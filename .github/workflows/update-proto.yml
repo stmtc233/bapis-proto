@@ -21,7 +21,7 @@ concurrency:
 env:
   APK_URL: https://dl.hdslb.com/mobile/latest/android64/iBiliPlayer-bili.apk?t=20260817
   JADX_VERSION: 1.5.6
-  MIN_MESSAGE_COUNT: 3000
+  MIN_MESSAGE_COUNT: 4000
 
 jobs:
   update:
@@ -103,13 +103,25 @@ jobs:
           unzip -q .work/bilibili.apk 'classes*.dex' -d .work/dex
           rm -rf decompiled
           javac -cp .work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
-            -d .work/classes tools/DecompileBapis.java
-          for dex in .work/dex/classes*.dex; do
-            echo "Decompiling $dex"
-            java -Xms512m -Xmx3g \
-              -cp .work/classes:.work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
-              DecompileBapis decompiled "$dex"
-          done
+            -d .work/classes tools/DecompileBapis.java tools/ListBapisDex.java
+          runtime_dex=.work/dex/classes17.dex
+          test -f "$runtime_dex"
+          bapis_dex_count=0
+          while read -r dex _; do
+            bapis_dex_count=$((bapis_dex_count + 1))
+            echo "Decompiling $dex with protobuf runtime context"
+            if [ "$dex" = "$runtime_dex" ]; then
+              java -Xms512m -Xmx3g \
+                -cp .work/classes:.work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
+                DecompileBapis decompiled "$dex"
+            else
+              java -Xms512m -Xmx3g \
+                -cp .work/classes:.work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
+                DecompileBapis decompiled "$dex" "$runtime_dex"
+            fi
+          done < <(java -cp .work/classes:.work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
+            ListBapisDex .work/dex/classes*.dex)
+          test "$bapis_dex_count" -gt 0
 
       - name: Reconstruct proto files
         if: steps.version.outputs.tag_exists != 'true'

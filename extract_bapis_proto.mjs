@@ -102,8 +102,12 @@ function parseEnums(source, topLevelOnly = false) {
     const open = source.indexOf('{', match.index);
     const close = closingBrace(source, open);
     if (close < 0) continue;
-    const values = [...source.slice(open + 1, close).matchAll(/^\s*([A-Za-z][A-Za-z0-9_]*)\((-?\d+)\)\s*[,;]/gm)]
-      .map(value => ({ name: value[1], number: Number(value[2]) }));
+    const body = source.slice(open + 1, close);
+    const constants = new Map([...body.matchAll(/^\s*public static final int ([A-Za-z][A-Za-z0-9_]*) = (-?\d+);/gm)]
+      .map(value => [value[1], Number(value[2])]));
+    const values = [...body.matchAll(/^\s*([A-Za-z][A-Za-z0-9_]*)\((-?\d+|[A-Za-z][A-Za-z0-9_]*)\)\s*[,;]/gm)]
+      .map(value => ({ name: value[1], number: constants.get(value[2]) ?? Number(value[2]) }))
+      .filter(value => Number.isFinite(value.number));
     if (values.length) enums.push({ name: match[1], values });
   }
   return enums;
