@@ -55,6 +55,14 @@ message LeaveNotify {
   BAPILiveRTCUserProto_UserLeaveReason reason = 2;
 }
 
+// Source: com/bapis/bilibili/live/rtc/datachannel/LeaveReq.java
+message LeaveReq {
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/LeaveResp.java
+message LeaveResp {
+}
+
 // Source: com/bapis/bilibili/live/rtc/datachannel/MembersReq.java
 message MembersReq {
   uint64 channelId = 1;
@@ -241,9 +249,21 @@ message UnPubNotify {
   BAPILiveRTCUserProto_Stream stream = 2;
 }
 
+// Source: com/bapis/bilibili/live/rtc/datachannel/UnPubReq.java
+message UnPubReq {
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/UnPubResp.java
+message UnPubResp {
+}
+
 // Source: com/bapis/bilibili/live/rtc/datachannel/UnSubReq.java
 message UnSubReq {
   uint64 uid = 1;
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/UnSubResp.java
+message UnSubResp {
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/UpdateCodecNotify.java
@@ -254,6 +274,10 @@ message UpdateCodecNotify {
 // Source: com/bapis/bilibili/live/rtc/datachannel/UpdateCodecReq.java
 message UpdateCodecReq {
   BAPILiveRTCUserProto_CodecCapability decodeCapability = 1;
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/UpdateCodecResp.java
+message UpdateCodecResp {
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/UpdateSubReq.java
@@ -286,6 +310,10 @@ message UpdateSubReq {
 
 }
 
+// Source: com/bapis/bilibili/live/rtc/datachannel/UpdateSubResp.java
+message UpdateSubResp {
+}
+
 // Source: com/bapis/bilibili/live/rtc/datachannel/UserMsgReq.java
 message UserMsgReq {
   uint32 bizId = 1;
@@ -297,5 +325,9 @@ message UserMsgReq {
 // Source: com/bapis/bilibili/live/rtc/datachannel/UserMsgResp.java
 message UserMsgResp {
   repeated uint64 sentUids = 1;
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/UserMuteResp.java
+message UserMuteResp {
 }
 

@@ -26,3 +26,7 @@ message FavoriteTabReply {
   repeated FavoriteTabItem items = 1;
 }
 
+// Source: com/bapis/bilibili/polymer/list/FavoriteTabReq.java
+message FavoriteTabReq {
+}
+

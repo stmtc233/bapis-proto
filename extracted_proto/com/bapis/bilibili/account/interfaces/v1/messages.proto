@@ -32,6 +32,10 @@ message AccountProfileReply {
   repeated UserFieldSetting fieldSetting = 4;
 }
 
+// Source: com/bapis/bilibili/account/interfaces/v1/AccountProfileReq.java
+message AccountProfileReq {
+}
+
 // Source: com/bapis/bilibili/account/interfaces/v1/MidByNameReply.java
 message MidByNameReply {
   map<string, int64> nameMap = 1;
@@ -50,6 +54,10 @@ message UnameMessageReply {
   string confirmMessage = 4;
   string conditionMessage = 5;
   string bindTel = 6;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/UnameMessageReq.java
+message UnameMessageReq {
 }
 
 // Source: com/bapis/bilibili/account/interfaces/v1/UpdateHandleReply.java

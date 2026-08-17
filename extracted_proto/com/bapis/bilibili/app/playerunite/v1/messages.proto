@@ -42,6 +42,10 @@ message PlayHalfChannelsReq {
   string playMode = 6;
 }
 
+// Source: com/bapis/bilibili/app/playerunite/v1/PlayQnEventReply.java
+message PlayQnEventReply {
+}
+
 // Source: com/bapis/bilibili/app/playerunite/v1/PlayQnEventReq.java
 message PlayQnEventReq {
   int64 aid = 1;

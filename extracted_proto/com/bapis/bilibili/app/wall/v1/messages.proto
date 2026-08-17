@@ -12,6 +12,10 @@ message RuleInfo {
   repeated string aBackup = 5;
 }
 
+// Source: com/bapis/bilibili/app/wall/v1/RuleRequest.java
+message RuleRequest {
+}
+
 // Source: com/bapis/bilibili/app/wall/v1/RulesInfo.java
 message RulesInfo {
   repeated bytes rulesinfo = 1;

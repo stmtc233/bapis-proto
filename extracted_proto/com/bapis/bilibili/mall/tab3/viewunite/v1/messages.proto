@@ -16,6 +16,7 @@ enum BizType {
 enum ECode {
   CODE_DEFAULT = 0;
   CODE_404 = 1;
+  CODE_TEENAGER = 78301;
   UNRECOGNIZED = -1;
 }
 

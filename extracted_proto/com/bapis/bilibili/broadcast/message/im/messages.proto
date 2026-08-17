@@ -100,8 +100,20 @@ message UpdateChatInfoCommand {
   SessionId sessionId = 1;
 }
 
+// Source: com/bapis/bilibili/broadcast/message/im/UpdateQuickLinkCommand.java
+message UpdateQuickLinkCommand {
+}
+
+// Source: com/bapis/bilibili/broadcast/message/im/UpdateSessionListCommand.java
+message UpdateSessionListCommand {
+}
+
 // Source: com/bapis/bilibili/broadcast/message/im/UpdateSessionOneCommand.java
 message UpdateSessionOneCommand {
   SessionId sessionId = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/im/UpdateTotalUnreadCommand.java
+message UpdateTotalUnreadCommand {
 }
 

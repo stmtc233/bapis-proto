@@ -114,6 +114,10 @@ message Color {
   string darkColor = 2;
 }
 
+// Source: com/bapis/bilibili/app/mine/v1/DeviceFeatureReq.java
+message DeviceFeatureReq {
+}
+
 // Source: com/bapis/bilibili/app/mine/v1/DeviceFeatureResp.java
 message DeviceFeatureResp {
   string actionData = 1;

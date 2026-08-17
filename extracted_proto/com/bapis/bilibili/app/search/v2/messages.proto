@@ -45,6 +45,10 @@ message GetChatAuthReply {
   int32 jumpLinkType = 6;
 }
 
+// Source: com/bapis/bilibili/app/search/v2/GetChatAuthReq.java
+message GetChatAuthReq {
+}
+
 // Source: com/bapis/bilibili/app/search/v2/GetChatResultReq.java
 message GetChatResultReq {
   string query = 1;
@@ -144,6 +148,10 @@ message SearchEggReply {
   int32 code = 1;
   string seid = 2;
   SearchEggInfos result = 3;
+}
+
+// Source: com/bapis/bilibili/app/search/v2/SearchEggReq.java
+message SearchEggReq {
 }
 
 // Source: com/bapis/bilibili/app/search/v2/SearchFollowRequest.java

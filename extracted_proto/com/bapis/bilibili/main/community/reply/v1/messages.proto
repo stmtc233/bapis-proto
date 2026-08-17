@@ -279,6 +279,10 @@ message DoVoteReq {
   int64 option_ = 4;
 }
 
+// Source: com/bapis/bilibili/main/community/reply/v1/DoVoteResp.java
+message DoVoteResp {
+}
+
 // Source: com/bapis/bilibili/main/community/reply/v1/Effects.java
 message Effects {
   string preloading = 1;
@@ -1215,6 +1219,10 @@ message UpdateSingleReplyNotificationConfigReq {
   ReplyNotificationSwitch pushSwitch = 4;
 }
 
+// Source: com/bapis/bilibili/main/community/reply/v1/UpdateSingleReplyNotificationConfigResp.java
+message UpdateSingleReplyNotificationConfigResp {
+}
+
 // Source: com/bapis/bilibili/main/community/reply/v1/UpProtectionCard.java
 message UpProtectionCard {
   string text = 1;
@@ -1255,6 +1263,10 @@ message Url {
     UNRECOGNIZED = -1;
   }
 
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/UserCallbackReply.java
+message UserCallbackReply {
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/UserCallbackReq.java

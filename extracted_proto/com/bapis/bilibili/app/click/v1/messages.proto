@@ -40,6 +40,10 @@ message Extra {
   string refer = 2;
 }
 
+// Source: com/bapis/bilibili/app/click/v1/HeartBeatReply.java
+message HeartBeatReply {
+}
+
 // Source: com/bapis/bilibili/app/click/v1/HeartBeatReq.java
 message HeartBeatReq {
   string sessionV2 = 1;

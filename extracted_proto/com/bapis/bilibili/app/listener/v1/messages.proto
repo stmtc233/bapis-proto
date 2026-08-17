@@ -141,6 +141,10 @@ message ClickReq {
 
 }
 
+// Source: com/bapis/bilibili/app/listener/v1/ClickResp.java
+message ClickResp {
+}
+
 // Source: com/bapis/bilibili/app/listener/v1/CoinAddReq.java
 message CoinAddReq {
   PlayItem item = 1;
@@ -202,6 +206,10 @@ message EventReq {
     UNRECOGNIZED = -1;
   }
 
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/EventResp.java
+message EventResp {
 }
 
 // Source: com/bapis/bilibili/app/listener/v1/EventTracking.java
@@ -479,6 +487,10 @@ message MainFavMusicMenuListResp {
   repeated MusicMenu menuList = 2;
   bool hasMore = 3;
   string offset = 4;
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/MainFavMusicSubTabListReq.java
+message MainFavMusicSubTabListReq {
 }
 
 // Source: com/bapis/bilibili/app/listener/v1/MainFavMusicSubTabListResp.java

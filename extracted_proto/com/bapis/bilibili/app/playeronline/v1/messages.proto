@@ -3,6 +3,10 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.playeronline.v1;
 
+// Source: com/bapis/bilibili/app/playeronline/v1/NoReply.java
+message NoReply {
+}
+
 // Source: com/bapis/bilibili/app/playeronline/v1/PlayerOnlineReply.java
 message PlayerOnlineReply {
   string totalText = 1;

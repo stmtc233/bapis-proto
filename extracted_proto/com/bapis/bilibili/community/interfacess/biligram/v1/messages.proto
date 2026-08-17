@@ -116,10 +116,18 @@ message CreateTopicReq {
   int64 upMid = 3;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/biligram/v1/DelMessageReply.java
+message DelMessageReply {
+}
+
 // Source: com/bapis/bilibili/community/interfacess/biligram/v1/DelMessageReq.java
 message DelMessageReq {
   int64 id = 1;
   int64 topicId = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/biligram/v1/DelTopicReply.java
+message DelTopicReply {
 }
 
 // Source: com/bapis/bilibili/community/interfacess/biligram/v1/DelTopicReq.java
@@ -206,6 +214,10 @@ message ItemContentText {
   string text = 1;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/biligram/v1/LikeMessageReply.java
+message LikeMessageReply {
+}
+
 // Source: com/bapis/bilibili/community/interfacess/biligram/v1/LikeMessageReq.java
 message LikeMessageReq {
   int64 topicId = 1;
@@ -266,6 +278,10 @@ message MessageItemNotice {
 // Source: com/bapis/bilibili/community/interfacess/biligram/v1/MessageItemPicture.java
 message MessageItemPicture {
   repeated Picture pictures = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/biligram/v1/MessagePositionReply.java
+message MessagePositionReply {
 }
 
 // Source: com/bapis/bilibili/community/interfacess/biligram/v1/MessagePositionReq.java
@@ -332,6 +348,10 @@ message ServerReply {
 // Source: com/bapis/bilibili/community/interfacess/biligram/v1/ServerReq.java
 message ServerReq {
   int64 upMid = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/biligram/v1/ServerStatusReply.java
+message ServerStatusReply {
 }
 
 // Source: com/bapis/bilibili/community/interfacess/biligram/v1/ServerStatusReq.java

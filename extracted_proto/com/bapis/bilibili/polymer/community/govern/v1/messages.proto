@@ -64,3 +64,7 @@ message StoreAntiHarassmentSettingsReq {
   AntiHarassmentSetting antiHarassmentSetting = 3;
 }
 
+// Source: com/bapis/bilibili/polymer/community/govern/v1/StoreAntiHarassmentSettingsRsp.java
+message StoreAntiHarassmentSettingsRsp {
+}
+

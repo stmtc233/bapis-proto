@@ -66,3 +66,7 @@ message FollowingReq {
   string actionId = 8;
 }
 
+// Source: com/bapis/bilibili/relation/interfaces/ModifyRelationReply.java
+message ModifyRelationReply {
+}
+

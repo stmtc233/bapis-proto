@@ -396,6 +396,10 @@ message PlayArcConf {
   ArcConf systemRecordConf = 32;
 }
 
+// Source: com/bapis/bilibili/app/playurl/v1/PlayConfEditReply.java
+message PlayConfEditReply {
+}
+
 // Source: com/bapis/bilibili/app/playurl/v1/PlayConfEditReq.java
 message PlayConfEditReq {
   repeated PlayConfState playConf = 1;
@@ -404,6 +408,10 @@ message PlayConfEditReq {
 // Source: com/bapis/bilibili/app/playurl/v1/PlayConfReply.java
 message PlayConfReply {
   PlayAbilityConf playConf = 1;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayConfReq.java
+message PlayConfReq {
 }
 
 // Source: com/bapis/bilibili/app/playurl/v1/PlayConfState.java

@@ -78,6 +78,33 @@ enum FeatureFlag {
   AIImage2Image = 94;
   KichikuScene = 95;
   ShootBeauty = 100;
+  ShootBeautyTemplate = 101;
+  ShootCountdown = 102;
+  ShootFlashlight = 103;
+  IntellectTitle = 104;
+  AiKeywordExtra = 105;
+  PictureTagRecognition = 106;
+  IntellectCover = 107;
+  AIActivity = 108;
+  DigitalHuman = 109;
+  AIStraightTitle = 110;
+  GameFactory = 111;
+  NonSmartVideo = 112;
+  Replace = 113;
+  TTSClone = 114;
+  SmartTitlePink = 115;
+  RecognitionMusic = 116;
+  AIVideoStoryTool = 117;
+  AIVideoStoryPlay = 118;
+  AIVideoMusicTool = 119;
+  AIVideoMusicPlay = 120;
+  VideoClipCut = 121;
+  FastPublish = 122;
+  TextToAudio = 123;
+  CloudDraft = 124;
+  LiveToEditor = 127;
+  LiveClipRecreation = 128;
+  TTVMaterialTag = 129;
   UNRECOGNIZED = -1;
 }
 

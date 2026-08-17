@@ -38,6 +38,10 @@ enum RecordType {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/pangu/gallery/v1/AgreePolicyReply.java
+message AgreePolicyReply {
+}
+
 // Source: com/bapis/bilibili/pangu/gallery/v1/AgreePolicyReq.java
 message AgreePolicyReq {
   PolicyType policyType = 1;

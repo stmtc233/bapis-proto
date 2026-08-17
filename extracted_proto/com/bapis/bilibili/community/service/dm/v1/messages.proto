@@ -25,6 +25,7 @@ enum CheckboxType {
 
 enum DmColorfulType {
   NoneType = 0;
+  VipGradualColor = 60001;
   UNRECOGNIZED = -1;
 }
 
@@ -400,6 +401,10 @@ message DmExpoReportReq {
   int64 oid = 2;
   bytes dmids = 3;
   string spmid = 4;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/DmExpoReportRes.java
+message DmExpoReportRes {
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/DmHerdView.java

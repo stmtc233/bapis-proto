@@ -26,6 +26,10 @@ message AuthReq {
   int64 lastMsgId = 3;
 }
 
+// Source: com/bapis/bilibili/broadcast/v1/AuthResp.java
+message AuthResp {
+}
+
 // Source: com/bapis/bilibili/broadcast/v1/BroadcastFrame.java
 message BroadcastFrame {
   FrameOption options = 1;
@@ -42,6 +46,10 @@ message FrameOption {
   string ackOrigin = 5;
   int64 timestamp = 6;
   int64 msgType = 7;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/HeartbeatReq.java
+message HeartbeatReq {
 }
 
 // Source: com/bapis/bilibili/broadcast/v1/HeartbeatResp.java
@@ -199,6 +207,14 @@ message PushMessageResp {
 // Source: com/bapis/bilibili/broadcast/v1/RoomErrorEvent.java
 message RoomErrorEvent {
   Status status = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/RoomJoinEvent.java
+message RoomJoinEvent {
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/RoomLeaveEvent.java
+message RoomLeaveEvent {
 }
 
 // Source: com/bapis/bilibili/broadcast/v1/RoomMessageEvent.java

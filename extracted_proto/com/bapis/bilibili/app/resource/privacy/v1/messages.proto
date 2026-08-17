@@ -15,6 +15,14 @@ enum PrivacyConfigType {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/app/resource/privacy/v1/NoArgRequest.java
+message NoArgRequest {
+}
+
+// Source: com/bapis/bilibili/app/resource/privacy/v1/NoReply.java
+message NoReply {
+}
+
 // Source: com/bapis/bilibili/app/resource/privacy/v1/PrivacyConfigItem.java
 message PrivacyConfigItem {
   PrivacyConfigType privacyConfigType = 1;

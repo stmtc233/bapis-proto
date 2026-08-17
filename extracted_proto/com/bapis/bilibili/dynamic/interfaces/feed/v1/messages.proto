@@ -92,6 +92,10 @@ message AddDynamicReportReq {
   string reasonDesc = 4;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddDynamicReportRsp.java
+message AddDynamicReportRsp {
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddOpusArticleDraftReq.java
 message AddOpusArticleDraftReq {
   OpusArticleDraftArg arg = 1;
@@ -119,6 +123,10 @@ message AdInfoDetail {
   string province = 2;
   string city = 3;
   string district = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionAddableReq.java
+message ArticleCollectionAddableReq {
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionAddableRsp.java
@@ -158,6 +166,14 @@ message ArticleCollectionOperationReq {
   string aids = 2;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionOperationRsp.java
+message ArticleCollectionOperationRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleHomePageCategoriesReq.java
+message ArticleHomePageCategoriesReq {
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleHomePageCategoriesRsp.java
 message ArticleHomePageCategoriesRsp {
   repeated Category categories = 1;
@@ -167,6 +183,10 @@ message ArticleHomePageCategoriesRsp {
 message ArticleInCollectionSortReq {
   int64 id = 1;
   string aids = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleInCollectionSortRsp.java
+message ArticleInCollectionSortRsp {
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AttachCardButtonReq.java
@@ -224,6 +244,10 @@ message CollectionArticleItem {
 message ConfigAB {
   ConfigABEntry entry = 1;
   int64 value = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ConfigReq.java
+message ConfigReq {
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ConfigRsp.java
@@ -347,9 +371,25 @@ message CreatePermissionButtonClickReq {
   UpPermissionType type = 1;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePermissionButtonClickRsp.java
+message CreatePermissionButtonClickRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePlusButtonClickReq.java
+message CreatePlusButtonClickReq {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePlusButtonClickRsp.java
+message CreatePlusButtonClickRsp {
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DelArticleCollectionReq.java
 message DelArticleCollectionReq {
   int64 id = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DelArticleCollectionRsp.java
+message DelArticleCollectionRsp {
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DelArticleDraftReq.java
@@ -357,9 +397,17 @@ message DelArticleDraftReq {
   int64 articleId = 1;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DelArticleDraftRsp.java
+message DelArticleDraftRsp {
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicButtonClickReq.java
 message DynamicButtonClickReq {
   repeated IntList bizType = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicButtonClickRsp.java
+message DynamicButtonClickRsp {
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicRepostReq.java
@@ -387,9 +435,17 @@ message DynamicThumbReq {
   string actionId = 11;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicThumbRsp.java
+message DynamicThumbRsp {
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynMetricsActiveReportReq.java
 message DynMetricsActiveReportReq {
   repeated ActiveReportMessage reportMetrics = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynMetricsActiveReportRsp.java
+message DynMetricsActiveReportRsp {
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynPrivatePubSettingReq.java
@@ -409,6 +465,10 @@ message EditArticleCollectionReq {
   string name = 2;
   string summary = 3;
   string imageUrl = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/EditArticleCollectionRsp.java
+message EditArticleCollectionRsp {
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/EditDynReq.java
@@ -546,6 +606,14 @@ message GoodsItem {
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HomeBubbleReportReq.java
 message HomeBubbleReportReq {
   string trackId = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HomeBubbleReportRsp.java
+message HomeBubbleReportRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HotSearchReq.java
+message HotSearchReq {
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HotSearchRsp.java
@@ -793,10 +861,18 @@ message RmDynReq {
   string ridStr = 4;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RmDynRsp.java
+message RmDynRsp {
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RmSpaceTopReq.java
 message RmSpaceTopReq {
   int64 dynId = 1;
   int32 teenagersMode = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RmSpaceTopRsp.java
+message RmSpaceTopRsp {
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SearchPoiListReq.java
@@ -820,6 +896,10 @@ message SetSpaceTopReq {
   int32 teenagersMode = 2;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SetSpaceTopRsp.java
+message SetSpaceTopRsp {
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SubmitCheckReq.java
 message SubmitCheckReq {
   CreateContent content = 1;
@@ -829,6 +909,10 @@ message SubmitCheckReq {
   CreateOption createOption = 5;
   Opus opus = 6;
   string dynIdStr = 7;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SubmitCheckRsp.java
+message SubmitCheckRsp {
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SuggestReq.java

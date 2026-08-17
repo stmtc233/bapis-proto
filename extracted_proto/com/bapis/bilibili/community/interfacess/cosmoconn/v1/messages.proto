@@ -97,9 +97,17 @@ message ClearTribeeVisaRedDotsReq {
   int64 tribeeId = 1;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ClearTribeeVisaRedDotsRsp.java
+message ClearTribeeVisaRedDotsRsp {
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ConfirmConventionReq.java
 message ConfirmConventionReq {
   int64 version = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ConfirmConventionRsp.java
+message ConfirmConventionRsp {
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ConfirmTribeeQuizQuestionsReq.java
@@ -165,6 +173,10 @@ message DeleteTribeeQuizQuestionRsp {
 message DelTribeeDraftReq {
   int64 draftId = 1;
   string draftIdStr = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/DelTribeeDraftRsp.java
+message DelTribeeDraftRsp {
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/Entity.java
@@ -290,12 +302,20 @@ message ReorderRecTribeeReq {
   int32 targetPosition = 2;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ReorderRecTribeeRsp.java
+message ReorderRecTribeeRsp {
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeQuizConfigReq.java
 message SetTribeeQuizConfigReq {
   int64 tribeeId = 1;
   string title = 2;
   int32 questionNum = 3;
   int32 passNum = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeQuizConfigRsp.java
+message SetTribeeQuizConfigRsp {
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ShowText.java
@@ -309,6 +329,10 @@ message SimpleActionReq {
   Entity entity = 1;
   Action action = 2;
   CosmoParaMeta meta = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SimpleActionRsp.java
+message SimpleActionRsp {
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeQuizAnswerReq.java
@@ -439,9 +463,17 @@ message TribeeDynClickReq {
   string dynIdStr = 3;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDynClickRsp.java
+message TribeeDynClickRsp {
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeInviteCodeNotificationsFeedbackReq.java
 message TribeeInviteCodeNotificationsFeedbackReq {
   InvFeedBackType feedBackType = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeInviteCodeNotificationsFeedbackRsp.java
+message TribeeInviteCodeNotificationsFeedbackRsp {
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageActionRsp.java
@@ -525,6 +557,10 @@ message UpdateRecTribeeReq {
   bool disableRec = 2;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateRecTribeeRsp.java
+message UpdateRecTribeeRsp {
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizQuestionReq.java
 message UpdateTribeeQuizQuestionReq {
   int64 tribeeId = 1;
@@ -533,5 +569,9 @@ message UpdateTribeeQuizQuestionReq {
   string stem = 4;
   repeated QuizQuestionOption options = 5;
   repeated int32 answer = 6;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizQuestionRsp.java
+message UpdateTribeeQuizQuestionRsp {
 }
 

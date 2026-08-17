@@ -411,6 +411,10 @@ message RightTopLiveBadge {
   string liveStatsDesc = 3;
 }
 
+// Source: com/bapis/bilibili/app/topic/v1/SetTopTopicResReply.java
+message SetTopTopicResReply {
+}
+
 // Source: com/bapis/bilibili/app/topic/v1/SetTopTopicResReq.java
 message SetTopTopicResReq {
   int64 topicId = 1;

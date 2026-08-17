@@ -820,11 +820,23 @@ message NewEP {
   string cover = 3;
 }
 
+// Source: com/bapis/bilibili/app/dynamic/v1/NoReply.java
+message NoReply {
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/NoReq.java
+message NoReq {
+}
+
 // Source: com/bapis/bilibili/app/dynamic/v1/OfficialVerify.java
 message OfficialVerify {
   int32 type = 1;
   string desc = 2;
   int32 isAtten = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/OurCityClickReportReply.java
+message OurCityClickReportReply {
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v1/OurCityClickReportReq.java

@@ -397,6 +397,10 @@ message ArcRights {
   bool isChargingPay = 1;
 }
 
+// Source: com/bapis/bilibili/app/viewunite/common/AttentionRecommend.java
+message AttentionRecommend {
+}
+
 // Source: com/bapis/bilibili/app/viewunite/common/Audio.java
 message Audio {
   map<int64, AudioInfo> audioInfo = 1;

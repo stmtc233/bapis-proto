@@ -25,6 +25,10 @@ message ClickReportReq {
   uint64 shopFatherId = 3;
 }
 
+// Source: com/bapis/bilibili/im/customer/interfaces/ClickReportRsp.java
+message ClickReportRsp {
+}
+
 // Source: com/bapis/bilibili/im/customer/interfaces/CloseConversationReq.java
 message CloseConversationReq {
   uint64 shopId = 1;
@@ -47,11 +51,19 @@ message CloseConversationRsp {
   string evaluationUrl = 1;
 }
 
+// Source: com/bapis/bilibili/im/customer/interfaces/Empty.java
+message Empty {
+}
+
 // Source: com/bapis/bilibili/im/customer/interfaces/FinishParagraphsRenderReq.java
 message FinishParagraphsRenderReq {
   uint64 msgKey = 1;
   uint64 status = 2;
   FinishParagraphsRenderStopPos stopPos = 3;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/FinishParagraphsRenderRsp.java
+message FinishParagraphsRenderRsp {
 }
 
 // Source: com/bapis/bilibili/im/customer/interfaces/FinishParagraphsRenderStopPos.java

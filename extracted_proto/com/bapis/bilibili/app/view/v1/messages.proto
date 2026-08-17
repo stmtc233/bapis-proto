@@ -960,6 +960,10 @@ message Node {
   int64 cid = 3;
 }
 
+// Source: com/bapis/bilibili/app/view/v1/NoReply.java
+message NoReply {
+}
+
 // Source: com/bapis/bilibili/app/view/v1/Notice.java
 message Notice {
   string title = 1;
@@ -1647,6 +1651,10 @@ message TFInfoReply {
   TFToast tfToast = 2;
   TFPanelCustomized tfPanelCustomized = 3;
   bool userFlagNew = 4;
+}
+
+// Source: com/bapis/bilibili/app/view/v1/TFInfoReq.java
+message TFInfoReq {
 }
 
 // Source: com/bapis/bilibili/app/view/v1/TFPanelCustomized.java

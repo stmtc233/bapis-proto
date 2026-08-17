@@ -23,3 +23,7 @@ message ReportAttributionReq {
   AdDeviceInfo adDeviceInfo = 6;
 }
 
+// Source: com/bapis/bilibili/app/growth/v1/ReportAttributionResp.java
+message ReportAttributionResp {
+}
+

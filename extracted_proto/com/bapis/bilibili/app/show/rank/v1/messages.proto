@@ -66,6 +66,10 @@ message RankRegionListReply {
   repeated RankRegionInfo regions = 1;
 }
 
+// Source: com/bapis/bilibili/app/show/rank/v1/RankRegionListReq.java
+message RankRegionListReq {
+}
+
 // Source: com/bapis/bilibili/app/show/rank/v1/RankRegionResultReq.java
 message RankRegionResultReq {
   int32 rid = 1;

@@ -9,6 +9,10 @@ enum ActionType {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/campus/v1/ActionReportReply.java
+message ActionReportReply {
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/campus/v1/ActionReportReq.java
 message ActionReportReq {
   string identity = 1;

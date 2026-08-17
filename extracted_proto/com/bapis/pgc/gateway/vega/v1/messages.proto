@@ -3,6 +3,14 @@ syntax = "proto3";
 
 package com.bapis.pgc.gateway.vega.v1;
 
+// Source: com/bapis/pgc/gateway/vega/v1/AuthReq.java
+message AuthReq {
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/AuthResp.java
+message AuthResp {
+}
+
 // Source: com/bapis/pgc/gateway/vega/v1/FrameOption.java
 message FrameOption {
   int64 vegaId = 1;
@@ -12,6 +20,14 @@ message FrameOption {
   Status status = 5;
   string ackOrigin = 6;
   int64 mid = 7;
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/HeartbeatReq.java
+message HeartbeatReq {
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/HeartbeatResp.java
+message HeartbeatResp {
 }
 
 // Source: com/bapis/pgc/gateway/vega/v1/MessageAckReq.java

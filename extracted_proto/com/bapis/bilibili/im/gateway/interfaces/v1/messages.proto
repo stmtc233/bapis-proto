@@ -96,6 +96,10 @@ message ClearBubbleMsgReq {
   MsgTabType tabType = 1;
 }
 
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/ClearBubbleMsgRsp.java
+message ClearBubbleMsgRsp {
+}
+
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/ClearMessageToastReq.java
 message ClearMessageToastReq {
   ToastType toastType = 1;
@@ -170,10 +174,18 @@ message DelMsgRsp {
   repeated DelMsgItem fail = 1;
 }
 
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/DummyRsp.java
+message DummyRsp {
+}
+
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/FavoriteCard.java
 message FavoriteCard {
   CommonMsgCard favMsg = 1;
   int32 noticeState = 2;
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/GetBubbleMsgReq.java
+message GetBubbleMsgReq {
 }
 
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/GetBubbleMsgRsp.java
@@ -208,6 +220,10 @@ message LikeCard {
   CommonMsgCard likeMsg = 1;
   int32 noticeState = 2;
   ThankButton thankButton = 3;
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/MessageToastReq.java
+message MessageToastReq {
 }
 
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/MessageToastRsp.java
@@ -435,6 +451,10 @@ message ReqGetSessions {
   uint32 lessonsMode = 9;
   repeated IntList sids = 11;
   int64 aiUid = 12;
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/ReqGetSystemNotice.java
+message ReqGetSystemNotice {
 }
 
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/ReqNewSessions.java

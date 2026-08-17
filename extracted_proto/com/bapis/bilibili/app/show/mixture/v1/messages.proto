@@ -47,6 +47,14 @@ message ClarityReply {
   int64 lastPlayQnValue = 3;
 }
 
+// Source: com/bapis/bilibili/app/show/mixture/v1/ClarityReq.java
+message ClarityReq {
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/EmptyReply.java
+message EmptyReply {
+}
+
 // Source: com/bapis/bilibili/app/show/mixture/v1/GuideCard.java
 message GuideCard {
   string image = 1;
@@ -153,6 +161,10 @@ message RegionLimit {
 message RegionListReply {
   RegionContent shortcut = 1;
   repeated RegionContent contents = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionListReq.java
+message RegionListReq {
 }
 
 // Source: com/bapis/bilibili/app/show/mixture/v1/RegionShortcutReply.java

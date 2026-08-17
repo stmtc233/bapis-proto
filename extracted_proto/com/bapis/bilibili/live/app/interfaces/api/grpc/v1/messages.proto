@@ -72,6 +72,10 @@ message RemoveViewHistoryReq {
   string buvid = 3;
 }
 
+// Source: com/bapis/bilibili/live/app/interfaces/api/grpc/v1/RemoveViewHistoryResp.java
+message RemoveViewHistoryResp {
+}
+
 // Source: com/bapis/bilibili/live/app/interfaces/api/grpc/v1/ViewHistory.java
 message ViewHistory {
   int64 kid = 1;

@@ -403,10 +403,18 @@ message Dynamic {
   DynamicItem dynamic = 1;
 }
 
+// Source: com/bapis/bilibili/app/interfaces/v1/EnableOverseasTeenagersModeReply.java
+message EnableOverseasTeenagersModeReply {
+}
+
 // Source: com/bapis/bilibili/app/interfaces/v1/EnableOverseasTeenagersModeReq.java
 message EnableOverseasTeenagersModeReq {
   string deviceToken = 1;
   int64 ageThreshold = 2;
+}
+
+// Source: com/bapis/bilibili/app/interfaces/v1/FacialRecognitionVerifyReply.java
+message FacialRecognitionVerifyReply {
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/FacialRecognitionVerifyReq.java
@@ -507,6 +515,10 @@ message MediaDetailReq {
   int64 bizType = 2;
 }
 
+// Source: com/bapis/bilibili/app/interfaces/v1/MediaFollowReply.java
+message MediaFollowReply {
+}
+
 // Source: com/bapis/bilibili/app/interfaces/v1/MediaFollowReq.java
 message MediaFollowReq {
   string id = 1;
@@ -582,6 +594,10 @@ message ModeStatusReq {
   string deviceToken = 1;
 }
 
+// Source: com/bapis/bilibili/app/interfaces/v1/ModifyPwdReply.java
+message ModifyPwdReply {
+}
+
 // Source: com/bapis/bilibili/app/interfaces/v1/ModifyPwdReq.java
 message ModifyPwdReq {
   string oldPwd = 1;
@@ -617,6 +633,10 @@ message NftFaceIcon {
   int32 regionType = 1;
   string icon = 2;
   int32 showStatus = 3;
+}
+
+// Source: com/bapis/bilibili/app/interfaces/v1/NoReply.java
+message NoReply {
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/OfficialVerify.java
@@ -776,6 +796,10 @@ message SearchTabReq {
   From from = 3;
 }
 
+// Source: com/bapis/bilibili/app/interfaces/v1/SetTeenagersModelAgeReply.java
+message SetTeenagersModelAgeReply {
+}
+
 // Source: com/bapis/bilibili/app/interfaces/v1/SetTeenagersModelAgeReq.java
 message SetTeenagersModelAgeReq {
   string pwd = 1;
@@ -859,6 +883,10 @@ message UpdateReserveStartTimeReq {
   int64 type = 3;
 }
 
+// Source: com/bapis/bilibili/app/interfaces/v1/UpdateStatusReply.java
+message UpdateStatusReply {
+}
+
 // Source: com/bapis/bilibili/app/interfaces/v1/UpdateStatusReq.java
 message UpdateStatusReq {
   string pwd = 1;
@@ -888,6 +916,10 @@ message UserModel {
   bool isParentControl = 9;
   int32 age = 10;
   bool isOverseas = 11;
+}
+
+// Source: com/bapis/bilibili/app/interfaces/v1/VerifyPwdReply.java
+message VerifyPwdReply {
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/VerifyPwdReq.java

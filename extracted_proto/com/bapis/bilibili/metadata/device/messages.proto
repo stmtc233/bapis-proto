@@ -23,3 +23,15 @@ message Device {
   string guestId = 16;
 }
 
+// Source: com/bapis/bilibili/metadata/device/DeviceType.java
+message DeviceType {
+}
+
+// Source: com/bapis/bilibili/metadata/device/MobiApp.java
+message MobiApp {
+}
+
+// Source: com/bapis/bilibili/metadata/device/Platform.java
+message Platform {
+}
+

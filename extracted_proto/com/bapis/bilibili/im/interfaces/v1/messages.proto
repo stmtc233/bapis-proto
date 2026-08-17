@@ -32,6 +32,10 @@ message DummyReq {
   uint32 idl = 1;
 }
 
+// Source: com/bapis/bilibili/im/interfaces/v1/DummyRsp.java
+message DummyRsp {
+}
+
 // Source: com/bapis/bilibili/im/interfaces/v1/EmotionInfo.java
 message EmotionInfo {
   string text = 1;
@@ -87,6 +91,18 @@ message ReqAckSessions {
   uint64 beginTs = 1;
   uint32 endTs = 2;
   uint32 size = 3;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqBatRmSess.java
+message ReqBatRmSess {
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqCloseClearUnreadUI.java
+message ReqCloseClearUnreadUI {
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqGetDiscussListInImPage.java
+message ReqGetDiscussListInImPage {
 }
 
 // Source: com/bapis/bilibili/im/interfaces/v1/ReqGetMsg.java
@@ -266,6 +282,10 @@ message ReqUpdateTotalUnread {
   UpdateUnreadScope scope = 1;
 }
 
+// Source: com/bapis/bilibili/im/interfaces/v1/RspCloseClearUnreadUI.java
+message RspCloseClearUnreadUI {
+}
+
 // Source: com/bapis/bilibili/im/interfaces/v1/RspGetDiscussListInImPage.java
 message RspGetDiscussListInImPage {
   repeated SingleDiscussInImPage discussList = 1;
@@ -364,6 +384,10 @@ message RspSpecificSingleUnread {
   uint64 allUnreadCnt = 2;
 }
 
+// Source: com/bapis/bilibili/im/interfaces/v1/RspSyncAck.java
+message RspSyncAck {
+}
+
 // Source: com/bapis/bilibili/im/interfaces/v1/RspTotalUnread.java
 message RspTotalUnread {
   SessionSingleUnreadRsp sessionSingleUnread = 1;
@@ -372,6 +396,10 @@ message RspTotalUnread {
   int32 totalUnread = 4;
   uint64 customUnread = 5;
   NewTotalUnread newTotalUnread = 6;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspUpdateTotalUnread.java
+message RspUpdateTotalUnread {
 }
 
 // Source: com/bapis/bilibili/im/interfaces/v1/SessionSingleUnreadRsp.java

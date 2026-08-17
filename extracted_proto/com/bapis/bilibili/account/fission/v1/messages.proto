@@ -17,6 +17,10 @@ message EntranceReply {
   AnimateIcon animateIcon = 4;
 }
 
+// Source: com/bapis/bilibili/account/fission/v1/EntranceReq.java
+message EntranceReq {
+}
+
 // Source: com/bapis/bilibili/account/fission/v1/PrivacyReply.java
 message PrivacyReply {
   string message_ = 1;
@@ -32,5 +36,9 @@ message WindowReply {
   int32 type = 1;
   string url = 2;
   string reportData = 3;
+}
+
+// Source: com/bapis/bilibili/account/fission/v1/WindowReq.java
+message WindowReq {
 }
 

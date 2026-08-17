@@ -23,6 +23,7 @@ enum ButtonAction {
 enum CacheCode {
   PLAY = 0;
   UPOWERSTATE_INACTIVE = 100;
+  REPEAT_LAST_OPERATION = 101;
   UNRECOGNIZED = -1;
 }
 
@@ -30,6 +31,7 @@ enum ECode {
   CODE_DEFAULT = 0;
   CODE_404 = 1;
   CODE_ARC_PRIVACY = 2;
+  CODE_TEENAGER = 78301;
   UNRECOGNIZED = -1;
 }
 

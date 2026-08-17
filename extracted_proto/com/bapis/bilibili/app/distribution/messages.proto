@@ -90,6 +90,10 @@ message Int64Value {
   string exp = 4;
 }
 
+// Source: com/bapis/bilibili/app/distribution/SetUserPreferenceReply.java
+message SetUserPreferenceReply {
+}
+
 // Source: com/bapis/bilibili/app/distribution/SetUserPreferenceReq.java
 message SetUserPreferenceReq {
   repeated Any preference = 1;
@@ -123,5 +127,9 @@ message UInt64Value {
 // Source: com/bapis/bilibili/app/distribution/UserPreferenceReply.java
 message UserPreferenceReply {
   repeated Any preference = 1;
+}
+
+// Source: com/bapis/bilibili/app/distribution/UserPreferenceReq.java
+message UserPreferenceReq {
 }
 

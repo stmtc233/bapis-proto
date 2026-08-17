@@ -148,9 +148,17 @@ message MineSelection {
   repeated IconItem items = 1;
 }
 
+// Source: com/bapis/bilibili/app/home/v1/MineSelectionContentReq.java
+message MineSelectionContentReq {
+}
+
 // Source: com/bapis/bilibili/app/home/v1/MineSelectionContentRes.java
 message MineSelectionContentRes {
   MineSelection mineSelection = 1;
+}
+
+// Source: com/bapis/bilibili/app/home/v1/MineSelectionOptionItemsReq.java
+message MineSelectionOptionItemsReq {
 }
 
 // Source: com/bapis/bilibili/app/home/v1/MineSelectionOptionItemsRes.java
@@ -161,6 +169,10 @@ message MineSelectionOptionItemsRes {
 // Source: com/bapis/bilibili/app/home/v1/MineSelectionOptionUpdateReq.java
 message MineSelectionOptionUpdateReq {
   repeated int64 itemIds = 1;
+}
+
+// Source: com/bapis/bilibili/app/home/v1/MineSelectionOptionUpdateRes.java
+message MineSelectionOptionUpdateRes {
 }
 
 // Source: com/bapis/bilibili/app/home/v1/ModuleInfo.java
@@ -274,6 +286,10 @@ message RemoveVideoReq {
   RecentRecReasonEnum recReasonEnum = 3;
 }
 
+// Source: com/bapis/bilibili/app/home/v1/RemoveVideoRes.java
+message RemoveVideoRes {
+}
+
 // Source: com/bapis/bilibili/app/home/v1/SimpleMineSection.java
 message SimpleMineSection {
   string id = 1;
@@ -284,6 +300,10 @@ message SimpleMineSection {
 // Source: com/bapis/bilibili/app/home/v1/TabExtraInfo.java
 message TabExtraInfo {
   bool switchToMineConfigBubble = 1;
+}
+
+// Source: com/bapis/bilibili/app/home/v1/TopLeftTabReq.java
+message TopLeftTabReq {
 }
 
 // Source: com/bapis/bilibili/app/home/v1/TopLeftTabRes.java
@@ -298,6 +318,10 @@ message TopLeftTabUpdateReq {
   TopLeftGoto tabGoto = 1;
   TabSelection tabSelection = 2;
   TabUpdateSource source = 3;
+}
+
+// Source: com/bapis/bilibili/app/home/v1/TopLeftTabUpdateRes.java
+message TopLeftTabUpdateRes {
 }
 
 // Source: com/bapis/bilibili/app/home/v1/ToView.java
