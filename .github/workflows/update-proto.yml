@@ -50,6 +50,8 @@ jobs:
           set -euo pipefail
           mkdir -p .work
           curl --fail --location --retry 3 --retry-delay 5 \
+            --user-agent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36' \
+            --referer 'https://www.bilibili.com/' \
             --output .work/bilibili.apk "$APK_URL"
           badging="$(aapt dump badging .work/bilibili.apk)"
           version_name="$(sed -nE "s/.*versionName='([^']+)'.*/\1/p" <<< "$badging" | head -n 1)"
