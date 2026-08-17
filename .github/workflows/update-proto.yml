@@ -2,6 +2,12 @@ name: Update BAPIS Proto
 
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: Rebuild and replace the release for an existing version.
+        required: false
+        default: false
+        type: boolean
   schedule:
     - cron: '23 2 * * *'
 
@@ -15,6 +21,7 @@ concurrency:
 env:
   APK_URL: https://dl.hdslb.com/mobile/latest/android64/iBiliPlayer-bili.apk?t=20260817
   JADX_VERSION: 1.5.6
+  MIN_MESSAGE_COUNT: 3000
 
 jobs:
   update:
@@ -63,24 +70,18 @@ jobs:
           tag="v${version_name}"
           apk_sha256="$(sha256sum .work/bilibili.apk | cut -d ' ' -f 1)"
           git fetch --tags --force
-          if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+          force_rebuild="${{ github.event_name == 'workflow_dispatch' && inputs.force }}"
+          if git rev-parse -q --verify "refs/tags/$tag" >/dev/null && [ "$force_rebuild" != 'true' ]; then
             tag_exists=true
           else
             tag_exists=false
           fi
-          if gh release view "$tag" >/dev/null 2>&1; then
-            release_exists=true
-          else
-            release_exists=false
-          fi
-
           {
             echo "version_name=$version_name"
             echo "version_code=$version_code"
             echo "tag=$tag"
             echo "apk_sha256=$apk_sha256"
             echo "tag_exists=$tag_exists"
-            echo "release_exists=$release_exists"
           } >> "$GITHUB_OUTPUT"
 
       - name: Download JADX
@@ -101,27 +102,23 @@ jobs:
           mkdir -p .work/dex
           unzip -q .work/bilibili.apk 'classes*.dex' -d .work/dex
           rm -rf decompiled
-          set +e
-          JAVA_OPTS='-Xms512m -Xmx6g' \
-            .work/jadx/bin/jadx --output-dir decompiled --threads-count 2 .work/dex/classes*.dex
-          jadx_status=$?
-          set -e
-          if [ -d decompiled/sources/com/bapis ]; then
-            bapis_file_count="$(find decompiled/sources/com/bapis -type f -name '*.java' | wc -l)"
-          else
-            bapis_file_count=0
-          fi
-          if [ "$bapis_file_count" -lt 1000 ]; then
-            echo "JADX exited with $jadx_status and generated only $bapis_file_count com.bapis source files." >&2
-            exit 1
-          fi
-          if [ "$jadx_status" -ne 0 ]; then
-            echo "::warning::JADX exited with $jadx_status, but generated $bapis_file_count com.bapis source files. Continuing."
-          fi
+          javac -cp .work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
+            -d .work/classes tools/DecompileBapis.java
+          java -Xms512m -Xmx6g \
+            -cp .work/classes:.work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
+            DecompileBapis decompiled .work/dex/classes*.dex
 
       - name: Reconstruct proto files
         if: steps.version.outputs.tag_exists != 'true'
-        run: node extract_bapis_proto.mjs
+        shell: bash
+        run: |
+          set -euo pipefail
+          node extract_bapis_proto.mjs
+          message_count="$(jq -r '.messageCount' extracted_proto/com/bapis/MANIFEST.json)"
+          if [ "$message_count" -lt "$MIN_MESSAGE_COUNT" ]; then
+            echo "Only $message_count protobuf messages were recovered; expected at least $MIN_MESSAGE_COUNT." >&2
+            exit 1
+          fi
 
       - name: Record generated source
         if: steps.version.outputs.tag_exists != 'true'
@@ -154,12 +151,17 @@ jobs:
             git commit -m "chore(proto): update to ${VERSION_NAME}"
             git push origin HEAD
           fi
-          git tag -a "$TAG" -m "BAPIS proto ${VERSION_NAME}"
-          git push origin "$TAG"
+          git tag -fa "$TAG" -m "BAPIS proto ${VERSION_NAME}"
+          git push origin "refs/tags/$TAG" --force
 
-      - name: Publish release
-        if: steps.version.outputs.release_exists != 'true'
+      - name: Publish or replace release
+        if: steps.version.outputs.tag_exists != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.version.outputs.tag }}
-        run: gh release create "$TAG" --title "$TAG" --generate-notes
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --target "$(git rev-parse HEAD)" --title "$TAG"
+          else
+            gh release create "$TAG" --title "$TAG" --generate-notes
+          fi
