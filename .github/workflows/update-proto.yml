@@ -104,9 +104,12 @@ jobs:
           rm -rf decompiled
           javac -cp .work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
             -d .work/classes tools/DecompileBapis.java
-          java -Xms512m -Xmx6g \
-            -cp .work/classes:.work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
-            DecompileBapis decompiled .work/dex/classes*.dex
+          for dex in .work/dex/classes*.dex; do
+            echo "Decompiling $dex"
+            java -Xms512m -Xmx3g \
+              -cp .work/classes:.work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
+              DecompileBapis decompiled "$dex"
+          done
 
       - name: Reconstruct proto files
         if: steps.version.outputs.tag_exists != 'true'

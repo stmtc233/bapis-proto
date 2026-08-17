@@ -1,6 +1,4 @@
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import jadx.api.JadxArgs;
 import jadx.api.JadxDecompiler;
@@ -14,19 +12,20 @@ public final class DecompileBapis {
 
     public static void main(String[] args) {
         System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "error");
-        if (args.length < 2) {
-            System.err.println("Usage: DecompileBapis <output-dir> <classes.dex>...");
+        if (args.length != 2) {
+            System.err.println("Usage: DecompileBapis <output-dir> <classes.dex>");
             System.exit(2);
         }
 
         File outputDir = new File(args[0]);
-        List<File> inputs = new ArrayList<>();
-        for (int index = 1; index < args.length; index++) {
-            inputs.add(new File(args[index]));
+        File input = new File(args[1]);
+        if (!input.isFile()) {
+            System.err.printf("Missing dex input: %s%n", input);
+            System.exit(2);
         }
 
         JadxArgs jadxArgs = new JadxArgs();
-        jadxArgs.setInputFiles(inputs);
+        jadxArgs.setInputFile(input);
         jadxArgs.setOutDir(outputDir);
         jadxArgs.setOutDirSrc(new File(outputDir, "sources"));
         jadxArgs.setSkipResources(true);
@@ -40,7 +39,7 @@ public final class DecompileBapis {
             int errors = jadx.getErrorsCount();
             int sourceFiles = countJavaFiles(new File(outputDir, "sources/com/bapis"));
             System.out.printf("JADX errors=%d, com.bapis source files=%d%n", errors, sourceFiles);
-            if (errors != 0 || sourceFiles == 0) {
+            if (errors != 0) {
                 System.exit(3);
             }
         }
