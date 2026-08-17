@@ -15,7 +15,6 @@ concurrency:
 env:
   APK_URL: https://dl.hdslb.com/mobile/latest/android64/iBiliPlayer-bili.apk?t=20260817
   JADX_VERSION: 1.5.6
-  APKTOOL_VERSION: 2.12.1
 
 jobs:
   update:
@@ -37,6 +36,11 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Install Android asset packaging tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes aapt
+
       - name: Download APK and read version
         id: version
         env:
@@ -47,15 +51,9 @@ jobs:
           mkdir -p .work
           curl --fail --location --retry 3 --retry-delay 5 \
             --output .work/bilibili.apk "$APK_URL"
-          curl --fail --location --retry 3 --retry-delay 5 \
-            --output .work/apktool.jar \
-            "https://github.com/iBotPeaches/Apktool/releases/download/v${APKTOOL_VERSION}/apktool_${APKTOOL_VERSION}.jar"
-          java -jar .work/apktool.jar d --force --no-src --no-res \
-            .work/bilibili.apk --output .work/apktool >/dev/null
-
-          manifest=.work/apktool/AndroidManifest.xml
-          version_name="$(sed -nE 's/.*android:versionName="([^"]+)".*/\1/p' "$manifest" | head -n 1)"
-          version_code="$(sed -nE 's/.*android:versionCode="([^"]+)".*/\1/p' "$manifest" | head -n 1)"
+          badging="$(aapt dump badging .work/bilibili.apk)"
+          version_name="$(sed -nE "s/.*versionName='([^']+)'.*/\1/p" <<< "$badging" | head -n 1)"
+          version_code="$(sed -nE "s/.*versionCode='([^']+)'.*/\1/p" <<< "$badging" | head -n 1)"
           test -n "$version_name"
           test -n "$version_code"
           case "$version_name" in *[!0-9A-Za-z._-]*|'') exit 1;; esac
