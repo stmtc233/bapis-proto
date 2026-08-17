@@ -10,3 +10,20 @@ enum MessageFormat {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/broadcast/live/BroadcastMessage.java
+message BroadcastMessage {
+  string targetPath = 1;
+  Any bizBody = 2;
+  Common common = 3;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/Common.java
+message Common {
+  int64 messageId = 1;
+  int64 timestamp = 2;
+  string cmd = 3;
+  int64 dmScore = 4;
+  MessageFormat format = 5;
+  int64 sort = 6;
+}
+

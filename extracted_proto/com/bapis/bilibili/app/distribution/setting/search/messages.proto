@@ -9,3 +9,8 @@ message SearchAutoPlay {
   BoolValue affectedByServerSide = 2;
 }
 
+// Source: com/bapis/bilibili/app/distribution/setting/search/SearchDeviceConfig.java
+message SearchDeviceConfig {
+  SearchAutoPlay autoPlay = 1;
+}
+

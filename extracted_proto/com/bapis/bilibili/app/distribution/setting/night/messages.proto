@@ -1,0 +1,10 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution.setting.night;
+
+// Source: com/bapis/bilibili/app/distribution/setting/night/NightSettingsConfig.java
+message NightSettingsConfig {
+  bytes isnightfollowsystem = 1;
+}
+

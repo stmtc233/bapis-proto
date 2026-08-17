@@ -9,3 +9,8 @@ message Exp {
   int32 bucket = 2;
 }
 
+// Source: com/bapis/bilibili/metadata/parabox/Exps.java
+message Exps {
+  repeated Exp exps = 1;
+}
+

@@ -31,3 +31,38 @@ message AtGroup {
 
 }
 
+// Source: com/bapis/bilibili/relation/interfaces/AtItem.java
+message AtItem {
+  int64 mid = 1;
+  string name = 2;
+  string face = 3;
+  int32 fans = 4;
+  int32 officialVerifyType = 5;
+  AvatarItem avatar = 6;
+  string handle = 7;
+}
+
+// Source: com/bapis/bilibili/relation/interfaces/AtSearchReply.java
+message AtSearchReply {
+  repeated AtGroup groups = 1;
+}
+
+// Source: com/bapis/bilibili/relation/interfaces/AtSearchReq.java
+message AtSearchReq {
+  int64 mid = 1;
+  string keyword = 2;
+  int32 scene = 3;
+}
+
+// Source: com/bapis/bilibili/relation/interfaces/FollowingReq.java
+message FollowingReq {
+  int64 fid = 1;
+  Act act = 2;
+  uint32 source = 3;
+  string spmid = 4;
+  string extendContent = 5;
+  string fromSpmid = 6;
+  string fromScmid = 7;
+  string actionId = 8;
+}
+

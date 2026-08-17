@@ -19,3 +19,31 @@ message SubjectInteractionResp {
 
 }
 
+// Source: com/bapis/bilibili/broadcast/message/reply/SubjectNoticeResp.java
+message SubjectNoticeResp {
+  int64 oid = 1;
+  int64 type = 2;
+  string title = 3;
+  string link = 4;
+  int64 timestamp = 5;
+  int64 rpid = 6;
+  string interactionType = 7;
+  int64 hoverDuration = 8;
+  int64 rootRpid = 9;
+  string interactionScene = 10;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/reply/SubjectReplyInsertionResp.java
+message SubjectReplyInsertionResp {
+  int64 oid = 1;
+  int64 type = 2;
+  string title = 3;
+  int64 rpid = 4;
+  int64 timestamp = 5;
+  int64 rank = 6;
+  int64 stepSize = 7;
+  repeated int64 supportMode = 8;
+  repeated string supportTag = 9;
+  repeated int64 supportTagIds = 10;
+}
+

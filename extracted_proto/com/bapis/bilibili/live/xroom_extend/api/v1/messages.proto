@@ -9,3 +9,18 @@ enum ReportStatus {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/live/xroom_extend/api/v1/SendReportInfoReq.java
+message SendReportInfoReq {
+  int64 roomId = 1;
+  string reportTag = 2;
+  string reportReason = 3;
+  string picUrl = 4;
+  string playStream = 5;
+}
+
+// Source: com/bapis/bilibili/live/xroom_extend/api/v1/SendReportInfoResp.java
+message SendReportInfoResp {
+  ReportStatus reportStatus = 1;
+  string toast = 2;
+}
+

@@ -9,6 +9,18 @@ enum LiveSource {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/broadcast/message/tv/AccountNotify.java
+message AccountNotify {
+  string biz = 1;
+  string data = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/CommonPushNotify.java
+message CommonPushNotify {
+  string cmd = 1;
+  string data = 2;
+}
+
 // Source: com/bapis/bilibili/broadcast/message/tv/DanmakuElem.java
 message DanmakuElem {
   int64 id = 1;
@@ -50,6 +62,78 @@ message DmLiveElem {
   string idStr = 14;
 }
 
+// Source: com/bapis/bilibili/broadcast/message/tv/DmLiveReply.java
+message DmLiveReply {
+  repeated DmLiveElem elems = 1;
+  int32 state = 2;
+  int32 source = 3;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmLiveSwitchReload.java
+message DmLiveSwitchReload {
+  bool reload = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmSegLiveReply.java
+message DmSegLiveReply {
+  repeated DanmakuElem elems = 1;
+  int32 state = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/EsportsNotify.java
+message EsportsNotify {
+  int64 cid = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/FeedClientSmartNotify.java
+message FeedClientSmartNotify {
+  int64 mid = 1;
+  string cards = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/LiveBottomConfNotify.java
+message LiveBottomConfNotify {
+  int64 roomId = 1;
+  string bottomMsg = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/LiveCommonNotify.java
+message LiveCommonNotify {
+  string cmd = 1;
+  string data = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/LiveSkipNotify.java
+message LiveSkipNotify {
+  int64 liveId = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/LiveStatusNotify.java
+message LiveStatusNotify {
+  int64 status = 1;
+  string msg = 2;
+  int64 cid = 3;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/LiveViewerMsgNotify.java
+message LiveViewerMsgNotify {
+  int64 roomId = 1;
+  string viewerMsg = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/MainRedDotReply.java
+message MainRedDotReply {
+  int64 mid = 1;
+  int64 reddot = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/ModResource.java
+message ModResource {
+  string mobiPool = 1;
+  string mobiModule = 2;
+  int64 mobiModuleVersion = 3;
+}
+
 // Source: com/bapis/bilibili/broadcast/message/tv/NotifyPop.java
 message NotifyPop {
   int64 id = 1;
@@ -60,6 +144,31 @@ message NotifyPop {
   string textBottom = 6;
   int32 expire = 7;
   repeated NotifyPopBtn notifyBtnList = 8;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/NotifyPopBtn.java
+message NotifyPopBtn {
+  string text = 1;
+  string url = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/NotifyPopReply.java
+message NotifyPopReply {
+  int64 mid = 1;
+  NotifyPop notify = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/OgvPayOrderReply.java
+message OgvPayOrderReply {
+  int64 mid = 1;
+  int64 seasonId = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/ProjLiveEventNotify.java
+message ProjLiveEventNotify {
+  int64 roomId = 1;
+  int64 eventType = 2;
+  string eventMsg = 3;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/ProjReply.java
@@ -75,5 +184,12 @@ message ProjReply {
   string extra = 9;
   int64 roomId = 10;
   string deviceInfo = 11;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/PublicityNotify.java
+message PublicityNotify {
+  int64 publicityId = 1;
+  int64 roomId = 2;
+  int64 status = 3;
 }
 

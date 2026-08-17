@@ -78,33 +78,6 @@ enum FeatureFlag {
   AIImage2Image = 94;
   KichikuScene = 95;
   ShootBeauty = 100;
-  ShootBeautyTemplate = 101;
-  ShootCountdown = 102;
-  ShootFlashlight = 103;
-  IntellectTitle = 104;
-  AiKeywordExtra = 105;
-  PictureTagRecognition = 106;
-  IntellectCover = 107;
-  AIActivity = 108;
-  DigitalHuman = 109;
-  AIStraightTitle = 110;
-  GameFactory = 111;
-  NonSmartVideo = 112;
-  Replace = 113;
-  TTSClone = 114;
-  SmartTitlePink = 115;
-  RecognitionMusic = 116;
-  AIVideoStoryTool = 117;
-  AIVideoStoryPlay = 118;
-  AIVideoMusicTool = 119;
-  AIVideoMusicPlay = 120;
-  VideoClipCut = 121;
-  FastPublish = 122;
-  TextToAudio = 123;
-  CloudDraft = 124;
-  LiveToEditor = 127;
-  LiveClipRecreation = 128;
-  TTVMaterialTag = 129;
   UNRECOGNIZED = -1;
 }
 
@@ -181,5 +154,54 @@ enum MaterialType {
   AiDrawingModel = 74;
   AiPlayModel = 75;
   UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/creative_tool/editor/v2/EditorBody.java
+message EditorBody {
+  int32 version = 1;
+  repeated Material materials = 2;
+  repeated Feature features = 3;
+  Metadata metadata = 4;
+}
+
+// Source: com/bapis/bilibili/creative_tool/editor/v2/Feature.java
+message Feature {
+  FeatureFlag flag = 1;
+  string ext = 2;
+}
+
+// Source: com/bapis/bilibili/creative_tool/editor/v2/FeatureHighlightExt.java
+message FeatureHighlightExt {
+  int32 count = 1;
+}
+
+// Source: com/bapis/bilibili/creative_tool/editor/v2/FeatureVtuberExt.java
+message FeatureVtuberExt {
+  repeated int32 exp = 1;
+  repeated int32 action = 2;
+  repeated int32 combine = 3;
+}
+
+// Source: com/bapis/bilibili/creative_tool/editor/v2/Material.java
+message Material {
+  int64 id = 1;
+  MaterialType type = 2;
+  MaterialForm from = 3;
+  int32 duration = 4;
+  string ext = 5;
+}
+
+// Source: com/bapis/bilibili/creative_tool/editor/v2/Metadata.java
+message Metadata {
+  int32 duration = 1;
+  int32 picCount = 2;
+  int32 videoCount = 3;
+  int32 videoTracks = 12;
+  int32 audioTracks = 13;
+  int32 storyId = 19;
+  int64 draftId = 20;
+  string draftKey = 21;
+  int32 localMaterialCount = 22;
+  string sdkType = 23;
 }
 

@@ -55,7 +55,6 @@ enum MsgType {
   EN_MSG_TYPE_NOTIFY_ANTI_DISTURB = 118;
   EN_MSG_TYPE_SYS_GROUP_DISSOLVED = 201;
   EN_MSG_TYPE_SYS_GROUP_JOINED = 202;
-  EN_MSG_TYPE_SYS_GROUP_MEMBER_EXITED = 203;
   EN_MSG_TYPE_SYS_GROUP_ADMIN_FIRED = 204;
   EN_MSG_TYPE_SYS_GROUP_MEMBER_KICKED = 205;
   EN_MSG_TYPE_SYS_GROUP_ADMIN_KICK_OFF = 206;
@@ -63,18 +62,38 @@ enum MsgType {
   EN_MSG_TYPE_SYS_GROUP_AUTO_CREATED = 208;
   EN_MSG_TYPE_SYS_FRIEND_APPLY = 210;
   EN_MSG_TYPE_SYS_FRIEND_APPLY_ACK = 211;
-  EN_MSG_TYPE_SYS_GROUP_APPLY_FOR_JOINING = 212;
   EN_MSG_TYPE_SYS_GROUP_ADMIN_ACCEPTED_USER_APPLY = 213;
   EN_MSG_TYPE_CHAT_MEMBER_JOINED = 301;
   EN_MSG_TYPE_CHAT_MEMBER_EXITED = 302;
   EN_MSG_TYPE_CHAT_GROUP_FREEZED = 303;
-  EN_MSG_TYPE_CHAT_GROUP_DISSOLVED = 304;
-  EN_MSG_TYPE_CHAT_GROUP_CREATED = 305;
-  EN_MSG_TYPE_CHAT_POPUP_SESSION = 306;
   EN_MSG_TYPE_MODIFY_MSG_TYPE = 51;
   EN_MSG_TYPE_CUSTOM_RANK_UPDATE = 400;
   EN_MSG_TYPE_CUSTOM_MSG_NOTICE = 401;
   UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/im/type/AccountInfo.java
+message AccountInfo {
+  string name = 1;
+  string picUrl = 2;
+}
+
+// Source: com/bapis/bilibili/im/type/AiCardInfo.java
+message AiCardInfo {
+  int64 aiUid = 1;
+  int64 aiStatus = 2;
+  UInfo uInfo = 3;
+  string title = 4;
+  string subtitle = 5;
+  AILogo aiLogo = 6;
+  int64 uid = 7;
+}
+
+// Source: com/bapis/bilibili/im/type/AiEntry.java
+message AiEntry {
+  string icon = 1;
+  string title = 2;
+  string subtitle = 3;
 }
 
 // Source: com/bapis/bilibili/im/type/AiInfo.java
@@ -83,6 +102,149 @@ message AiInfo {
   ImInfo imInfo = 2;
   AiEntry aiEntry = 3;
   Story story = 4;
+}
+
+// Source: com/bapis/bilibili/im/type/AILogo.java
+message AILogo {
+  string aiMark = 1;
+  string limitText = 2;
+}
+
+// Source: com/bapis/bilibili/im/type/AttestationDisplay.java
+message AttestationDisplay {
+  int32 type = 1;
+  CommonInfo commonInfo = 2;
+  SpliceInfo spliceInfo = 3;
+  string icon = 4;
+  string desc = 5;
+}
+
+// Source: com/bapis/bilibili/im/type/Card.java
+message Card {
+  int64 mid = 1;
+  string name = 2;
+  string sex = 3;
+  string face = 4;
+  string sign = 5;
+  int32 rank = 6;
+  int32 level = 7;
+  int32 silence = 8;
+  VipInfo vip = 9;
+  PendantInfo pendant = 10;
+  NameplateInfo nameplate = 11;
+  OfficialInfo official = 12;
+  int64 birthday = 13;
+  int32 isFakeAccount = 20;
+  int32 isDeleted = 21;
+  int32 inRegAudit = 22;
+  int32 faceNft = 23;
+  int32 faceNftNew = 24;
+  int32 isSeniorMember = 25;
+  string digitalId = 26;
+  int64 digitalType = 27;
+  AttestationDisplay attestation = 28;
+  ExpertInfo expertInfo = 29;
+  UserHonourInfo honours = 30;
+  NameRender nameRender = 31;
+}
+
+// Source: com/bapis/bilibili/im/type/CommonInfo.java
+message CommonInfo {
+  string title = 1;
+  string prefix = 2;
+  string prefixTitle = 3;
+}
+
+// Source: com/bapis/bilibili/im/type/ExpertInfo.java
+message ExpertInfo {
+  string title = 1;
+  int32 state = 2;
+  int32 type = 3;
+  string desc = 4;
+}
+
+// Source: com/bapis/bilibili/im/type/FriendRelation.java
+message FriendRelation {
+  uint64 uid = 1;
+  string userName = 2;
+  string face = 3;
+  uint32 vipLevel = 4;
+}
+
+// Source: com/bapis/bilibili/im/type/GptMsgContent.java
+message GptMsgContent {
+  RichTextMsgContent content = 1;
+  bool showLike = 2;
+  bool showChange = 3;
+  int64 gptSessionId = 4;
+  string gptBindQuery = 5;
+  string sessionClosedLine = 6;
+  string voiceUrl = 7;
+  int64 subType = 8;
+  int64 voiceTime = 9;
+}
+
+// Source: com/bapis/bilibili/im/type/GptRcmdQuestionBizInfo.java
+message GptRcmdQuestionBizInfo {
+  string question = 1;
+}
+
+// Source: com/bapis/bilibili/im/type/GroupRelation.java
+message GroupRelation {
+  uint64 groupId = 1;
+  uint64 ownerUid = 2;
+  uint32 groupType = 3;
+  uint32 groupLevel = 4;
+  string groupCover = 5;
+  string groupName = 6;
+  string groupNotice = 7;
+  int32 status = 8;
+  int32 memberRole = 9;
+  string fansMedalName = 10;
+  uint64 roomId = 11;
+}
+
+// Source: com/bapis/bilibili/im/type/HighText.java
+message HighText {
+  string title = 1;
+  string url = 2;
+  uint32 index = 3;
+  ActionType action = 4;
+}
+
+// Source: com/bapis/bilibili/im/type/HonourTag.java
+message HonourTag {
+  string name = 1;
+  string link = 2;
+  string webLink = 3;
+  int32 type = 4;
+  repeated string scene = 5;
+  int32 priorityLevel = 6;
+  string icon = 7;
+  int32 year = 8;
+}
+
+// Source: com/bapis/bilibili/im/type/ImgInfo.java
+message ImgInfo {
+  string url = 1;
+  int32 width = 2;
+  int32 height = 3;
+  string imagetype = 4;
+}
+
+// Source: com/bapis/bilibili/im/type/ImInfo.java
+message ImInfo {
+  string backgroundUrl = 1;
+  repeated string aiPrompt = 2;
+  string aiLoading = 3;
+  uint32 aiLoadingMax = 4;
+}
+
+// Source: com/bapis/bilibili/im/type/KeyHitInfos.java
+message KeyHitInfos {
+  string toast = 1;
+  uint32 ruleId = 2;
+  repeated HighText highText = 3;
 }
 
 // Source: com/bapis/bilibili/im/type/Medal.java
@@ -127,6 +289,52 @@ message Msg {
   string canalToken = 20;
 }
 
+// Source: com/bapis/bilibili/im/type/NameplateInfo.java
+message NameplateInfo {
+  int32 nid = 1;
+  string name = 2;
+  string image = 3;
+  string imageSmall = 4;
+  string level = 5;
+  string condition = 6;
+}
+
+// Source: com/bapis/bilibili/im/type/OfficialInfo.java
+message OfficialInfo {
+  int32 role = 1;
+  string title = 2;
+  string desc = 3;
+  int32 type = 4;
+}
+
+// Source: com/bapis/bilibili/im/type/PendantInfo.java
+message PendantInfo {
+  int32 pid = 1;
+  string name = 2;
+  string image = 3;
+  int64 expire = 4;
+  string imageEnhance = 5;
+  string imageEnhanceFrame = 6;
+}
+
+// Source: com/bapis/bilibili/im/type/Prompt.java
+message Prompt {
+  string msg = 1;
+}
+
+// Source: com/bapis/bilibili/im/type/RelationLog.java
+message RelationLog {
+  int32 logType = 1;
+  uint64 oplogSeqno = 2;
+  FriendRelation friendRelation = 3;
+  GroupRelation groupRelation = 4;
+}
+
+// Source: com/bapis/bilibili/im/type/RichTextMsgContent.java
+message RichTextMsgContent {
+  repeated Paragraph paragraphs = 1;
+}
+
 // Source: com/bapis/bilibili/im/type/SessionInfo.java
 message SessionInfo {
   uint64 talkerId = 1;
@@ -162,5 +370,90 @@ message SessionInfo {
   AiInfo aiInfo = 31;
   bool isHideEdit = 32;
   SessionInfoExt ext = 33;
+}
+
+// Source: com/bapis/bilibili/im/type/SessionInfoExt.java
+message SessionInfoExt {
+  uint64 shopId = 1;
+  uint64 shopFatherId = 2;
+}
+
+// Source: com/bapis/bilibili/im/type/SpliceInfo.java
+message SpliceInfo {
+  string title = 1;
+}
+
+// Source: com/bapis/bilibili/im/type/Story.java
+message Story {
+  string tip = 1;
+  repeated StoryItem items = 2;
+}
+
+// Source: com/bapis/bilibili/im/type/StoryItem.java
+message StoryItem {
+  uint64 id = 1;
+  string showName = 2;
+  string aiMsg = 3;
+  bool selected = 4;
+  repeated Prompt prompts = 5;
+}
+
+// Source: com/bapis/bilibili/im/type/UInfo.java
+message UInfo {
+  AvatarItem ava = 1;
+  Card card = 2;
+}
+
+// Source: com/bapis/bilibili/im/type/UserHonourInfo.java
+message UserHonourInfo {
+  int64 mid = 1;
+  UserHonourStyle colour = 2;
+  repeated HonourTag tags = 3;
+}
+
+// Source: com/bapis/bilibili/im/type/UserHonourStyle.java
+message UserHonourStyle {
+  string dark = 1;
+  string normal = 2;
+}
+
+// Source: com/bapis/bilibili/im/type/UserLabel.java
+message UserLabel {
+  int32 labelType = 1;
+  Medal medal = 2;
+  int32 guardianRelation = 3;
+}
+
+// Source: com/bapis/bilibili/im/type/VipInfo.java
+message VipInfo {
+  int32 type = 1;
+  int32 status = 2;
+  int64 dueDate = 3;
+  int32 vipPayType = 4;
+  int32 themeType = 5;
+  VipLabel label = 6;
+  int32 avatarSubscript = 7;
+  string nicknameColor = 8;
+  int64 role = 9;
+  string avatarSubscriptUrl = 10;
+  int32 tvVipStatus = 11;
+  int32 tvVipPayType = 12;
+  int64 tvDueDate = 13;
+}
+
+// Source: com/bapis/bilibili/im/type/VipLabel.java
+message VipLabel {
+  string path = 1;
+  string text = 3;
+  string labelTheme = 4;
+  string textColor = 5;
+  int32 bgStyle = 6;
+  string bgColor = 7;
+  string borderColor = 8;
+  bool useImgLabel = 9;
+  string imgLabelUriHans = 10;
+  string imgLabelUriHant = 11;
+  string imgLabelUriHansStatic = 12;
+  string imgLabelUriHantStatic = 13;
 }
 

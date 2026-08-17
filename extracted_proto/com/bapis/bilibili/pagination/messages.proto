@@ -23,3 +23,9 @@ message Pagination {
   string next = 2;
 }
 
+// Source: com/bapis/bilibili/pagination/PaginationReply.java
+message PaginationReply {
+  string next = 1;
+  string prev = 2;
+}
+

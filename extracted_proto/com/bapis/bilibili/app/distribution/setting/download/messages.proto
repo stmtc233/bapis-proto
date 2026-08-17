@@ -1,0 +1,10 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution.setting.download;
+
+// Source: com/bapis/bilibili/app/distribution/setting/download/DownloadSettingsConfig.java
+message DownloadSettingsConfig {
+  bytes enabledownloadautostart = 1;
+}
+

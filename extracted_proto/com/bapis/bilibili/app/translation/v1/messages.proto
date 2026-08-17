@@ -34,8 +34,29 @@ message TranslatedField {
   string translatedScript = 7;
 }
 
+// Source: com/bapis/bilibili/app/translation/v1/TranslationBatchReply.java
+message TranslationBatchReply {
+  repeated TranslationSimpleReply results = 1;
+}
+
+// Source: com/bapis/bilibili/app/translation/v1/TranslationBatchReq.java
+message TranslationBatchReq {
+  string spmid = 1;
+  repeated TranslationSimpleReq items = 2;
+}
+
 // Source: com/bapis/bilibili/app/translation/v1/TranslationSimpleReply.java
 message TranslationSimpleReply {
   repeated TranslatedField results = 1;
+}
+
+// Source: com/bapis/bilibili/app/translation/v1/TranslationSimpleReq.java
+message TranslationSimpleReq {
+  TranslationBusiness bizType = 1;
+  string businessId = 2;
+  string spmid = 3;
+  repeated string fields = 4;
+  repeated string text = 5;
+  map<string, string> ext = 6;
 }
 

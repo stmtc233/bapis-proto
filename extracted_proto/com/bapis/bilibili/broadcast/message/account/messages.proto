@@ -9,3 +9,10 @@ enum EventAction {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/broadcast/message/account/AccountNotifyReply.java
+message AccountNotifyReply {
+  int64 mid = 1;
+  EventAction action = 2;
+  int64 ts = 3;
+}
+

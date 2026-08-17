@@ -9,3 +9,14 @@ enum Action {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/community/service/cert/v1/FieldCertPopActionReq.java
+message FieldCertPopActionReq {
+  int64 avid = 1;
+  Action action = 2;
+}
+
+// Source: com/bapis/bilibili/community/service/cert/v1/FieldCertPopRecordReq.java
+message FieldCertPopRecordReq {
+  int64 avid = 1;
+}
+

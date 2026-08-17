@@ -3,6 +3,29 @@ syntax = "proto3";
 
 package com.bapis.bilibili.dynamic.interfaces.vote.v1;
 
+// Source: com/bapis/bilibili/dynamic/interfaces/vote/v1/NewDoVoteReq.java
+message NewDoVoteReq {
+  int64 voteId = 1;
+  repeated int32 votes = 2;
+  int32 status = 3;
+  int64 dynamicId = 4;
+  int64 opBit = 5;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/vote/v1/NewDoVoteRsp.java
+message NewDoVoteRsp {
+  int64 uid = 1;
+  int32 type = 2;
+  VoteInfo voteInfo = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/vote/v1/VoteBizInfo.java
+message VoteBizInfo {
+  int64 bizId = 1;
+  int32 bizType = 2;
+  string bizExt = 3;
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/vote/v1/VoteInfo.java
 message VoteInfo {
   int64 voteId = 1;
@@ -29,5 +52,15 @@ message VoteInfo {
   string face = 22;
   string name = 23;
   int64 onlyFansLevel = 24;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/vote/v1/VoteOptionInfo.java
+message VoteOptionInfo {
+  int32 optIdx = 1;
+  string optDesc = 2;
+  string imgUrl = 3;
+  int32 cnt = 4;
+  string btnStr = 5;
+  string title = 6;
 }
 

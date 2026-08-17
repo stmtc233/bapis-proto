@@ -9,3 +9,10 @@ enum ActionType {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/campus/v1/ActionReportReq.java
+message ActionReportReq {
+  string identity = 1;
+  ActionType action = 2;
+  int64 campusId = 3;
+}
+

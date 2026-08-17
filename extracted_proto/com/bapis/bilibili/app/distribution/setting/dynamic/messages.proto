@@ -8,3 +8,8 @@ message DynamicAutoPlay {
   Int64Value value = 1;
 }
 
+// Source: com/bapis/bilibili/app/distribution/setting/dynamic/DynamicDeviceConfig.java
+message DynamicDeviceConfig {
+  DynamicAutoPlay autoPlay = 1;
+}
+

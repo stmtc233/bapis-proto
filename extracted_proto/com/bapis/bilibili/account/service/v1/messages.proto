@@ -21,3 +21,9 @@ message ColorsInfo {
   repeated Color color = 2;
 }
 
+// Source: com/bapis/bilibili/account/service/v1/NameRender.java
+message NameRender {
+  RenderSchemeEnum renderScheme = 1;
+  ColorsInfo colorsInfo = 2;
+}
+

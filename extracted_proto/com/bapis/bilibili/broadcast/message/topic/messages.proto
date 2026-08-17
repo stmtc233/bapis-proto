@@ -3,6 +3,12 @@ syntax = "proto3";
 
 package com.bapis.bilibili.broadcast.message.topic;
 
+// Source: com/bapis/bilibili/broadcast/message/topic/DetailEventMessage.java
+message DetailEventMessage {
+  int32 type = 1;
+  repeated PubEvent pubData = 2;
+}
+
 // Source: com/bapis/bilibili/broadcast/message/topic/PubEvent.java
 message PubEvent {
   int64 dynamicId = 1;

@@ -35,11 +35,48 @@ message Item {
   int32 playIcon = 28;
 }
 
+// Source: com/bapis/bilibili/app/show/rank/v1/OfficialVerify.java
+message OfficialVerify {
+  int32 type = 1;
+  string desc = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/rank/v1/RankAllResultReq.java
+message RankAllResultReq {
+  string order = 1;
+  int32 pn = 2;
+  int32 ps = 3;
+}
+
+// Source: com/bapis/bilibili/app/show/rank/v1/RankListReply.java
+message RankListReply {
+  repeated Item items = 1;
+}
+
 // Source: com/bapis/bilibili/app/show/rank/v1/RankRegionInfo.java
 message RankRegionInfo {
   int32 tid = 1;
   string name = 2;
   int32 regionType = 3;
   string uri = 4;
+}
+
+// Source: com/bapis/bilibili/app/show/rank/v1/RankRegionListReply.java
+message RankRegionListReply {
+  repeated RankRegionInfo regions = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/rank/v1/RankRegionResultReq.java
+message RankRegionResultReq {
+  int32 rid = 1;
+  int32 pn = 2;
+  int32 ps = 3;
+}
+
+// Source: com/bapis/bilibili/app/show/rank/v1/Relation.java
+message Relation {
+  int32 status = 1;
+  int32 isFollow = 2;
+  int32 isFollowed = 3;
 }
 

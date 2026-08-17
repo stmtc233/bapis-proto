@@ -33,3 +33,20 @@ enum TFType {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/metadata/network/NetQuality.java
+message NetQuality {
+  float successRate = 1;
+  int32 speed = 2;
+  int64 speedTimestamp = 3;
+  int32 netType = 4;
+}
+
+// Source: com/bapis/bilibili/metadata/network/Network.java
+message Network {
+  NetworkType type = 1;
+  TFType tf = 2;
+  string oid = 3;
+  CellularType cellular = 4;
+  NetQuality quality = 5;
+}
+

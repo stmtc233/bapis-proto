@@ -14,3 +14,11 @@ enum MsgType {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/broadcast/message/mall/NotifyReq.java
+message NotifyReq {
+  uint64 roomId = 1;
+  int32 msgType = 2;
+  string content = 3;
+  string jumpUrl = 4;
+}
+

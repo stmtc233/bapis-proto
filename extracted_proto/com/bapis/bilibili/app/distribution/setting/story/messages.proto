@@ -1,0 +1,15 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution.setting.story;
+
+// Source: com/bapis/bilibili/app/distribution/setting/story/MidStoryConfig.java
+message MidStoryConfig {
+  bytes gesturetype = 1;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/story/StoryConfig.java
+message StoryConfig {
+  bytes gesturetype = 1;
+}
+

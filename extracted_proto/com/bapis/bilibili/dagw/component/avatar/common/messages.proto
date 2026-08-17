@@ -3,6 +3,11 @@ syntax = "proto3";
 
 package com.bapis.bilibili.dagw.component.avatar.common;
 
+// Source: com/bapis/bilibili/dagw/component/avatar/common/BasicRenderSpec.java
+message BasicRenderSpec {
+  double opacity = 1;
+}
+
 // Source: com/bapis/bilibili/dagw/component/avatar/common/ColorConfig.java
 message ColorConfig {
   bool isDarkModeAware = 1;
@@ -13,6 +18,19 @@ message ColorConfig {
 // Source: com/bapis/bilibili/dagw/component/avatar/common/ColorSpec.java
 message ColorSpec {
   string argb = 1;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/common/LayerGeneralSpec.java
+message LayerGeneralSpec {
+  PositionSpec posSpec = 1;
+  SizeSpec sizeSpec = 2;
+  BasicRenderSpec renderSpec = 3;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/common/MaskProperty.java
+message MaskProperty {
+  LayerGeneralSpec generalSpec = 1;
+  ResourceSource maskSrc = 2;
 }
 
 // Source: com/bapis/bilibili/dagw/component/avatar/common/NativeDrawRes.java
@@ -49,6 +67,12 @@ message PositionSpec {
     UNRECOGNIZED = -1;
   }
 
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/common/RemoteRes.java
+message RemoteRes {
+  string url = 1;
+  string bfsStyle = 2;
 }
 
 // Source: com/bapis/bilibili/dagw/component/avatar/common/ResourceSource.java
@@ -88,5 +112,11 @@ message ResourceSource {
     UNRECOGNIZED = -1;
   }
 
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/common/SizeSpec.java
+message SizeSpec {
+  double width = 1;
+  double height = 2;
 }
 

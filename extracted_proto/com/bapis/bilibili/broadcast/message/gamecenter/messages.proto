@@ -10,3 +10,13 @@ enum PushEvent {
   UNRECOGNIZED = -1;
 }
 
+// Source: com/bapis/bilibili/broadcast/message/gamecenter/PushEventMessage.java
+message PushEventMessage {
+  PushEvent eventType = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/gamecenter/PushEventReply.java
+message PushEventReply {
+  PushEvent eventType = 1;
+}
+
