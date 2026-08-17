@@ -1,0 +1,25 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.card.v1;
+
+enum TranslateStatus {
+  TRANSLATE_STATUS_DEFAULT = 0;
+  TRANSLATE_STATUS_SEE_ORIGINAL = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/DislikeReason.java
+message DislikeReason {
+  int64 id = 1;
+  string name = 2;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/FunctionalButtonMeta.java
+message FunctionalButtonMeta {
+  string icon = 1;
+  string text = 2;
+  string buttonStatus = 3;
+  string toast = 4;
+}
+

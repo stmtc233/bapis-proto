@@ -1,0 +1,39 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.component.common_model.user_dagw;
+
+enum AnonType {
+  ANON_TYPE_NONE = 0;
+  ANON_TYPE_ROOM_ANON = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum HaveMedalType {
+  Medal_Common = 0;
+  Medal_Group = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum MedalType {
+  Medal_Wear = 0;
+  Medal_Spec = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum RiskPolicyEnum {
+  RP_NORMAL = 0;
+  RP_POLICY = 1;
+  RP_SILENCE = 2;
+  RP_CNY = 3;
+  RP_BIGEV = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum RoomAnonTypeEnum {
+  RA_ALL = 0;
+  RA_With_Subject = 1;
+  RA_Identity_Only = 2;
+  UNRECOGNIZED = -1;
+}
+

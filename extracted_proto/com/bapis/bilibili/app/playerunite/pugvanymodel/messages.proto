@@ -1,0 +1,39 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.playerunite.pugvanymodel;
+
+enum ClipType {
+  CLIP_TYPE_UNSPECIFIED = 0;
+  CLIP_TYPE_HE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum EpisodeStatus {
+  EPISODE_STATUS_UNSPECIFIED = 0;
+  EPISODE_STATUS_TRY_WATCH_WHOLE = 1;
+  EPISODE_STATUS_NOT_TRY_WATCH = 2;
+  EPISODE_STATUS_TRY_WATCH_5_MINUTES = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayLimitCode {
+  PLC_UNKNOWN = 0;
+  PLC_DRM_NOT_LOGIN = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum StudyType {
+  NORMAL = 0;
+  FITNESS = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/pugvanymodel/EndingPageConfig.java
+message EndingPageConfig {
+  string image = 1;
+  string completeTitle = 2;
+  string lackingMessage = 3;
+  string detailMessage = 4;
+}
+

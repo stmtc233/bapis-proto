@@ -1,0 +1,20 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.community.service.govern.v1;
+
+// Source: com/bapis/bilibili/community/service/govern/v1/QoeReportReq.java
+message QoeReportReq {
+  int64 id = 1;
+  int64 scene = 2;
+  int32 type = 3;
+  bool cancel = 4;
+  string businessType = 5;
+  int64 oid = 6;
+  QoeScoreResult scoreResult = 7;
+  string businessData = 8;
+  QoeResult result = 9;
+  DeviceInfo deviceInfo = 10;
+  int64 contentId = 11;
+}
+

@@ -1,0 +1,165 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.pgc.gateway.player.v2;
+
+enum CanWatchQnReason {
+  CAN_WATCH_QN_REASON_DEFAULT = 0;
+  CAN_WATCH_QN_REASON_VIP_QN_TRY_WATCH = 1;
+  CAN_WATCH_QN_REASON_CTCC_HOME_NETWORK = 2;
+  CAN_WATCH_QN_REASON_BIG_VIP = 3;
+  CAN_WATCH_QN_REASON_TV_BIG_VIP = 4;
+  CAN_WATCH_QN_REASON_OGV_TVOD_PAY = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum ClipType {
+  NT_UNKNOWN = 0;
+  CLIP_TYPE_OP = 1;
+  CLIP_TYPE_ED = 2;
+  CLIP_TYPE_HE = 3;
+  CLIP_TYPE_MULTI_VIEW = 4;
+  CLIP_TYPE_AD = 5;
+  CLIP_TYPE_PREVIEW = 6;
+  UNRECOGNIZED = -1;
+}
+
+enum CodeType {
+  NOCODE = 0;
+  CODE264 = 1;
+  CODE265 = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum DrmTechType {
+  NON = 0;
+  FAIR_PLAY = 1;
+  WIDE_VINE = 2;
+  BILI_DRM = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum EpPublicityVideoType {
+  PRE = 0;
+  INLINE = 1;
+  ADV_TYPE_UNKNOWN = -1;
+  UNRECOGNIZED = -1;
+}
+
+enum InlineScene {
+  UNKNOWN = 0;
+  RELATED_EP = 1;
+  HE = 2;
+  SKIP = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum InlineType {
+  TYPE_UNKNOWN = 0;
+  TYPE_WHOLE = 1;
+  TYPE_HE_CLIP = 2;
+  TYPE_PREVIEW = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum LimitActionType {
+  LAT_UNKNOWN = 0;
+  SHOW_LIMIT_DIALOG = 1;
+  SKIP_CURRENT_EP = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum LimitWatchQnReason {
+  LIMIT_WATCH_QN_REASON_DEFAULT = 0;
+  LIMIT_WATCH_QN_REASON_QN_VIP_PLAY = 1;
+  LIMIT_WATCH_QN_REASON_CTCC_HOME_NETWORK_DEVICE_LIMIT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayErr {
+  NoErr = 0;
+  WithMultiDeviceLoginErr = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PromptBarType {
+  PROMPT_BAR_TYPE_UNKNOWN = 0;
+  OPEN_PROMPT_BAR = 1;
+  TRY_PROMPT_BAR = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum QnGroupType {
+  UNKNOWN_GROUP = 0;
+  VIP_VISION = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum RedemptionMode {
+  REDEMPTION_MODE_UNKNOWN = 0;
+  EXCHANGE = 1;
+  PAYMENT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SecurityLevel {
+  LEVEL_UNKNOWN = 0;
+  LEVEL_L1 = 1;
+  LEVEL_L2 = 2;
+  LEVEL_L3 = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v2/DashVideo.java
+message DashVideo {
+  string baseUrl = 1;
+  repeated string backupUrl = 2;
+  uint32 bandwidth = 3;
+  uint32 codecid = 4;
+  string md5 = 5;
+  uint64 size = 6;
+  uint32 audioId = 7;
+  bool noRexcode = 8;
+  string frameRate = 9;
+  uint32 width = 10;
+  uint32 height = 11;
+  string widevinePssh = 12;
+  string bilidrmUri = 13;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v2/PlayDubbingInfo.java
+message PlayDubbingInfo {
+  AudioMaterialProto backgroundAudio = 1;
+  repeated RoleAudioProto roleAudioList = 2;
+  string guideText = 3;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v2/QnItem.java
+message QnItem {
+  oneof oneof_0 {
+    StreamInfo streamInfo = 1;
+    QnGroup qnGroup = 2;
+  }
+  enum ContentCase {
+    STREAM_INFO = 1;
+    QN_GROUP = 2;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v2/ResponseUrl.java
+message ResponseUrl {
+  uint32 order = 1;
+  uint64 length = 2;
+  uint64 size = 3;
+  string url = 4;
+  repeated string backupUrl = 5;
+  string md5 = 6;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v2/Shake.java
+message Shake {
+  string file = 1;
+}
+

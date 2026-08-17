@@ -1,0 +1,218 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.listener.v1;
+
+enum CardModuleType {
+  Module_invalid = 0;
+  Module_header = 1;
+  Module_archive = 2;
+  Module_cbtn = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum ListOrder {
+  NO_ORDER = 0;
+  ORDER_NORMAL = 1;
+  ORDER_REVERSE = 2;
+  ORDER_RANDOM = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum ListSortField {
+  NO_SORT = 0;
+  SORT_CTIME = 1;
+  SORT_VIEWCNT = 2;
+  SORT_FAVCNT = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum PlaylistSource {
+  DEFAULT = 0;
+  MEM_SPACE = 1;
+  AUDIO_COLLECTION = 2;
+  AUDIO_CARD = 3;
+  USER_FAVOURITE = 4;
+  UP_ARCHIVE = 5;
+  AUDIO_CACHE = 6;
+  PICK_CARD = 7;
+  MEDIA_LIST = 8;
+  UNRECOGNIZED = -1;
+}
+
+enum TopCardType {
+  UNSPECIFIED = 0;
+  LISTEN_HISTORY = 1;
+  FAVORITE_FOLDER = 2;
+  UP_RECALL = 3;
+  PICK_TODAY = 4;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/CardModule.java
+message CardModule {
+  CardModuleType moduleType = 1;
+  oneof oneof_0 {
+    PkcmHeader moduleHeader = 2;
+    PkcmArchive moduleArchive = 3;
+    PkcmCenterButton moduleCbtn = 4;
+  }
+  enum ModuleCase {
+    MODULE_HEADER = 2;
+    MODULE_ARCHIVE = 3;
+    MODULE_CBTN = 4;
+    MODULE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/ClickReq.java
+message ClickReq {
+  int64 sid = 1;
+  ClickAction action = 2;
+  enum ClickAction {
+    INVALID = 0;
+    SHARE = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/DashItem.java
+message DashItem {
+  uint32 id = 1;
+  string baseUrl = 2;
+  repeated string backupUrl = 3;
+  uint32 bandwidth = 4;
+  string mimeType = 5;
+  string codecs = 6;
+  DashSegmentBase segmentBase = 12;
+  uint32 codecid = 13;
+  string md5 = 14;
+  uint64 size = 15;
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/EventTracking.java
+message EventTracking {
+  string operator = 1;
+  string batch = 2;
+  string trackId = 3;
+  string entityType = 4;
+  string entityId = 5;
+  string trackJson = 6;
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/FavFolder.java
+message FavFolder {
+  int64 fid = 1;
+  int32 folderType = 2;
+  FavFolderAuthor owner = 3;
+  string name = 4;
+  string cover = 5;
+  string desc = 6;
+  int32 count = 7;
+  int32 attr = 8;
+  int32 state = 9;
+  int32 favored = 10;
+  int64 ctime = 11;
+  int64 mtime = 12;
+  int32 statFavCnt = 13;
+  int32 statShareCnt = 14;
+  int32 statLikeCnt = 15;
+  int32 statPlayCnt = 16;
+  int32 statReplyCnt = 17;
+  int32 favState = 18;
+  bool useViewVt = 19;
+  string viewVtText = 20;
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/FavFolderAction.java
+message FavFolderAction {
+  int64 fid = 1;
+  int32 folderType = 2;
+  Action action = 3;
+  enum Action {
+    UNSPECIFIED = 0;
+    ADD = 1;
+    DEL = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/FavItem.java
+message FavItem {
+  int32 itemType = 1;
+  int64 oid = 2;
+  int64 fid = 3;
+  int64 mid = 4;
+  int64 mtime = 5;
+  int64 ctime = 6;
+  EventTracking et = 7;
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/FollowRelation.java
+message FollowRelation {
+  RelationStatus status = 1;
+  enum RelationStatus {
+    UNSPECIFIED = 0;
+    NO_FOLLOW = 1;
+    FOLLOWING = 2;
+    FOLLOWED = 3;
+    MUTUAL_FOLLOWING = 4;
+    SPECIAL_FOLLOWING = 5;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/MedialistUpInfo.java
+message MedialistUpInfo {
+  int64 mid = 1;
+  string avatar = 2;
+  int64 fans = 3;
+  string name = 4;
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/MenuSubscribeReq.java
+message MenuSubscribeReq {
+  SubscribeAction action = 1;
+  int64 targetId = 2;
+  enum SubscribeAction {
+    INVALID = 0;
+    ADD = 1;
+    DEL = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/PickCard.java
+message PickCard {
+  int64 pickId = 1;
+  int64 cardId = 2;
+  string cardName = 3;
+  repeated CardModule modules = 4;
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/PlayItem.java
+message PlayItem {
+  int32 itemType = 1;
+  int64 oid = 3;
+  repeated int64 subId = 4;
+  EventTracking et = 5;
+  int64 pos = 6;
+}
+
+// Source: com/bapis/bilibili/app/listener/v1/ResponseUrl.java
+message ResponseUrl {
+  uint32 order = 1;
+  uint64 length = 2;
+  uint64 size = 3;
+  string ahead = 4;
+  string vhead = 5;
+  string url = 6;
+  repeated string backupUrl = 7;
+  string md5 = 8;
+}
+

@@ -1,0 +1,55 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.search.v2;
+
+enum Action {
+  ACTION_UNSPECIFIED = 0;
+  ACTION_LIKE = 1;
+  ACTION_CANCEL_LIKE = 2;
+  ACTION_DISLIKE = 3;
+  ACTION_CANCEL_DISLIKE = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum FeedbackScene {
+  FEEDBACK_SCENE_UNSPECIFIED = 0;
+  FEEDBACK_SCENE_RELATED_SEARCH = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum FollowTypeEnum {
+  UNKNOWN = 0;
+  COMIC = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/search/v2/QueryRecAfterClickResult.java
+message QueryRecAfterClickResult {
+  repeated QueryRecAfterClickItem queryRecList = 1;
+  string relatedTitle = 2;
+  string param = 3;
+  string goto = 4;
+  string linktype = 5;
+  int32 position = 6;
+  string trackid = 7;
+  string userAct = 8;
+}
+
+// Source: com/bapis/bilibili/app/search/v2/SearchEggInfo.java
+message SearchEggInfo {
+  int32 eggType = 1;
+  int64 id = 2;
+  int32 isCommercial = 3;
+  string maskColor = 4;
+  int64 maskTransparency = 5;
+  string md5 = 6;
+  int32 reType = 7;
+  string reUrl = 8;
+  string reValue = 9;
+  int32 showCount = 10;
+  int64 size = 11;
+  int64 source = 12;
+  string url = 13;
+}
+

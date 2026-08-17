@@ -1,0 +1,18 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.viewunite.ugcanymodel;
+
+enum PremiereState {
+  premiere_none = 0;
+  premiere_before = 1;
+  premiere_in = 2;
+  premiere_after = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/ugcanymodel/AiExtra.java
+message AiExtra {
+  string trackId = 1;
+}
+

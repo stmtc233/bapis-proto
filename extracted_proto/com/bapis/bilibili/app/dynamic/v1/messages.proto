@@ -1,0 +1,192 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.dynamic.v1;
+
+enum BgType {
+  bg_type_default = 0;
+  bg_type_face = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum BubbleModuleType {
+  BUBBLE_MODULE_NONE = 0;
+  BUBBLE_MODULE_USER = 1;
+  BUBBLE_MODULE_TEXT = 2;
+  BUBBLE_MODULE_COLORED_TIP = 3;
+  BUBBLE_MODULE_PIC = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum CornerType {
+  corner_type_none = 0;
+  corner_type_text = 1;
+  corner_type_animation = 2;
+  corner_type_static = 3;
+  corner_type_red_dot = 4;
+  corner_type_number = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum FoldType {
+  FoldTypeZero = 0;
+  FoldTypePublish = 1;
+  FoldTypeFrequent = 2;
+  FoldTypeUnite = 3;
+  FoldTypeLimit = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum MediaType {
+  MediaTypeNone = 0;
+  MediaTypeUGC = 1;
+  MediaTypePGC = 2;
+  MediaTypeLive = 3;
+  MediaTypeVCS = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum RelationStatus {
+  relation_status_none = 0;
+  relation_status_nofollow = 1;
+  relation_status_follow = 2;
+  relation_status_followed = 3;
+  relation_status_mutual_concern = 4;
+  relation_status_special = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum StyleType {
+  STYLE_TYPE_NONE = 0;
+  STYLE_TYPE_LIVE = 1;
+  STYLE_TYPE_DYN_UP = 2;
+  STYLE_TYPE_OGV_UP = 3;
+  STYLE_TYPE_COLLECTION_UP = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum SVideoType {
+  TypeNone = 0;
+  TypeDynamic = 1;
+  TypePopularIndex = 2;
+  TypePopularHotword = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum VideoSubType {
+  VideoSubTypeNone = 0;
+  VideoSubTypeBangumi = 1;
+  VideoSubTypeMovie = 2;
+  VideoSubTypeDocumentary = 3;
+  VideoSubTypeDomestic = 4;
+  VideoSubTypeTeleplay = 5;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Description.java
+message Description {
+  string text = 1;
+  string type = 2;
+  string uri = 3;
+  string emojiType = 4;
+  string goodsType = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynamicItem.java
+message DynamicItem {
+  string cardType = 1;
+  string itemType = 2;
+  repeated Module modules = 3;
+  string dynIdStr = 4;
+  string origDynIdStr = 5;
+  int32 rType = 6;
+  int32 hasFold = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynTab.java
+message DynTab {
+  string title = 1;
+  string uri = 2;
+  string bubble = 3;
+  int32 redPoint = 4;
+  int64 cityId = 5;
+  int32 isPopup = 6;
+  Popup popup = 7;
+  bool defaulttab = 8;
+  string subTitle = 9;
+  string anchor = 10;
+  string internalTest = 11;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Exp.java
+message Exp {
+  string expName = 1;
+  string expGroup = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Extend.java
+message Extend {
+  string type = 1;
+  oneof oneof_0 {
+    ExtInfoTopic extInfoTopic = 2;
+    ExtInfoLBS extInfoLbs = 3;
+    ExtInfoHot extInfoHot = 4;
+    ExtInfoGame extInfoGame = 5;
+  }
+  enum ExtendCase {
+    EXT_INFO_TOPIC = 2;
+    EXT_INFO_LBS = 3;
+    EXT_INFO_HOT = 4;
+    EXT_INFO_GAME = 5;
+    EXTEND_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/LikeAnimation.java
+message LikeAnimation {
+  string begin = 1;
+  string proc = 2;
+  string end = 3;
+  int64 likeIconId = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/LikeInfo.java
+message LikeInfo {
+  LikeAnimation animation = 1;
+  int32 isLike = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/MixUpListItem.java
+message MixUpListItem {
+  int64 uid = 1;
+  int32 specialAttention = 2;
+  int32 reddotState = 3;
+  MixUpListLiveItem liveInfo = 4;
+  string name = 5;
+  string face = 6;
+  OfficialVerify official = 7;
+  VipInfo vip = 8;
+  Relation relation = 9;
+  int32 premiereState = 10;
+  string uri = 11;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/UserInfo.java
+message UserInfo {
+  int64 mid = 1;
+  string name = 2;
+  string face = 3;
+  OfficialVerify official = 4;
+  VipInfo vip = 5;
+  LiveInfo live = 6;
+  string uri = 7;
+  UserPendant pendant = 8;
+  Nameplate nameplate = 9;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/VipLabel.java
+message VipLabel {
+  string path = 1;
+}
+

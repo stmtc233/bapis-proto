@@ -1,0 +1,45 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.viewunite.pgcanymodel;
+
+enum SectionPaginationMode {
+  SECTION_PAGINATION_MODE_UNKNOWN = 0;
+  SECTION_PAGINATION_MODE_PAGED = 1;
+  SECTION_PAGINATION_MODE_PAGED_CURATED = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pgcanymodel/CacheDialog.java
+message CacheDialog {
+  string title = 1;
+  string buttonTitle = 2;
+  string link = 3;
+  string bgImage = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pgcanymodel/Earphone.java
+message Earphone {
+  string productModel = 1;
+  string likeToastText = 2;
+  string switchToastText = 3;
+  string likeToastVoice = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pgcanymodel/SectionPage.java
+message SectionPage {
+  int32 pageIndex = 1;
+  int64 startEpId = 2;
+  int64 endEpId = 3;
+  int32 epCount = 4;
+  string title = 5;
+  string arcTitle = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pgcanymodel/WatchProgress.java
+message WatchProgress {
+  int64 lastEpId = 1;
+  string lastEpIndex = 2;
+  int64 lastTime = 3;
+}
+

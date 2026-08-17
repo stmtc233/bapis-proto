@@ -1,0 +1,399 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.dynamic.common;
+
+enum AttachCardType {
+  ATTACH_CARD_NONE = 0;
+  ATTACH_CARD_GOODS = 1;
+  ATTACH_CARD_VOTE = 2;
+  ATTACH_CARD_UGC = 3;
+  ATTACH_CARD_ACTIVITY = 4;
+  ATTACH_CARD_OFFICIAL_ACTIVITY = 5;
+  ATTACH_CARD_TOPIC = 6;
+  ATTACH_CARD_OGV = 7;
+  ATTACH_CARD_AUTO_OGV = 8;
+  ATTACH_CARD_GAME = 9;
+  ATTACH_CARD_MANGA = 10;
+  ATTACH_CARD_DECORATION = 11;
+  ATTACH_CARD_MATCH = 12;
+  ATTACH_CARD_PUGV = 13;
+  ATTACH_CARD_RESERVE = 14;
+  ATTACH_CARD_UP_TOPIC = 15;
+  ATTACH_CARD_UP_ACTIVITY = 16;
+  ATTACH_CARD_UP_MAOER = 17;
+  ATTACH_CARD_MEMBER_GOODS = 18;
+  ATTACH_CARD_MAN_TIAN_XING = 19;
+  ATTACH_CARD_LOTTERY = 20;
+  UNRECOGNIZED = -1;
+}
+
+enum ContentType {
+  CONTENT_TYPE_NONE = 0;
+  TEXT = 1;
+  AT = 2;
+  LOTTERY = 3;
+  VOTE = 4;
+  TOPIC = 5;
+  GOODS = 6;
+  BV = 7;
+  AV = 8;
+  EMOJI = 9;
+  USER = 10;
+  CV = 11;
+  VC = 12;
+  WEB = 13;
+  TAOBAO = 14;
+  MAIL = 15;
+  OGV_SEASON = 16;
+  OGV_EP = 17;
+  UNRECOGNIZED = -1;
+}
+
+enum CreateInitCheckScene {
+  CREATE_INIT_CHECK_SCENE_INVALID = 0;
+  CREATE_INIT_CHECK_SCENE_NORMAL = 1;
+  CREATE_INIT_CHECK_SCENE_REPOST = 2;
+  CREATE_INIT_CHECK_SCENE_SHARE = 3;
+  CREATE_INIT_CHECK_SCENE_RESERVE_SHARE = 4;
+  CREATE_INIT_CHECK_SCENE_ARTICLE = 5;
+  CREATE_INIT_CHECK_SCENE_TRIBEE = 6;
+  UNRECOGNIZED = -1;
+}
+
+enum CreateScene {
+  CREATE_SCENE_INVALID = 0;
+  CREATE_SCENE_CREATE_WORD = 1;
+  CREATE_SCENE_CREATE_DRAW = 2;
+  CREATE_SCENE_CREATE_DYN_VIDEO = 3;
+  CREATE_SCENE_REPOST = 4;
+  CREATE_SCENE_SHARE_BIZ = 5;
+  CREATE_SCENE_SHARE_PAGE = 6;
+  CREATE_SCENE_SHARE_PROGRAM = 7;
+  CREATE_SCENE_REPLY_SYNC = 8;
+  CREATE_SCENE_REPLY_CREATE_ACTIVITY = 9;
+  CREATE_SCENE_CREATE_AD = 10;
+  CREATE_SCENE_CREATE_LIVE_RCMD = 11;
+  CREATE_SCENE_CREATE_ARTICLE = 12;
+  CREATE_SCENE_CREATE_TRIBEE = 13;
+  UNRECOGNIZED = -1;
+}
+
+enum LangMatchResult {
+  LANG_MATCH_UNSPECIFIED = 0;
+  LANG_MATCH_CONSISTENT = 1;
+  LANG_MATCH_INCONSISTENT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum OnlyFansOptionType {
+  ONLY_FANS_OPTION_NONE = 0;
+  ONLY_FANS_OPTION_UPOWER = 1;
+  ONLY_FANS_OPTION_HIGH_UPOWER = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum OpusBizType {
+  DEFAULT = 0;
+  VIDEO = 1;
+  RESERVE = 2;
+  VOTE = 3;
+  LIVE = 4;
+  LOTTERY = 5;
+  MATCH = 6;
+  GOODS = 7;
+  OGV_SS = 8;
+  OGV_EP = 9;
+  MANGA = 10;
+  CHEESE = 11;
+  VIDEO_TS = 12;
+  AT = 13;
+  HASH_TAG = 14;
+  CV = 15;
+  URL = 16;
+  MAIL = 17;
+  LBS = 18;
+  ACTIVITY = 19;
+  ATTACH_CARD_OFFICIAL_ACTIVITY = 20;
+  GAME = 21;
+  DECORATION = 22;
+  UP_TOPIC = 23;
+  UP_ACTIVITY = 24;
+  UP_MAOER = 25;
+  MEMBER_GOODS = 26;
+  OPENMALL_UP_ITEMS = 27;
+  MUSIC = 29;
+  MEMBER_TICKET = 31;
+  REPOST_PIC_URL = 32;
+  REPOST_PIC_DYN_URL = 33;
+  OGV_FOLLOW_CARD = 34;
+  ARTICLE_GOODS = 35;
+  ARTICLE_TAG = 36;
+  NICK_NAME = 37;
+  CONTENT_OPUS = 39;
+  CONTENT_VIDEO = 41;
+  CONTENT_COMMENT = 42;
+  CONTENT_UP = 44;
+  UNRECOGNIZED = -1;
+}
+
+enum OpusSource {
+  DEFAULT_SOURCE = 0;
+  ALBUM = 1;
+  ARTICLE = 2;
+  NOTE = 3;
+  OGV_COMMENT = 4;
+  ARTICLE_H5 = 5;
+  WORD = 6;
+  REPOST = 7;
+  MANGA_EP = 8;
+  MIXED_CONTENT = 9;
+  UNRECOGNIZED = -1;
+}
+
+enum PosterSource {
+  POSTER_SOURCE_DEFAULT = 0;
+  POSTER_SOURCE_SERVER = 1;
+  POSTER_SOURCE_AI = 2;
+  POSTER_SOURCE_CONTENT_PIC = 3;
+  POSTER_SOURCE_CUSTOM = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveSource {
+  RESERVE_SOURCE_NEW = 0;
+  RESERVE_SOURCE_ASSOCIATED = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum TranslateState {
+  TRANSLATE_UNSPECIFIED = 0;
+  TRANSLATE_FAIL = 1;
+  TRANSLATE_SUCCESS = 2;
+  TRANSLATE_NOT_TRANSLATE = 3;
+  TRANSLATE_MATCH = 4;
+  TRANSLATE_NOT_SUPPORTED = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum UpPermissionType {
+  UP_PERMISSION_TYPE_NONE = 0;
+  UP_PERMISSION_TYPE_LOTTERY = 1;
+  UP_PERMISSION_TYPE_CLIP_PUBLISHED = 2;
+  UP_PERMISSION_TYPE_UGC_ATTACH_CARD = 3;
+  UP_PERMISSION_TYPE_GOODS_ATTACH_CARD = 4;
+  UP_PERMISSION_TYPE_CHOOSE_COMMENT = 5;
+  UP_PERMISSION_TYPE_CONTROL_COMMENT = 6;
+  UP_PERMISSION_TYPE_CONTROL_DANMU = 7;
+  UP_PERMISSION_TYPE_VIDEO_RESERVE = 8;
+  UP_PERMISSION_TYPE_LIVE_RESERVE = 9;
+  UP_PERMISSION_TYPE_BIZ_LINK = 10;
+  UP_PERMISSION_TYPE_COMMERCIAL = 11;
+  UP_PERMISSION_TYPE_BIG_COVER = 12;
+  UP_PERMISSION_TYPE_LIVE_VOYAGE = 13;
+  UP_PERMISSION_TYPE_ONLY_FANS = 14;
+  UP_PERMISSION_TYPE_TIMING_DYN = 15;
+  UP_PERMISSION_TYPE_PUBLIC = 16;
+  UP_PERMISSION_TYPE_PRIVATE = 17;
+  UP_PERMISSION_TYPE_AIGC_MARK = 18;
+  UP_PERMISSION_TYPE_JOINED_TRIBEE = 19;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/AtGroup.java
+message AtGroup {
+  int32 groupType = 1;
+  string groupName = 2;
+  repeated AtItem items = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/ContentCardInfo.java
+message ContentCardInfo {
+  ContentVideo contentVideo = 1;
+  ContentComment contentComment = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/ContentComment.java
+message ContentComment {
+  int64 parentId = 1;
+  int64 type = 2;
+  int64 oid = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/ContentVideo.java
+message ContentVideo {
+  int32 videoType = 1;
+  int64 playFromTime = 2;
+  int64 cid = 3;
+  int64 epid = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/DraftMeta.java
+message DraftMeta {
+  int64 articleId = 1;
+  Category category = 2;
+  string title = 3;
+  string content = 4;
+  string summary = 5;
+  string bannerUrl = 6;
+  int64 templateId = 7;
+  int64 reprint = 8;
+  repeated string imageUrls = 9;
+  repeated string tags = 10;
+  string dynamicIntro = 11;
+  repeated string originImageUrls = 12;
+  ArticleList list = 13;
+  int64 type = 14;
+  int64 mediaId = 15;
+  int64 spoiler = 16;
+  int64 original = 17;
+  TopVideoInfo topVideoInfo = 18;
+  int64 privatePub = 19;
+  int64 mtime = 20;
+  string editUrl = 21;
+  int64 isNewEditor = 22;
+  int64 editable = 23;
+  Opus opus = 24;
+  int64 commentSelected = 25;
+  int64 upClosedReply = 26;
+  int64 timerPubTime = 27;
+  int64 onlyFansLevel = 28;
+  int64 onlyFansDnd = 29;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/DynRevsId.java
+message DynRevsId {
+  int64 dynType = 1;
+  int64 rid = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/GoodsContent.java
+message GoodsContent {
+  int32 sourceType = 1;
+  int64 itemId = 2;
+  int64 shopId = 3;
+  int64 actId = 4;
+  int64 actMid = 5;
+  string itemIdStr = 6;
+  int64 subType = 7;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/LbsLoc.java
+message LbsLoc {
+  double lat = 1;
+  double lng = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/LinkNode.java
+message LinkNode {
+  bool showText = 1;
+  bool link = 2;
+  bool icon = 3;
+  bool iconSuffix = 4;
+  double linkType = 5;
+  int32 bizId = 6;
+  string videoTs = 7;
+  int32 style = 8;
+  repeated int32 pics = 9;
+  int32 bgStyle = 10;
+  int32 contentCard = 11;
+  int32 hashTagType = 12;
+  enum HashTagType {
+    DEFAULT = 0;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/dynamic/common/MetaDataCtrl.java
+message MetaDataCtrl {
+  string platform = 1;
+  string build = 2;
+  string mobiApp = 3;
+  string buvid = 4;
+  string device = 5;
+  string fromSpmid = 6;
+  string from = 7;
+  string traceId = 8;
+  int32 teenagerMode = 9;
+  int32 coldStart = 10;
+  string version = 11;
+  int32 network = 12;
+  string ip = 13;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/OpusArticleDraftArg.java
+message OpusArticleDraftArg {
+  int64 articleId = 1;
+  int64 categoryId = 2;
+  string title = 3;
+  string content = 4;
+  string summary = 5;
+  string bannerUrl = 6;
+  int64 templateId = 7;
+  int64 reprint = 8;
+  repeated string imageUrls = 9;
+  repeated string tags = 10;
+  string dynamicIntro = 11;
+  repeated string originImageUrls = 12;
+  int64 listId = 13;
+  int64 type = 14;
+  int64 mediaId = 15;
+  int64 spoiler = 16;
+  int64 original = 17;
+  string coverBvid = 18;
+  int64 privatePub = 19;
+  Opus opus = 20;
+  int64 commentSelected = 21;
+  int64 upClosedReply = 22;
+  int64 timerPubTime = 23;
+  int64 onlyFansLevel = 24;
+  int64 onlyFansDnd = 25;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/TextNode.java
+message TextNode {
+  TextNodeType nodeType = 1;
+  WordNode word = 2;
+  EmoteNode emote = 3;
+  LinkNode link = 4;
+  FormulaNode formula = 5;
+  enum TextNodeType {
+    DEFAULT = 0;
+    WORDS = 1;
+    EMOTE = 2;
+    AT = 3;
+    BIZ_LINK = 4;
+    FORMULA = 5;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/dynamic/common/TribeeCategory.java
+message TribeeCategory {
+  int64 categoryId = 1;
+  string name = 2;
+  bool isSelected = 3;
+  int32 allowOutsiderPub = 4;
+  int32 switchable = 5;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/TribeeSelection.java
+message TribeeSelection {
+  int64 tribeeId = 1;
+  int64 categoryId = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/UpPermissionItem.java
+message UpPermissionItem {
+  UpPermissionType type = 1;
+  int32 permission = 2;
+  string title = 3;
+  string subtitle = 4;
+  string icon = 5;
+  string jumpUrl = 6;
+  string toast = 7;
+  int64 hasRedDot = 8;
+}
+

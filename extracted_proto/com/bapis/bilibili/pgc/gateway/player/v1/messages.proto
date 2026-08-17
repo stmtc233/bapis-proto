@@ -1,0 +1,30 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.pgc.gateway.player.v1;
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/RoomShowInfo.java
+message RoomShowInfo {
+  int64 shortId = 1;
+  int64 popularityCount = 8;
+  int64 liveStartTime = 10;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/RoomStatusInfo.java
+message RoomStatusInfo {
+  int64 liveStatus = 1;
+  int64 liveScreenType = 2;
+  int64 liveMark = 3;
+  int64 lockStatus = 4;
+  int64 lockTime = 5;
+  int64 hiddenStatus = 6;
+  int64 hiddenTime = 7;
+  int64 liveType = 8;
+  int64 roomShield = 9;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/Shake.java
+message Shake {
+  string file = 1;
+}
+

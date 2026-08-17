@@ -1,0 +1,1474 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.dynamic.v2;
+
+enum AddButtonBgStyle {
+  fill = 0;
+  stroke = 1;
+  gray = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum AddButtonType {
+  bt_none = 0;
+  bt_jump = 1;
+  bt_button = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum AdditionalButtonClickType {
+  click_none = 0;
+  click_up = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum AdditionalButtonStatus {
+  none = 0;
+  uncheck = 1;
+  check = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum AdditionalShareShowType {
+  st_none = 0;
+  st_show = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum AdditionalType {
+  additional_none = 0;
+  additional_type_pgc = 1;
+  additional_type_goods = 2;
+  additional_type_vote = 3;
+  additional_type_common = 4;
+  additional_type_esport = 5;
+  additional_type_up_rcmd = 6;
+  additional_type_ugc = 7;
+  additional_type_up_reservation = 8;
+  additional_type_article = 9;
+  additional_type_live_room = 10;
+  additional_type_music = 11;
+  additional_type_content_opus = 12;
+  additional_type_content_video = 13;
+  additional_type_content_comment = 14;
+  additional_type_content_up = 15;
+  UNRECOGNIZED = -1;
+}
+
+enum AdditionVoteState {
+  addition_vote_state_none = 0;
+  addition_vote_state_open = 1;
+  addition_vote_state_close = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum AdditionVoteType {
+  addition_vote_type_none = 0;
+  addition_vote_type_word = 1;
+  addition_vote_type_pic = 2;
+  addition_vote_type_default = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum AuthorBadgeStyle {
+  AUTHOR_BADGE_STYLE_INVALID = 0;
+  AUTHOR_BADGE_STYLE_GRAY_OUTLINE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum CampusEntryType {
+  NONE = 0;
+  ENTRY_DYNAMIC = 1;
+  ENTRY_HOME = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum CampusHomePageType {
+  PAGE_MAJOR = 0;
+  PAGE_SUBORDINATE = 1;
+  PAGE_MAJOR_DETAIL = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum CampusMngAuditStatus {
+  campus_mng_audit_none = 0;
+  campus_mng_audit_in_process = 1;
+  campus_mng_audit_failed = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum CampusMngItemType {
+  campus_mng_none = 0;
+  campus_mng_basic_info = 1;
+  campus_mng_badge = 2;
+  campus_mng_slogan = 3;
+  campus_mng_quiz = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum CampusMngQuizAction {
+  campus_mng_quiz_act_list = 0;
+  campus_mng_quiz_act_add = 1;
+  campus_mng_quiz_act_del = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum CampusOnlineStatus {
+  campus_online_offline = 0;
+  campus_online_online = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum CampusRcmdReqFrom {
+  CAMPUS_RCMD_FROM_UNKNOWN = 0;
+  CAMPUS_RCMD_FROM_HOME_UN_OPEN = 1;
+  CAMPUS_RCMD_FROM_VISIT_OTHER = 2;
+  CAMPUS_RCMD_FROM_HOME_MOMENT = 3;
+  CAMPUS_RCMD_FROM_DYN_MOMENT = 4;
+  CAMPUS_RCMD_FROM_PAGE_SUBORDINATE_MOMENT = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum CampusReqFromType {
+  DYNAMIC = 0;
+  HOME = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum CampusTabType {
+  campus_none = 0;
+  campus_school = 1;
+  campus_dynamic = 2;
+  campus_account = 3;
+  campus_billboard = 4;
+  campus_topic = 5;
+  campues_other = 6;
+  UNRECOGNIZED = -1;
+}
+
+enum CommentSourceType {
+  COMMENT_SOURCE_TYPE_NONE = 0;
+  COMMENT_SOURCE_TYPE_VIDEO = 1;
+  COMMENT_SOURCE_TYPE_OPUS = 2;
+  COMMENT_SOURCE_TYPE_SUB_COMMENT = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum CoverIcon {
+  cover_icon_none = 0;
+  cover_icon_play = 1;
+  cover_icon_danmaku = 2;
+  cover_icon_up = 3;
+  cover_icon_vt = 4;
+  cover_icon_view_cnt = 5;
+  cover_icon_thumb_up = 6;
+  cover_icon_reply = 7;
+  cover_icon_fav = 8;
+  cover_icon_coin = 9;
+  cover_icon_self_seen = 10;
+  UNRECOGNIZED = -1;
+}
+
+enum DescType {
+  desc_type_none = 0;
+  desc_type_text = 1;
+  desc_type_aite = 2;
+  desc_type_lottery = 3;
+  desc_type_vote = 4;
+  desc_type_topic = 5;
+  desc_type_goods = 6;
+  desc_type_bv = 7;
+  desc_type_av = 8;
+  desc_type_emoji = 9;
+  desc_type_user = 10;
+  desc_type_cv = 11;
+  desc_type_vc = 12;
+  desc_type_web = 13;
+  desc_type_taobao = 14;
+  desc_type_mail = 15;
+  desc_type_ogv_season = 16;
+  desc_type_ogv_ep = 17;
+  desc_type_search_word = 18;
+  UNRECOGNIZED = -1;
+}
+
+enum DisableState {
+  highlight = 0;
+  gary = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum DisplayAppMineIconAction {
+  ICON_ACTION_NONE = 0;
+  ICON_ACTION_ADD_TO_MINE_TIPS = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum DynamicType {
+  dyn_none = 0;
+  forward = 1;
+  av = 2;
+  pgc = 3;
+  courses = 4;
+  fold = 5;
+  word = 6;
+  draw = 7;
+  article = 8;
+  music = 9;
+  common_square = 10;
+  common_vertical = 11;
+  live = 12;
+  medialist = 13;
+  courses_season = 14;
+  ad = 15;
+  applet = 16;
+  subscription = 17;
+  live_rcmd = 18;
+  banner = 19;
+  ugc_season = 20;
+  subscription_new = 21;
+  story = 22;
+  topic_rcmd = 23;
+  cour_up = 24;
+  topic_set = 25;
+  notice = 26;
+  text_notice = 27;
+  onetime_notice = 28;
+  manga_ep = 29;
+  UNRECOGNIZED = -1;
+}
+
+enum DynExtendType {
+  dyn_ext_type_none = 0;
+  dyn_ext_type_topic = 1;
+  dyn_ext_type_lbs = 2;
+  dyn_ext_type_hot = 3;
+  dyn_ext_type_game = 4;
+  dyn_ext_type_common = 5;
+  dyn_ext_type_biliCut = 6;
+  dyn_ext_type_ogv = 7;
+  dyn_ext_type_auto_ogv = 8;
+  dyn_ext_type_article_tag = 9;
+  dyn_ext_type_tribee = 10;
+  UNRECOGNIZED = -1;
+}
+
+enum DynModuleType {
+  module_none = 0;
+  module_author = 1;
+  module_dispute = 2;
+  module_desc = 3;
+  module_dynamic = 4;
+  module_forward = 5;
+  module_likeUser = 6;
+  module_extend = 7;
+  module_additional = 8;
+  module_stat = 9;
+  module_fold = 10;
+  module_comment = 11;
+  module_interaction = 12;
+  module_author_forward = 13;
+  module_ad = 14;
+  module_banner = 15;
+  module_item_null = 16;
+  module_share_info = 17;
+  module_recommend = 18;
+  module_stat_forward = 19;
+  module_top = 20;
+  module_bottom = 21;
+  module_story = 22;
+  module_topic = 23;
+  module_topic_details_ext = 24;
+  module_top_tag = 25;
+  module_topic_brief = 26;
+  module_title = 27;
+  module_button = 28;
+  module_notice = 29;
+  module_opus_summary = 30;
+  module_copyright = 31;
+  module_paragraph = 32;
+  module_blocked = 33;
+  module_text_notice = 34;
+  module_opus_collection = 35;
+  module_onetime_notice = 36;
+  module_sneaking_ad = 37;
+  module_manga_horizontal_page_pic_content = 38;
+  module_manga_vertical_slide_pic_content = 39;
+  module_manga_cover_pic_content = 40;
+  module_author_for_subscribe = 41;
+  module_author_slim = 42;
+  module_manga_collection = 43;
+  module_cooperation = 44;
+  module_head_resource = 45;
+  module_recommend_cards = 46;
+  module_rcmd_reason = 47;
+  module_paywall = 48;
+  UNRECOGNIZED = -1;
+}
+
+enum DynVisibilityStatus {
+  DYN_VISIBILITY_PUBLIC = 0;
+  DYN_VISIBILITY_SELF_SEEN_ONLY = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum EmojiType {
+  emoji_none = 0;
+  emoji_old = 1;
+  emoji_new = 2;
+  vip = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum EmoteClickAction {
+  EMOTE_CLICK_NONE = 0;
+  EMOTE_CLICK_POPUP_PREVIEW = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum EspaceStyle {
+  moba = 0;
+  UNRECOGNIZED = -1;
+}
+
+enum FlowItemType {
+  FLOW_ITEM_TYPE_INVALID = 0;
+  FLOW_ITEM_TYPE_OPUS = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum FoldType {
+  FoldTypeZore = 0;
+  FoldTypePublish = 1;
+  FoldTypeFrequent = 2;
+  FoldTypeUnite = 3;
+  FoldTypeLimit = 4;
+  FoldTypeTopicMerged = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum GlobalPermissionType {
+  UNKNOWN = 0;
+  WHITELIST = 1;
+  NOT_WHITELIST = 2;
+  CANDIDATE_LIST = 3;
+  NOT_CANDIDATE_LIST = 4;
+  QUALIFIED = 5;
+  QUALIFIED_BUT_BANNED = 6;
+  ALLOW_OUTSIDER_PUB = 7;
+  VISA_FREE_JOIN = 8;
+  UNRECOGNIZED = -1;
+}
+
+enum GoodsJumpType {
+  goods_none = 0;
+  goods_schema = 1;
+  goods_url = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum HighlightTextStyle {
+  style_none = 0;
+  style_highlight = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum HomePageTabSttingStatus {
+  SETTING_INVALID = 0;
+  SETTING_OPEN = 1;
+  SETTING_CLOSE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum HorizontalAlign {
+  HORIZONTAL_ALIGN_UNSPECIFIED = 0;
+  HORIZONTAL_ALIGN_LEFT = 1;
+  HORIZONTAL_ALIGN_CENTER = 2;
+  HORIZONTAL_ALIGN_RIGHT = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum IconResLocal {
+  ICON_RES_LOCAL_NONE = 0;
+  ICON_RES_LOCAL_LIVE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ImageStyle {
+  add_style_vertical = 0;
+  add_style_square = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum InviteCodeStatus {
+  UNUSED = 0;
+  USED = 1;
+  EXPIRED = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum LightFromType {
+  from_login = 0;
+  from_unlogin = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum LinkNodeBubbleType {
+  BUBBLE_VIDEO = 0;
+  BUBBLE_COMMENT = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum LinkNodeShowType {
+  PLAIN_TEXT = 0;
+  RICH_TEXT = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum LinkNodeType {
+  INVALID = 0;
+  VIDEO = 1;
+  RESERVE = 2;
+  VOTE = 3;
+  LIVE = 4;
+  LOTTERY = 5;
+  MATCH = 6;
+  GOODS = 7;
+  OGV_SS = 8;
+  OGV_EP = 9;
+  MANGA = 10;
+  CHEESE = 11;
+  VIDEO_TS = 12;
+  AT = 13;
+  HASH_TAG = 14;
+  ARTICLE = 15;
+  URL = 16;
+  MAIL = 17;
+  LBS = 18;
+  ACTIVITY = 19;
+  ATTACH_CARD_OFFICIAL_ACTIVITY = 20;
+  GAME = 21;
+  DECORATION = 22;
+  UP_TOPIC = 23;
+  UP_ACTIVITY = 24;
+  UP_MAOER = 25;
+  MEMBER_GOODS = 26;
+  OPENMALL_UP_ITEMS = 27;
+  SEARCH = 28;
+  MUSIC = 29;
+  GPT_RCMD_QUESTION = 30;
+  MEMBER_TICKET = 31;
+  REPOST_PIC_URL = 32;
+  REPOST_PIC_DYN_URL = 33;
+  OGV_FOLLOW_CARD = 34;
+  ARTICLE_GOODS = 35;
+  ARTICLE_TAG = 36;
+  NICK_NAME = 37;
+  RECALL_MESSAGE = 38;
+  CONTENT_OPUS = 39;
+  CONTENT_VIDEO = 41;
+  CONTENT_COMMENT = 42;
+  IM_PUSH_INFO_MORE = 43;
+  CONTENT_UP = 44;
+  REFERENCE_COMMENT = 45;
+  MULTIPLE_RESOURCES = 46;
+  REFERENCE = 47;
+  UNRECOGNIZED = -1;
+}
+
+enum LiveState {
+  live_none = 0;
+  live_live = 1;
+  live_rotation = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum LocalIconType {
+  local_icon_comment = 0;
+  local_icon_like = 1;
+  local_icon_avatar = 2;
+  local_icon_cover = 3;
+  local_icon_like_and_forward = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum MangaLikePageDirection {
+  PAGE_DIRECTION_INVALID = 0;
+  PAGE_DIRECTION_LEFT_TO_RIGHT = 1;
+  PAGE_DIRECTION_RIGHT_TO_LEFT = 2;
+  PAGE_DIRECTION_LEFT_TO_RIGHT_ROTATE = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum MangaLikePicClickAction {
+  CLICK_ACT_NONE = 0;
+  CLICK_ACT_MANGA_BROWSER = 1;
+  CLICK_ACT_NORMAL_BROWSER = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum MdlBlockedStyle {
+  BLOCKED_STYLE_DEFAULT = 0;
+  BLOCKED_STYLE_IN_AUDIT = 1;
+  BLOCKED_STYLE_ONLY_FANS_LIST = 2;
+  BLOCKED_STYLE_ONLY_FANS_VIDEO = 3;
+  BLOCKED_STYLE_MANGA_PURCHASE = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum MdlDynCommonType {
+  mdl_dyn_common_none = 0;
+  mdl_dyn_common_square = 1;
+  mdl_dyn_common_vertica = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum MdlDynDrawTagType {
+  mdl_draw_tag_none = 0;
+  mdl_draw_tag_common = 1;
+  mdl_draw_tag_goods = 2;
+  mdl_draw_tag_user = 3;
+  mdl_draw_tag_topic = 4;
+  mdl_draw_tag_lbs = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum MdlDynSubscriptionNewStyle {
+  mdl_dyn_subscription_new_style_nont = 0;
+  mdl_dyn_subscription_new_style_live = 1;
+  mdl_dyn_subscription_new_style_draw = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum MediaType {
+  MediaTypeNone = 0;
+  MediaTypeUGC = 1;
+  MediaTypePGC = 2;
+  MediaTypeLive = 3;
+  MediaTypeVCS = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum ModuleAuthorBadgeType {
+  module_author_badge_type_none = 0;
+  module_author_badge_type_threePoint = 1;
+  module_author_badge_type_button = 2;
+  module_author_badge_type_weight = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum ModuleBannerType {
+  module_banner_type_none = 0;
+  module_banner_type_user = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ModuleDynamicType {
+  mdl_dyn_archive = 0;
+  mdl_dyn_pgc = 1;
+  mdl_dyn_cour_season = 2;
+  mdl_dyn_cour_batch = 3;
+  mdl_dyn_forward = 4;
+  mdl_dyn_draw = 5;
+  mdl_dyn_article = 6;
+  mdl_dyn_music = 7;
+  mdl_dyn_common = 8;
+  mdl_dyn_live = 9;
+  mdl_dyn_medialist = 10;
+  mdl_dyn_applet = 11;
+  mdl_dyn_subscription = 12;
+  mdl_dyn_live_rcmd = 13;
+  mdl_dyn_ugc_season = 14;
+  mdl_dyn_subscription_new = 15;
+  mdl_dyn_cour_up = 16;
+  mdl_dyn_topic_set = 17;
+  mdl_dyn_charging_archive = 18;
+  mdl_dyn_share_charging_qa = 19;
+  UNRECOGNIZED = -1;
+}
+
+enum NavigationType {
+  COMMON = 0;
+  JOINED_OTHER_TRIBEE = 1;
+  SHARE = 2;
+  MY_POST = 3;
+  INVITE_CODE = 4;
+  GAME_STATS = 5;
+  DISPLAY_APP_MINE = 6;
+  VISA_CARD = 7;
+  UNRECOGNIZED = -1;
+}
+
+enum NetworkType {
+  NT_UNKNOWN = 0;
+  WIFI = 1;
+  CELLULAR = 2;
+  OFFLINE = 3;
+  OTHERNET = 4;
+  ETHERNET = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum NFTRegionType {
+  nft_region_default = 0;
+  nft_region_mainlang = 1;
+  nft_region_gat = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum NFTShowStatus {
+  nft_show_default = 0;
+  nft_show_zoominmainlang = 1;
+  nft_show_raw = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum OptionItemType {
+  OPTION_ITEM_TYPE_DEFAULT = 0;
+  OPTION_ITEM_TYPE_SWITCH = 1;
+  OPTION_ITEM_TYPE_SELECT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum OpusType {
+  OPUS_TYPE_DYN = 0;
+  OPUS_TYPE_ARTICLE = 1;
+  OPUS_TYPE_NOTE = 2;
+  OPUS_TYPE_WORD = 3;
+  OPUS_TYPE_REPOST = 4;
+  OPUS_TYPE_MANGA_EP = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum PaywallStyle {
+  PAYWALL_STYLE_NONE = 0;
+  PAYWALL_STYLE_RECOMMEND_LIST = 1;
+  PAYWALL_STYLE_BLOCKED = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum RcmdReasonStyle {
+  rcmd_reason_style_none = 0;
+  rcmd_reason_style_campus_nearby = 1;
+  rcmd_reason_style_campus_up = 2;
+  rcmd_reason_style_campus_near_up_mix = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum RcmdType {
+  rcmd_archive = 0;
+  rcmd_dynamic = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum RecommendCardReasonStyle {
+  RECOMMEND_CARD_REASON_STYLE_NONE = 0;
+  RECOMMEND_CARD_REASON_STYLE_FOLLOW = 1;
+  RECOMMEND_CARD_REASON_STYLE_GENERAL = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum RecommendCardType {
+  RECOMMEND_CARD_TYPE_NONE = 0;
+  RECOMMEND_CARD_TYPE_OPUS = 1;
+  RECOMMEND_CARD_TYPE_VIDEO = 2;
+  RECOMMEND_CARD_TYPE_LIVE = 3;
+  RECOMMEND_CARD_TYPE_OGV = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum Refresh {
+  refresh_new = 0;
+  refresh_history = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum RelationStatus {
+  relation_status_none = 0;
+  relation_status_nofollow = 1;
+  relation_status_follow = 2;
+  relation_status_followed = 3;
+  relation_status_mutual_concern = 4;
+  relation_status_special = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum RepostType {
+  repost_hot = 0;
+  repost_general = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveRelationLotteryType {
+  reserve_relation_lottery_type_default = 0;
+  reserve_relation_lottery_type_cron = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveType {
+  reserve_none = 0;
+  reserve_recall = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum RouterAction {
+  OPEN = 0;
+  EMBED = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ShowType {
+  show_type_none = 0;
+  show_type_backup = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum StyleType {
+  STYLE_TYPE_NONE = 0;
+  STYLE_TYPE_LIVE = 1;
+  STYLE_TYPE_DYN_UP = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TFType {
+  TF_UNKNOWN = 0;
+  U_CARD = 1;
+  U_PKG = 2;
+  C_CARD = 3;
+  C_PKG = 4;
+  T_CARD = 5;
+  T_PKG = 6;
+  UNRECOGNIZED = -1;
+}
+
+enum ThreePointAttentionStatus {
+  tp_not_attention = 0;
+  tp_attention = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ThreePointType {
+  tp_none = 0;
+  background = 1;
+  auto_play = 2;
+  share = 3;
+  wait = 4;
+  attention = 5;
+  report = 6;
+  delete = 7;
+  dislike = 8;
+  favorite = 9;
+  top = 10;
+  comment = 11;
+  hide = 12;
+  campus_delete = 13;
+  topic_irrelevant = 14;
+  batch_cancel = 15;
+  topic_set_cancel = 16;
+  dynamic_edit = 17;
+  create_video = 18;
+  coin = 19;
+  ogv_subscribe = 20;
+  visibility_change = 21;
+  topic_top = 22;
+  translate = 23;
+  repost_tribee = 24;
+  tribee_remove_thread = 25;
+  tribee_featured = 26;
+  tribee_modify_category = 27;
+  tribee_invite_code = 28;
+  tribee_approved_thread = 29;
+  recommend_remove = 30;
+  tribee_reject_thread = 31;
+  UNRECOGNIZED = -1;
+}
+
+enum ThumbType {
+  cancel = 0;
+  thumb = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum TopType {
+  top_none = 0;
+  top_cancel = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum TribeeCategoryType {
+  NORMAL_CATEGORY = 0;
+  OUTSIDER_PUB_CATEGORY = 1;
+  MEMBER_WATCHING_CATEGORY = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TribeeEntryApplyStatus {
+  TRIBEE_ENTRY_APPLY_STATUS_UNSPECIFIED = 0;
+  TRIBEE_ENTRY_APPLY_STATUS_PENDING = 1;
+  TRIBEE_ENTRY_APPLY_STATUS_REJECTED = 2;
+  TRIBEE_ENTRY_APPLY_STATUS_PASSED = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum TribeeGameStatsStatus {
+  TRIBEE_GAME_STATS_UNUSED = 0;
+  TRIBEE_GAME_STATS_NOT_BIND = 1;
+  TRIBEE_GAME_STATS_BINDED = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TribeeSearchOrder {
+  TribeeSearchOrder_DEFAULT = 0;
+  TribeeSearchOrder_DESC = 1;
+  TribeeSearchOrder_LIKE = 2;
+  TribeeSearchOrder_COMMENT = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum TribeeSearchType {
+  TribeeSearchType_DEFAULT = 0;
+  TribeeSearchType_DYN = 1;
+  TribeeSearchType_COMMENT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TribeeSortType {
+  TRIBEE_SORT_TYPE_DEFAULT = 0;
+  TRIBEE_SORT_TYPE_NEW_REPLY = 1;
+  TRIBEE_SORT_TYPE_NEW_POST = 2;
+  TRIBEE_SORT_TYPE_HOT = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum UserItemType {
+  user_item_type_none = 0;
+  user_item_type_live = 1;
+  user_item_type_live_custom = 2;
+  user_item_type_normal = 3;
+  user_item_type_extend = 4;
+  user_item_type_premiere_reserve = 5;
+  user_item_type_premiere = 6;
+  user_item_type_live_card = 7;
+  user_item_type_ogv_season = 8;
+  user_item_type_ugc_season = 9;
+  UNRECOGNIZED = -1;
+}
+
+enum VideoSubType {
+  VideoSubTypeNone = 0;
+  VideoSubTypeBangumi = 1;
+  VideoSubTypeMovie = 2;
+  VideoSubTypeDocumentary = 3;
+  VideoSubTypeDomestic = 4;
+  VideoSubTypeTeleplay = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum VideoType {
+  video_type_general = 0;
+  video_type_dynamic = 1;
+  video_type_playback = 2;
+  video_type_story = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum VoteStatus {
+  normal = 0;
+  anonymous = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum WeightType {
+  weight_none = 0;
+  weight_dislike = 1;
+  weight_jump = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum WFItemType {
+  WATER_FLOW_TYPE_NONE = 0;
+  WATER_FLOW_TYPE_ARCHIVE = 1;
+  WATER_FLOW_TYPE_DYNAMIC = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/AdditionUP.java
+message AdditionUP {
+  string title = 1;
+  HighlightText descText1 = 2;
+  string descText2 = 3;
+  string url = 4;
+  AdditionalButton button = 5;
+  string cardType = 6;
+  int64 reserveTotal = 7;
+  AdditionalActSkin actSkin = 8;
+  int64 rid = 9;
+  ReserveRelationLotteryType lotteryType = 10;
+  HighlightText descText3 = 11;
+  int64 upMid = 12;
+  AdditionUserInfo userInfo = 13;
+  string dynamicId = 14;
+  bool showText2 = 15;
+  int64 dynType = 16;
+  string businessId = 17;
+  string badgeText = 18;
+  bool isPremiere = 19;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/AdditionVotePicItem.java
+message AdditionVotePicItem {
+  int32 optIdx = 1;
+  string cover = 2;
+  bool isVote = 3;
+  int32 total = 4;
+  double persent = 5;
+  string title = 6;
+  bool isMaxOption = 7;
+  MdlDynDrawItem drawItem = 8;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/AdditionVoteWordItem.java
+message AdditionVoteWordItem {
+  int32 optIdx = 1;
+  string title = 2;
+  bool isVote = 3;
+  int32 total = 4;
+  double persent = 5;
+  bool isMaxOption = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/CampusFeedbackInfo.java
+message CampusFeedbackInfo {
+  int32 bizType = 1;
+  int64 bizId = 2;
+  int64 campusId = 3;
+  string reason = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/CampusInfo.java
+message CampusInfo {
+  int64 campusId = 1;
+  string campusName = 2;
+  string desc = 3;
+  int64 online = 4;
+  string url = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/CampusMngItem.java
+message CampusMngItem {
+  CampusMngAuditStatus auditStatus = 1;
+  string auditMessage = 2;
+  CampusMngItemType itemType = 3;
+  string mngItemId = 4;
+  bool isDel = 5;
+  oneof oneof_0 {
+    CampusMngBasicInfo basicInfo = 6;
+    CampusMngBadge badge = 7;
+    CampusMngSlogan slogan = 8;
+    CampusMngQuiz quiz = 9;
+  }
+  enum ItemCase {
+    BASIC_INFO = 6;
+    BADGE = 7;
+    SLOGAN = 8;
+    QUIZ = 9;
+    ITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/CampusMngQuizDetail.java
+message CampusMngQuizDetail {
+  int64 quizId = 1;
+  string question = 2;
+  string correctAnswer = 3;
+  repeated string wrongAnswerList = 4;
+  CampusMngAuditStatus auditStatus = 5;
+  string auditMessage = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/CmtShowItem.java
+message CmtShowItem {
+  int64 uid = 1;
+  string uname = 2;
+  string uri = 3;
+  string comment = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/Colors.java
+message Colors {
+  string colorDay = 1;
+  string colorNight = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ContentOpusCard.java
+message ContentOpusCard {
+  long opusId = 1;
+  int32 title = 2;
+  int32 content = 3;
+  int32 jumpUrl = 4;
+  int32 authorName = 5;
+  int32 publishText = 6;
+  int32 view = 7;
+  int32 reply = 9;
+  repeated int32 pics = 10;
+  int32 badge = 11;
+  int32 cardType = 12;
+  int32 linkShowText = 13;
+  int32 isOnlyFans = 14;
+  int32 cardBadge = 15;
+  int32 block = 16;
+  int32 like = 17;
+  int32 summary = 18;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/CooperationUpInfo.java
+message CooperationUpInfo {
+  BasicUserInfoV2 userInfo = 1;
+  string upRole = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/DynamicItem.java
+message DynamicItem {
+  DynamicType cardType = 1;
+  DynamicType itemType = 2;
+  repeated Module modules = 3;
+  Extend extend_ = 4;
+  int32 hasFold = 5;
+  string serverInfo = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/DynamicList.java
+message DynamicList {
+  repeated DynamicItem list = 1;
+  int64 updateNum = 2;
+  string historyOffset = 3;
+  string updateBaseline = 4;
+  bool hasMore = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/DynScreenTabReq.java
+message DynScreenTabReq {
+  string name = 1;
+  string sortType = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/EmoteSize.java
+message EmoteSize {
+  double width = 1;
+  int32 emojiSize = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/FootHoverToast.java
+message FootHoverToast {
+  string title = 1;
+  string subtitle = 2;
+  string picUrlLight = 3;
+  string picUrlDark = 4;
+  string confirmText = 5;
+  string jumpText = 6;
+  string jumpUrl = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/IconBadge.java
+message IconBadge {
+  string iconBgUrl = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/IconButton.java
+message IconButton {
+  string text = 1;
+  string iconHead = 2;
+  string iconTail = 3;
+  string jumpUri = 4;
+  RouterAction routerAction = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/InfoOGV.java
+message InfoOGV {
+  string title = 1;
+  string uri = 2;
+  string icon = 3;
+  string subModule = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/LikeAnimation.java
+message LikeAnimation {
+  string begin = 1;
+  string proc = 2;
+  string end = 3;
+  int64 likeIconId = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/MangaLikePic.java
+message MangaLikePic {
+  ProtectedStaticResource pic = 1;
+  int64 width = 2;
+  int64 height = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/MdlDynDrawTagItem.java
+message MdlDynDrawTagItem {
+  string url = 1;
+  string text = 2;
+  int64 x = 3;
+  int64 y = 4;
+  int32 orientation = 5;
+  int32 source = 6;
+  int64 itemId = 7;
+  int64 mid = 8;
+  int64 tid = 9;
+  string poi = 10;
+  string schemaUrl = 11;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/MixUpListItem.java
+message MixUpListItem {
+  int64 uid = 1;
+  int32 specialAttention = 2;
+  int32 reddotState = 3;
+  MixUpListLiveItem liveInfo = 4;
+  string name = 5;
+  string face = 6;
+  OfficialVerify official = 7;
+  VipInfo vip = 8;
+  Relation relation = 9;
+  int32 premiereState = 10;
+  string uri = 11;
+  AvatarItem avatar = 12;
+  NameRender nameRender = 13;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ModuleBannerUserItem.java
+message ModuleBannerUserItem {
+  string face = 1;
+  string name = 2;
+  int64 uid = 3;
+  LiveState liveState = 4;
+  OfficialVerify official = 5;
+  VipInfo vip = 6;
+  string label = 7;
+  AdditionalButton button = 8;
+  string uri = 9;
+  Relation relation = 10;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ModuleButtom.java
+message ModuleButtom {
+  ModuleStat moduleStat = 1;
+  bool commentBox = 2;
+  string commentBoxMsg = 3;
+  repeated IntList interactionIcons = 4;
+  repeated InteractionFace faces = 5;
+  enum InteractionIcon {
+    ICON_INVALID = 0;
+    ICON_FORWARD = 1;
+    ICON_COMMENT = 2;
+    ICON_FAVORITE = 3;
+    ICON_LIKE = 4;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ModuleCopyright.java
+message ModuleCopyright {
+  string leftText = 1;
+  string rightText = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ModuleParagraph.java
+message ModuleParagraph {
+  Paragraph paragraph = 1;
+  bool isArticleTitle = 2;
+  ParaSpacing paraSpacing = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/MultipleResourcesCard.java
+message MultipleResourcesCard {
+  oneof oneof_0 {
+    repeated Resource resources = 1;
+  }
+  enum ContentCase {
+    OPUS = 1;
+    VIDEO = 2;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/NavigationEntry.java
+message NavigationEntry {
+  NavigationType navigationType = 1;
+  NavigationEntryBasicInfo basicInfo = 2;
+  oneof oneof_0 {
+    NavigationEntryJoinedOtherTribee joinedOtherTribee = 3;
+    NavigationEntryInviteCode inviteCode = 4;
+    NavigationEntryGameStats gameStats = 5;
+    NavigationEntryDisplayAppMine displayAppMine = 6;
+    NavigationEntryVisaCard visaCard = 7;
+  }
+  enum DataCase {
+    JOINED_OTHER_TRIBEE = 3;
+    INVITE_CODE = 4;
+    GAME_STATS = 5;
+    DISPLAY_APP_MINE = 6;
+    VISA_CARD = 7;
+    DATA_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/OfficialAccountInfo.java
+message OfficialAccountInfo {
+  UserInfo author = 1;
+  int64 mid = 2;
+  string uri = 3;
+  Relation relation = 4;
+  string descText1 = 5;
+  string descText2 = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/OneLineText.java
+message OneLineText {
+  repeated TextWithPriority texts = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/OpusItem.java
+message OpusItem {
+  int64 opusId = 1;
+  OpusType opusType = 2;
+  int64 oid = 3;
+  repeated Module modules = 4;
+  Extend extend_ = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ProtectedStaticResource.java
+message ProtectedStaticResource {
+  string resUrl = 1;
+  bool isAlreadySigned = 2;
+  string signParam = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/RcmdItem.java
+message RcmdItem {
+  RcmdType type = 1;
+  oneof oneof_0 {
+    RcmdArchive rcmdArchive = 2;
+  }
+  enum RcmdItemCase {
+    RCMD_ARCHIVE = 2;
+    RCMDITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/SignedStaticResource.java
+message SignedStaticResource {
+  string signedResUrl = 1;
+  bool isSucceed = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TableCell.java
+message TableCell {
+  repeated Paragraph paragraphs = 1;
+  Colors backgroundColor = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TextNode.java
+message TextNode {
+  TextNodeType nodeType = 1;
+  string rawText = 2;
+  oneof oneof_0 {
+    WordNode word = 3;
+    EmoteNode emote = 4;
+    LinkNode link = 5;
+    FormulaNode formula = 6;
+  }
+  enum TextCase {
+    WORD = 3;
+    EMOTE = 4;
+    LINK = 5;
+    FORMULA = 6;
+    TEXT_NOT_SET = 0;
+  }
+
+  enum TextNodeType {
+    INVALID = 0;
+    WORDS = 1;
+    EMOTE = 2;
+    AT = 3;
+    BIZ_LINK = 4;
+    FORMULA = 5;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TextWithPriority.java
+message TextWithPriority {
+  string text = 1;
+  int64 priority = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ThreeDotItem.java
+message ThreeDotItem {
+  BusinessType type = 1;
+  string title = 2;
+  string desc = 3;
+  ToastDialog toast = 4;
+  string jumpUrl = 5;
+  enum BusinessType {
+    THREEDOT_BUSINESS_DEFAULT = 0;
+    THREEDOT_BUSINESS_UNBIND = 1;
+    THREEDOT_BUSINESS_MYSELF = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ToastDialog.java
+message ToastDialog {
+  ToastDialogType type = 1;
+  string title = 2;
+  string desc = 3;
+  string picUrl = 4;
+  string confirmText = 5;
+  string cancelText = 6;
+  string inputDefaultText = 7;
+  string cancelJumpUri = 8;
+  string inputInviteCode = 9;
+  TribeeDesc sourceTribee = 10;
+  TribeeDesc targetTribee = 11;
+  enum ToastDialogType {
+    UNKNOWN = 0;
+    EXIT = 1;
+    PUBLISH_JOIN = 2;
+    PUBLISH_ABNORMAL = 3;
+    ACTIVATE_NO_CANDIDATE = 4;
+    ACTIVATE_CANDIDATE = 5;
+    INVITE_CODE_SUCCESS = 6;
+    INVITE_CODE_EXPIRE = 7;
+    INVITE_CODE_NO_NEED = 8;
+    PUBLISH_BANNED = 9;
+    GAME_STATS_NO_TRIBEE = 10;
+    STEAM_ACCOUNT_RELEASE = 11;
+    ALLOW_OUTSIDER_PUB_TOAST = 12;
+    OUTSIDER_INVITE_CODE_SUCCESS = 13;
+    VISA_JOIN_SUCCESS = 14;
+    VISA_PUBLISH_SUCCESS = 15;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TopicItem.java
+message TopicItem {
+  int64 topicId = 1;
+  string topicName = 2;
+  string url = 3;
+  string desc = 4;
+  string desc2 = 5;
+  string rcmdDesc = 6;
+  IconButton button = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TopicSquareInfo.java
+message TopicSquareInfo {
+  string title = 1;
+  CampusLabel button = 2;
+  TopicRcmdCard rcmd = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeCategory.java
+message TribeeCategory {
+  int64 id = 1;
+  string name = 2;
+  bool isCurrent = 3;
+  TribeeCategoryType type = 4;
+  CategoryTip tip = 5;
+  string icon = 6;
+  bool showEntryApplyStatusFilter = 7;
+  repeated TribeeEntryApplyStatusFilterItem entryApplyStatusFilterItems = 8;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeDesc.java
+message TribeeDesc {
+  int64 id = 1;
+  string title = 2;
+  string subTitle = 3;
+  string faceUrl = 4;
+  Color bgColor = 5;
+  string jumpUri = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeModule.java
+message TribeeModule {
+  string title = 1;
+  repeated TribeeDesc tribees = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchTab.java
+message TribeeSearchTab {
+  repeated TribeeSearchTabItem items = 1;
+  repeated TribeeSearchType selectedType = 2;
+  int32 selectedOrder = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSelectBox.java
+message TribeeSelectBox {
+  repeated string tribees = 1;
+  int64 selectedTribeeIdx = 2;
+  int32 selectedCategoryIdx = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSteamHomeAchievement.java
+message TribeeSteamHomeAchievement {
+  TribeeSteamHomeAchievementType type = 1;
+  string titlePicUrl = 2;
+  string title = 3;
+  oneof oneof_0 {
+    TribeeSteamHomeAchievementEmpty empty = 4;
+    TribeeSteamHomeAchievementSuccess success = 5;
+  }
+  enum DataCase {
+    EMPTY = 4;
+    SUCCESS = 5;
+    DATA_NOT_SET = 0;
+  }
+
+  enum TribeeSteamHomeAchievementType {
+    Achievement_Type_Default = 0;
+    Achievement_Type_Empty = 1;
+    Achievement_Type_Success = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSteamHomeAchievementItem.java
+message TribeeSteamHomeAchievementItem {
+  AchievementType type = 1;
+  bool isAchieved = 2;
+  string achievePicUrl = 3;
+  string achieveName = 4;
+  string achieveTime = 5;
+  string achieveDesc = 6;
+  string achievePerc = 7;
+  enum AchievementType {
+    ACHIEVEMENT_DEFAULT = 0;
+    ACHIEVEMENT_HIDDEN = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/Unfollow.java
+message Unfollow {
+  string title = 1;
+  repeated UnfollowUserItem list = 2;
+  string trackid = 3;
+}
+

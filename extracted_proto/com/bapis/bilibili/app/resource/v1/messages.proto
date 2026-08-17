@@ -1,0 +1,38 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.resource.v1;
+
+enum CompressType {
+  Unzip = 0;
+  Original = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum EnvType {
+  Unknown = 0;
+  Release = 1;
+  Test = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum IncrementType {
+  Total = 0;
+  Incremental = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum LevelType {
+  Undefined = 0;
+  High = 1;
+  Middle = 2;
+  Low = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/resource/v1/DwTimePiece.java
+message DwTimePiece {
+  int64 start = 1;
+  int64 end = 2;
+}
+

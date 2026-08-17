@@ -1,0 +1,11 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.topic;
+
+// Source: com/bapis/bilibili/broadcast/message/topic/PubEvent.java
+message PubEvent {
+  int64 dynamicId = 1;
+  int64 mid = 2;
+}
+

@@ -1,0 +1,33 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.dynamic.interfaces.vote.v1;
+
+// Source: com/bapis/bilibili/dynamic/interfaces/vote/v1/VoteInfo.java
+message VoteInfo {
+  int64 voteId = 1;
+  string title = 2;
+  string desc = 3;
+  int64 joinNum = 4;
+  int32 type = 5;
+  int32 choiceCnt = 6;
+  int64 endTime = 7;
+  int32 status = 8;
+  int64 votePublisher = 9;
+  int32 defaultShare = 10;
+  int64 ctime = 11;
+  int32 bizType = 12;
+  string imgUrl = 13;
+  repeated int32 myVotes = 14;
+  repeated VoteOptionInfo options = 15;
+  int32 optionsCnt = 16;
+  int64 startTime = 17;
+  int64 voterUid = 18;
+  int32 voterLevel = 19;
+  int64 duration = 20;
+  repeated VoteBizInfo voteBizInfo = 21;
+  string face = 22;
+  string name = 23;
+  int64 onlyFansLevel = 24;
+}
+

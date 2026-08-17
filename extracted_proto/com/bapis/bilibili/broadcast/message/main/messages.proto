@@ -1,0 +1,54 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.main;
+
+enum LikeState {
+  DEFAULT = 0;
+  LIKE = 1;
+  DISLIKE = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/main/DanmakuElem.java
+message DanmakuElem {
+  int64 id = 1;
+  int32 progress = 2;
+  int32 mode = 3;
+  int32 fontsize = 4;
+  uint32 color = 5;
+  string midHash = 6;
+  string content = 7;
+  int64 ctime = 8;
+  string action = 9;
+  int32 pool = 10;
+  string idStr = 11;
+  int32 weight = 12;
+  int32 attr = 13;
+  string animation = 14;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/main/EventItem.java
+message EventItem {
+  int64 itemid = 1;
+  string type = 2;
+  int64 num = 3;
+  string displaynum = 4;
+  string webkey = 5;
+  int64 dimension = 6;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/main/NativePageEvent.java
+message NativePageEvent {
+  int64 pageid = 1;
+  repeated EventItem items = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/main/Stats.java
+message Stats {
+  int32 like = 1;
+  int32 coin = 2;
+  int32 fav = 3;
+  int32 share = 4;
+}
+

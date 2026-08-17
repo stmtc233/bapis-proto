@@ -1,0 +1,10 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution.setting.dynamic;
+
+// Source: com/bapis/bilibili/app/distribution/setting/dynamic/DynamicAutoPlay.java
+message DynamicAutoPlay {
+  Int64Value value = 1;
+}
+

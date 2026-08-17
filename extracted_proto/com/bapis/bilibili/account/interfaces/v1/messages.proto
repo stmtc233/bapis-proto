@@ -1,0 +1,16 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.account.interfaces.v1;
+
+enum ProfileField {
+  PROFILE_FIELD_UNSPECIFIED = 0;
+  PROFILE_FIELD_MID = 1;
+  PROFILE_FIELD_UNAME = 2;
+  PROFILE_FIELD_SIGN = 3;
+  PROFILE_FIELD_BIRTHDAY = 4;
+  PROFILE_FIELD_SEX = 5;
+  PROFILE_FIELD_HANDLE = 6;
+  UNRECOGNIZED = -1;
+}
+

@@ -1,0 +1,11 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.pgc.gateway.vega.v1;
+
+// Source: com/bapis/pgc/gateway/vega/v1/TargetPath.java
+message TargetPath {
+  string key = 1;
+  Any subs = 2;
+}
+

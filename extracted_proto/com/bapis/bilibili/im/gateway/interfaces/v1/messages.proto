@@ -1,0 +1,133 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.im.gateway.interfaces.v1;
+
+enum MsgFeedActionType {
+  MSG_FEED_ACTION_TYPE_INVALID = 0;
+  MSG_FEED_ACTION_TYPE_THANK = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum MsgFeedFilterType {
+  MsgFeed_All = 0;
+  MsgFeed_Following = 1;
+  MsgFeed_AtMe = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum MsgFeedMsgType {
+  LikeMsg = 0;
+  ReplyMsg = 1;
+  AtMsg = 2;
+  DanmuMsg = 3;
+  CoinMsg = 4;
+  FavoriteMsg = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum MsgTabType {
+  LikeMe = 0;
+  ReplyMe = 1;
+  AtMe = 2;
+  SystemMsg = 3;
+  HuaHuo = 4;
+  NewFollow = 5;
+  ReceiveReply = 100;
+  ReceiveLike = 101;
+  UNRECOGNIZED = -1;
+}
+
+enum SessionsFilterType {
+  Sessions_All = 0;
+  Sessions_Following = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ToastType {
+  ToastTypeDefault = 0;
+  ToastTypeBanned = 1;
+  ToastTypeReport = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/BubbleMsg.java
+message BubbleMsg {
+  int64 mid = 1;
+  string avatar = 2;
+  string nickName = 3;
+  string content = 4;
+  MsgTabType tabType = 5;
+  MsgFeedMsgType msgType = 6;
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/CommonMsgCard.java
+message CommonMsgCard {
+  int64 id = 1;
+  repeated User users = 2;
+  int64 itemId = 3;
+  int64 msgTime = 4;
+  int64 originId = 5;
+  int64 businessId = 6;
+  string coverImage = 7;
+  string coverText = 8;
+  string nativeUri = 9;
+  int64 counts = 10;
+  RichTextContent richTextContent = 11;
+  string bizType = 12;
+  bool isUnread = 13;
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/Cursor.java
+message Cursor {
+  bool isEnd = 1;
+  int64 id = 2;
+  int64 time = 3;
+  int64 replymsgid = 4;
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/DelMsgItem.java
+message DelMsgItem {
+  uint64 talkerUid = 1;
+  uint64 msgKey = 2;
+  uint64 seqNo = 3;
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/MsgFeedActionThankParams.java
+message MsgFeedActionThankParams {
+  int64 receiverMid = 1;
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/MsgItem.java
+message MsgItem {
+  oneof oneof_0 {
+    ReplyCard replyCard = 1;
+    AtCard atCard = 2;
+    DanmuCard danmuCard = 3;
+    LikeCard likeCard = 4;
+    CoinCard coinCard = 5;
+    FavoriteCard favoriteCard = 6;
+  }
+  enum MsgCardCase {
+    REPLY_CARD = 1;
+    AT_CARD = 2;
+    DANMU_CARD = 3;
+    LIKE_CARD = 4;
+    COIN_CARD = 5;
+    FAVORITE_CARD = 6;
+    MSGCARD_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/Prompt.java
+message Prompt {
+  string msg = 1;
+}
+
+// Source: com/bapis/bilibili/im/gateway/interfaces/v1/TotalUnreadNew.java
+message TotalUnreadNew {
+  int32 unreadCount = 1;
+  int32 unreadType = 2;
+}
+

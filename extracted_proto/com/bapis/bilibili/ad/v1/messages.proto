@@ -1,0 +1,66 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.ad.v1;
+
+enum PauseAdFormType {
+  DEFAULT = 0;
+  RADIO = 1;
+  CHECKBOX = 2;
+  TEXT = 3;
+  PHONE = 4;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/ad/v1/AdCardCalenderInfo.java
+message AdCardCalenderInfo {
+  string title = 1;
+  int64 startTime = 2;
+  int64 endTime = 3;
+  int32 calenderId = 4;
+  string comment = 5;
+  string calendarIdStr = 6;
+}
+
+// Source: com/bapis/bilibili/ad/v1/AdOgvEpDto.java
+message AdOgvEpDto {
+  int64 epid = 1;
+  bool hasRecommend = 2;
+}
+
+// Source: com/bapis/bilibili/ad/v1/BrandPauseLoopImageItemDto.java
+message BrandPauseLoopImageItemDto {
+  string url = 1;
+  string desc = 2;
+  string mainColorDay = 3;
+  string mainColorNight = 4;
+  string textColorDay = 5;
+  string textColorNight = 6;
+}
+
+// Source: com/bapis/bilibili/ad/v1/QualityParmas.java
+message QualityParmas {
+  string firstLine = 1;
+  string secondLine = 2;
+  double grade = 3;
+  string rankIcon = 4;
+  int32 qualityType = 5;
+}
+
+// Source: com/bapis/bilibili/ad/v1/Reward.java
+message Reward {
+  int32 level = 1;
+  string title = 2;
+  string content = 3;
+  string pic = 4;
+  bool reach = 5;
+}
+
+// Source: com/bapis/bilibili/ad/v1/ScreenShots.java
+message ScreenShots {
+  string url = 1;
+  int32 height = 2;
+  int32 width = 3;
+  int32 seq = 4;
+}
+

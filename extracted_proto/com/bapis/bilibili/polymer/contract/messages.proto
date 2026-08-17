@@ -1,0 +1,11 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.polymer.contract;
+
+// Source: com/bapis/bilibili/polymer/contract/ContractCard.java
+message ContractCard {
+  string title = 1;
+  string subTitle = 2;
+}
+

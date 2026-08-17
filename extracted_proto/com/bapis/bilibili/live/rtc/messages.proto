@@ -1,0 +1,66 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.rtc;
+
+enum BAPILiveRTCStreamProto_Codec {
+  Opus = 0;
+  H264 = 1;
+  H265 = 2;
+  AV1 = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum BAPILiveRTCTokenProto_TurnProtocol {
+  UDP = 0;
+  TCP = 1;
+  TLS = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum BAPILiveRTCUserProto_UserLeaveReason {
+  NORMAL = 0;
+  KICKED = 1;
+  TIMEOUT = 2;
+  KILLED = 3;
+  RECONNECT = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum BAPILiveRTCUserProto_UserRole {
+  Normal = 0;
+  Audience = 1;
+  Monitor = 2;
+  Relay = 3;
+  App = 4;
+  Mix = 5;
+  Unknown = 99;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/live/rtc/BAPILiveRTCUserProto$CodecCapability.java
+message BAPILiveRTCUserProto_CodecCapability {
+  bool av1 = 1;
+  bool h265 = 2;
+}
+
+// Source: com/bapis/bilibili/live/rtc/BAPILiveRTCUserProto$Stream.java
+message BAPILiveRTCUserProto_Stream {
+  bool hasVideo = 1;
+  bool hasAudio = 2;
+  bool audioMuted = 3;
+  bool videoMuted = 4;
+  uint32 videoCount = 5;
+  uint32 temporalCount = 6;
+}
+
+// Source: com/bapis/bilibili/live/rtc/BAPILiveRTCUserProto$User.java
+message BAPILiveRTCUserProto_User {
+  uint64 uid = 1;
+  BAPILiveRTCUserProto_UserRole role = 2;
+  BAPILiveRTCUserProto_Stream pubStream = 3;
+  string platform = 4;
+  string sdkVersion = 5;
+  BAPILiveRTCUserProto_CodecCapability decodeCapability = 6;
+}
+

@@ -1,0 +1,77 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.mine.v1;
+
+enum ArcState {
+  STATE_UNKNOWN = 0;
+  OPEN = 1;
+  ORANGE = 2;
+  WAIT = 3;
+  RECICLE = 4;
+  LOCK = 5;
+  FIXED = 6;
+  USER_DELAY = 7;
+  FAST_PUB = 8;
+  XCODE_FAIL = 9;
+  UNRECOGNIZED = -1;
+}
+
+enum CardType {
+  CARD_UNKNOWN = 0;
+  PUBGUIDE = 1;
+  UGC = 2;
+  OPUS = 3;
+  MORE = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum DisplayPos {
+  UNKNOWN_DISPLAYTYPE = 0;
+  VIP_BUTTON_STATIC = 1;
+  VIP_BUTTON_DYNAMIC = 2;
+  VIP_BUTTON_BIRTHDAY = 3;
+  VIP_BACKGROUND = 4;
+  FANS_EFFECT = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum OpusState {
+  OPUS_UNKNOWN = 0;
+  OPUS_OPEN = 1;
+  OPUS_NO_FORWARD = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/Button.java
+message Button {
+  string lightIcon = 1;
+  string darkIcon = 2;
+  string url = 3;
+  string text = 4;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/DisplayReportReq.java
+message DisplayReportReq {
+  repeated int64 content = 1;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/PubCard.java
+message PubCard {
+  oneof oneof_0 {
+    CardPubGuide pubGuide = 1;
+    CardUGC ugc = 2;
+    CardOpus opus = 3;
+    CardMore more = 4;
+  }
+  CardType type = 5;
+  enum CardCase {
+    PUB_GUIDE = 1;
+    UGC = 2;
+    OPUS = 3;
+    MORE = 4;
+    CARD_NOT_SET = 0;
+  }
+
+}
+

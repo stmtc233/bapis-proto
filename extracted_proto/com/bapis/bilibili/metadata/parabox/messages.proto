@@ -1,0 +1,11 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.metadata.parabox;
+
+// Source: com/bapis/bilibili/metadata/parabox/Exp.java
+message Exp {
+  int64 id = 1;
+  int32 bucket = 2;
+}
+

@@ -1,0 +1,11 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.dynamic.interfaces.campus.v1;
+
+enum ActionType {
+  ACTION_NOTHING = 0;
+  ACTION_CLOSE_YELLOW_BAR = 1;
+  UNRECOGNIZED = -1;
+}
+

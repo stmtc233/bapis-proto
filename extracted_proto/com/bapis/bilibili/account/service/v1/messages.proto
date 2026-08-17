@@ -1,0 +1,23 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.account.service.v1;
+
+enum RenderSchemeEnum {
+  Default = 0;
+  Colorful = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/account/service/v1/Color.java
+message Color {
+  string colorDay = 1;
+  string colorNight = 2;
+}
+
+// Source: com/bapis/bilibili/account/service/v1/ColorsInfo.java
+message ColorsInfo {
+  repeated int64 colorIds = 1;
+  repeated Color color = 2;
+}
+

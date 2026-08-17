@@ -1,0 +1,557 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.playershared;
+
+enum ArcType {
+  ARC_TYPE_NORMAL = 0;
+  ARC_TYPE_INTERACT = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum BizType {
+  BIZ_TYPE_UNKNOWN = 0;
+  BIZ_TYPE_UGC = 1;
+  BIZ_TYPE_PGC = 2;
+  BIZ_TYPE_PUGV = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum ButtonAction {
+  BUTTON_UNKNOWN = 0;
+  PAY = 1;
+  VIP = 2;
+  PACK = 3;
+  LINK = 4;
+  COUPON = 5;
+  DEMAND = 6;
+  DEMAND_PACK = 7;
+  FOLLOW = 8;
+  APPOINTMENT = 9;
+  VIP_FREE = 10;
+  TASK = 11;
+  CHARGINGPLUS = 12;
+  BP = 13;
+  PRE_SELL = 14;
+  LOGIN = 15;
+  BUTTON_ACTION_CHEESE_PAY = 16;
+  DELIVER_REPORT = 17;
+  DEVICE_MANAGE = 18;
+  RELOAD = 19;
+  ADUNLOCK = 20;
+  SWITCH_QN = 21;
+  UNRECOGNIZED = -1;
+}
+
+enum CanWatchQnReason {
+  CAN_WATCH_QN_REASON_DEFAULT = 0;
+  CAN_WATCH_QN_REASON_VIP_QN_TRY_WATCH = 1;
+  CAN_WATCH_QN_REASON_CTCC_HOME_NETWORK = 2;
+  CAN_WATCH_QN_REASON_BIG_VIP = 3;
+  CAN_WATCH_QN_REASON_TV_BIG_VIP = 4;
+  CAN_WATCH_QN_REASON_OGV_TVOD_PAY = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum CodeType {
+  NOCODE = 0;
+  CODE264 = 1;
+  CODE265 = 2;
+  CODEAV1 = 3;
+  CODE266 = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum ConfType {
+  NoType = 0;
+  FLIPCONF = 1;
+  CASTCONF = 2;
+  FEEDBACK = 3;
+  SUBTITLE = 4;
+  PLAYBACKRATE = 5;
+  TIMEUP = 6;
+  PLAYBACKMODE = 7;
+  SCALEMODE = 8;
+  BACKGROUNDPLAY = 9;
+  LIKE = 10;
+  DISLIKE = 11;
+  COIN = 12;
+  ELEC = 13;
+  SHARE = 14;
+  SCREENSHOT = 15;
+  LOCKSCREEN = 16;
+  RECOMMEND = 17;
+  PLAYBACKSPEED = 18;
+  DEFINITION = 19;
+  SELECTIONS = 20;
+  NEXT = 21;
+  EDITDM = 22;
+  SMALLWINDOW = 23;
+  SHAKE = 24;
+  OUTERDM = 25;
+  INNERDM = 26;
+  PANORAMA = 27;
+  DOLBY = 28;
+  COLORFILTER = 29;
+  LOSSLESS = 30;
+  FREYAENTER = 31;
+  FREYAFULLENTER = 32;
+  SKIPOPED = 33;
+  RECORDSCREEN = 34;
+  DUBBING = 35;
+  LISTEN = 36;
+  WATCH_LATER = 37;
+  SYSTEM_RECORD = 38;
+  TRANSLATE = 39;
+  COMMENT = 40;
+  FAVORITE = 41;
+  UNRECOGNIZED = -1;
+}
+
+enum DrmTechType {
+  UNKNOWN_DRM = 0;
+  FAIR_PLAY = 1;
+  WIDE_VINE = 2;
+  BILI_DRM = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum Effects {
+  EFFECTS_UNKNOWN = 0;
+  GAUSSIAN_BLUR = 1;
+  HALF_ALPHA = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ExtDataType {
+  EXT_DATA_TYPE_UNKNOWN = 0;
+  PLAY_LIST = 1;
+  BANNER = 2;
+  HE_INLINE = 3;
+  EXT_DATA_TYPE_CHARGING = 4;
+  QR_CODE = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum FoldStyle {
+  FOLD_STYLE_UNSPECIFIED = 0;
+  FOLD_STYLE_COUNT_DOWN = 1;
+  FOLD_STYLE_ONLY_BUTTON = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum FragmentPosition {
+  INVALID = 0;
+  PRE = 1;
+  MIDDLE = 2;
+  POST = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum FragmentType {
+  UNKNOWN = 0;
+  AD_FRAGMENT = 1;
+  OGV_FRAGMENT = 2;
+  PUGV_FRAGMENT = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum GroupStyle {
+  GROUP_STYLE_DEFAULT = 0;
+  GROUP_STYLE_HORIZON = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum GuideStyle {
+  STYLE_UNKNOWN = 0;
+  HORIZONTAL_IMAGE = 1;
+  VERTICAL_TEXT = 2;
+  SIMPLE_TEXT = 3;
+  CHARGING_TEXT = 4;
+  UNIVERSAL_INTERCEPT = 5;
+  MSG_ATTACH_QR_CODE = 6;
+  UNRECOGNIZED = -1;
+}
+
+enum LimitActionType {
+  LAT_UNKNOWN = 0;
+  SHOW_LIMIT_DIALOG = 1;
+  SKIP_CURRENT_EP = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum LimitWatchQnReason {
+  LIMIT_WATCH_QN_REASON_DEFAULT = 0;
+  LIMIT_WATCH_QN_REASON_QN_VIP_PLAY = 1;
+  LIMIT_WATCH_QN_REASON_CTCC_HOME_NETWORK_DEVICE_LIMIT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayCtrl {
+  PLAY_CTRL_DEFAULT = 0;
+  PLAY_CTRL_SIMPLE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayErr {
+  NoErr = 0;
+  WithMultiDeviceLoginErr = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ProductionType {
+  PRODUCTION_TYPE_DEFAULT = 0;
+  PRODUCTION_TYPE_UPLOAD = 1;
+  PRODUCTION_TYPE_AI = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum PromptBarStyle {
+  PROMPT_BAR_STYLE_UNKNOWN = 0;
+  TEXT = 1;
+  CURING_BENEFITS = 2;
+  CARD_OPENING_GIFT = 3;
+  COUNTDOWN = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum PromptBarType {
+  PROMPT_BAR_TYPE_UNKNOWN = 0;
+  OPEN_PROMPT_BAR = 1;
+  TRY_PROMPT_BAR = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum QnGroupType {
+  UNKNOWN_GROUP = 0;
+  VIP_VISION = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum QnPolicy {
+  QN_POLICY_DEFAULT = 0;
+  QN_POLICY_AUTO_QN_ENABLE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SettingItemStyle {
+  SETTING_STYLE_NONE = 0;
+  SETTING_STYLE_SWITCH = 1;
+  SETTING_STYLE_MORE = 2;
+  SETTING_STYLE_SELECT = 3;
+  SETTING_STYLE_VERTICAL = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum SettingItemType {
+  SETTING_NONE = 0;
+  SETTING_PLAYBACK_RATE = 1;
+  SETTING_WATCH_LATER = 2;
+  SETTING_DOWNlOAD = 3;
+  SETTING_SMALL_WINDOW = 4;
+  SETTING_FREYAENTER = 5;
+  SETTING_PLAYBACK_MODE = 6;
+  SETTING_LOOP_PLAYBACK = 7;
+  SETTING_TIMING_SWITCH = 8;
+  SETTING_BACKGROUND_PLAY = 9;
+  SETTING_SUBTITLE = 10;
+  SETTING_SUBTITLE_EXCHANGE = 11;
+  SETTING_FLIP_CONF = 12;
+  SETTING_MORE_PLAY = 13;
+  SETTING_SHAKE = 14;
+  SETTING_SKIP_OPED = 15;
+  SETTING_NOTE = 16;
+  SETTING_REPORT = 17;
+  SETTING_FEEDBACK = 18;
+  SETTING_FREE_GIFT = 19;
+  SETTING_DUB = 20;
+  SETTING_LISTEN = 21;
+  SETTING_PROJECT = 22;
+  SETTING_PIC_SIZE = 23;
+  SETTING_PANORAMA = 24;
+  SETTING_VISION_ASSIST = 25;
+  SETTING_EDIT = 26;
+  SETTING_DISLIKE = 27;
+  SETTING_BIHUO = 28;
+  SETTING_GESTURE = 29;
+  SETTING_DM = 30;
+  SETTING_DEFINITION = 31;
+  SETTING_SUGGEST = 32;
+  SETTING_AUTOMATIC_SCROLL = 33;
+  SETTING_BACKTRACKING = 34;
+  SETTING_AI_AUDIO = 35;
+  SETTING_AI_AUDIO_EXCHANGE = 36;
+  SETTING_TRANSLATE = 37;
+  SETTING_DM_SWITCH = 38;
+  UNRECOGNIZED = -1;
+}
+
+enum SettingJumpType {
+  SETTING_JUMP_TYPE_NONE = 0;
+  SETTING_JUMP_TYPE_OPEN_URL = 1;
+  SETTING_JUMP_TYPE_HALF_SCREEN = 2;
+  SETTING_JUMP_TYPE_OPEN_URL_BY_OUTER_BROWSER = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum ShowStyleType {
+  SHOW_STYLE_TYPE_UNKNOWN = 0;
+  SHOW_STYLE_TYPE_ORDINARY = 1;
+  SHOW_STYLE_TYPE_RESIDENT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ToastType {
+  TOAST_TYPE_UNKNOWN = 0;
+  VIP_CONTENT_REMIND = 1;
+  VIP_DEFINITION_REMIND = 2;
+  VIP_DEFINITION_GUIDE = 3;
+  OGV_VIDEO_START_TOAST = 4;
+  CHARGING_TOAST = 5;
+  VIP_SKIP_FRAGMENT_TOAST = 6;
+  VIP_AI_FIX_DEFINITION_REMIND = 7;
+  NEW_USER_DEFINITION_REMIND = 8;
+  VIP_RISK_TOAST = 9;
+  PREMIUM_EXTRA_DROPS_TOAST = 10;
+  PREMIUM_FINALE_ACCESS_TOAST = 11;
+  S_VIP_TOAST = 12;
+  TELECOM_VIP_TOAST = 13;
+  SPONSOR_TOAST = 14;
+  UNRECOGNIZED = -1;
+}
+
+enum UnsupportScene {
+  UNKNOWN_SCENE = 0;
+  PREMIERE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum UnsupportState {
+  NONE = 0;
+  HALF = 1;
+  FULL = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/playershared/ArcConf.java
+message ArcConf {
+  bool isSupport = 1;
+  bool disabled = 2;
+  ExtraContent extraContent = 3;
+  repeated IntList unsupportScene = 4;
+  UnsupportState unsupportState = 5;
+}
+
+// Source: com/bapis/bilibili/playershared/AutoQnRange.java
+message AutoQnRange {
+  int64 max = 1;
+  int64 min = 2;
+}
+
+// Source: com/bapis/bilibili/playershared/Badge.java
+message Badge {
+  string text = 1;
+  string textColor = 2;
+  string textColorNight = 3;
+  string bgColor = 4;
+  string bgColorNight = 5;
+  string borderColor = 6;
+  string borderColorNight = 7;
+  int32 bgStyle = 8;
+}
+
+// Source: com/bapis/bilibili/playershared/ConfValue.java
+message ConfValue {
+  oneof oneof_0 {
+    bool switchVal = 1;
+    int64 selectedVal = 2;
+  }
+  enum ValueCase {
+    SWITCH_VAL = 1;
+    SELECTED_VAL = 2;
+    VALUE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/playershared/DashItem.java
+message DashItem {
+  uint32 id = 1;
+  string baseUrl = 2;
+  repeated string backupUrl = 3;
+  uint32 bandwidth = 4;
+  uint32 codecid = 5;
+  string md5 = 6;
+  uint64 size = 7;
+  string frameRate = 8;
+  string widevinePssh = 9;
+  string bilidrmUri = 10;
+}
+
+// Source: com/bapis/bilibili/playershared/DashVideo.java
+message DashVideo {
+  string baseUrl = 1;
+  repeated string backupUrl = 2;
+  uint32 bandwidth = 3;
+  uint32 codecid = 4;
+  string md5 = 5;
+  uint64 size = 6;
+  uint32 audioId = 7;
+  bool noRexcode = 8;
+  string frameRate = 9;
+  uint32 width = 10;
+  uint32 height = 11;
+  string widevinePssh = 12;
+  string bilidrmUri = 13;
+}
+
+// Source: com/bapis/bilibili/playershared/DeviceConf.java
+message DeviceConf {
+  ConfValue confValue = 1;
+}
+
+// Source: com/bapis/bilibili/playershared/Dimension.java
+message Dimension {
+  int64 width = 1;
+  int64 height = 2;
+  int64 rotate = 3;
+  int64 variable = 4;
+}
+
+// Source: com/bapis/bilibili/playershared/EpInlineVideo.java
+message EpInlineVideo {
+  int64 materialNo = 1;
+  int64 aid = 2;
+  int64 cid = 3;
+}
+
+// Source: com/bapis/bilibili/playershared/ExtraContent.java
+message ExtraContent {
+  string disabledReason = 1;
+  int64 disabledCode = 2;
+}
+
+// Source: com/bapis/bilibili/playershared/FragmentInfo.java
+message FragmentInfo {
+  int32 index = 1;
+  FragmentPosition fragmentPosition = 2;
+  FragmentType fragmentType = 3;
+  int64 aid = 4;
+  int64 cid = 5;
+  int64 startTime = 6;
+  Any report = 7;
+}
+
+// Source: com/bapis/bilibili/playershared/FragmentVideoInfo.java
+message FragmentVideoInfo {
+  FragmentInfo fragmentInfo = 1;
+  VodInfo vodInfo = 2;
+  PlayArcConf playArcConf = 3;
+  Dimension dimension = 4;
+  uint64 timelength = 5;
+  BizType videoType = 6;
+  bool playableStatus = 7;
+}
+
+// Source: com/bapis/bilibili/playershared/HistoryInfo.java
+message HistoryInfo {
+  int64 progress = 1;
+  int64 lastPlayCid = 2;
+  Toast toast = 3;
+  Toast toastWithoutTime = 4;
+  int64 lastPlayAid = 5;
+}
+
+// Source: com/bapis/bilibili/playershared/PlayList.java
+message PlayList {
+  int64 seasonId = 1;
+  string title = 2;
+  string cover = 3;
+  string link = 4;
+  BadgeInfo badgeInfo = 5;
+}
+
+// Source: com/bapis/bilibili/playershared/QnCoverRuleItem.java
+message QnCoverRuleItem {
+  int64 targetQn = 1;
+  string solutionType = 2;
+  int64 solutionQn = 3;
+}
+
+// Source: com/bapis/bilibili/playershared/QnExpThree.java
+message QnExpThree {
+  bool qnExp3 = 1;
+  int64 sid = 2;
+  float lowScreenThreshold = 3;
+}
+
+// Source: com/bapis/bilibili/playershared/QnItem.java
+message QnItem {
+  oneof oneof_0 {
+    StreamInfo streamInfo = 1;
+    QnGroup qnGroup = 2;
+  }
+  enum ContentCase {
+    STREAM_INFO = 1;
+    QN_GROUP = 2;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/playershared/ResponseUrl.java
+message ResponseUrl {
+  uint32 order = 1;
+  uint64 length = 2;
+  uint64 size = 3;
+  string url = 4;
+  repeated string backupUrl = 5;
+  string md5 = 6;
+}
+
+// Source: com/bapis/bilibili/playershared/SettingGroup.java
+message SettingGroup {
+  string title = 1;
+  repeated SettingItem items = 2;
+  GroupStyle groupStyle = 3;
+}
+
+// Source: com/bapis/bilibili/playershared/SponsorToast.java
+message SponsorToast {
+  ComprehensiveToast startToast = 1;
+  ComprehensiveToast endToast = 2;
+  ComprehensiveToast successToast = 3;
+  SponsorCutscene cutscene = 4;
+}
+
+// Source: com/bapis/bilibili/playershared/Stream.java
+message Stream {
+  StreamInfo streamInfo = 1;
+  oneof oneof_0 {
+    DashVideo dashVideo = 2;
+    SegmentVideo segmentVideo = 3;
+    MultiDashVideo multiDashVideo = 4;
+  }
+  enum ContentCase {
+    DASH_VIDEO = 2;
+    SEGMENT_VIDEO = 3;
+    MULTI_DASH_VIDEO = 4;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/playershared/TextInfo.java
+message TextInfo {
+  string text = 1;
+  string textColor = 2;
+  string textColorNight = 3;
+  int32 fontSize = 4;
+}
+
+// Source: com/bapis/bilibili/playershared/Toast.java
+message Toast {
+  string text = 1;
+  Button button = 2;
+}
+

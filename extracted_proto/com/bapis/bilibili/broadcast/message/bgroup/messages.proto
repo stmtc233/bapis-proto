@@ -1,0 +1,14 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.bgroup;
+
+enum AppEvent {
+  AppEventUnknown = 0;
+  AppEventVisible = 1;
+  AppEventInvisible = 2;
+  AppEventHomePage = 3;
+  AppEventColdStart = 4;
+  UNRECOGNIZED = -1;
+}
+

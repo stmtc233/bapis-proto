@@ -1,0 +1,56 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.main.community.reply.v2;
+
+enum EditorIconState {
+  EditorIconState_DEFAULT = 0;
+  EditorIconState_ENABLE = 1;
+  EditorIconState_DISABLE = 2;
+  EditorIconState_HIDE = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum FunctionButtonType {
+  FunctionButtonType_DEFAULT = 0;
+  FunctionButtonType_Screenshot = 1;
+  FunctionButtonType_UploadPicture = 2;
+  FunctionButtonType_Vote = 3;
+  FunctionButtonType_Note = 4;
+  FunctionButtonType_Goods = 5;
+  FunctionButtonType_InsertContent = 6;
+  FunctionButtonType_Elec = 7;
+  FunctionButtonType_CMBizHelper = 8;
+  UNRECOGNIZED = -1;
+}
+
+enum UserCallbackAction {
+  USER_CALLBACK_ACTION_DEFAULT = 0;
+  USER_CALLBACK_ACTION_DISMISS = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum UserCallbackScene {
+  USER_CALLBACK_SCENE_DEFAULT = 0;
+  USER_CALLBACK_SCENE_INSERT = 1;
+  USER_CALLBACK_SCENE_RECOMMEND_SUPERB_REPLY = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/GuideText.java
+message GuideText {
+  repeated string texts = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/PlayerParams.java
+message PlayerParams {
+  bool isStory = 1;
+  bool disableFilterTag = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectID.java
+message SubjectID {
+  int64 oid = 1;
+  int64 type = 2;
+}
+

@@ -1,0 +1,35 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.mall.tab3.dynamic.v1;
+
+enum ReserveState {
+  INVALID = 0;
+  Reserve = 1;
+  PrizeReserve = 2;
+  CancelReserve = 3;
+  Cancel = 4;
+  PrizeCancel = 5;
+  Going = 6;
+  End = 7;
+  Canceled = -1;
+  Expired = -2;
+  UNRECOGNIZED = -1;
+}
+
+enum UpActReserveRelationLotteryType {
+  UpActReserveRelationLotteryTypeDefault = 0;
+  UpActReserveRelationLotteryTypeCron = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/mall/tab3/dynamic/v1/MallTagInfo.java
+message MallTagInfo {
+  string tagType = 1;
+  string tagId = 2;
+  string name = 3;
+  IconInfo icon = 4;
+  IconInfo nameSuffixIcon = 5;
+  string url = 6;
+}
+

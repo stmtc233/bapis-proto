@@ -1,0 +1,14 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.wall.v1;
+
+// Source: com/bapis/bilibili/app/wall/v1/RuleInfo.java
+message RuleInfo {
+  bool tf = 1;
+  string m = 2;
+  string a = 3;
+  string p = 4;
+  repeated string aBackup = 5;
+}
+

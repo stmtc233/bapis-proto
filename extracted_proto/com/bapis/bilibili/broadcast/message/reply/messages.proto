@@ -1,0 +1,21 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.reply;
+
+// Source: com/bapis/bilibili/broadcast/message/reply/SubjectInteractionResp.java
+message SubjectInteractionResp {
+  int64 oid = 1;
+  int64 type = 2;
+  Interaction interactionType = 3;
+  int64 rpid = 4;
+  int64 likeCount = 5;
+  int64 frequency = 6;
+  enum Interaction {
+    Unknown = 0;
+    ReplyLike = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+

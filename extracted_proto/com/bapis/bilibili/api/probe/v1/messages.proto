@@ -1,0 +1,23 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.api.probe.v1;
+
+enum Category {
+  CATEGORY_UNSPECIFIED = 0;
+  CATEGORY_ONE = 1;
+  CATEGORY_TWO = 2;
+  CATEGORY_THREE = 3;
+  CATEGORY_FOUR = 4;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/api/probe/v1/SimpleMessage.java
+message SimpleMessage {
+  int32 id = 1;
+  int64 num = 2;
+  string lang = 3;
+  Category cate = 4;
+  Embedded embedded = 5;
+}
+

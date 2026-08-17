@@ -1,0 +1,255 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.community.service.dm.v1;
+
+enum AvatarType {
+  AvatarTypeNone = 0;
+  AvatarTypeNFT = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum BubbleType {
+  BubbleTypeNone = 0;
+  BubbleTypeClickButton = 1;
+  BubbleTypeDmSettingPanel = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum CheckboxType {
+  CheckboxTypeNone = 0;
+  CheckboxTypeEncourage = 1;
+  CheckboxTypeColorDM = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum DmColorfulType {
+  NoneType = 0;
+  UNRECOGNIZED = -1;
+}
+
+enum DmFromType {
+  DmFromUnknown = 0;
+  DmFromNormal = 1;
+  DmFromCmd = 2;
+  DmFromLive = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum DmMaskWallBizType {
+  Unknown = 0;
+  OGV = 1;
+  BizPic = 2;
+  Mute = 3;
+  Record = 4;
+  Cloud = 5;
+  AIGC = 6;
+  UNRECOGNIZED = -1;
+}
+
+enum DmMaskWallContentType {
+  DmMaskWallContentTypeUnknown = 0;
+  DmMaskWallContentTypeText = 1;
+  DmMaskWallContentTypePic = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ExposureType {
+  ExposureTypeNone = 0;
+  ExposureTypeDMSend = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum FontSizeType {
+  FontSizeDefault = 0;
+  FontSizeOGV = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PostPanelBizType {
+  PostPanelBizTypeNone = 0;
+  PostPanelBizTypeEncourage = 1;
+  PostPanelBizTypeColorDM = 2;
+  PostPanelBizTypeNFTDM = 3;
+  PostPanelBizTypeFragClose = 4;
+  PostPanelBizTypeRecommend = 5;
+  PostPanelBizTypePlotLeak = 6;
+  PostPanelBizTypeAntiHarassment = 7;
+  UNRECOGNIZED = -1;
+}
+
+enum PostStatus {
+  PostStatusNormal = 0;
+  PostStatusClosed = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ProductionType {
+  PRODUCTION_TYPE_DEFAULT = 0;
+  PRODUCTION_TYPE_UPLOAD = 1;
+  PRODUCTION_TYPE_AI = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum PurposeType {
+  PurposeCover = 0;
+  PurposeOGV = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum RenderType {
+  RenderTypeNone = 0;
+  RenderTypeSingle = 1;
+  RenderTypeRotation = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SubtitleAiStatus {
+  None = 0;
+  Exposure = 1;
+  Assist = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SubtitleAiType {
+  Normal = 0;
+  Translate = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SubtitleRole {
+  Default = 0;
+  Main = 1;
+  Secondary = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SubtitleType {
+  CC = 0;
+  AI = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ToastFunctionType {
+  ToastFunctionTypeNone = 0;
+  ToastFunctionTypePostPanel = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/BuzzwordShowConfig.java
+message BuzzwordShowConfig {
+  string name = 1;
+  string schema = 2;
+  int32 source = 3;
+  int64 id = 4;
+  int64 buzzwordId = 5;
+  int32 schemaType = 6;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/CommandDm.java
+message CommandDm {
+  int64 id = 1;
+  int64 oid = 2;
+  int64 mid = 3;
+  string command = 4;
+  string content = 5;
+  int32 progress = 6;
+  string ctime = 7;
+  string mtime = 8;
+  string extra = 9;
+  string idstr = 10;
+  int32 type = 11;
+  bool autocreate = 12;
+  int32 countdown = 13;
+  int32 attr = 14;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/DanmakuElem.java
+message DanmakuElem {
+  int64 id = 1;
+  int32 progress = 2;
+  int32 mode = 3;
+  int32 fontsize = 4;
+  uint32 color = 5;
+  string midHash = 6;
+  string content = 7;
+  int64 ctime = 8;
+  int32 weight = 9;
+  string action = 10;
+  int32 pool = 11;
+  string idStr = 12;
+  int32 attr = 13;
+  int64 likeCount = 15;
+  string animation = 22;
+  string extra = 23;
+  DmColorfulType colorful = 24;
+  int32 type = 25;
+  int64 oid = 26;
+  DmFromType dmFrom = 27;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/DanmakuFlag.java
+message DanmakuFlag {
+  int64 dmid = 1;
+  uint32 flag = 2;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/DMRestrictPeriod.java
+message DMRestrictPeriod {
+  int64 start = 1;
+  int64 end = 2;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/Expression.java
+message Expression {
+  repeated string keyword = 1;
+  string url = 2;
+  repeated Period period = 3;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/PostPanelV2.java
+message PostPanelV2 {
+  int64 start = 1;
+  int64 end = 2;
+  PostPanelBizType bizType = 3;
+  ClickButtonV2 clickButton = 4;
+  TextInputV2 textInput = 5;
+  CheckBoxV2 checkBox = 6;
+  ToastV2 toast = 7;
+  BubbleV2 bubble = 8;
+  LabelV2 label = 9;
+  PostStatus postStatus = 10;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/ReportDuration.java
+message ReportDuration {
+  int64 startSecond = 1;
+  int64 endSecond = 2;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/SubtitleItem.java
+message SubtitleItem {
+  int64 id = 1;
+  string idStr = 2;
+  string lan = 3;
+  string lanDoc = 4;
+  string subtitleUrl = 5;
+  UserInfo author = 6;
+  SubtitleType type = 7;
+  string lanDocBrief = 8;
+  SubtitleAiType aiType = 9;
+  SubtitleAiStatus aiStatus = 10;
+  SubtitleRole role = 11;
+  SubtitleHeight subtitleHeight = 12;
+}
+
+// Source: com/bapis/bilibili/community/service/dm/v1/ViewHerdDmElem.java
+message ViewHerdDmElem {
+  string herdMsg = 1;
+  int32 herdStartCnt = 2;
+  int32 herdEndCnt = 3;
+  string regexRule = 4;
+  int32 startProgress = 5;
+  int32 endProgress = 6;
+}
+

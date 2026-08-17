@@ -1,0 +1,464 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.im.v1;
+
+enum AiIdType {
+  AI_ID_TYPE_UNKNOWN = 0;
+  AI_ID_TYPE_MAIN = 1;
+  AI_ID_TYPE_CUSTOMER = 2;
+  AI_ID_TYPE_BOTH = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum AirDropFrom {
+  ADF_UNKNOWN = 0;
+  ADF_INSIDE_APP = 1;
+  ADF_OUTSIDE_APP = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum AlertToastType {
+  ALERT_TOAST_TYPE_UNSPECIFIED = 0;
+  ALERT_TOAST_TYPE_BANNED = 1;
+  ALERT_TOAST_TYPE_REPORT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum AssistantType {
+  ASSISTANT_TYPE_UNKNOWN = 0;
+  ASSISTANT_TYPE_LIVE = 1;
+  ASSISTANT_TYPE_UP = 2;
+  ASSISTANT_TYPE_PAY = 3;
+  ASSISTANT_TYPE_REPORT = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum BubbleStyle {
+  BUBBLE_STYLE_ROUND_CORNER = 0;
+  BUBBLE_STYLE_SHARP_CORNER = 1;
+  BUBBLE_STYLE_BACKGROUND_CLEAR = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ContactTabType {
+  TAB_UNKNOWN = 0;
+  TAB_GROUP = 1;
+  TAB_FOLLOW = 2;
+  TAB_FANS = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum EntityMsgType {
+  ENTITY_MSG_TYPE_UNSPECIFIED = 0;
+  ENTITY_MSG_TYPE_TEXT = 1;
+  ENTITY_MSG_TYPE_PICTURE = 2;
+  ENTITY_MSG_TYPE_RECALL = 3;
+  ENTITY_MSG_TYPE_SHARE = 4;
+  ENTITY_MSG_TYPE_APPLET = 5;
+  ENTITY_MSG_TYPE_NOTIFICATION = 6;
+  ENTITY_MSG_TYPE_WORKS_PUSH = 7;
+  ENTITY_MSG_TYPE_BANNER = 8;
+  ENTITY_MSG_TYPE_RECOMMEND = 9;
+  ENTITY_MSG_TYPE_TIPS = 10;
+  ENTITY_MSG_TYPE_SEARCH_GPT = 11;
+  ENTITY_MSG_TYPE_AI_INTRODUCE = 12;
+  ENTITY_MSG_TYPE_CUSTOM_STICKER = 13;
+  UNRECOGNIZED = -1;
+}
+
+enum FetchDirection {
+  FETCH_DIRECTION_EARLIER = 0;
+  FETCH_DIRECTION_LATER = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum GhostMsgType {
+  GHOST_MSG_TYPE_UNSPECIFIED = 0;
+  GHOST_MSG_TYPE_DELETE_MSG = 1;
+  GHOST_MSG_TYPE_RECALL_MSG = 2;
+  GHOST_MSG_TYPE_UPDATE_MSG = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum IMSettingType {
+  SETTING_TYPE_NEED_ALL = 0;
+  SETTING_TYPE_REPLY_ME = 1;
+  SETTING_TYPE_NEW_FANS = 2;
+  SETTING_TYPE_RECEIVE_LIKE = 3;
+  SETTING_TYPE_MSG_REMIND = 4;
+  SETTING_TYPE_MSG_INTERCEPTION = 5;
+  SETTING_TYPE_FANS_GROUP_MSG = 6;
+  SETTING_TYPE_FANS_GROUP_MSG_RECEIVE = 7;
+  SETTING_TYPE_FANS_GROUP_MSG_FOLD = 8;
+  SETTING_TYPE_FANS_GROUP_MSG_JOIN_GUIDE = 9;
+  SETTING_TYPE_UNFOLLOWED_MSG = 10;
+  SETTING_TYPE_UNFOLLOWED_MSG_FOLD = 11;
+  SETTING_TYPE_BLACK_LIST = 12;
+  SETTING_TYPE_ANTI_HARASSMENT = 13;
+  SETTING_TYPE_ANTI_HARASSMENT_SWITCH = 14;
+  SETTING_TYPE_ANTI_HARASSMENT_OPEN_TIP_TEXT = 15;
+  SETTING_TYPE_CLOSE_FANS_GROUP = 16;
+  SETTING_TYPE_OLD_REPLY_ME = 17;
+  SETTING_TYPE_OLD_AT_ME = 18;
+  SETTING_TYPE_OLD_RECEIVE_LIKE = 19;
+  SETTING_TYPE_ANTI_HARASSMENT_INTERACT_LIMITS = 20;
+  SETTING_TYPE_ANTI_HARASSMENT_DURATION = 21;
+  SETTING_TYPE_ANTI_HARASSMENT_COMMENT_LIMITS = 22;
+  SETTING_TYPE_ANTI_HARASSMENT_DANMU_LIMITS = 23;
+  SETTING_TYPE_UNFOLLOWED_MSG_RECEIVE = 24;
+  SETTING_TYPE_ANTI_HARASSMENT_IM_LIMITS = 25;
+  SETTING_TYPE_KEYWORD_BLOCKING = 26;
+  SETTING_TYPE_RECEIVE_PUSH = 27;
+  SETTING_TYPE_PIN_SESSION = 28;
+  SETTING_TYPE_MUTE_SESSION = 29;
+  SETTING_TYPE_BLOCK_USER = 30;
+  SETTING_TYPE_REPORT_USER = 31;
+  SETTING_TYPE_USER_INFO = 32;
+  SETTING_TYPE_CHAT_BG = 33;
+  UNRECOGNIZED = -1;
+}
+
+enum LabelType {
+  LABEL_TYPE_DEFAULT = 0;
+  LABEL_TYPE_HUA_HUO = 1;
+  LABEL_TYPE_ORIGINAL_FANS = 2;
+  LABEL_TYPE_SPECIAL_ATTENTION = 3;
+  LABEL_TYPE_CONTRACT_UP = 4;
+  LABEL_TYPE_OLD_FANS = 5;
+  LABEL_TYPE_SPECIAL_ATTENTION_2 = 6;
+  LABEL_TYPE_FANS_MEDAL = 7;
+  LABEL_TYPE_GUARD_MEDAL = 8;
+  UNRECOGNIZED = -1;
+}
+
+enum MsgSummaryPrefixType {
+  MSG_SUMMARY_PREFIX_TYPE_NONE = 0;
+  MSG_SUMMARY_PREFIX_TYPE_NOTIFICATION = 1;
+  MSG_SUMMARY_PREFIX_TYPE_GROUP_BLOCKED = 2;
+  MSG_SUMMARY_PREFIX_TYPE_MENTIONED = 3;
+  MSG_SUMMARY_PREFIX_TYPE_UNREAD = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum QuickLinkItemType {
+  QUICK_LINK_ITEM_TYPE_UNKNOWN = 0;
+  QUICK_LINK_ITEM_TYPE_OLD_LIKE = 1;
+  QUICK_LINK_ITEM_TYPE_OLD_REPLY = 2;
+  QUICK_LINK_ITEM_TYPE_AT = 3;
+  QUICK_LINK_ITEM_TYPE_SYSTEM = 4;
+  QUICK_LINK_ITEM_TYPE_HUA_HUO = 5;
+  QUICK_LINK_ITEM_TYPE_FOLLOW = 6;
+  QUICK_LINK_ITEM_TYPE_REPLY = 100;
+  QUICK_LINK_ITEM_TYPE_LIKE = 101;
+  UNRECOGNIZED = -1;
+}
+
+enum QuickLinkMsgType {
+  LikeMsg = 0;
+  ReplyMsg = 1;
+  AtMsg = 2;
+  DanmuMsg = 3;
+  CoinMsg = 4;
+  FavoriteMsg = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum SessionFilterType {
+  FILTER_DEFAULT = 0;
+  FILTER_FOLLOW = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SessionPageType {
+  SESSION_PAGE_TYPE_UNKNOWN = 0;
+  SESSION_PAGE_TYPE_HOME = 1;
+  SESSION_PAGE_TYPE_UNFOLLOWED = 2;
+  SESSION_PAGE_TYPE_STRANGER = 3;
+  SESSION_PAGE_TYPE_DUSTBIN = 4;
+  SESSION_PAGE_TYPE_GROUP = 5;
+  SESSION_PAGE_TYPE_HUA_HUO = 6;
+  SESSION_PAGE_TYPE_AI = 7;
+  SESSION_PAGE_TYPE_CUSTOMER = 8;
+  UNRECOGNIZED = -1;
+}
+
+enum SessionType {
+  SESSION_TYPE_UNKNOWN = 0;
+  SESSION_TYPE_PRIVATE = 1;
+  SESSION_TYPE_GROUP = 2;
+  SESSION_TYPE_GROUP_FOLD = 3;
+  SESSION_TYPE_UNFOLLOWED = 4;
+  SESSION_TYPE_STRANGER = 5;
+  SESSION_TYPE_DUSTBIN = 6;
+  SESSION_TYPE_CUSTOMER_FOLD = 7;
+  SESSION_TYPE_SYSTEM = 8;
+  SESSION_TYPE_AI_FOLD = 9;
+  SESSION_TYPE_CUSTOMER_ACCOUNT = 10;
+  SESSION_TYPE_ASSISTANT_ID = 11;
+  SESSION_TYPE_AI_ID = 12;
+  SESSION_TYPE_TMP_ANNUAL_REPORT = 99;
+  UNRECOGNIZED = -1;
+}
+
+enum ShortcutType {
+  SHORTCUT_TYPE_UNSPECIFIED = 0;
+  SHORTCUT_TYPE_PUSH_ENABLE = 1;
+  SHORTCUT_TYPE_PUSH_DISABLE = 2;
+  SHORTCUT_TYPE_BLOCK = 3;
+  SHORTCUT_TYPE_FOLLOW = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum ThreeDotItemType {
+  THREE_DOT_ITEM_TYPE_UNKNOWN = 0;
+  THREE_DOT_ITEM_TYPE_READ_ALL = 1;
+  THREE_DOT_ITEM_TYPE_MSG_SETTING = 2;
+  THREE_DOT_ITEM_TYPE_AUTO_REPLY = 3;
+  THREE_DOT_ITEM_TYPE_UP_HELPER = 4;
+  THREE_DOT_ITEM_TYPE_LIVE_HELPER = 5;
+  THREE_DOT_ITEM_TYPE_FANS_GROUP_HELPER = 6;
+  THREE_DOT_ITEM_TYPE_CONTRIBUTION_PUSH = 7;
+  THREE_DOT_ITEM_TYPE_CONTACTS = 8;
+  THREE_DOT_ITEM_TYPE_CLEAR_LIST = 9;
+  THREE_DOT_ITEM_TYPE_ANTI_HARASSMENT = 10;
+  THREE_DOT_ITEM_TYPE_REPORT_HELPER = 11;
+  UNRECOGNIZED = -1;
+}
+
+enum TipsType {
+  TIPS_TYPE_UNSPECIFIED = 0;
+  TIPS_TYPE_BANNED = 1;
+  TIPS_TYPE_BLOCKED = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TranslateSwitch {
+  TRANSLATE_UNKNOWN = 0;
+  TRANSLATE_TRANSLATED = 1;
+  TRANSLATE_ORIGINAL = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum UnreadStyle {
+  UNREAD_STYLE_NONE = 0;
+  UNREAD_STYLE_DOT = 1;
+  UNREAD_STYLE_NUMBER = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AIBizInfo.java
+message AIBizInfo {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AirDropShareUserInfo.java
+message AirDropShareUserInfo {
+  int64 mid = 1;
+  string face = 2;
+  string url = 3;
+  string name = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/BizInfo.java
+message BizInfo {
+  oneof oneof_0 {
+    AIBizInfo aiBizInfo = 1;
+  }
+  enum InfoCase {
+    AI_BIZ_INFO = 1;
+    INFO_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ChatHintMessages.java
+message ChatHintMessages {
+  PushInfoMessage pushInfoMessage = 1;
+  PushSettingChangedMessage pushSettingChangedMessage = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/EntityMsg.java
+message EntityMsg {
+  MsgId msgId = 1;
+  EntityMsgType msgType = 2;
+  MsgFrame msgFrame = 3;
+  int64 timestamp = 4;
+  bool isHidden = 5;
+  map<string, string> traceParams = 6;
+  string sendToken = 7;
+  bool isRealtimeMsg = 8;
+  bool isTemporary = 9;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Msg.java
+message Msg {
+  oneof oneof_0 {
+    EntityMsg entityMsg = 1;
+    GhostMsg ghostMsg = 2;
+  }
+  enum ContentCase {
+    ENTITY_MSG = 1;
+    GHOST_MSG = 2;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgBuildDepInfoReq.java
+message MsgBuildDepInfoReq {
+  int64 mode = 1;
+  long mid = 2;
+  int32 vmid = 3;
+  int32 fetchMessage = 4;
+  int32 msgBuild = 5;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgId.java
+message MsgId {
+  int64 msgKey = 1;
+  int64 sequenceNumber = 2;
+  int64 subSequenceNumber = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Offset.java
+message Offset {
+  int64 normalOffset = 1;
+  int64 topOffset = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/OperationContent.java
+message OperationContent {
+  bool show = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PaginationParams.java
+message PaginationParams {
+  map<int32, Offset> offsets = 1;
+  bool hasMore = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PictureModule.java
+message PictureModule {
+  string url = 1;
+  int32 width = 2;
+  int32 height = 3;
+  int32 size = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/QuickLinkUnreadItem.java
+message QuickLinkUnreadItem {
+  QuickLinkItemType itemType = 1;
+  Unread unread = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SelectItem.java
+message SelectItem {
+  int32 itemType = 1;
+  string text = 2;
+  bool selected = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Session.java
+message Session {
+  SessionId id = 1;
+  SessionInfo sessionInfo = 2;
+  Unread unread = 3;
+  MsgSummary msgSummary = 4;
+  int64 timestamp = 5;
+  bool isPinned = 6;
+  int64 sequenceNumber = 7;
+  bool isMuted = 8;
+  string chatUrl = 9;
+  SessionOperation operation = 10;
+  map<string, string> traceParams = 11;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionId.java
+message SessionId {
+  oneof oneof_0 {
+    PrivateId privateId = 1;
+    GroupId groupId = 2;
+    FoldId foldId = 3;
+    SystemId systemId = 4;
+    CustomerId customerId = 5;
+    AiId aiId = 6;
+    AssistantId assistantId = 7;
+  }
+  enum IdCase {
+    PRIVATE_ID = 1;
+    GROUP_ID = 2;
+    FOLD_ID = 3;
+    SYSTEM_ID = 4;
+    CUSTOMER_ID = 5;
+    AI_ID = 6;
+    ASSISTANT_ID = 7;
+    ID_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionsFilter.java
+message SessionsFilter {
+  SessionFilterType stype = 1;
+  string title = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Setting.java
+message Setting {
+  oneof oneof_0 {
+    SettingSwitch switch = 1;
+    SettingSelect select = 2;
+    SettingRedirect redirect = 3;
+    SettingText text = 4;
+  }
+  enum ContentCase {
+    SWITCH = 1;
+    SELECT = 2;
+    REDIRECT = 3;
+    TEXT = 4;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareTarget.java
+message ShareTarget {
+  AvatarItem avatar = 1;
+  string name = 2;
+  SessionId sessionId = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShortcutItem.java
+message ShortcutItem {
+  string icon = 1;
+  string title = 2;
+  string subtitle = 3;
+  ShortcutType type = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Unread.java
+message Unread {
+  UnreadStyle style = 1;
+  int64 number = 2;
+  string numberShow = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UserLabelStyle.java
+message UserLabelStyle {
+  oneof oneof_0 {
+    BorderedLabel borderedLabel = 2;
+    FilledLabel filledLabel = 3;
+    ImageLabel imageLabel = 4;
+    Medal medalLabel = 5;
+  }
+  enum StyleCase {
+    BORDERED_LABEL = 2;
+    FILLED_LABEL = 3;
+    IMAGE_LABEL = 4;
+    MEDAL_LABEL = 5;
+    STYLE_NOT_SET = 0;
+  }
+
+}
+

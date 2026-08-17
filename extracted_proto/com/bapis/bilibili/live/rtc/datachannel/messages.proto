@@ -1,0 +1,77 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.rtc.datachannel;
+
+enum MuteReason {
+  UserMute = 0;
+  AdminMute = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/ClientStatsResp.java
+message ClientStatsResp {
+  uint32 reportInterval = 1;
+  uint32 score = 2;
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/MuteNotify.java
+message MuteNotify {
+  uint64 uid = 1;
+  oneof oneof_0 {
+    bool muteAudio = 2;
+    bool muteVideo = 3;
+  }
+  MuteReason reason = 4;
+  enum MuteStatusCase {
+    MUTE_AUDIO = 2;
+    MUTE_VIDEO = 3;
+    MUTESTATUS_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/MuteReq.java
+message MuteReq {
+  oneof oneof_0 {
+    bool muteAudio = 1;
+    bool muteVideo = 2;
+  }
+  enum MuteReqCase {
+    MUTE_AUDIO = 1;
+    MUTE_VIDEO = 2;
+    MUTEREQ_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/UpdateSubReq.java
+message UpdateSubReq {
+  uint32 uid = 1;
+  oneof oneof_0 {
+    uint32 subAudio = 2;
+  }
+  int32 subVideo = 3;
+  int32 layer = 4;
+  enum AudioOptionCase {
+    SUB_AUDIO = 2;
+    AUDIOOPTION_NOT_SET = 0;
+  }
+
+  enum VideoLayerOptionCase {
+    LAYER = 4;
+    VIDEOLAYEROPTION_NOT_SET = 0;
+  }
+
+  enum VideoOptionCase {
+    SUB_VIDEO = 3;
+    VIDEOOPTION_NOT_SET = 0;
+  }
+
+  enum VideoTemporalLayerOptionCase {
+    TEMPORAL_INDEX = 2;
+    VIDEOTEMPORALLAYEROPTION_NOT_SET = 0;
+  }
+
+}
+

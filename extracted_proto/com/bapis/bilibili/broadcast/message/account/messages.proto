@@ -1,0 +1,11 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.account;
+
+enum EventAction {
+  ACTION_UNKNOWN = 0;
+  ACTION_UPDATE_VIP = 1;
+  UNRECOGNIZED = -1;
+}
+

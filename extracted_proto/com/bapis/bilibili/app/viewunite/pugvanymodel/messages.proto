@@ -1,0 +1,137 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.viewunite.pugvanymodel;
+
+enum EpisodeStatus {
+  EPISODE_STATUS_UNSPECIFIED = 0;
+  EPISODE_STATUS_TRY_WATCH_WHOLE = 1;
+  EPISODE_STATUS_NOT_TRY_WATCH = 2;
+  EPISODE_STATUS_TRY_WATCH_5_MINUTES = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum EpisodeType {
+  EPISODE_TYPE_UNSPECIFIED = 0;
+  EPISODE_TYPE_VIDEO = 1;
+  EPISODE_TYPE_LIVE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum LiveStatus {
+  LIVE_STATUS_UNSPECIFIED = 0;
+  LIVE_STATUS_PREPARE = 1;
+  LIVE_STATUS_LIVE = 2;
+  LIVE_STATUS_PLAYBACK_GENERATING = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum OperationAreaButtonType {
+  OPERATION_AREA_BUTTON_TYPE_UNSPECIFIED = 0;
+  OPERATION_AREA_BUTTON_TYPE_FAVORITE = 1;
+  OPERATION_AREA_BUTTON_TYPE_CONSULT = 2;
+  OPERATION_AREA_BUTTON_TYPE_SHARE = 3;
+  OPERATION_AREA_BUTTON_TYPE_PURCHASE = 4;
+  OPERATION_AREA_BUTTON_TYPE_VIP = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum SeasonCouponStatus {
+  SEASON_COUPON_STATUS_UNSPECIFIED = 0;
+  SEASON_COUPON_STATUS_RECEIVED = 1;
+  SEASON_COUPON_STATUS_NOT_RECEIVED = 2;
+  SEASON_COUPON_STATUS_INVALID = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum SeasonCouponType {
+  SEASON_COUPON_TYPE_UNSPECIFIED = 0;
+  SEASON_COUPON_TYPE_DISCOUNT = 1;
+  SEASON_COUPON_TYPE_DECREASE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SeasonSectionType {
+  SEASON_SECTION_TYPE_UNSPECIFIED = 0;
+  SEASON_SECTION_TYPE_DEFAULT = 1;
+  SEASON_SECTION_TYPE_CUSTOM = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SeasonStatus {
+  SEASON_STATUS_UNSPECIFIED = 0;
+  SEASON_STATUS_OFFLINE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SeasonType {
+  SEASON_TYPE_UNSPECIFIED = 0;
+  SEASON_TYPE_INSTALLMENT = 1;
+  SEASON_TYPE_FREE = 2;
+  SEASON_TYPE_SUBSCRIPTION = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum VideoPlayWay {
+  VIDEO_PLAY_WAY_UNSPECIFIED = 0;
+  VIDEO_PLAY_WAY_VOD = 1;
+  VIDEO_PLAY_WAY_LIVE_PLAYBACK = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/Courseware.java
+message Courseware {
+  int64 fileId = 1;
+  string fileName = 2;
+  string fileType = 3;
+  int64 fileSize = 4;
+  string desc = 5;
+  string fileUrl = 6;
+  string icon = 7;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/DanmakuControl.java
+message DanmakuControl {
+  bool disabled = 1;
+  ExtraContent extraContent = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/ExtraContent.java
+message ExtraContent {
+  string disabledReason = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/NetdiskCourseware.java
+message NetdiskCourseware {
+  int64 coursewareId = 1;
+  string name = 2;
+  string remark = 3;
+  string desc = 4;
+  string url = 5;
+  string icon = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/OperationAreaButton.java
+message OperationAreaButton {
+  OperationAreaButtonType type = 1;
+  string text = 2;
+  bool disabled = 3;
+  string link = 4;
+  ConsultBubble consultBubble = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SeasonSection.java
+message SeasonSection {
+  int64 sectionId = 1;
+  string title = 2;
+  SeasonSectionType type = 3;
+  repeated Courseware coursewares = 4;
+  repeated Episode episodes = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/WaterMark.java
+message WaterMark {
+  bool showWatermark = 1;
+  int64 watermarkInterval = 2;
+}
+

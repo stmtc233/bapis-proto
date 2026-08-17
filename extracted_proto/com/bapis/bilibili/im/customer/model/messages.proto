@@ -1,0 +1,228 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.im.customer.model;
+
+enum ComplianceAlertType {
+  None = 0;
+  AIModel = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ConfirmButtonAction {
+  CONFIRM_BUTTON_ACTION_DEFAULT = 0;
+  CONFIRM_BUTTON_ACTION_CANCEL = 1;
+  CONFIRM_BUTTON_ACTION_END_SESSION_FROM_INPUT_BOX = 2;
+  CONFIRM_BUTTON_ACTION_END_SESSION_FROM_BACK = 3;
+  CONFIRM_BUTTON_ACTION_KEEP_SESSION_FROM_BACK = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum CustomerRankStatus {
+  OFFLINE = 0;
+  CROWD = 1;
+  ONLINE = 2;
+  SWITCH_ONLINE = 3;
+  RANKING = 4;
+  SWITCH_RANKING = 5;
+  OUT_CUSTOMER_QUEUE = 6;
+  OUT_CUSTOMER_QUEUE_WITH_MESSAGE = 7;
+  OUT_WORK = 8;
+  CUSTOMER_INVITE = 9;
+  WORK_BATCH_STOP_RANK = 10;
+  FORCE_SWITCH_CUSTOMER = 11;
+  RANKING_ONLY = 12;
+  NO_CUSTOMER_ONLY = 13;
+  OFFLINE_PROCESS = 14;
+  UNRECOGNIZED = -1;
+}
+
+enum EvaluateType {
+  EvaluateMachineMsg = 0;
+  EvaluateCustomer = 1;
+  EvaluateCustomerInvited = 2;
+  EvaluatePanelMsg = 3;
+  EvaluateMachineSess = 4;
+  EvaluateMachineSessInvited = 5;
+  NewUserEvaluateCustomSession = 6;
+  NewCustomerInviteEvaluateCustomSession = 7;
+  NewSystemInviteEvaluateCustomSession = 8;
+  NewUserEvaluateMachineSession = 9;
+  NewSystemInviteEvaluateMachineSession = 10;
+  UNRECOGNIZED = -1;
+}
+
+enum MsgSource {
+  INVALID = 0;
+  IOS = 1;
+  ANDROID = 2;
+  IPAD = 3;
+  ANDROID_HD = 4;
+  PC_APP = 5;
+  WEB = 6;
+  Biz = 7;
+  ThirdShopStage = 8;
+  AI = 9;
+  UNRECOGNIZED = -1;
+}
+
+enum MsgType {
+  MSG_TYPE_INVALID = 0;
+  MSG_TYPE_TEXT = 1;
+  MSG_TYPE_IMG = 2;
+  MSG_TYPE_WITHDRAW = 5;
+  MSG_TYPE_FAV_EMOJI = 6;
+  MSG_TYPE_SHARE = 7;
+  MSG_TYPE_VIDEO = 17;
+  MSG_TYPE_ORDER = 10001;
+  MSG_TYPE_GOODS = 10002;
+  MSG_TYPE_EVALUATION = 10003;
+  MSG_TYPE_MESSAGE = 10004;
+  MSG_TYPE_MACHINE_A = 10005;
+  MSG_TYPE_MACHINE_Q = 10006;
+  MSG_TYPE_CUSTOMER_COME = 10007;
+  MSG_TYPE_MACHINE_WELCOME_TEXT = 10008;
+  MSG_TYPE_MACHINE_WELCOME_QLIST = 10009;
+  MSG_TYPE_SPLIT_Q = 10010;
+  MSG_TYPE_SPLIT_A = 10011;
+  MSG_TYPE_SWITCH_CUSTOMER = 10012;
+  MSG_TYPE_CUSTOMER_INVITE_EVALUATION = 10013;
+  MSG_TYPE_OUT_CUSTOMER_SESS = 10015;
+  MSG_TYPE_MESSAGE_GUIDE = 10016;
+  MSG_TYPE_SYS_NOTE = 10019;
+  MSG_TYPE_MACHINE_SESS_EVALUATION = 10020;
+  MSG_TYPE_PARAGRAPH_TEXT = 10021;
+  MSG_TYPE_BUSINESS_LINK = 10022;
+  MSG_TYPE_SYS_BAR = 10023;
+  MSG_TYPE_COMMENT_QUOTE = 10026;
+  MSG_TYPE_ARCHIVE = 10027;
+  UNRECOGNIZED = -1;
+}
+
+enum NotifyMsgType {
+  UN_USABLE = 0;
+  RANK_UPDATE = 400;
+  MSG_TALK = 401;
+  SUBMIT_WORK_ORDER_DRAFT = 402;
+  UNRECOGNIZED = -1;
+}
+
+enum Select {
+  ABLE = 0;
+  SELECTED = 1;
+  UNABLE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum Situation {
+  Invalid = 0;
+  IM = 1;
+  ServiceCenter = 2;
+  Order = 3;
+  Push = 4;
+  Goods = 5;
+  VipMall = 6;
+  Else = 7;
+  Live = 8;
+  Space = 9;
+  UNRECOGNIZED = -1;
+}
+
+enum SplitAnsMsgContentType {
+  BUSINESS = 0;
+  GROUP = 1;
+  CUSTOM = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TalkerType {
+  MACHINE = 0;
+  CUSTOMER = 1;
+  SYS_NOTICE = 2;
+  USER = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/im/customer/model/InputBoxButton.java
+message InputBoxButton {
+  string icon = 1;
+  string title = 2;
+  InputBoxAction action = 3;
+  string url = 4;
+  ConfirmPanel confirm = 5;
+  InputBoxUrlType urlType = 6;
+  enum InputBoxAction {
+    InputBoxActionDefault = 0;
+    InputBoxActionUrl = 1;
+    InputBoxActionWebLayer = 2;
+    InputBoxActionEndSession = 3;
+    InputBoxActionEvaluation = 4;
+    UNRECOGNIZED = -1;
+  }
+
+  enum InputBoxUrlType {
+    InputBoxUrlTypeDefault = 0;
+    InputBoxUrlTypeArchive = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/im/customer/model/SessionInfo.java
+message SessionInfo {
+  TalkerInfo talkerInfo = 1;
+  Msg lastMsg = 2;
+  UnreadInfo unreadInfo = 3;
+  uint64 ackSeqno = 4;
+  uint64 ackTs = 5;
+  uint64 sessionTs = 6;
+  uint64 maxSeqno = 7;
+  int32 status = 8;
+  string tagicon = 9;
+  int32 topSet = 10;
+  string jumpUrl = 11;
+  bool doNotDisturb = 12;
+  string settingPageSchema = 13;
+  string settingPageUrl = 14;
+  string tagName = 15;
+  ComplianceModel compliance = 16;
+  bool isHideEdit = 17;
+}
+
+// Source: com/bapis/bilibili/im/customer/model/WindowOption.java
+message WindowOption {
+  WindowOptionUrlType urlType = 1;
+  string title = 2;
+  string url = 3;
+  WindowOptionAction action = 4;
+  repeated IntList tags = 5;
+  bool isClickReport = 6;
+  string clickReportId = 7;
+  WindowOptionMessageExtra messageExtra = 8;
+  WindowOptionEvaluationExtra evaluationExtra = 9;
+  enum WindowOptionAction {
+    WindowOptionActionDefault = 0;
+    WindowOptionActionUrl = 1;
+    WindowOptionActionWebLayer = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  enum WindowOptionTag {
+    WindowOptionTagDefault = 0;
+    WindowOptionTagNew = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  enum WindowOptionUrlType {
+    WindowOptionUrlTypeDefault = 0;
+    WindowOptionUrlTypeGoods = 1;
+    WindowOptionUrlTypeOrder = 2;
+    WindowOptionUrlTypeEvaluation = 3;
+    WindowOptionUrlTypeMessage = 4;
+    WindowOptionUrlTypeHistory = 5;
+    WindowOptionUrlTypeArchive = 6;
+    UNRECOGNIZED = -1;
+  }
+
+}
+

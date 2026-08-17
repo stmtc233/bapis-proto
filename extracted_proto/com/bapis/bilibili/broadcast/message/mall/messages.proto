@@ -1,0 +1,16 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.mall;
+
+enum MsgType {
+  USER_CALL = 0;
+  DEL_ROOM = 1;
+  OPPOSITE_LEAVE = 2;
+  PUSH_ITEMS = 3;
+  MERCHANT_ADD = 4;
+  USER_ADD = 5;
+  MERCHANT_REJET = 6;
+  UNRECOGNIZED = -1;
+}
+

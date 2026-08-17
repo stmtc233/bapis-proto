@@ -1,0 +1,112 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.live.universal_interact;
+
+enum CloseUserReason {
+  CloseUserReason_Invalid = 0;
+  CloseUserReason_DissolveChannel = 1;
+  CloseUserReason_Remove = 2;
+  CloseUserReason_Banned = 3;
+  CloseUserReason_Normal = 4;
+  CloseUserReason_BySelf = 5;
+  CloseUserReason_ByOther = 6;
+  UNRECOGNIZED = -1;
+}
+
+enum Gender {
+  Gender_Woman = 0;
+  Gender_Man = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum InteractScene {
+  InteractSceneVoice1V1 = 0;
+  InteractSceneVideoB2B = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum LayoutCellOpen {
+  LayoutCellOpenInvalid = 0;
+  LayoutCellOpenVisible = 1;
+  LayoutCellOpenInvisible = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayMode {
+  play_mode_default = 0;
+  play_mode_explicit = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SubMode {
+  sub_mode_none = 0;
+  sub_mode_audio = 1;
+  sub_mode_video = 2;
+  sub_mode_all = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum UniversalInteractActionType {
+  UniversalInteractActionTypeApply = 0;
+  UniversalInteractActionTypeInvitation = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum UniversalInteractOperationType {
+  UniversalInteractOperationInvalid = 0;
+  UniversalInteractOperationAccept = 1;
+  UniversalInteractOperationReject = 2;
+  UniversalInteractOperationCancel = 3;
+  UniversalInteractOperationTimeoutCancel = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum UniversalItemStatus {
+  UniversalItemStatus_Unknown = 0;
+  UniversalItemStatus_NotLiving = 1;
+  UniversalItemStatus_NotAllow = 2;
+  UniversalItemStatus_Connected = 3;
+  UniversalItemStatus_Connected_NoPosition = 4;
+  UniversalItemStatus_AllowInvitation = 5;
+  UniversalItemStatus_Applying = 6;
+  UniversalItemStatus_Inviting = 7;
+  UniversalItemStatus_Connecting = 8;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/universal_interact/InteractSceneConfiguration.java
+message InteractSceneConfiguration {
+  string interactMode = 1;
+  string interactTemplate = 2;
+  int64 interactMaxUsers = 3;
+  enum InteractMode {
+    InteractModeB2B = 0;
+    InteractModeB2C = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/broadcast/live/universal_interact/UniversalInteractStreamControl.java
+message UniversalInteractStreamControl {
+  int64 audioControl = 1;
+  UserStreamControlItem videoControl = 2;
+  int32 pubSubControl = 3;
+  enum MuteLocalMode {
+    mute_mode_none = 0;
+    mute_mode_packet = 1;
+    mute_mode_capture = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  enum PubStatus {
+    pub_status_none = 0;
+    pub_status_audio = 1;
+    pub_status_video = 2;
+    pub_status_all = 3;
+    UNRECOGNIZED = -1;
+  }
+
+}
+

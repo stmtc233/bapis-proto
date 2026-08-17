@@ -1,0 +1,14 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.component.common_model.effect;
+
+// Source: com/bapis/bilibili/live/component/common_model/effect/FileConfItem.java
+message FileConfItem {
+  string mp4 = 1;
+  string mp4Md5 = 2;
+  string mp4Json = 3;
+  int64 mp4Crc32 = 4;
+  int64 mp4FileSize = 5;
+}
+

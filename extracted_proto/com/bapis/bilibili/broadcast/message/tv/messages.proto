@@ -1,0 +1,79 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.tv;
+
+enum LiveSource {
+  LiveSourceMLive = 0;
+  LiveSourceBizTrigger = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DanmakuElem.java
+message DanmakuElem {
+  int64 id = 1;
+  int32 progress = 2;
+  int32 mode = 3;
+  int32 fontsize = 4;
+  uint32 color = 5;
+  string midHash = 6;
+  string content = 7;
+  int64 ctime = 8;
+  int32 weight = 9;
+  string action = 10;
+  int32 pool = 11;
+  string idStr = 12;
+  int32 attr = 13;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmActivityReply.java
+message DmActivityReply {
+  string roomId = 1;
+  repeated string activityList = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmLiveElem.java
+message DmLiveElem {
+  int64 roomId = 1;
+  int64 roomUid = 2;
+  int64 uid = 3;
+  string uname = 4;
+  int32 userLevel = 5;
+  uint32 color = 6;
+  string content = 7;
+  int64 time = 8;
+  string msgId = 9;
+  int32 msgType = 10;
+  int32 areaId = 11;
+  int32 parentAreaId = 12;
+  int32 dmType = 13;
+  string idStr = 14;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/NotifyPop.java
+message NotifyPop {
+  int64 id = 1;
+  int32 style = 2;
+  string img = 3;
+  int32 textType = 4;
+  string textTop = 5;
+  string textBottom = 6;
+  int32 expire = 7;
+  repeated NotifyPopBtn notifyBtnList = 8;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/ProjReply.java
+message ProjReply {
+  int64 cmdType = 1;
+  int64 mid = 2;
+  int64 aid = 3;
+  int64 cid = 4;
+  int64 videoType = 5;
+  int64 epId = 6;
+  int64 seasonId = 7;
+  int64 seekTs = 8;
+  string extra = 9;
+  int64 roomId = 10;
+  string deviceInfo = 11;
+}
+

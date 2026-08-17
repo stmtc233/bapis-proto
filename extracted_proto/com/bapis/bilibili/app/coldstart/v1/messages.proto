@@ -1,0 +1,21 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.coldstart.v1;
+
+// Source: com/bapis/bilibili/app/coldstart/v1/ColdStartBizResp.java
+message ColdStartBizResp {
+  string bizKey = 1;
+  Any bizResp = 2;
+  oneof oneof_0 {
+    GrpcStatus grpcStatus = 3;
+    HttpStatus httpStatus = 4;
+  }
+  enum StatusCase {
+    GRPC_STATUS = 3;
+    HTTP_STATUS = 4;
+    STATUS_NOT_SET = 0;
+  }
+
+}
+

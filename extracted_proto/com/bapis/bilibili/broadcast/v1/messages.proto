@@ -1,0 +1,21 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.v1;
+
+enum Action {
+  UNKNOWN = 0;
+  UPDATE = 1;
+  DELETE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum LinkType {
+  LINK_TYPE_UNKNOWN = 0;
+  LINK_TYPE_BANGUMI = 1;
+  LINK_TYPE_VIDEO = 2;
+  LINK_TYPE_LIVE = 3;
+  LINK_MESSAGE = 4;
+  UNRECOGNIZED = -1;
+}
+

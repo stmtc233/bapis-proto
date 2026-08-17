@@ -1,0 +1,53 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.im.customer.interfaces;
+
+// Source: com/bapis/bilibili/im/customer/interfaces/Announcement.java
+message Announcement {
+  bool enable = 1;
+  string content = 2;
+  bool jumpEnable = 3;
+  string jumpUrl = 4;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/CloseConversationReq.java
+message CloseConversationReq {
+  uint64 shopId = 1;
+  uint64 shopFatherId = 2;
+  uint64 customSessionId = 3;
+  CloseConversationSource source = 4;
+  uint32 msgSource = 5;
+  uint32 situation = 6;
+  enum CloseConversationSource {
+    CLOSE_CONVERSATION_SOURCE_DEFAULT = 0;
+    CLOSE_CONVERSATION_SOURCE_INPUT_BOX = 1;
+    CLOSE_CONVERSATION_SOURCE_BACK = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/CloseConversationRsp.java
+message CloseConversationRsp {
+  string evaluationUrl = 1;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/FinishParagraphsRenderStopPos.java
+message FinishParagraphsRenderStopPos {
+  uint64 para = 1;
+  uint64 node = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/PreEvaluateRsp.java
+message PreEvaluateRsp {
+  EvaluationShowInfo rsp = 1;
+  EvaluationShowInfoV2 rspV2 = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/Shop.java
+message Shop {
+  uint64 shopFatherId = 1;
+  uint64 shopId = 2;
+}
+

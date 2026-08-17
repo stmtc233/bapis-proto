@@ -1,0 +1,120 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.community.interfacess.biligram.v1;
+
+enum IconPosition {
+  IconPositionPrefix = 0;
+  IconPositionSuffix = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ItemContentType {
+  ItemContentTypeUnknown = 0;
+  ItemContentTypeText = 1;
+  ItemContentTypeHighlight = 2;
+  ItemContentTypeEmoji = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum MessageActionType {
+  MessageActionTypeUnknown = 0;
+  MessageActionTypeLike = 1;
+  MessageActionTypeUnlike = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum MessageItemType {
+  MessageItemTypeUnknown = 0;
+  MessageItemTypeAuthor = 1;
+  MessageItemTypeNotice = 2;
+  MessageItemTypeContent = 3;
+  MessageItemTypePicture = 4;
+  MessageItemTypeAddition = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum MessageStatus {
+  MessageStatusNormal = 0;
+  MessageStatusAudit = 1;
+  MessageStatusSelfSeen = 2;
+  MessageStatusDelete = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum MessageType {
+  MessageTypeNone = 0;
+  MessageTypeText = 1;
+  MessageTypeImage = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ServerStatus {
+  ServerStatusUnknown = 0;
+  ServerStatusOnline = 1;
+  ServerStatusOffline = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TopicStatus {
+  TopicStatusUnknown = 0;
+  TopicStatusNormal = 1;
+  TopicStatusAudit = 2;
+  TopicStatusDeleted = 3;
+  TopicStatusAuditDeleted = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum TopicTailType {
+  TopicTailTypeUnknown = 0;
+  TopicTailTypeUnreadGray = 1;
+  TopicTailTypeUnreadRed = 2;
+  TopicTailTypeEdit = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum UpServerType {
+  UpServerTypeUnknown = 0;
+  UpServerTypeCreate = 1;
+  UpServerTypeUp = 2;
+  UpServerTypeFollow = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/biligram/v1/DialogButton.java
+message DialogButton {
+  string title = 1;
+  string content = 2;
+  ActionButton confirm = 3;
+  string cancel = 4;
+  string text = 5;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/biligram/v1/Message.java
+message Message {
+  int64 id = 1;
+  int64 timestamp = 2;
+  MessageStatus status = 3;
+  repeated MessageItem items = 4;
+  MessageType type = 5;
+  int64 order = 6;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/biligram/v1/Picture.java
+message Picture {
+  string uri = 1;
+  double width = 2;
+  double height = 3;
+  double size = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/biligram/v1/UpServer.java
+message UpServer {
+  int64 id = 1;
+  int64 mid = 2;
+  UpServerType type = 3;
+  string face = 4;
+  int64 unreadCount = 5;
+  string name = 6;
+}
+

@@ -1,0 +1,12 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.polymer.list;
+
+// Source: com/bapis/bilibili/polymer/list/FavoriteTabItem.java
+message FavoriteTabItem {
+  string name = 1;
+  string uri = 2;
+  string type = 3;
+}
+

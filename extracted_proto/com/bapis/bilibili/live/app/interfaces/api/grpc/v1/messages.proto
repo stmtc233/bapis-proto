@@ -1,0 +1,11 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.app.interfaces.api.grpc.v1;
+
+enum RoomType {
+  Watched = 0;
+  Popularity = 1;
+  UNRECOGNIZED = -1;
+}
+

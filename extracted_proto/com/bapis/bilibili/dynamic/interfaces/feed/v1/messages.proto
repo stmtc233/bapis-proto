@@ -1,0 +1,197 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.dynamic.interfaces.feed.v1;
+
+enum ConfigABEntry {
+  CONFIG_AB_ENTRY_NONE = 0;
+  CONFIG_AB_ENTRY_PUB_PAGE_TITLE = 1;
+  CONFIG_AB_ENTRY_SELECT_PIC_PANEL = 2;
+  CONFIG_AB_BIG_PLUS_PUB_ARTICLE = 3;
+  CONFIG_AB_LIVE_PHOTO = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum DynamicButtonClickBizType {
+  DYNAMIC_BUTTON_CLICK_BIZ_TYPE_NONE = 0;
+  DYNAMIC_BUTTON_CLICK_BIZ_TYPE_LIVE = 1;
+  DYNAMIC_BUTTON_CLICK_BIZ_TYPE_DYN_UP = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum MaxPicCountType {
+  MAX_PIC_COUNT_NINE = 0;
+  MAX_PIC_COUNT_EIGHTEEN = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum OpusInitVerifyType {
+  OPUS_INIT_VERIFY_NONE = 0;
+  OPUS_INIT_VERIFY_BANNED = 1;
+  OPUS_INIT_VERIFY_LEVEL_UNSUFFICIENT = 2;
+  OPUS_INIT_VERIFY_UNREAL_NAME = 3;
+  OPUS_INIT_VERIFY_UNBIND_PHONE = 4;
+  OPUS_INIT_VERIFY_POST_COUNT_EXCEEDED = 5;
+  OPUS_INIT_VERIFY_EDIT_COUNT_EXCEEDED = 6;
+  OPUS_INIT_VERIFY_EDITOR_VERSION_UNQUALIFIED = 7;
+  UNRECOGNIZED = -1;
+}
+
+enum POI_TYPE {
+  TENCENT = 0;
+  CITY = 1;
+  NATION = 2;
+  BILI = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveButtonMode {
+  RESERVE_BUTTON_MODE_NONE = 0;
+  RESERVE_BUTTON_MODE_RESERVE = 1;
+  RESERVE_BUTTON_MODE_UP_CANCEL = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveButtonStatus {
+  RESERVE_BUTTON_STATUS_NONE = 0;
+  RESERVE_BUTTON_STATUS_UNCHECK = 1;
+  RESERVE_BUTTON_STATUS_CHECK = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ActiveReportMessage.java
+message ActiveReportMessage {
+  ReportAction action = 1;
+  string metricData = 2;
+  enum ReportAction {
+    REPORT_ACTION_NONE = 0;
+    REPORT_ACTION_EXPOSURE = 1;
+    REPORT_ACTION_CLICK = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Category.java
+message Category {
+  int64 id = 1;
+  int64 parentId = 2;
+  string name = 3;
+  int64 position = 4;
+  repeated Category children = 5;
+  string bannerUrl = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CollectionArticleItem.java
+message CollectionArticleItem {
+  int64 id = 1;
+  string title = 2;
+  int64 state = 3;
+  int64 publishTime = 4;
+  int64 position = 5;
+  int64 words = 6;
+  repeated string imageUrls = 7;
+  Category category = 8;
+  repeated Category categories = 9;
+  string summary = 10;
+  int64 type = 11;
+  int64 dynId = 12;
+  string dynIdStr = 13;
+  int64 attributes = 14;
+  int64 authorUid = 15;
+  int64 onlyFans = 16;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateInitCheckReq.java
+message CreateInitCheckReq {
+  CreateInitCheckScene scene = 1;
+  MetaDataCtrl meta = 2;
+  RepostInitCheck repost = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePermissionButtonClickRsp.java
+message CreatePermissionButtonClickRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GoodsItem.java
+message GoodsItem {
+  int64 itemsId = 1;
+  string name = 2;
+  string brief = 3;
+  string img = 4;
+  float price = 5;
+  string priceStr = 6;
+  string iconName = 7;
+  string iconUrl = 8;
+  string jumpLink = 9;
+  string jumpLinkDesc = 10;
+  int64 actId = 11;
+  int64 actMid = 12;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/NearbyPoiDetail.java
+message NearbyPoiDetail {
+  LbsLocation location = 1;
+  POI_TYPE type = 2;
+  string poi = 3;
+  string address = 4;
+  string title = 5;
+  string showTitle = 6;
+  double distance = 7;
+  string showDistance = 8;
+  AdInfoDetail adInfo = 9;
+  repeated PoiId ancestors = 10;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/NearbyPoiListItem.java
+message NearbyPoiListItem {
+  NearbyPoiDetail poiInfo = 1;
+  int32 userCount = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusCollectionItem.java
+message OpusCollectionItem {
+  int64 id = 1;
+  int64 mid = 2;
+  string name = 3;
+  string summary = 4;
+  string imageUrl = 5;
+  int64 opusCount = 6;
+  bool maxOpusCountReached = 7;
+  int64 words = 8;
+  int64 read = 9;
+  int64 state = 10;
+  string reason = 11;
+  int64 updateTime = 12;
+  int64 ctime = 13;
+  int64 publishTime = 14;
+  string applyTime = 15;
+  string checkTime = 16;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusInitVerifyItem.java
+message OpusInitVerifyItem {
+  OpusInitVerifyType verifyType = 1;
+  int64 result = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/PoiDetail.java
+message PoiDetail {
+  LbsLocation location = 1;
+  POI_TYPE type = 2;
+  string poi = 3;
+  string address = 4;
+  string title = 5;
+  string showTitle = 6;
+  double distance = 7;
+  string showDistance = 8;
+  AdInfoDetail adInfo = 9;
+  PoiId ancestors = 10;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/PoiListItem.java
+message PoiListItem {
+  PoiDetail poiInfo = 1;
+  int32 userCount = 2;
+}
+

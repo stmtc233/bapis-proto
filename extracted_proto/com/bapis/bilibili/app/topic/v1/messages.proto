@@ -1,0 +1,164 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.topic.v1;
+
+enum FeedCardType {
+  FEED_CARD_TYPE_UNKNOWN = 0;
+  FEED_CARD_TYPE_USER_RATING = 1;
+  FEED_CARD_TYPE_LEAD_COLLECTION = 2;
+  FEED_CARD_TYPE_ITEM = 3;
+  FEED_CARD_TYPE_TASK = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum FeedCardUserRatingOptionType {
+  FEED_CARD_USER_RATING_OPTION_TYPE_UNKNOWN = 0;
+  FEED_CARD_USER_RATING_OPTION_TYPE_VERY_DISSATISFIED = 1;
+  FEED_CARD_USER_RATING_OPTION_TYPE_DISSATISFIED = 2;
+  FEED_CARD_USER_RATING_OPTION_TYPE_AVERAGE = 3;
+  FEED_CARD_USER_RATING_OPTION_TYPE_SATISFIED = 4;
+  FEED_CARD_USER_RATING_OPTION_TYPE_VERY_SATISFIED = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveButtonMode {
+  RESERVE_BUTTON_MODE_NONE = 0;
+  RESERVE_BUTTON_MODE_RESERVE = 1;
+  RESERVE_BUTTON_MODE_UP_CANCEL = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveButtonStatus {
+  RESERVE_BUTTON_STATUS_NONE = 0;
+  RESERVE_BUTTON_STATUS_UNCHECK = 1;
+  RESERVE_BUTTON_STATUS_CHECK = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ResSetTopOptType {
+  ResSetTopNone = 0;
+  ResSetTop = 1;
+  ResSetTopCancel = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TopicCardType {
+  ILLEGAL_TYPE = 0;
+  DYNAMIC = 1;
+  FOLD = 2;
+  VIDEO_SMALL_CARD = 3;
+  FEED_CARD = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum TopicCategory {
+  Default = 0;
+  Questions = 1;
+  IPTopic = 2;
+  Commerce = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum TopicDetailsExtMode {
+  MODE_ILLEGAL_TYPE = 0;
+  STORY = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum TopicTopCardType {
+  Unknown_Type = 0;
+  Capsules_Type = 1;
+  Traffic_Card_Type = 2;
+  Game_Card_Type = 3;
+  Time_Line_Type = 4;
+  Large_Cover_Inline_Type = 5;
+  Reservation_Card_Type = 6;
+  Esport_Card_Type = 7;
+  IPTopic_Card_Type = 8;
+  Head_Click_Area_Card_Type = 9;
+  Item_Card_Type = 10;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/HeadClickAreaRow.java
+message HeadClickAreaRow {
+  repeated HeadClickRect rects = 1;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/HeadClickRect.java
+message HeadClickRect {
+  int32 w = 1;
+  int32 h = 2;
+  string pic = 3;
+  ClickPath path = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/IPTopicInfo.java
+message IPTopicInfo {
+  string name = 1;
+  string statsDesc = 2;
+  string jumpUrl = 3;
+  string icon = 4;
+  int64 id = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/MatchTeamInfo.java
+message MatchTeamInfo {
+  int64 id = 1;
+  string title = 2;
+  string cover = 3;
+  int64 score = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/OperationCard.java
+message OperationCard {
+  oneof oneof_0 {
+    LargeCoverInline largeCoverInline = 1;
+  }
+  enum CardCase {
+    LARGE_COVER_INLINE = 1;
+    CARD_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/PlayerRatingInMatch.java
+message PlayerRatingInMatch {
+  string playerFace = 1;
+  string playerName = 2;
+  string hotRemark = 3;
+  string rating = 4;
+  string jumpUri = 5;
+  int64 playerId = 6;
+  int64 matchId = 7;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/SortContent.java
+message SortContent {
+  int64 sortBy = 1;
+  string sortName = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/Texts.java
+message Texts {
+  string bookingText = 1;
+  string unbookingText = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicCapsule.java
+message TopicCapsule {
+  string name = 1;
+  string jumpUrl = 2;
+  string iconUrl = 3;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicCardList.java
+message TopicCardList {
+  repeated TopicCardItem topicCardItems = 1;
+  string offset = 2;
+  bool hasMore = 3;
+  TopicSortByConf topicSortByConf = 4;
+  NoCardResultReply noCardResultReply = 5;
+}
+

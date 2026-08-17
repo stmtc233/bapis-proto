@@ -1,0 +1,114 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.community.interfacess.cosmoconn.v1;
+
+enum Action {
+  ACTION_INVALID = 0;
+  ACTION_THUMB = 1;
+  ACTION_CANCEL_THUMB = 2;
+  ACTION_FAV = 3;
+  ACTION_CANCEL_FAV = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum EntityBiz {
+  ENTITY_BIZ_INVALID = 0;
+  ENTITY_BIZ_VIDEO = 1;
+  ENTITY_BIZ_OPUS = 2;
+  ENTITY_BIZ_DYNAMIC = 3;
+  ENTITY_BIZ_REPLY = 4;
+  ENTITY_BIZ_TOPIC = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum InvFeedBackType {
+  INV_FEED_BACK_TYPE_INVALID = 0;
+  HOME_PAGE_BUBBLE_SHOW = 1;
+  HOME_PAGE_REDDOT_CLICK = 2;
+  MY_PAGE_REDDOT_CLICK = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum JoinTribeeByInviteCodeResult {
+  JOIN_BY_INV_FAIL_DEFAULT = 0;
+  JOIN_BY_INV_SUCCESS = 1;
+  JOIN_BY_INV_FAIL_CODE_STATUS_ERR = 2;
+  JOIN_BY_INV_FAIL_JOINED = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum TribeeMemberStatus {
+  DEFAULT = 0;
+  JOINED = 1;
+  OWNER = 2;
+  MAINTAINER = 3;
+  BANNED = 100;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/Button.java
+message Button {
+  bool disable = 1;
+  int32 opType = 2;
+  string text = 3;
+  string jumpUrl = 4;
+  TimeLimited timeLimit = 5;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/CosmoBusiness.java
+message CosmoBusiness {
+  string business = 1;
+  string subBusiness = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeByVisaReq.java
+message JoinTribeeByVisaReq {
+  int64 targetTribeeId = 1;
+  VisaScene scene = 2;
+  enum VisaScene {
+    VISA_SCENE_JOIN = 0;
+    VISA_SCENE_PUBLISH = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/QuizQuestionItem.java
+message QuizQuestionItem {
+  int32 questionType = 1;
+  string stem = 2;
+  repeated QuizQuestionOption options = 3;
+  repeated int32 answer = 4;
+  int64 creatorUid = 5;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageThreadFeaturedReq.java
+message TribeeManageThreadFeaturedReq {
+  int64 opusId = 1;
+  ActionType action = 2;
+  enum ActionType {
+    ACTION_TYPE_NONE = 0;
+    ACTION_TYPE_FEATURED = 1;
+    ACTION_TYPE_UNFEATURED = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeMemberInfo.java
+message TribeeMemberInfo {
+  int64 uid = 1;
+  int64 tribeeId = 2;
+  int64 memberSn = 3;
+  TribeeMemberStatus status = 4;
+  int64 joinTs = 5;
+  string uidStr = 6;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeSelection.java
+message TribeeSelection {
+  int64 tribeeId = 1;
+  int64 categoryId = 2;
+}
+

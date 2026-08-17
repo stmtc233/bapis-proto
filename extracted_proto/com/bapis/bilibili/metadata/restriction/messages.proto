@@ -1,0 +1,13 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.metadata.restriction;
+
+enum ModeType {
+  NORMAL = 0;
+  TEENAGERS = 1;
+  LESSONS = 2;
+  BASIC = 3;
+  UNRECOGNIZED = -1;
+}
+

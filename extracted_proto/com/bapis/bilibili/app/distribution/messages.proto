@@ -1,0 +1,25 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution;
+
+// Source: com/bapis/bilibili/app/distribution/BoolValue.java
+message BoolValue {
+  bool value = 1;
+  int64 lastModified = 2;
+  bool defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/Int64Value.java
+message Int64Value {
+  int64 value = 1;
+  int64 lastModified = 2;
+  int64 defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/SetUserPreferenceReply.java
+message SetUserPreferenceReply {
+}
+

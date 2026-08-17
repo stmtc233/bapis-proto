@@ -1,0 +1,37 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.story.v1;
+
+// Source: com/bapis/bilibili/app/story/v1/DiversionEntranceInfo.java
+message DiversionEntranceInfo {
+  StoryCardInfo cardInfo = 1;
+  DiversionEntrance diversionEntrance = 2;
+}
+
+// Source: com/bapis/bilibili/app/story/v1/LanguageItem.java
+message LanguageItem {
+  string lang = 1;
+  string title = 2;
+  string buttonTitle = 3;
+  string subtitleLang = 4;
+  bool videoDetext = 5;
+}
+
+// Source: com/bapis/bilibili/app/story/v1/RerankCardInfo.java
+message RerankCardInfo {
+  int32 displayId = 1;
+  int32 displayPos = 2;
+  string cardGoto = 3;
+  string param = 4;
+  map<string, string> playerArgs = 5;
+  oneof oneof_0 {
+    RerankAdInfo adInfo = 6;
+  }
+  enum InfoCase {
+    AD_INFO = 6;
+    INFO_NOT_SET = 0;
+  }
+
+}
+

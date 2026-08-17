@@ -1,0 +1,24 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.dagw.component.avatar.v1.plugin;
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/plugin/GyroscopeEntityV2.java
+message GyroscopeEntityV2 {
+  string displayType = 1;
+  repeated GyroscopeContentV2 contents = 2;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/plugin/Interaction.java
+message Interaction {
+  string nftId = 1;
+  bool enabled = 2;
+  string itype = 3;
+  string metadataUrl = 4;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/plugin/NFTImageV2.java
+message NFTImageV2 {
+  repeated GyroscopeEntityV2 gyroscope = 1;
+}
+

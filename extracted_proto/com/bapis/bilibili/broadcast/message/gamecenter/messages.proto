@@ -1,0 +1,12 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.gamecenter;
+
+enum PushEvent {
+  PushEventUnknown = 0;
+  PushEventDownload = 1;
+  PushEventBookDownload = 2;
+  UNRECOGNIZED = -1;
+}
+

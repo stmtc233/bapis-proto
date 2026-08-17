@@ -1,0 +1,169 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.main.community.reply.v1;
+
+enum DetailListScene {
+  REPLY = 0;
+  MSG_FEED = 1;
+  NOTIFY = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum EditorIconState {
+  EditorIconState_DEFAULT = 0;
+  EditorIconState_ENABLE = 1;
+  EditorIconState_DISABLE = 2;
+  EditorIconState_HIDE = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum Mode {
+  DEFAULT = 0;
+  UNSPECIFIED = 1;
+  MAIN_LIST_TIME = 2;
+  MAIN_LIST_HOT = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum ReplyNotificationSwitch {
+  ReplyNotificationSwitch_UNSPECIFIED = 0;
+  ReplyNotificationSwitch_OFF = 1;
+  ReplyNotificationSwitch_ON = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SearchItemType {
+  DEFAULT_ITEM_TYPE = 0;
+  GOODS = 1;
+  VIDEO = 2;
+  ARTICLE = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum SearchItemVideoSubType {
+  UGC = 0;
+  PGC = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum TranslationSwitch {
+  TRANSLATION_SWITCH_UNSPECIFIED = 0;
+  TRANSLATION_SWITCH_UNSUPPORTED = 1;
+  TRANSLATION_SWITCH_SHOW_TRANSLATION = 2;
+  TRANSLATION_SWITCH_SHOW_ORIGIN = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum UserCallbackAction {
+  Dismiss = 0;
+  UNRECOGNIZED = -1;
+}
+
+enum UserCallbackScene {
+  Insert = 0;
+  RecommendSuperbReply = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AtGroup.java
+message AtGroup {
+  Type groupType = 1;
+  string groupName = 2;
+  repeated AtItem items = 3;
+  enum Type {
+    AT_GROUP_TYPE_DEFAULT = 0;
+    AT_GROUP_TYPE_RECENT = 1;
+    AT_GROUP_TYPE_FOLLOW = 2;
+    AT_GROUP_TYPE_FANS = 3;
+    AT_GROUP_TYPE_OTHERS = 4;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/CursorReq.java
+message CursorReq {
+  int64 next = 1;
+  int64 prev = 2;
+  Mode mode = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/DoVoteResp.java
+message DoVoteResp {
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Emote.java
+message Emote {
+  int64 size = 1;
+  string url = 2;
+  string jumpUrl = 3;
+  string jumpTitle = 4;
+  int64 id = 5;
+  int64 packageId = 6;
+  string gifUrl = 7;
+  string text = 8;
+  string webpUrl = 9;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QoeOption.java
+message QoeOption {
+  string title = 1;
+  float score = 2;
+  string imgUrl = 3;
+  repeated string desc = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInAppPushPayload.java
+message ReplyInAppPushPayload {
+  string reply = 1;
+  Reply parentReply = 2;
+  Subject subject = 3;
+  repeated SubjectMaterial subjectMaterial = 4;
+  enum ItemCase {
+    ARC = 1;
+    ITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInfo.java
+message ReplyInfo {
+  repeated ReplyInfo replies = 1;
+  int64 id = 2;
+  int64 oid = 3;
+  int64 type = 4;
+  int64 mid = 5;
+  int64 root = 6;
+  int64 parent = 7;
+  int64 dialog = 8;
+  int64 like = 9;
+  int64 ctime = 10;
+  int64 count = 11;
+  Content content = 12;
+  Member member = 13;
+  ReplyControl replyControl = 14;
+  MemberV2 memberV2 = 15;
+  string trackInfo = 16;
+  Content translatedContent = 17;
+  ParentReplyMember parentReplyMember = 18;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInfoReq.java
+message ReplyInfoReq {
+  int64 rpid = 1;
+  ReplyInfoScene scene = 2;
+  BizScene bizScene = 3;
+  enum BizScene {
+    DEFAULT = 0;
+    INSERT_NEW = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  enum ReplyInfoScene {
+    Insert = 0;
+    UNRECOGNIZED = -1;
+  }
+
+}
+

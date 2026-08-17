@@ -1,0 +1,21 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.vas.garb.service;
+
+// Source: com/bapis/bilibili/vas/garb/service/UserCard.java
+message UserCard {
+  int64 id = 1;
+  int64 itemId = 2;
+  string name = 3;
+  string cardUrl = 4;
+  string bigCardUrl = 5;
+  int64 cardType = 6;
+  int64 expireTime = 7;
+  string cardTypeName = 8;
+  string jumpUrl = 9;
+  UserFanShow fan = 10;
+  string imageEnhance = 12;
+  ImageGroup imageGroup = 13;
+}
+

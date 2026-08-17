@@ -1,0 +1,29 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.playerunite.ugcanymodel;
+
+enum ClipType {
+  CLIP_TYPE_UNSPECIFIED = 0;
+  CLIP_TYPE_HE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayLimitCode {
+  PLC_UNKNOWN = 0;
+  PLC_UGCNOTPAYED = 1;
+  PLC_ChargingPlusNotPass = 2;
+  PLC_ChargingPlusUpgrade = 3;
+  PLC_ChargingPlusReject = 4;
+  PLC_COMMON_CODE = 5;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/ugcanymodel/ClipInfo.java
+message ClipInfo {
+  ClipType clipType = 1;
+  int64 materialNo = 2;
+  int64 start = 3;
+  int64 end = 4;
+}
+

@@ -1,0 +1,13 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.dialing;
+
+// Source: com/bapis/bilibili/broadcast/message/dialing/TCPTaskPair.java
+message TCPTaskPair {
+  string frompeer = 1;
+  repeated string topeers = 2;
+  repeated string remotedaddrs = 3;
+  string localip = 4;
+}
+

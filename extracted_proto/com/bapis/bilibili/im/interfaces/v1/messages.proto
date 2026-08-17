@@ -1,0 +1,85 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.im.interfaces.v1;
+
+enum MSG_LIKE_ACTION {
+  ACTION_UNSPECIFIED = 0;
+  ACTION_LIKE = 1;
+  ACTION_CANCEL_LIKE = 2;
+  ACTION_DISLIKE = 3;
+  ACTION_CANCEL_DISLIKE = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum MSG_LIKE_STATE {
+  STATE_UNSPECIFIED = 0;
+  STATE_LIKE = 1;
+  STATE_DISLIKE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum UpdateUnreadScope {
+  All = 0;
+  Dustbin = 1;
+  Unfollowed = 2;
+  Stranger = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/GetUserCosmoStateRsp.java
+message GetUserCosmoStateRsp {
+  string business = 1;
+  int64 cardSendMid = 2;
+  int32 cosmoState = 3;
+  int32 opType = 4;
+  string text = 5;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/HasLikeState.java
+message HasLikeState {
+  MSG_LIKE_STATE state = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/MsgDetail.java
+message MsgDetail {
+  uint64 msgKey = 1;
+  uint64 seqno = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqSessionDetail.java
+message ReqSessionDetail {
+  uint64 talkerId = 1;
+  uint32 sessionType = 2;
+  uint64 uid = 3;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspMyGroupUnread.java
+message RspMyGroupUnread {
+  uint32 unreadCount = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ShareSessionInfo.java
+message ShareSessionInfo {
+  uint64 talkerId = 1;
+  string talkerUname = 2;
+  string talkerIcon = 3;
+  int32 officialType = 4;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/SimpleSession.java
+message SimpleSession {
+  uint64 talkerId = 1;
+  uint32 sessionType = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/SingleDiscussInImPage.java
+message SingleDiscussInImPage {
+  uint64 discussId = 1;
+  uint64 mid = 2;
+  string face = 3;
+  string name = 4;
+  uint32 unreadCount = 5;
+  uint32 type = 6;
+}
+

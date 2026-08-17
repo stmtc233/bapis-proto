@@ -1,0 +1,45 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.polymer.community.govern.v1;
+
+enum AntiHarassmentLimit {
+  DefaultLimit = 0;
+  FollowLimit = 1;
+  ReFollowLimit = 2;
+  TwoWayFollow = 3;
+  AllLimit = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum BizType {
+  InvalidBizType = 0;
+  Im = 1;
+  Dm = 2;
+  Reply = 3;
+  ReplyMe = 4;
+  LikeMe = 5;
+  AtMe = 6;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/polymer/community/govern/v1/AntiHarassmentInfo.java
+message AntiHarassmentInfo {
+  AntiHarassmentLimit limit = 1;
+  int32 followTimeLimitSecond = 2;
+  int64 expireTime = 3;
+}
+
+// Source: com/bapis/bilibili/polymer/community/govern/v1/AntiHarassmentSetting.java
+message AntiHarassmentSetting {
+  int64 mid = 1;
+  bool autoLimit = 2;
+  AntiHarassmentInfo im = 3;
+  AntiHarassmentInfo reply = 4;
+  AntiHarassmentInfo dm = 5;
+  AntiHarassmentInfo replyMe = 6;
+  AntiHarassmentInfo likeMe = 7;
+  AntiHarassmentInfo atMe = 8;
+  int64 autoLimitExpireTime = 9;
+}
+
