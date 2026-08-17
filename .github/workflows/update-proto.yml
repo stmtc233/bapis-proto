@@ -101,8 +101,23 @@ jobs:
           mkdir -p .work/dex
           unzip -q .work/bilibili.apk 'classes*.dex' -d .work/dex
           rm -rf decompiled
+          set +e
           JAVA_OPTS='-Xms512m -Xmx6g' \
             .work/jadx/bin/jadx --output-dir decompiled --threads-count 2 .work/dex/classes*.dex
+          jadx_status=$?
+          set -e
+          if [ -d decompiled/sources/com/bapis ]; then
+            bapis_file_count="$(find decompiled/sources/com/bapis -type f -name '*.java' | wc -l)"
+          else
+            bapis_file_count=0
+          fi
+          if [ "$bapis_file_count" -lt 1000 ]; then
+            echo "JADX exited with $jadx_status and generated only $bapis_file_count com.bapis source files." >&2
+            exit 1
+          fi
+          if [ "$jadx_status" -ne 0 ]; then
+            echo "::warning::JADX exited with $jadx_status, but generated $bapis_file_count com.bapis source files. Continuing."
+          fi
 
       - name: Reconstruct proto files
         if: steps.version.outputs.tag_exists != 'true'
