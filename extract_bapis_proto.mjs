@@ -2,8 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const sourceRoot = path.join(root, 'decompiled', 'sources', 'com', 'bapis');
-const outputRoot = path.join(root, 'extracted_proto', 'com', 'bapis');
+const sourceRoot = path.resolve(process.env.BAPIS_SOURCE_ROOT ?? path.join(root, 'decompiled', 'sources', 'com', 'bapis'));
+const outputRoot = path.resolve(process.env.BAPIS_OUTPUT_ROOT ?? path.join(root, 'extracted_proto', 'com', 'bapis'));
 const scalar = new Map([
   [0, 'double'], [1, 'float'], [2, 'int64'], [3, 'uint64'], [4, 'int32'],
   [5, 'fixed64'], [6, 'fixed32'], [7, 'bool'], [8, 'string'], [10, 'bytes'],

@@ -169,7 +169,6 @@ enum PugvBadgeType {
   PUGV_BADGE_TYPE_FIRST = 3;
   PUGV_BADGE_TYPE_SELECTED = 4;
   PUGV_BADGE_TYPE_AI = 5;
-  PUGV_BADGE_TYPE_VIP = 6;
   UNRECOGNIZED = -1;
 }
 
@@ -2326,7 +2325,6 @@ message VideoMentions {
   VideoMentionButton button = 2;
   string videoReq = 3;
   string title = 4;
-  map<string, string> ab = 5;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/VideoSeason.java

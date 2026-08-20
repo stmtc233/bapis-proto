@@ -304,7 +304,6 @@ message CM {
   PadRelateCM padRelateCm = 4;
   repeated SourceContentItem sourceContentItem = 5;
   Any cmHalfPanel = 6;
-  OverseasAdInfo overseasAdInfo = 7;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/CommandDm.java
@@ -923,7 +922,6 @@ message VideoGuide {
 message VideoMentionsReply {
   repeated Mention mentions = 1;
   string title = 2;
-  map<string, string> ab = 3;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/VideoMentionsReq.java

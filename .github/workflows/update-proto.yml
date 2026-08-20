@@ -19,9 +19,10 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  APK_URL: https://dl.hdslb.com/mobile/latest/android64/iBiliPlayer-bili.apk?t=20260817
+  APK_PAGE_URL: https://apkcombo.com/bilibili/com.bilibili.app.in/old-versions/
+  APK_PACKAGE: com.bilibili.app.in
   JADX_VERSION: 1.5.6
-  MIN_MESSAGE_COUNT: 4000
+  MIN_MESSAGE_COUNT: 3500
 
 jobs:
   update:
@@ -50,25 +51,45 @@ jobs:
 
       - name: Download APK and read version
         id: version
-        env:
-          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p .work
+          old_versions="$(curl --fail --location --retry 3 --retry-delay 5 \
+            --user-agent 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36' \
+            "$APK_PAGE_URL")"
+          release_path="$(printf '%s' "$old_versions" | grep -oE '/bilibili/com\.bilibili\.app\.in/download/phone-6[^" ]+-apk' | head -n 1)"
+          test -n "$release_path"
+          release_page="https://apkcombo.com${release_path}"
+          release_html="$(curl --fail --location --retry 3 --retry-delay 5 \
+            --user-agent 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36' \
+            "$release_page")"
+          apk_url="$(RELEASE_HTML="$release_html" node --input-type=module -e '
+            const html = process.env.RELEASE_HTML;
+            const match = html.match(/href="(\/r2\?u=[^"]+\.apks[^"]*)"/);
+            if (!match) process.exit(1);
+            console.log(new URL(match[1].replaceAll("&amp;", "&"), "https://apkcombo.com").href);
+          ')"
           curl --fail --location --retry 3 --retry-delay 5 \
-            --user-agent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36' \
-            --referer 'https://www.bilibili.com/' \
-            --output .work/bilibili.apk "$APK_URL"
-          badging="$(aapt dump badging .work/bilibili.apk)"
-          version_name="$(sed -nE "s/.*versionName='([^']+)'.*/\1/p" <<< "$badging" | head -n 1)"
-          version_code="$(sed -nE "s/.*versionCode='([^']+)'.*/\1/p" <<< "$badging" | head -n 1)"
-          test -n "$version_name"
-          test -n "$version_code"
-          case "$version_name" in *[!0-9A-Za-z._-]*|'') exit 1;; esac
+            --user-agent 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36' \
+            --output .work/bilibili.xapk "$apk_url"
+          manifest_json="$(unzip -p .work/bilibili.xapk manifest.json)"
+          version_name="$(jq -r '.version_name' <<< "$manifest_json")"
+          version_code="$(jq -r '.version_code' <<< "$manifest_json")"
+          base_apk="$(jq -r '.split_apks[] | select(.id == "base") | .file' <<< "$manifest_json")"
+          test "$version_name" != null
+          test "$version_code" != null
+          test -n "$base_apk"
+          case "$version_code" in ''|*[!0-9]*) echo "Invalid version code: $version_code" >&2; exit 1;; esac
+          mkdir -p .work/apks
+          unzip -q .work/bilibili.xapk "$base_apk" -d .work/apks
+          badging="$(aapt dump badging ".work/apks/$base_apk")"
+          package_name="$(sed -nE "s/^package: name='([^']+)'.*/\1/p" <<< "$badging" | head -n 1)"
+          test "$package_name" = "$APK_PACKAGE"
+          case "$version_name" in 6.[0-9]* ) ;; *) echo "Unexpected international version: $version_name" >&2; exit 1;; esac
 
-          tag="v${version_name}"
-          apk_sha256="$(sha256sum .work/bilibili.apk | cut -d ' ' -f 1)"
+          tag="international-v${version_name}"
+          apk_sha256="$(sha256sum .work/bilibili.xapk | cut -d ' ' -f 1)"
           git fetch --tags --force
           force_rebuild="${{ github.event_name == 'workflow_dispatch' && inputs.force }}"
           if git rev-parse -q --verify "refs/tags/$tag" >/dev/null && [ "$force_rebuild" != 'true' ]; then
@@ -79,6 +100,8 @@ jobs:
           {
             echo "version_name=$version_name"
             echo "version_code=$version_code"
+            echo "apk_file=$base_apk"
+            echo "apk_page_url=$release_page"
             echo "tag=$tag"
             echo "apk_sha256=$apk_sha256"
             echo "tag_exists=$tag_exists"
@@ -100,11 +123,12 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .work/dex
-          unzip -q .work/bilibili.apk 'classes*.dex' -d .work/dex
+          unzip -q ".work/apks/${{ steps.version.outputs.apk_file }}" 'classes*.dex' -d .work/dex
           rm -rf decompiled
           javac -cp .work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
-            -d .work/classes tools/DecompileBapis.java tools/ListBapisDex.java
-          runtime_dex=.work/dex/classes17.dex
+            -d .work/classes tools/DecompileBapis.java tools/ListBapisDex.java tools/FindProtoRuntimeDex.java
+          runtime_dex="$(java -cp .work/classes:.work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
+            FindProtoRuntimeDex .work/dex/classes*.dex)"
           test -f "$runtime_dex"
           bapis_dex_count=0
           while read -r dex _; do
@@ -144,11 +168,12 @@ jobs:
         shell: bash
         run: |
           jq -n \
-            --arg apk_url "$APK_URL" \
+            --arg apk_url "${{ steps.version.outputs.apk_page_url }}" \
+            --arg package_name "$APK_PACKAGE" \
             --arg apk_sha256 "$APK_SHA256" \
             --arg version_code "$VERSION_CODE" \
             --arg version_name "$VERSION_NAME" \
-            '{apk_url: $apk_url, apk_sha256: $apk_sha256, version_code: $version_code, version_name: $version_name}' \
+            '{apk_url: $apk_url, package_name: $package_name, apk_sha256: $apk_sha256, version_code: $version_code, version_name: $version_name}' \
             > extracted_proto/SOURCE.json
 
       - name: Commit and tag new schema

@@ -335,7 +335,6 @@ message DanmuPlayerConfig {
   int32 playerDanmakuDensity = 26;
   bool playerDanmakuSubtitleProof = 27;
   bool playerDanmakuPeopleProof = 28;
-  int32 playerDanmakuSwitchState = 29;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/DanmuPlayerConfigPanel.java
@@ -385,8 +384,6 @@ message DanmuWebPlayerConfig {
   bool blocktopBottom = 24;
   int32 dmAreaV2 = 25;
   int32 dmDensity = 26;
-  bool subtitleProof = 27;
-  int32 dmSwitchState = 28;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/DmColorful.java
@@ -457,7 +454,6 @@ message DmPlayerConfigReq {
   PlayerDanmakuDensity density = 24;
   PlayerDanmakuSubtitleProof subtitleProof = 25;
   PlayerDanmakuPeopleProof peopleProof = 26;
-  PlayerDanmakuSwitchState switchState = 27;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/DMRestrict.java
@@ -771,12 +767,6 @@ message PlayerDanmakuSwitch {
 // Source: com/bapis/bilibili/community/service/dm/v1/PlayerDanmakuSwitchSave.java
 message PlayerDanmakuSwitchSave {
   bool value = 1;
-}
-
-// Source: com/bapis/bilibili/community/service/dm/v1/PlayerDanmakuSwitchState.java
-message PlayerDanmakuSwitchState {
-  int32 value = 1;
-  bool canignore = 2;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/PlayerDanmakuUseDefaultConfig.java

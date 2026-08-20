@@ -5829,9 +5829,6 @@ message TribeeExtendInfo {
   string tribeeName = 2;
   int64 categoryId = 3;
   string categoryName = 4;
-  bool showEntryApplyAuditButton = 5;
-  string entryApplyApproveIcon = 6;
-  string entryApplyRejectIcon = 7;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeExtInfo.java

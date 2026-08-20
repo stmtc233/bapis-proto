@@ -38,7 +38,6 @@ message PageSectionEpisodesReq {
 message SeasonSectionsReply {
   repeated SectionData sections = 1;
   Reserve reserve = 2;
-  map<int32, SectionPagination> sectionPagination = 3;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/view/v1/SeasonSectionsReq.java

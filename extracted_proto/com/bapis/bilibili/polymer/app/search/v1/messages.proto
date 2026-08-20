@@ -344,7 +344,6 @@ message DisplayOption {
   int32 pureLikeExp = 17;
   int32 feedbackExp = 18;
   int32 cardStyleExp = 19;
-  int32 ugcPicRevampExpGroup = 20;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/DoubleOpusItem.java
@@ -497,13 +496,6 @@ message FollowButtonV2 {
   string icon = 1;
   map<int32, string> texts = 2;
   string statusReport = 3;
-  string textColor = 4;
-  string textColorNight = 5;
-  string bgColor = 6;
-  string bgColorNight = 7;
-  string borderColor = 8;
-  string borderColorNight = 9;
-  int32 styleType = 10;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/FullTextResult.java
@@ -563,7 +555,6 @@ message InlineThreePointPanel {
   string shareId = 2;
   string shareOrigin = 3;
   repeated ShareButtonItem functionalButtons = 4;
-  Feedback searchFeedback = 5;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/Item.java
@@ -645,8 +636,6 @@ message Item {
   string userAct = 63;
   bool isHorizontalCover = 72;
   int32 cardGroupId = 75;
-  string originGoto = 76;
-  map<string, string> reportExtra = 77;
   enum CardItemCase {
     SPECIAL = 7;
     ARTICLE = 8;
@@ -1236,8 +1225,6 @@ message SearchAuthorNewCard {
   AvatarItem avatarInfo = 34;
   int64 translationStatus = 35;
   string handle = 36;
-  FollowButtonV2 followButton = 37;
-  string moduleTitle = 38;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchBangumiCard.java
@@ -2193,9 +2180,6 @@ message SearchUpperCard {
   AvatarItem avatarInfo = 20;
   string userCardDesc = 21;
   string handle = 22;
-  FollowButtonV2 followButton = 23;
-  Feedback feedback = 24;
-  string moduleTitle = 25;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchUPRecommend.java
@@ -2207,8 +2191,6 @@ message SearchUPRecommend {
   int32 showFollowButton = 5;
   repeated UPRecommendItem items = 6;
   string title = 7;
-  int32 followButtonStyle = 8;
-  bool showTitle = 9;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchVideoCard.java
