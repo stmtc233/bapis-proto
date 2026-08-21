@@ -9,6 +9,26 @@ const scalar = new Map([
   [5, 'fixed64'], [6, 'fixed32'], [7, 'bool'], [8, 'string'], [10, 'bytes'],
   [11, 'uint32'], [13, 'sfixed32'], [14, 'sfixed64'], [15, 'sint32'], [16, 'sint64'],
 ]);
+const wellKnownTypes = new Map([
+  ['Any', { type: 'google.protobuf.Any', import: 'google/protobuf/any.proto' }],
+  ['BoolValue', { type: 'google.protobuf.BoolValue', import: 'google/protobuf/wrappers.proto' }],
+  ['BytesValue', { type: 'google.protobuf.BytesValue', import: 'google/protobuf/wrappers.proto' }],
+  ['Duration', { type: 'google.protobuf.Duration', import: 'google/protobuf/duration.proto' }],
+  ['DoubleValue', { type: 'google.protobuf.DoubleValue', import: 'google/protobuf/wrappers.proto' }],
+  ['Empty', { type: 'google.protobuf.Empty', import: 'google/protobuf/empty.proto' }],
+  ['FieldMask', { type: 'google.protobuf.FieldMask', import: 'google/protobuf/field_mask.proto' }],
+  ['FloatValue', { type: 'google.protobuf.FloatValue', import: 'google/protobuf/wrappers.proto' }],
+  ['Int32Value', { type: 'google.protobuf.Int32Value', import: 'google/protobuf/wrappers.proto' }],
+  ['Int64Value', { type: 'google.protobuf.Int64Value', import: 'google/protobuf/wrappers.proto' }],
+  ['ListValue', { type: 'google.protobuf.ListValue', import: 'google/protobuf/struct.proto' }],
+  ['StringValue', { type: 'google.protobuf.StringValue', import: 'google/protobuf/wrappers.proto' }],
+  ['Struct', { type: 'google.protobuf.Struct', import: 'google/protobuf/struct.proto' }],
+  ['Timestamp', { type: 'google.protobuf.Timestamp', import: 'google/protobuf/timestamp.proto' }],
+  ['UInt32Value', { type: 'google.protobuf.UInt32Value', import: 'google/protobuf/wrappers.proto' }],
+  ['UInt64Value', { type: 'google.protobuf.UInt64Value', import: 'google/protobuf/wrappers.proto' }],
+  ['Value', { type: 'google.protobuf.Value', import: 'google/protobuf/struct.proto' }],
+]);
+const wellKnownImports = new Map([...wellKnownTypes.values()].map(value => [value.type, value.import]));
 const keywords = new Set(['bool', 'bytes', 'double', 'enum', 'extend', 'fixed32', 'fixed64', 'float', 'group', 'import', 'int32', 'int64', 'map', 'message', 'oneof', 'option', 'package', 'public', 'repeated', 'returns', 'rpc', 'service', 'sfixed32', 'sfixed64', 'sint32', 'sint64', 'string', 'syntax', 'uint32', 'uint64']);
 
 function walk(directory) {
@@ -58,30 +78,34 @@ function protoType(name) {
   return name.replace(/\$/g, '_');
 }
 
-function nestedType(javaType) {
+function nestedType(javaType, source) {
   const type = javaType.replace(/<.*>/g, '').replace(/\[\]/g, '').trim();
   const simple = type.split('.').pop();
+  const wellKnown = wellKnownTypes.get(simple);
+  if (wellKnown && (type === `com.google.protobuf.${simple}` || new RegExp(`^import com\\.google\\.protobuf\\.${simple};`, 'm').test(source))) return wellKnown.type;
+  const importedBapis = type.startsWith('com.bapis.') ? type : source.match(new RegExp(`^import (com\\.bapis\\.[\\w$.]*\\.${simple});`, 'm'))?.[1];
+  if (importedBapis) return protoType(importedBapis);
   return ['Object', 'String', 'Integer', 'Long', 'Boolean', 'Float', 'Double', 'ByteString'].includes(simple) ? null : protoType(simple);
 }
 
-function mapType(javaType) {
+function mapType(javaType, source) {
   const name = javaType.replace(/<.*>/g, '').trim().split('.').pop();
-  return new Map([['String', 'string'], ['Integer', 'int32'], ['Long', 'int64'], ['Boolean', 'bool'], ['Float', 'float'], ['Double', 'double']]).get(name) ?? nestedType(javaType) ?? 'bytes';
+  return new Map([['String', 'string'], ['Integer', 'int32'], ['Long', 'int64'], ['Boolean', 'bool'], ['Float', 'float'], ['Double', 'double']]).get(name) ?? nestedType(javaType, source) ?? 'bytes';
 }
 
 function fieldJavaType(source, member, property) {
   const escaped = member.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const getter = property[0].toUpperCase() + property.slice(1);
   const getterMatch = source.match(new RegExp(`^    public ([A-Za-z0-9_$.]+) get${getter}\\(\\)`, 'm'));
-  const getterType = getterMatch ? nestedType(getterMatch[1]) : null;
+  const getterType = getterMatch ? nestedType(getterMatch[1], source) : null;
   const declaration = source.match(new RegExp(`^    private (?:final )?(.+?) ${escaped}(?:\\s*=.*)?;`, 'm'));
   if (declaration) {
     const type = declaration[1];
     const list = type.match(/(?:Internal\\.)?ProtobufList<(.+)>/);
     const map = type.match(/MapFieldLite<(.+),\s*(.+)>/);
-    if (list) return { repeated: true, type: nestedType(list[1]), getterType };
-    if (map) return { map: [mapType(map[1]), mapType(map[2])], getterType };
-    return { type: nestedType(type), getterType };
+    if (list) return { repeated: true, type: nestedType(list[1], source), getterType };
+    if (map) return { map: [mapType(map[1], source), mapType(map[2], source)], getterType };
+    return { type: nestedType(type, source), getterType };
   }
   return { type: getterType, getterType };
 }
@@ -215,11 +239,22 @@ for (const definition of topLevelEnums) {
   if (!packages.has(definition.packageName)) packages.set(definition.packageName, { messages: [], enums: [] });
   packages.get(definition.packageName).enums.push(definition);
 }
+function protoImport(type) {
+  if (wellKnownImports.has(type)) return wellKnownImports.get(type);
+  if (type.startsWith('com.bapis.')) return `${type.split('.').slice(2, -1).join('/')}/messages.proto`;
+  return null;
+}
 for (const [packageName, items] of packages) {
   const relative = packageName.replace(/^com\.bapis\.?/, '').split('.');
   const target = path.join(outputRoot, ...relative, 'messages.proto');
   fs.mkdirSync(path.dirname(target), { recursive: true });
+  const imports = new Set(items.messages.flatMap(message => message.fields.flatMap(field => {
+    const types = field.map ?? [field.type];
+    return types.map(protoImport).filter(Boolean);
+  })));
   const body = ['// Reconstructed from protobuf-lite metadata in the APK.', 'syntax = "proto3";', '', `package ${packageName};`, ''];
+  for (const importPath of [...imports].sort()) body.push(`import "${importPath}";`);
+  if (imports.size) body.push('');
   for (const definition of items.enums.sort((a, b) => a.name.localeCompare(b.name))) body.push(...renderEnum(definition));
   for (const message of items.messages.sort((a, b) => a.name.localeCompare(b.name))) {
     body.push(...renderMessage(message));
