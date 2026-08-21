@@ -131,7 +131,8 @@ function parseEnums(source, topLevelOnly = false) {
       .map(value => [value[1], Number(value[2])]));
     const values = [...body.matchAll(/^\s*([A-Za-z_][A-Za-z0-9_]*)\((-?\d+|[A-Za-z_][A-Za-z0-9_]*)\)\s*[,;]/gm)]
       .map(value => ({ name: value[1], number: constants.get(value[2]) ?? Number(value[2]) }))
-      .filter(value => Number.isFinite(value.number));
+      // Java's protobuf runtime adds this synthetic sentinel; it is not schema data.
+      .filter(value => Number.isFinite(value.number) && value.name !== 'UNRECOGNIZED');
     if (values.length) {
       const zeroIndex = values.findIndex(value => value.number === 0);
       if (zeroIndex < 0) throw new Error(`Enum ${match[1]} does not declare a zero value`);
