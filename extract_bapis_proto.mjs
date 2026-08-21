@@ -30,6 +30,14 @@ const wellKnownTypes = new Map([
 ]);
 const wellKnownImports = new Map([...wellKnownTypes.values()].map(value => [value.type, value.import]));
 const keywords = new Set(['bool', 'bytes', 'double', 'enum', 'extend', 'fixed32', 'fixed64', 'float', 'group', 'import', 'int32', 'int64', 'map', 'message', 'oneof', 'option', 'package', 'public', 'repeated', 'returns', 'rpc', 'service', 'sfixed32', 'sfixed64', 'sint32', 'sint64', 'string', 'syntax', 'uint32', 'uint64']);
+const javaScalars = new Map([
+  ['boolean', 'bool'], ['Boolean', 'bool'], ['byte[]', 'bytes'], ['ByteString', 'bytes'],
+  ['double', 'double'], ['Double', 'double'], ['float', 'float'], ['Float', 'float'],
+  ['int', 'int32'], ['Integer', 'int32'], ['long', 'int64'], ['Long', 'int64'],
+  ['String', 'string'],
+]);
+const typeRegistry = new Map();
+const typeImports = new Map(wellKnownImports);
 
 function walk(directory) {
   const files = [];
@@ -78,34 +86,58 @@ function protoType(name) {
   return name.replace(/\$/g, '_');
 }
 
-function nestedType(javaType, source) {
-  const type = javaType.replace(/<.*>/g, '').replace(/\[\]/g, '').trim();
+function resolveJavaType(javaType, record, node) {
+  const type = javaType.replace(/<.*>/g, '').trim();
   const simple = type.split('.').pop();
+  const scalarType = javaScalars.get(type) ?? javaScalars.get(simple);
+  if (scalarType) return scalarType;
+  if (simple === 'Object') return null;
+
   const wellKnown = wellKnownTypes.get(simple);
-  if (wellKnown && (type === `com.google.protobuf.${simple}` || new RegExp(`^import com\\.google\\.protobuf\\.${simple};`, 'm').test(source))) return wellKnown.type;
-  const importedBapis = type.startsWith('com.bapis.') ? type : source.match(new RegExp(`^import (com\\.bapis\\.[\\w$.]*\\.${simple});`, 'm'))?.[1];
-  if (importedBapis) return protoType(importedBapis);
-  return ['Object', 'String', 'Integer', 'Long', 'Boolean', 'Float', 'Double', 'ByteString'].includes(simple) ? null : protoType(simple);
+  if (wellKnown && (type === `com.google.protobuf.${simple}` || new RegExp(`^import com\\.google\\.protobuf\\.${simple};`, 'm').test(record.source))) return wellKnown.type;
+
+  const candidates = [];
+  if (type.startsWith('com.bapis.')) {
+    candidates.push(type);
+  } else if (type.includes('.')) {
+    candidates.push(`${record.packageName}.${type}`);
+  } else {
+    for (let scope = node; scope; scope = scope.parent) candidates.push(`${record.packageName}.${scope.javaName}.${type}`);
+    for (const candidate of record.nodes) {
+      if (candidate.name === type) candidates.push(`${record.packageName}.${candidate.javaName}`);
+    }
+    candidates.push(`${record.packageName}.${type}`);
+    const imported = record.source.match(new RegExp(`^import (com\\.bapis\\.[\\w$.]*\\.${simple});`, 'm'))?.[1];
+    if (imported) candidates.push(imported);
+  }
+
+  for (const candidate of candidates) {
+    const definition = typeRegistry.get(candidate) ?? typeRegistry.get(candidate.replace(/\$/g, '.'));
+    if (!definition) continue;
+    if (definition.packageName !== record.packageName) return definition.type;
+    if (definition.kind === 'enum' && definition.ownerProto === node.protoName) return definition.name;
+    return definition.localType;
+  }
+  return null;
 }
 
-function mapType(javaType, source) {
-  const name = javaType.replace(/<.*>/g, '').trim().split('.').pop();
-  return new Map([['String', 'string'], ['Integer', 'int32'], ['Long', 'int64'], ['Boolean', 'bool'], ['Float', 'float'], ['Double', 'double']]).get(name) ?? nestedType(javaType, source) ?? 'bytes';
+function resolveMapType(javaType, record, node) {
+  return resolveJavaType(javaType, record, node) ?? 'bytes';
 }
 
-function fieldJavaType(source, member, property) {
+function inspectFieldJavaType(source, record, node, member, property) {
   const escaped = member.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const getter = property[0].toUpperCase() + property.slice(1);
-  const getterMatch = source.match(new RegExp(`^    public ([A-Za-z0-9_$.]+) get${getter}\\(\\)`, 'm'));
-  const getterType = getterMatch ? nestedType(getterMatch[1], source) : null;
-  const declaration = source.match(new RegExp(`^    private (?:final )?(.+?) ${escaped}(?:\\s*=.*)?;`, 'm'));
+  const getterMatch = source.match(new RegExp(`^\\s+public ([A-Za-z0-9_$.]+) get${getter}\\((?:int [A-Za-z_$][\\w$]*)?\\)`, 'm'));
+  const getterType = getterMatch ? resolveJavaType(getterMatch[1], record, node) : null;
+  const declaration = source.match(new RegExp(`^\\s+private (?:final )?(.+?) ${escaped}(?:\\s*=.*)?;`, 'm'));
   if (declaration) {
     const type = declaration[1];
     const list = type.match(/(?:Internal\\.)?ProtobufList<(.+)>/);
     const map = type.match(/MapFieldLite<(.+),\s*(.+)>/);
-    if (list) return { repeated: true, type: nestedType(list[1], source), getterType };
-    if (map) return { map: [mapType(map[1], source), mapType(map[2], source)], getterType };
-    return { type: nestedType(type, source), getterType };
+    if (list) return { repeated: true, type: resolveJavaType(list[1], record, node), getterType };
+    if (map) return { map: [resolveMapType(map[1], record, node), resolveMapType(map[2], record, node)], getterType };
+    return { type: resolveJavaType(type, record, node), getterType };
   }
   return { type: getterType, getterType };
 }
@@ -117,6 +149,40 @@ function closingBrace(source, open) {
     else if (source[index] === '}' && --depth === 0) return index;
   }
   return -1;
+}
+
+function discoverMessages(source) {
+  const nodes = [];
+  const matcher = /\b(?:public\s+)?(?:static\s+)?(?:final\s+)?class\s+([\w$]+)\s+extends\s+GeneratedMessageLite\s*</g;
+  for (const match of source.matchAll(matcher)) {
+    const open = source.indexOf('{', match.index);
+    const close = closingBrace(source, open);
+    if (open >= 0 && close >= 0) nodes.push({ name: match[1], index: match.index, open, close, parent: null, children: [] });
+  }
+  for (const node of nodes) {
+    node.parent = nodes
+      .filter(candidate => candidate.open < node.index && candidate.close > node.close)
+      .sort((left, right) => (left.close - left.open) - (right.close - right.open))[0] ?? null;
+    if (node.parent) node.parent.children.push(node);
+  }
+  for (const node of nodes) {
+    const hierarchy = [];
+    for (let scope = node; scope; scope = scope.parent) hierarchy.unshift(scope.name);
+    node.javaName = hierarchy.join('.');
+    node.protoName = hierarchy.join('_').replace(/\$/g, '_');
+  }
+  return nodes;
+}
+
+function ownMessageSource(source, node) {
+  const chunks = [];
+  let cursor = node.open + 1;
+  for (const child of [...node.children].sort((left, right) => left.index - right.index)) {
+    chunks.push(source.slice(cursor, child.index));
+    cursor = child.close + 1;
+  }
+  chunks.push(source.slice(cursor, node.close));
+  return chunks.join('\n');
 }
 
 function parseEnums(source, topLevelOnly = false) {
@@ -142,16 +208,15 @@ function parseEnums(source, topLevelOnly = false) {
   return enums;
 }
 
-function parseMessage(file, source) {
-  const packageName = source.match(/^package ([\w.]+);/m)?.[1];
-  const name = source.match(/public (?:static )?(?:final )?class ([\w$]+) extends GeneratedMessageLite/)?.[1];
-  const infoMatch = source.match(/newMessageInfo\(DEFAULT_INSTANCE,\s*"((?:\\.|[^"\\])*)",\s*(?:new Object\[\]\{[\s\S]*?\}|null)\)/);
-  if (!packageName || !name || !infoMatch) return null;
+function parseMessage(record, node) {
+  const source = ownMessageSource(record.source, node);
+  const infoMatches = [...source.matchAll(/newMessageInfo\(DEFAULT_INSTANCE,\s*"((?:\\.|[^"\\])*)",\s*(?:new Object\[\]\{[\s\S]*?\}|null)\)/g)];
+  const infoMatch = infoMatches.at(-1);
+  if (!record.packageName || !infoMatch) return null;
 
   const data = ints(javaString(infoMatch[1]));
   const fieldCount = data[1];
   if (data.length < 11 && fieldCount !== 0) return null;
-  const oneofCount = data[2];
   let cursor = 10;
   const descriptors = [];
   for (let index = 0; index < fieldCount && cursor + 1 < data.length; index++) {
@@ -164,14 +229,14 @@ function parseMessage(file, source) {
     if ((encodedType & 0x1000) !== 0) cursor++;
     descriptors.push({ number, type, oneof, oneofIndex });
   }
-  const constants = [...source.matchAll(/^    public static final int ([A-Z0-9_]+)_FIELD_NUMBER = (\d+);/gm)]
+  const constants = [...source.matchAll(/^\s+public static final int ([A-Z0-9_]+)_FIELD_NUMBER = (\d+);/gm)]
     .map(match => ({ property: lowerCamel(match[1]), number: Number(match[2]) }))
     .sort((a, b) => a.number - b.number);
   const descriptorByNumber = new Map(descriptors.map(item => [item.number, item]));
   const fields = constants.map(field => {
     const descriptor = descriptorByNumber.get(field.number) ?? { type: 4, oneof: false };
     const member = `${field.property}_`;
-    const java = fieldJavaType(source, member, field.property);
+    const java = inspectFieldJavaType(source, record, node, member, field.property);
     const typeCode = descriptor.type;
     const repeated = typeCode >= 18 && typeCode <= 48;
     const scalarCode = typeCode >= 18 && typeCode <= 34 ? typeCode - 18 : typeCode >= 35 && typeCode <= 48 ? typeCode - 35 : typeCode;
@@ -181,7 +246,7 @@ function parseMessage(file, source) {
     if (typeCode === 50 && java.map) return { ...field, descriptor, map: java.map };
     return { ...field, descriptor, type: type ?? java.type ?? 'bytes', repeated: repeated || java.repeated };
   });
-  return { packageName, name, file, fields, enums: parseEnums(source) };
+  return { packageName: record.packageName, name: node.protoName, file: record.file, fields, enums: parseEnums(source) };
 }
 
 function renderField(field) {
@@ -190,7 +255,7 @@ function renderField(field) {
 }
 
 function renderMessage(message) {
-  const lines = [`// Source: ${path.relative(path.join(root, 'decompiled', 'sources'), message.file).replace(/\\/g, '/')}`, `message ${protoType(message.name)} {`];
+  const lines = [`// Source: ${path.relative(path.join(root, 'decompiled', 'sources'), message.file).replace(/\\/g, '/')}`, `message ${message.name} {`];
   const groups = new Map();
   for (const field of message.fields) {
     if (!field.descriptor.oneof || field.repeated || field.map) continue;
@@ -208,29 +273,77 @@ function renderMessage(message) {
     lines.push(...groups.get(key).map(item => `    ${renderField(item).trim()}`));
     lines.push('  }');
   }
-  for (const definition of message.enums) lines.push(...renderEnum(definition, '  '));
+  for (const definition of disambiguateEnumValues(message.enums)) lines.push(...renderEnum(definition, '  '));
   lines.push('}', '');
   return lines;
 }
 
 function renderEnum(definition, indent = '') {
+  const numbers = new Set(definition.values.map(value => value.number));
   return [
     `${indent}enum ${protoType(definition.name)} {`,
+    ...(numbers.size < definition.values.length ? [`${indent}  option allow_alias = true;`] : []),
     ...definition.values.map(value => `${indent}  ${value.name} = ${value.number};`),
     `${indent}}`,
     '',
   ];
 }
 
+function upperSnake(name) {
+  return name.replace(/([a-z0-9])([A-Z])/g, '$1_$2').replace(/\$/g, '_').toUpperCase();
+}
+
+function disambiguateEnumValues(definitions) {
+  const counts = new Map();
+  for (const definition of definitions) {
+    for (const value of definition.values) counts.set(value.name, (counts.get(value.name) ?? 0) + 1);
+  }
+  const used = new Set();
+  return definitions.map(definition => ({
+    ...definition,
+    values: definition.values.map(value => {
+      let name = value.name;
+      if ((counts.get(name) ?? 0) > 1 || used.has(name)) name = `${upperSnake(definition.name)}_${name}`;
+      const base = name;
+      for (let suffix = 2; used.has(name); suffix++) name = `${base}_${suffix}`;
+      used.add(name);
+      return { ...value, name };
+    }),
+  }));
+}
+
 if (!fs.existsSync(sourceRoot)) throw new Error(`Missing decompiled source directory: ${sourceRoot}`);
-const sources = walk(sourceRoot).map(file => ({ file, source: fs.readFileSync(file, 'utf8') }));
-const messages = sources
-  .map(({ file, source }) => parseMessage(file, source))
-  .filter(Boolean);
-const topLevelEnums = sources.flatMap(({ file, source }) => {
-  const packageName = source.match(/^package ([\w.]+);/m)?.[1];
-  return packageName ? parseEnums(source, true).map(definition => ({ ...definition, file, packageName })) : [];
+const sources = walk(sourceRoot).map(file => {
+  const source = fs.readFileSync(file, 'utf8');
+  return { file, source, packageName: source.match(/^package ([\w.]+);/m)?.[1], nodes: discoverMessages(source) };
 });
+for (const record of sources) {
+  if (!record.packageName) continue;
+  const importPath = `${record.packageName.split('.').slice(2).join('/')}/messages.proto`;
+  for (const node of record.nodes) {
+    const definition = { kind: 'message', type: `${record.packageName}.${node.protoName}`, localType: node.protoName, packageName: record.packageName };
+    typeRegistry.set(`${record.packageName}.${node.javaName}`, definition);
+    typeRegistry.set(`${record.packageName}.${node.javaName.replace(/\./g, '$')}`, definition);
+    typeImports.set(definition.type, importPath);
+  }
+  const enumMatcher = /(?:^|\s)public enum ([\w$]+)[^{]*\{/g;
+  for (const match of record.source.matchAll(enumMatcher)) {
+    const owner = record.nodes
+      .filter(node => node.open < match.index && node.close > match.index)
+      .sort((left, right) => (left.close - left.open) - (right.close - right.open))[0] ?? null;
+    const javaName = owner ? `${owner.javaName}.${match[1]}` : match[1];
+    const enumName = match[1].replace(/\$/g, '_');
+    const localType = owner ? `${owner.protoName}.${enumName}` : enumName;
+    const definition = { kind: 'enum', name: enumName, ownerProto: owner?.protoName, type: `${record.packageName}.${localType}`, localType, packageName: record.packageName };
+    typeRegistry.set(`${record.packageName}.${javaName}`, definition);
+    typeRegistry.set(`${record.packageName}.${javaName.replace(/\./g, '$')}`, definition);
+    typeImports.set(definition.type, importPath);
+  }
+}
+const messages = sources.flatMap(record => record.nodes.map(node => parseMessage(record, node)).filter(Boolean));
+const topLevelEnums = sources.flatMap(record => record.packageName
+  ? parseEnums(record.source, true).map(definition => ({ ...definition, file: record.file, packageName: record.packageName }))
+  : []);
 const packages = new Map();
 for (const message of messages) {
   if (!packages.has(message.packageName)) packages.set(message.packageName, { messages: [], enums: [] });
@@ -241,9 +354,7 @@ for (const definition of topLevelEnums) {
   packages.get(definition.packageName).enums.push(definition);
 }
 function protoImport(type) {
-  if (wellKnownImports.has(type)) return wellKnownImports.get(type);
-  if (type.startsWith('com.bapis.')) return `${type.split('.').slice(2, -1).join('/')}/messages.proto`;
-  return null;
+  return typeImports.get(type) ?? null;
 }
 for (const [packageName, items] of packages) {
   const relative = packageName.replace(/^com\.bapis\.?/, '').split('.');
@@ -256,7 +367,7 @@ for (const [packageName, items] of packages) {
   const body = ['// Reconstructed from protobuf-lite metadata in the APK.', 'syntax = "proto3";', '', `package ${packageName};`, ''];
   for (const importPath of [...imports].sort()) body.push(`import "${importPath}";`);
   if (imports.size) body.push('');
-  for (const definition of items.enums.sort((a, b) => a.name.localeCompare(b.name))) body.push(...renderEnum(definition));
+  for (const definition of disambiguateEnumValues(items.enums.sort((a, b) => a.name.localeCompare(b.name)))) body.push(...renderEnum(definition));
   for (const message of items.messages.sort((a, b) => a.name.localeCompare(b.name))) {
     body.push(...renderMessage(message));
   }
