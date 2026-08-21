@@ -43,10 +43,10 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Install Android asset packaging tool
+      - name: Install build tools
         run: |
           sudo apt-get update
-          sudo apt-get install --yes aapt
+          sudo apt-get install --yes aapt protobuf-compiler
 
       - name: Download APK and read version
         id: version
@@ -134,6 +134,21 @@ jobs:
             echo "Only $message_count protobuf messages were recovered; expected at least $MIN_MESSAGE_COUNT." >&2
             exit 1
           fi
+
+      - name: Validate all generated proto files
+        if: steps.version.outputs.tag_exists != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd extracted_proto/com/bapis
+          mapfile -d '' proto_files < <(find . -type f -name '*.proto' -print0 | sort -z)
+          test "${#proto_files[@]}" -gt 0
+          protoc \
+            --proto_path=. \
+            --proto_path=/usr/include \
+            --descriptor_set_out="$GITHUB_WORKSPACE/.work/bapis.pb" \
+            --include_imports \
+            "${proto_files[@]}"
 
       - name: Record generated source
         if: steps.version.outputs.tag_exists != 'true'
