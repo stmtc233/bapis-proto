@@ -103,12 +103,16 @@ function parseEnums(source, topLevelOnly = false) {
     const close = closingBrace(source, open);
     if (close < 0) continue;
     const body = source.slice(open + 1, close);
-    const constants = new Map([...body.matchAll(/^\s*public static final int ([A-Za-z][A-Za-z0-9_]*) = (-?\d+);/gm)]
+    const constants = new Map([...body.matchAll(/^\s*public static final int ([A-Za-z_][A-Za-z0-9_]*) = (-?\d+);/gm)]
       .map(value => [value[1], Number(value[2])]));
-    const values = [...body.matchAll(/^\s*([A-Za-z][A-Za-z0-9_]*)\((-?\d+|[A-Za-z][A-Za-z0-9_]*)\)\s*[,;]/gm)]
+    const values = [...body.matchAll(/^\s*([A-Za-z_][A-Za-z0-9_]*)\((-?\d+|[A-Za-z_][A-Za-z0-9_]*)\)\s*[,;]/gm)]
       .map(value => ({ name: value[1], number: constants.get(value[2]) ?? Number(value[2]) }))
       .filter(value => Number.isFinite(value.number));
-    if (values.length) enums.push({ name: match[1], values });
+    if (values.length) {
+      const zeroIndex = values.findIndex(value => value.number === 0);
+      if (zeroIndex < 0) throw new Error(`Enum ${match[1]} does not declare a zero value`);
+      enums.push({ name: match[1], values: [values[zeroIndex], ...values.slice(0, zeroIndex), ...values.slice(zeroIndex + 1)] });
+    }
   }
   return enums;
 }
