@@ -193,14 +193,14 @@ function renderMessage(message) {
   const lines = [`// Source: ${path.relative(path.join(root, 'decompiled', 'sources'), message.file).replace(/\\/g, '/')}`, `message ${protoType(message.name)} {`];
   const groups = new Map();
   for (const field of message.fields) {
-    if (!field.descriptor.oneof) continue;
+    if (!field.descriptor.oneof || field.repeated || field.map) continue;
     const key = field.descriptor.oneofIndex ?? 0;
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(field);
   }
   const rendered = new Set();
   for (const field of message.fields) {
-    if (!field.descriptor.oneof) { lines.push(renderField(field)); continue; }
+    if (!field.descriptor.oneof || field.repeated || field.map) { lines.push(renderField(field)); continue; }
     const key = field.descriptor.oneofIndex ?? 0;
     if (rendered.has(key)) continue;
     rendered.add(key);
