@@ -151,9 +151,9 @@ message Episode {
     LiveEpisode liveEpisode = 3;
   }
   enum DataCase {
+    DATA_NOT_SET = 0;
     VIDEO_EPISODE = 2;
     LIVE_EPISODE = 3;
-    DATA_NOT_SET = 0;
   }
 
 }
