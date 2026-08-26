@@ -4,6 +4,7 @@ syntax = "proto3";
 package com.bapis.bilibili.app.viewunite.v1;
 
 import "bilibili/app/archive/middleware/v1/messages.proto";
+import "bilibili/app/overseas/ad/v1/messages.proto";
 import "bilibili/app/viewunite/common/messages.proto";
 import "bilibili/pagination/messages.proto";
 import "bilibili/playershared/messages.proto";
@@ -296,6 +297,7 @@ message CM {
   PadRelateCM padRelateCm = 4;
   repeated SourceContentItem sourceContentItem = 5;
   google.protobuf.Any cmHalfPanel = 6;
+  com.bapis.bilibili.app.overseas.ad.v1.OverseasAdInfo overseasAdInfo = 7;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/CommandDm.java
@@ -914,6 +916,7 @@ message VideoGuide {
 message VideoMentionsReply {
   repeated com.bapis.bilibili.app.viewunite.common.Mention mentions = 1;
   string title = 2;
+  map<string, string> ab = 3;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/VideoMentionsReq.java

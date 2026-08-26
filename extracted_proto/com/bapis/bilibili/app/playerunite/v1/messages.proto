@@ -3,6 +3,7 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.playerunite.v1;
 
+import "bilibili/app/overseas/ad/v1/messages.proto";
 import "bilibili/playershared/messages.proto";
 import "google/protobuf/any.proto";
 
@@ -70,6 +71,7 @@ message PlayViewUniteReply {
   com.bapis.bilibili.playershared.FragmentVideo fragmentVideo = 10;
   com.bapis.bilibili.playershared.VideoCtrl videoCtrl = 11;
   com.bapis.bilibili.playershared.Language language = 12;
+  com.bapis.bilibili.app.overseas.ad.v1.OverseasAdInfo overseasAdInfo = 13;
 }
 
 // Source: com/bapis/bilibili/app/playerunite/v1/PlayViewUniteReq.java

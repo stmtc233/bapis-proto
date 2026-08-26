@@ -150,6 +150,7 @@ enum ModuleType {
   PUGV_SEASON_COMBINE = 62;
   VIDEO_MENTIONS = 63;
   OGV_RESERVE_REMINDER = 64;
+  SEARCH_QUERY = 65;
 }
 
 enum OccupationType {
@@ -165,6 +166,7 @@ enum PugvBadgeType {
   PUGV_BADGE_TYPE_FIRST = 3;
   PUGV_BADGE_TYPE_SELECTED = 4;
   PUGV_BADGE_TYPE_AI = 5;
+  PUGV_BADGE_TYPE_VIP = 6;
 }
 
 enum PugvSeasonDescriptionType {
@@ -2309,6 +2311,7 @@ message VideoMentions {
   VideoMentionButton button = 2;
   string videoReq = 3;
   string title = 4;
+  map<string, string> ab = 5;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/VideoSeason.java

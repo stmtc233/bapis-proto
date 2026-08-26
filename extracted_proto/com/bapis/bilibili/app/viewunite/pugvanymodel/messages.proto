@@ -29,6 +29,7 @@ enum OperationAreaButtonType {
   OPERATION_AREA_BUTTON_TYPE_CONSULT = 2;
   OPERATION_AREA_BUTTON_TYPE_SHARE = 3;
   OPERATION_AREA_BUTTON_TYPE_PURCHASE = 4;
+  OPERATION_AREA_BUTTON_TYPE_VIP = 5;
 }
 
 enum SeasonCouponStatus {
@@ -140,6 +141,7 @@ message Episode {
     VideoEpisode videoEpisode = 2;
     LiveEpisode liveEpisode = 3;
   }
+  map<string, string> reportParams = 4;
   enum DataCase {
     DATA_NOT_SET = 0;
     VIDEO_EPISODE = 2;
@@ -308,6 +310,7 @@ message SeasonOverview {
   SeasonType type = 4;
   string cover = 5;
   string title = 6;
+  map<string, string> reportParams = 7;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SeasonPayment.java

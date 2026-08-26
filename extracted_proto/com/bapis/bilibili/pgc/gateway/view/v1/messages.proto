@@ -41,6 +41,7 @@ message PageSectionEpisodesReq {
 message SeasonSectionsReply {
   repeated com.bapis.bilibili.app.viewunite.common.SectionData sections = 1;
   com.bapis.bilibili.app.viewunite.pgcanymodel.Reserve reserve = 2;
+  map<int32, com.bapis.bilibili.app.viewunite.pgcanymodel.SectionPagination> sectionPagination = 3;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/view/v1/SeasonSectionsReq.java
