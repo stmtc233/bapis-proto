@@ -4,6 +4,7 @@ import path from 'node:path';
 const root = process.cwd();
 const sourceRoot = path.resolve(process.env.BAPIS_SOURCE_ROOT ?? path.join(root, 'decompiled', 'sources', 'com', 'bapis'));
 const outputRoot = path.resolve(process.env.BAPIS_OUTPUT_ROOT ?? path.join(root, 'extracted_proto', 'com', 'bapis'));
+const serviceCatalogPath = path.resolve(process.env.BAPIS_GRPC_SERVICE_CATALOG ?? path.join(root, 'grpc_service_catalog.json'));
 const scalar = new Map([
   [0, 'double'], [1, 'float'], [2, 'int64'], [3, 'uint64'], [4, 'int32'],
   [5, 'fixed64'], [6, 'fixed32'], [7, 'bool'], [8, 'string'], [10, 'bytes'],
@@ -123,6 +124,59 @@ function resolveJavaType(javaType, record, node) {
 
 function resolveMapType(javaType, record, node) {
   return resolveJavaType(javaType, record, node) ?? 'bytes';
+}
+
+function resolveServiceJavaType(javaType, record) {
+  const type = javaType.replace(/<.*>/g, '').trim();
+  const simple = type.split('.').pop();
+  const wellKnown = wellKnownTypes.get(simple);
+  if (wellKnown && (type === `com.google.protobuf.${simple}` || new RegExp(`^import com\\.google\\.protobuf\\.${simple};`, 'm').test(record.source))) {
+    return wellKnown.type;
+  }
+
+  const candidates = [];
+  if (type.startsWith('com.bapis.')) candidates.push(type);
+  else if (type.includes('.')) candidates.push(`${record.packageName}.${type}`);
+  else {
+    candidates.push(`${record.packageName}.${type}`);
+    const imported = record.source.match(new RegExp(`^import (com\\.bapis\\.[\\w$.]*\\.${simple});`, 'm'))?.[1];
+    if (imported) candidates.push(imported);
+  }
+  for (const candidate of candidates) {
+    const definition = typeRegistry.get(candidate) ?? typeRegistry.get(candidate.replace(/\$/g, '.'));
+    if (definition) return definition.type;
+  }
+  return null;
+}
+
+function parseServices(record) {
+  if (!record.packageName || !record.source.includes('@RpcMethod(')) return [];
+  const services = new Map();
+  const matcher = /@RpcMethod\(fullMethodName = "([^/"]+)\/([^"]+)", methodType = MethodDescriptor\.MethodType\.(UNARY|CLIENT_STREAMING|SERVER_STREAMING|BIDI_STREAMING), requestType = ([\w$.]+)\.class, responseType = ([\w$.]+)\.class\)/g;
+  for (const match of record.source.matchAll(matcher)) {
+    const [, fullServiceName, methodName, methodType, requestJavaType, responseJavaType] = match;
+    const request = resolveServiceJavaType(requestJavaType, record);
+    const response = resolveServiceJavaType(responseJavaType, record);
+    if (!request || !response) {
+      throw new Error(`Unable to resolve ${fullServiceName}/${methodName} types in ${record.file}`);
+    }
+    const parts = fullServiceName.split('.');
+    const service = services.get(fullServiceName) ?? {
+      fullName: fullServiceName,
+      packageName: `com.bapis.${parts.slice(0, -1).join('.')}`,
+      name: parts.at(-1),
+      methods: [],
+    };
+    service.methods.push({
+      name: methodName,
+      request,
+      response,
+      clientStreaming: methodType === 'CLIENT_STREAMING' || methodType === 'BIDI_STREAMING',
+      serverStreaming: methodType === 'SERVER_STREAMING' || methodType === 'BIDI_STREAMING',
+    });
+    services.set(fullServiceName, service);
+  }
+  return [...services.values()];
 }
 
 function inspectFieldJavaType(source, record, node, member, property) {
@@ -373,7 +427,108 @@ for (const [packageName, items] of packages) {
   }
   fs.writeFileSync(target, `${body.join('\n')}\n`);
 }
-const manifest = { sourceRoot, generatedAt: new Date().toISOString(), messageCount: messages.length, topLevelEnumCount: topLevelEnums.length, packageCount: packages.size };
+const services = new Map();
+for (const service of sources.flatMap(parseServices)) {
+  const existing = services.get(service.fullName) ?? { ...service, methods: [] };
+  for (const method of service.methods) {
+    const previous = existing.methods.find(candidate => candidate.name === method.name);
+    if (previous && JSON.stringify(previous) !== JSON.stringify(method)) {
+      throw new Error(`Conflicting RPC definition for ${service.fullName}/${method.name}`);
+    }
+    if (!previous) existing.methods.push(method);
+  }
+  services.set(service.fullName, existing);
+}
+const apkServiceCount = services.size;
+let catalogServiceCount = 0;
+let skippedCatalogRpcCount = 0;
+if (apkServiceCount === 0 && fs.existsSync(serviceCatalogPath)) {
+  const catalog = JSON.parse(fs.readFileSync(serviceCatalogPath, 'utf8'));
+  for (const catalogService of catalog.services) {
+    const fullName = `${catalogService.package}.${catalogService.name}`;
+    if (services.has(fullName)) continue;
+    const packageName = `com.bapis.${catalogService.package}`;
+    const methodsByName = new Map();
+    for (const method of catalogService.methods) {
+      const request = method.request.includes('.') ? method.request : `${packageName}.${method.request}`;
+      const response = method.response.includes('.') ? method.response : `${packageName}.${method.response}`;
+      if (!typeImports.has(request) || !typeImports.has(response)) {
+        skippedCatalogRpcCount++;
+        continue;
+      }
+      const candidates = methodsByName.get(method.name) ?? [];
+      candidates.push({
+        name: method.name,
+        request,
+        response,
+        clientStreaming: method.clientStreaming ?? false,
+        serverStreaming: method.serverStreaming ?? false,
+        source: method.source,
+      });
+      methodsByName.set(method.name, candidates);
+    }
+    const methods = [...methodsByName.values()].map(candidates => candidates.sort((left, right) => {
+      const leftDepth = left.source.split('/').length;
+      const rightDepth = right.source.split('/').length;
+      return leftDepth - rightDepth || left.source.localeCompare(right.source);
+    })[0]);
+    if (!methods.length) continue;
+    services.set(fullName, { fullName, packageName, name: catalogService.name, methods });
+    catalogServiceCount++;
+  }
+}
+const servicePackages = new Map();
+for (const service of services.values()) {
+  const grouped = servicePackages.get(service.packageName) ?? [];
+  grouped.push(service);
+  servicePackages.set(service.packageName, grouped);
+}
+for (const [packageName, packageServices] of servicePackages) {
+  const relative = packageName.replace(/^com\.bapis\.?/, '').split('.');
+  const target = path.join(outputRoot, ...relative, 'services.proto');
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  const imports = new Set();
+  for (const service of packageServices) {
+    for (const method of service.methods) {
+      for (const type of [method.request, method.response]) {
+        const importPath = typeImports.get(type);
+        if (!importPath) throw new Error(`Missing proto import for ${type} in ${service.fullName}`);
+        imports.add(importPath);
+      }
+    }
+  }
+  const renderType = type => type.startsWith(`${packageName}.`) ? type.slice(packageName.length + 1) : `.${type}`;
+  const renderStream = enabled => enabled ? 'stream ' : '';
+  const body = [
+    '// Reconstructed from gRPC service descriptors.',
+    'syntax = "proto3";',
+    '',
+    `package ${packageName};`,
+    '',
+    ...[...imports].sort().map(importPath => `import "${importPath}";`),
+    '',
+    ...packageServices.sort((left, right) => left.name.localeCompare(right.name)).flatMap(service => [
+      `service ${service.name} {`,
+      ...service.methods.sort((left, right) => left.name.localeCompare(right.name)).map(method => `  rpc ${method.name}(${renderStream(method.clientStreaming)}${renderType(method.request)}) returns (${renderStream(method.serverStreaming)}${renderType(method.response)});`),
+      '}',
+      '',
+    ]),
+    '',
+  ];
+  fs.writeFileSync(target, body.join('\n'));
+}
+const manifest = {
+  sourceRoot,
+  generatedAt: new Date().toISOString(),
+  messageCount: messages.length,
+  topLevelEnumCount: topLevelEnums.length,
+  packageCount: packages.size,
+  serviceCount: services.size,
+  rpcCount: [...services.values()].reduce((count, service) => count + service.methods.length, 0),
+  apkServiceCount,
+  catalogServiceCount,
+  skippedCatalogRpcCount,
+};
 fs.mkdirSync(outputRoot, { recursive: true });
 fs.writeFileSync(path.join(outputRoot, 'MANIFEST.json'), `${JSON.stringify(manifest, null, 2)}\n`);
 console.log(JSON.stringify(manifest, null, 2));
