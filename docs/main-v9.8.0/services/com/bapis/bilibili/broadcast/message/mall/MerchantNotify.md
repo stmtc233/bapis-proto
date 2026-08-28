@@ -1,0 +1,28 @@
+# `com.bapis.bilibili.broadcast.message.mall.MerchantNotify`
+
+中文说明：广播 消息 商城 业务 服务。说明根据接口标识符自动推断，实际业务语义以客户端实现和服务端行为为准。
+
+## RPC
+
+| 方法 | 调用模式 | 请求 | 响应 | 中文说明 |
+| --- | --- | --- | --- | --- |
+| `MessageNotify` | 服务端流 | `google.protobuf.Empty` | `com.bapis.bilibili.broadcast.message.mall.NotifyReq` | 消息 |
+
+## 请求与响应字段
+
+### 请求 `google.protobuf.Empty`
+
+中文说明：`Empty` 消息。
+
+该消息来自 protobuf 标准库或当前归档未包含的定义。
+
+### 响应 `com.bapis.bilibili.broadcast.message.mall.NotifyReq`
+
+中文说明：请求。
+
+| 字段号 | 字段 | Proto 类型 | 修饰 | 中文说明 |
+| --- | --- | --- | --- | --- |
+| 1 | `roomId` | `uint64` | - | 直播间 标识 |
+| 2 | `msgType` | `int32` | - | 类型 |
+| 3 | `content` | `string` | - | 内容 |
+| 4 | `jumpUrl` | `string` | - | 跳转 地址 |

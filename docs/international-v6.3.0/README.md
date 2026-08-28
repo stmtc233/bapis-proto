@@ -1,0 +1,89 @@
+# 国际版 v6.3.0
+
+来源标签：`international-v6.3.0`。共 81 个 service，475 个 RPC。
+
+中文说明基于名称自动推断；字段号、类型、重复与 oneof 信息来自对应 proto。
+
+## Service
+
+- [`com.bapis.bilibili.account.fission.v1.Fission`](services/com/bapis/bilibili/account/fission/v1/Fission.md)：账户 裂变 服务，3 个 RPC
+- [`com.bapis.bilibili.account.interfaces.v1.AccountInterfaceV1`](services/com/bapis/bilibili/account/interfaces/v1/AccountInterfaceV1.md)：账户 接口 服务，3 个 RPC
+- [`com.bapis.bilibili.api.probe.v1.Probe`](services/com/bapis/bilibili/api/probe/v1/Probe.md)：接口 探测 服务，4 个 RPC
+- [`com.bapis.bilibili.api.probe.v1.ProbeService`](services/com/bapis/bilibili/api/probe/v1/ProbeService.md)：接口 探测 服务，5 个 RPC
+- [`com.bapis.bilibili.api.ticket.v1.Ticket`](services/com/bapis/bilibili/api/ticket/v1/Ticket.md)：接口 票务 服务，2 个 RPC
+- [`com.bapis.bilibili.app.click.v1.Click`](services/com/bapis/bilibili/app/click/v1/Click.md)：应用 点击 服务，1 个 RPC
+- [`com.bapis.bilibili.app.distribution.Distribution`](services/com/bapis/bilibili/app/distribution/Distribution.md)：应用 业务 服务，3 个 RPC
+- [`com.bapis.bilibili.app.dynamic.v1.Dynamic`](services/com/bapis/bilibili/app/dynamic/v1/Dynamic.md)：应用 动态 服务，13 个 RPC
+- [`com.bapis.bilibili.app.dynamic.v2.Campus`](services/com/bapis/bilibili/app/dynamic/v2/Campus.md)：应用 动态 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.app.dynamic.v2.Dynamic`](services/com/bapis/bilibili/app/dynamic/v2/Dynamic.md)：应用 动态 服务，62 个 RPC
+- [`com.bapis.bilibili.app.dynamic.v2.Opus`](services/com/bapis/bilibili/app/dynamic/v2/Opus.md)：应用 动态 业务 服务，6 个 RPC
+- [`com.bapis.bilibili.app.home.v1.Home`](services/com/bapis/bilibili/app/home/v1/Home.md)：应用 首页 服务，8 个 RPC
+- [`com.bapis.bilibili.app.interfaces.v1.History`](services/com/bapis/bilibili/app/interfaces/v1/History.md)：应用 历史记录 服务，8 个 RPC
+- [`com.bapis.bilibili.app.interfaces.v1.Media`](services/com/bapis/bilibili/app/interfaces/v1/Media.md)：应用 业务 服务，6 个 RPC
+- [`com.bapis.bilibili.app.interfaces.v1.Search`](services/com/bapis/bilibili/app/interfaces/v1/Search.md)：应用 搜索 服务，2 个 RPC
+- [`com.bapis.bilibili.app.interfaces.v1.SearchTest`](services/com/bapis/bilibili/app/interfaces/v1/SearchTest.md)：应用 搜索 测试 服务，1 个 RPC
+- [`com.bapis.bilibili.app.interfaces.v1.Space`](services/com/bapis/bilibili/app/interfaces/v1/Space.md)：应用 业务 服务，4 个 RPC
+- [`com.bapis.bilibili.app.interfaces.v1.Teenagers`](services/com/bapis/bilibili/app/interfaces/v1/Teenagers.md)：应用 业务 服务，6 个 RPC
+- [`com.bapis.bilibili.app.listener.v1.Listener`](services/com/bapis/bilibili/app/listener/v1/Listener.md)：应用 听播 服务，28 个 RPC
+- [`com.bapis.bilibili.app.listener.v1.Music`](services/com/bapis/bilibili/app/listener/v1/Music.md)：应用 听播 业务 服务，7 个 RPC
+- [`com.bapis.bilibili.app.mine.v1.Mine`](services/com/bapis/bilibili/app/mine/v1/Mine.md)：应用 我的 服务，2 个 RPC
+- [`com.bapis.bilibili.app.playeronline.v1.PlayerOnline`](services/com/bapis/bilibili/app/playeronline/v1/PlayerOnline.md)：应用 播放器 服务，3 个 RPC
+- [`com.bapis.bilibili.app.playerunite.v1.Player`](services/com/bapis/bilibili/app/playerunite/v1/Player.md)：应用 播放器 服务，3 个 RPC
+- [`com.bapis.bilibili.app.playurl.v1.PlayURL`](services/com/bapis/bilibili/app/playurl/v1/PlayURL.md)：应用 播放 地址 服务，5 个 RPC
+- [`com.bapis.bilibili.app.resource.privacy.v1.Privacy`](services/com/bapis/bilibili/app/resource/privacy/v1/Privacy.md)：应用 资源 隐私 服务，2 个 RPC
+- [`com.bapis.bilibili.app.resource.v1.LegacyResource`](services/com/bapis/bilibili/app/resource/v1/LegacyResource.md)：应用 资源 服务，1 个 RPC
+- [`com.bapis.bilibili.app.resource.v1.Module`](services/com/bapis/bilibili/app/resource/v1/Module.md)：应用 资源 模块 服务，1 个 RPC
+- [`com.bapis.bilibili.app.search.v2.Search`](services/com/bapis/bilibili/app/search/v2/Search.md)：应用 搜索 服务，11 个 RPC
+- [`com.bapis.bilibili.app.show.gateway.v1.AppShow`](services/com/bapis/bilibili/app/show/gateway/v1/AppShow.md)：应用 网关 服务，1 个 RPC
+- [`com.bapis.bilibili.app.show.mixture.v1.Mixture`](services/com/bapis/bilibili/app/show/mixture/v1/Mixture.md)：应用 业务 服务，7 个 RPC
+- [`com.bapis.bilibili.app.show.popular.v1.Popular`](services/com/bapis/bilibili/app/show/popular/v1/Popular.md)：应用 热门 服务，1 个 RPC
+- [`com.bapis.bilibili.app.show.rank.v1.Rank`](services/com/bapis/bilibili/app/show/rank/v1/Rank.md)：应用 排行 服务，3 个 RPC
+- [`com.bapis.bilibili.app.story.v1.Story`](services/com/bapis/bilibili/app/story/v1/Story.md)：应用 业务 服务，4 个 RPC
+- [`com.bapis.bilibili.app.topic.v1.Topic`](services/com/bapis/bilibili/app/topic/v1/Topic.md)：应用 话题 服务，8 个 RPC
+- [`com.bapis.bilibili.app.view.v1.LegacyView`](services/com/bapis/bilibili/app/view/v1/LegacyView.md)：应用 查看 服务，1 个 RPC
+- [`com.bapis.bilibili.app.view.v1.View`](services/com/bapis/bilibili/app/view/v1/View.md)：应用 查看 服务，24 个 RPC
+- [`com.bapis.bilibili.app.viewunite.v1.View`](services/com/bapis/bilibili/app/viewunite/v1/View.md)：应用 查看 服务，7 个 RPC
+- [`com.bapis.bilibili.app.wall.v1.Wall`](services/com/bapis/bilibili/app/wall/v1/Wall.md)：应用 壁纸 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.message.archive.VideoUp`](services/com/bapis/bilibili/broadcast/message/archive/VideoUp.md)：广播 消息 稿件 视频 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.message.bgroup.BGroup`](services/com/bapis/bilibili/broadcast/message/bgroup/BGroup.md)：广播 消息 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.message.gamecenter.GameCenterPush`](services/com/bapis/bilibili/broadcast/message/gamecenter/GameCenterPush.md)：广播 消息 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.message.im.Notify`](services/com/bapis/bilibili/broadcast/message/im/Notify.md)：广播 消息 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.message.main.NativePage`](services/com/bapis/bilibili/broadcast/message/main/NativePage.md)：广播 消息 分页 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.message.main.Resource`](services/com/bapis/bilibili/broadcast/message/main/Resource.md)：广播 消息 资源 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.message.main.Search`](services/com/bapis/bilibili/broadcast/message/main/Search.md)：广播 消息 搜索 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.message.push.PushUpStream`](services/com/bapis/bilibili/broadcast/message/push/PushUpStream.md)：广播 消息 流 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.message.tv.Tv`](services/com/bapis/bilibili/broadcast/message/tv/Tv.md)：广播 消息 业务 服务，16 个 RPC
+- [`com.bapis.bilibili.broadcast.v1.Broadcast`](services/com/bapis/bilibili/broadcast/v1/Broadcast.md)：广播 服务，5 个 RPC
+- [`com.bapis.bilibili.broadcast.v1.BroadcastRoom`](services/com/bapis/bilibili/broadcast/v1/BroadcastRoom.md)：广播 直播间 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.v1.BroadcastTunnel`](services/com/bapis/bilibili/broadcast/v1/BroadcastTunnel.md)：广播 通道 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.v1.Laser`](services/com/bapis/bilibili/broadcast/v1/Laser.md)：广播 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.v1.ModManager`](services/com/bapis/bilibili/broadcast/v1/ModManager.md)：广播 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.v1.Push`](services/com/bapis/bilibili/broadcast/v1/Push.md)：广播 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.v1.Test`](services/com/bapis/bilibili/broadcast/v1/Test.md)：广播 测试 服务，1 个 RPC
+- [`com.bapis.bilibili.broadcast.v2.Laser`](services/com/bapis/bilibili/broadcast/v2/Laser.md)：广播 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.cheese.gateway.player.v1.PlayURL`](services/com/bapis/bilibili/cheese/gateway/player/v1/PlayURL.md)：网关 播放器 播放 地址 服务，2 个 RPC
+- [`com.bapis.bilibili.community.interfacess.cosmoconn.v1.CosmoInterface`](services/com/bapis/bilibili/community/interfacess/cosmoconn/v1/CosmoInterface.md)：社区 接口 服务，4 个 RPC
+- [`com.bapis.bilibili.community.service.cert.v1.FieldCert`](services/com/bapis/bilibili/community/service/cert/v1/FieldCert.md)：社区 业务 服务，2 个 RPC
+- [`com.bapis.bilibili.community.service.dm.v1.DM`](services/com/bapis/bilibili/community/service/dm/v1/DM.md)：社区 弹幕 服务，7 个 RPC
+- [`com.bapis.bilibili.community.service.govern.v1.Qoe`](services/com/bapis/bilibili/community/service/govern/v1/Qoe.md)：社区 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.dynamic.interfaces.campus.v1.Campus`](services/com/bapis/bilibili/dynamic/interfaces/campus/v1/Campus.md)：动态 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.dynamic.interfaces.feed.v1.Feed`](services/com/bapis/bilibili/dynamic/interfaces/feed/v1/Feed.md)：动态 信息流 服务，33 个 RPC
+- [`com.bapis.bilibili.dynamic.interfaces.vote.v1.Vote`](services/com/bapis/bilibili/dynamic/interfaces/vote/v1/Vote.md)：动态 业务 服务，1 个 RPC
+- [`com.bapis.bilibili.gaia.gw.Gaia`](services/com/bapis/bilibili/gaia/gw/Gaia.md)：业务 服务，4 个 RPC
+- [`com.bapis.bilibili.im.customer.interfaces.CustomerInterface`](services/com/bapis/bilibili/im/customer/interfaces/CustomerInterface.md)：接口 服务，18 个 RPC
+- [`com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi`](services/com/bapis/bilibili/im/gateway/interfaces/v1/ImGatewayApi.md)：网关 接口 服务，19 个 RPC
+- [`com.bapis.bilibili.im.interfaces.v1.ImInterface`](services/com/bapis/bilibili/im/interfaces/v1/ImInterface.md)：接口 服务，34 个 RPC
+- [`com.bapis.bilibili.main.community.reply.v1.Reply`](services/com/bapis/bilibili/main/community/reply/v1/Reply.md)：社区 响应 服务，16 个 RPC
+- [`com.bapis.bilibili.main.community.reply.v2.Reply`](services/com/bapis/bilibili/main/community/reply/v2/Reply.md)：社区 响应 服务，1 个 RPC
+- [`com.bapis.bilibili.pangu.gallery.v1.GalleryInterface`](services/com/bapis/bilibili/pangu/gallery/v1/GalleryInterface.md)：接口 服务，10 个 RPC
+- [`com.bapis.bilibili.pgc.gateway.player.v1.PlayURL`](services/com/bapis/bilibili/pgc/gateway/player/v1/PlayURL.md)：网关 播放器 播放 地址 服务，3 个 RPC
+- [`com.bapis.bilibili.pgc.gateway.player.v2.PlayURL`](services/com/bapis/bilibili/pgc/gateway/player/v2/PlayURL.md)：网关 播放器 播放 地址 服务，2 个 RPC
+- [`com.bapis.bilibili.polymer.app.search.v1.Search`](services/com/bapis/bilibili/polymer/app/search/v1/Search.md)：应用 搜索 服务，6 个 RPC
+- [`com.bapis.bilibili.polymer.chronos.v1.ChronosService`](services/com/bapis/bilibili/polymer/chronos/v1/ChronosService.md)：资源包 服务，2 个 RPC
+- [`com.bapis.bilibili.polymer.community.govern.v1.AntiHarassmentService`](services/com/bapis/bilibili/polymer/community/govern/v1/AntiHarassmentService.md)：社区 业务 服务，2 个 RPC
+- [`com.bapis.bilibili.polymer.contract.Contract`](services/com/bapis/bilibili/polymer/contract/Contract.md)：业务 服务，3 个 RPC
+- [`com.bapis.bilibili.polymer.list.List`](services/com/bapis/bilibili/polymer/list/List.md)：列表 服务，2 个 RPC
+- [`com.bapis.bilibili.relation.interfaces.RelationInterface`](services/com/bapis/bilibili/relation/interfaces/RelationInterface.md)：关系 接口 服务，2 个 RPC
+- [`com.bapis.bilibili.vega.deneb.v1.VegaDenebRPC`](services/com/bapis/bilibili/vega/deneb/v1/VegaDenebRPC.md)：业务 服务，1 个 RPC
+- [`com.bapis.pgc.gateway.vega.v1.Vega`](services/com/bapis/pgc/gateway/vega/v1/Vega.md)：网关 业务 服务，1 个 RPC
+- [`com.bapis.pgc.gateway.vega.v1.VegaFrameDoc`](services/com/bapis/pgc/gateway/vega/v1/VegaFrameDoc.md)：网关 业务 服务，4 个 RPC
