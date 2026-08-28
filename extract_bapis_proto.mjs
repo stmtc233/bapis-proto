@@ -163,7 +163,9 @@ function parseServices(record) {
     const parts = fullServiceName.split('.');
     const service = services.get(fullServiceName) ?? {
       fullName: fullServiceName,
-      packageName: `com.bapis.${parts.slice(0, -1).join('.')}`,
+      // fullMethodName is the on-wire gRPC service name. Java message types
+      // live under com.bapis, but that prefix is not part of the RPC path.
+      packageName: parts.slice(0, -1).join('.'),
       name: parts.at(-1),
       methods: [],
     };
@@ -447,11 +449,12 @@ if (apkServiceCount === 0 && fs.existsSync(serviceCatalogPath)) {
   for (const catalogService of catalog.services) {
     const fullName = `${catalogService.package}.${catalogService.name}`;
     if (services.has(fullName)) continue;
-    const packageName = `com.bapis.${catalogService.package}`;
+    const packageName = catalogService.package;
+    const messagePackageName = `com.bapis.${catalogService.package}`;
     const methodsByName = new Map();
     for (const method of catalogService.methods) {
-      const request = method.request.includes('.') ? method.request : `${packageName}.${method.request}`;
-      const response = method.response.includes('.') ? method.response : `${packageName}.${method.response}`;
+      const request = method.request.includes('.') ? method.request : `${messagePackageName}.${method.request}`;
+      const response = method.response.includes('.') ? method.response : `${messagePackageName}.${method.response}`;
       if (!typeImports.has(request) || !typeImports.has(response)) {
         skippedCatalogRpcCount++;
         continue;
