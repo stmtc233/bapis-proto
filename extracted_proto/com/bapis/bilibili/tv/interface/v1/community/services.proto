@@ -1,0 +1,12 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package com.bapis.bilibili.tv.interface.v1.community;
+
+import "ott/community/messages.proto";
+
+service UserCommunity {
+  rpc GetHistoryRPC(.com.bapis.ott.community.GetHistoryReq) returns (.com.bapis.ott.community.GetHistoryReply);
+  rpc HasLike(.com.bapis.ott.community.HasLikeReq) returns (.com.bapis.ott.community.HasLikeReply);
+  rpc Like(.com.bapis.ott.community.LikeReq) returns (.com.bapis.ott.community.LikeReply);
+}

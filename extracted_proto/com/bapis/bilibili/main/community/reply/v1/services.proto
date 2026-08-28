@@ -1,0 +1,10 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package com.bapis.bilibili.main.community.reply.v1;
+
+import "bilibili/community/reply/v1/messages.proto";
+
+service Reply {
+  rpc MainList(.com.bapis.bilibili.community.reply.v1.MainListReq) returns (.com.bapis.bilibili.community.reply.v1.MainListReply);
+}

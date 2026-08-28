@@ -1,0 +1,15 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package com.bapis.bilibili.community.service.dm.v1;
+
+import "bilibili/community/service/dm/v1/messages.proto";
+
+service DM {
+  rpc DmExpoReport(DmExpoReportReq) returns (DmExpoReportRes);
+  rpc DmPlayerConfig(DmPlayerConfigReq) returns (Response);
+  rpc DmSegMobile(DmSegMobileReq) returns (DmSegMobileReply);
+  rpc DmSegOtt(DmSegOttReq) returns (DmSegOttReply);
+  rpc DmSegSDK(DmSegSDKReq) returns (DmSegSDKReply);
+  rpc DmView(DmViewReq) returns (DmViewReply);
+}

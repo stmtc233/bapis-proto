@@ -1,0 +1,10 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.wall.v1;
+
+import "bilibili/app/wall/v1/messages.proto";
+
+service Wall {
+  rpc RuleInfo(RuleRequest) returns (RulesReply);
+}

@@ -1,0 +1,18 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.dynamic.v1;
+
+import "bilibili/app/dynamic/v1/messages.proto";
+
+service Dynamic {
+  rpc DynDetails(DynDetailsReq) returns (DynDetailsReply);
+  rpc DynOurCity(DynOurCityReq) returns (DynOurCityReply);
+  rpc DynOurCitySwitch(DynOurCitySwitchReq) returns (NoReply);
+  rpc DynRed(DynRedReq) returns (DynRedReply);
+  rpc DynTab(DynTabReq) returns (DynTabReply);
+  rpc DynUpdOffset(DynUpdOffsetReq) returns (NoReply);
+  rpc DynVideo(DynVideoReq) returns (DynVideoReqReply);
+  rpc DynVideoPersonal(DynVideoPersonalReq) returns (DynVideoPersonalReply);
+  rpc SVideo(SVideoReq) returns (SVideoReply);
+}

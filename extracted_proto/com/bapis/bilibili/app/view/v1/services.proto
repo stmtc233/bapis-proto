@@ -1,0 +1,17 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.view.v1;
+
+import "bilibili/app/view/v1/messages.proto";
+
+service View {
+  rpc ChronosPkg(ChronosPkgReq) returns (Chronos);
+  rpc ClickActivitySeason(ClickActivitySeasonReq) returns (NoReply);
+  rpc ClickPlayerCard(ClickPlayerCardReq) returns (NoReply);
+  rpc ExposePlayerCard(ExposePlayerCardReq) returns (NoReply);
+  rpc Season(SeasonReq) returns (SeasonReply);
+  rpc ShortFormVideoDownload(ShortFormVideoDownloadReq) returns (ShortFormVideoDownloadReply);
+  rpc View(ViewReq) returns (ViewReply);
+  rpc ViewProgress(ViewProgressReq) returns (ViewProgressReply);
+}

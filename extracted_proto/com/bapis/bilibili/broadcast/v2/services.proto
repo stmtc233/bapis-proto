@@ -1,0 +1,11 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.v2;
+
+import "bilibili/broadcast/v2/messages.proto";
+import "google/protobuf/empty.proto";
+
+service Laser {
+  rpc WatchEvent(.google.protobuf.Empty) returns (stream LaserEventResp);
+}

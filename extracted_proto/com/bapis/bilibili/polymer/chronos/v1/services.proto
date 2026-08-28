@@ -1,0 +1,11 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package com.bapis.bilibili.polymer.chronos.v1;
+
+import "bilibili/polymer/chronos/v1/messages.proto";
+
+service ChronosService {
+  rpc ObtainChronosPackage(ObtainChronosPackageReq) returns (ObtainChronosPackageRsp);
+  rpc ObtainChronosPackageV2(ObtainChronosPackageV2Req) returns (ObtainChronosPackageRsp);
+}
