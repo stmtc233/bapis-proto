@@ -52,15 +52,15 @@ node tools/grpc_debug.mjs list --version tv --query PlayURL
 
 # 查看一个方法的请求与响应字段
 node tools/grpc_debug.mjs describe --version main \
-  --service com.bapis.bilibili.app.view.v1.View --method View
+  --service bilibili.app.view.v1.View --method View
 
 # 生成可编辑的请求 JSON
 node tools/grpc_debug.mjs template --version main \
-  --service com.bapis.bilibili.app.view.v1.View --method View --output request.json
+  --service bilibili.app.view.v1.View --method View --output request.json
 
 # 使用自己的目标地址和鉴权信息调用；先以 --dry-run 验证参数
 node tools/grpc_debug.mjs call --version main --target example.com:443 \
-  --service com.bapis.bilibili.app.view.v1.View --method View \
+  --service bilibili.app.view.v1.View --method View \
   --data request.json --header 'authorization: Bearer <token>' --dry-run
 ```
 

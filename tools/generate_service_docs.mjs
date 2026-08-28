@@ -211,6 +211,10 @@ const rootIndex = [
 ];
 
 for (const version of versions) {
+  const versionRoot = path.join(docsRoot, version.key);
+  // Service paths derive from their wire package names. Remove previous
+  // generated pages so a package-name correction cannot leave stale pages.
+  fs.rmSync(path.join(versionRoot, 'services'), { recursive: true, force: true });
   const sourceFiles = runGit(['ls-tree', '-r', '--name-only', version.ref, 'extracted_proto/com/bapis'])
     .split('\n')
     .filter(file => file.endsWith('/messages.proto') || file.endsWith('/services.proto'));
@@ -234,9 +238,9 @@ for (const version of versions) {
   for (const service of services) {
     const relative = path.join('services', ...service.fullName.split('.')).replace(/\\/g, '/') + '.md';
     versionIndex.push(`- [\`${service.fullName}\`](${relative})：${serviceDescription(service)}，${service.methods.length} 个 RPC`);
-    writeFile(path.join(docsRoot, version.key, relative), renderService(service, messages));
+    writeFile(path.join(versionRoot, relative), renderService(service, messages));
   }
-  writeFile(path.join(docsRoot, version.key, 'README.md'), `${versionIndex.join('\n')}\n`);
+  writeFile(path.join(versionRoot, 'README.md'), `${versionIndex.join('\n')}\n`);
   rootIndex.push(`- [${version.title}](${version.key}/README.md)：${services.length} 个 service，${services.reduce((count, service) => count + service.methods.length, 0)} 个 RPC`);
 }
 

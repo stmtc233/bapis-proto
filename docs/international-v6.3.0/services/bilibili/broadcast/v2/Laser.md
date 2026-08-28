@@ -1,0 +1,27 @@
+# `bilibili.broadcast.v2.Laser`
+
+中文说明：广播 业务 服务。说明根据接口标识符自动推断，实际业务语义以客户端实现和服务端行为为准。
+
+## RPC
+
+| 方法 | 调用模式 | 请求 | 响应 | 中文说明 |
+| --- | --- | --- | --- | --- |
+| `WatchEvent` | 服务端流 | `google.protobuf.Empty` | `com.bapis.bilibili.broadcast.v2.LaserEventResp` | 事件 |
+
+## 请求与响应字段
+
+### 请求 `google.protobuf.Empty`
+
+中文说明：`Empty` 消息。
+
+该消息来自 protobuf 标准库或当前归档未包含的定义。
+
+### 响应 `com.bapis.bilibili.broadcast.v2.LaserEventResp`
+
+中文说明：事件 响应。
+
+| 字段号 | 字段 | Proto 类型 | 修饰 | 中文说明 |
+| --- | --- | --- | --- | --- |
+| 1 | `taskid` | `int64` | - | 业务字段 `taskid`（名称未提供可靠中文语义） |
+| 2 | `action` | `string` | - | 操作 |
+| 3 | `params` | `string` | - | 业务字段 `params`（名称未提供可靠中文语义） |

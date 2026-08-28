@@ -155,8 +155,10 @@ class ProtoArchive {
 
   findService(value) {
     const normalized = value.replace(/^\./, '');
-    const fullName = normalized.startsWith('com.bapis.') ? normalized : `com.bapis.${normalized}`;
-    const exact = this.services.find(service => service.fullName === fullName);
+    // Older generated docs incorrectly prefixed wire service names with
+    // com.bapis. Keep those inputs working while always invoking the real path.
+    const candidates = [normalized, normalized.replace(/^com\.bapis\./, '')];
+    const exact = this.services.find(service => candidates.includes(service.fullName));
     if (exact) return exact;
     const matches = this.services.filter(service => service.fullName.toLowerCase().includes(normalized.toLowerCase()));
     if (matches.length === 1) return matches[0];
