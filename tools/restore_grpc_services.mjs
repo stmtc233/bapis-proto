@@ -103,7 +103,6 @@ for (const [packageName, rendered] of renderedPackages) {
       '}',
       '',
     ]),
-    '',
   ];
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.writeFileSync(target, body.join('\n'));
