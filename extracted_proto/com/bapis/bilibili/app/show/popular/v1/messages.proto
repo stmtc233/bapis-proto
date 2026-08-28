@@ -58,3 +58,4 @@ message PopularResultReq {
   string locationIds = 12;
   int32 sourceId = 13;
 }
+

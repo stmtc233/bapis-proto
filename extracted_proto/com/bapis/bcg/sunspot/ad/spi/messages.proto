@@ -6,3 +6,4 @@ package com.bapis.bcg.sunspot.ad.spi;
 // Source: com/bapis/bcg/sunspot/ad/spi/Empty.java
 message Empty {
 }
+

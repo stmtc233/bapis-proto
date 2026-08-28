@@ -856,3 +856,4 @@ message ViewHerdDmElem {
   int32 startProgress = 5;
   int32 endProgress = 6;
 }
+

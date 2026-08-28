@@ -57,3 +57,4 @@ message SunspotAdRequestForView {
   int32 mayResistGif = 27;
   string device = 28;
 }
+

@@ -16,3 +16,4 @@ message Restriction {
   ModeType mode = 3;
   bool review = 4;
 }
+

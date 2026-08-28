@@ -9,3 +9,4 @@ import "bcg/sunspot/ad/spi/messages.proto";
 message SearchObj {
   com.bapis.bcg.sunspot.ad.spi.Empty empty = 1;
 }
+

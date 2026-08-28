@@ -518,3 +518,4 @@ message UserAppInfoDto {
   int32 id = 1;
   int32 type = 2;
 }
+

@@ -101,3 +101,4 @@ message Stat {
   int32 like = 10;
   int32 dislike = 11;
 }
+

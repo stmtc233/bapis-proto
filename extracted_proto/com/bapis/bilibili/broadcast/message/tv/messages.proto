@@ -304,3 +304,4 @@ message PublicityNotify {
   int64 roomId = 2;
   int64 status = 3;
 }
+

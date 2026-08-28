@@ -60,3 +60,4 @@ message SunspotAdRequestForView {
   string from = 29;
   string requestType = 30;
 }
+

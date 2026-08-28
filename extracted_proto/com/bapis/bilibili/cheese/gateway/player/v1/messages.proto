@@ -74,3 +74,4 @@ message ProjectReq {
   int32 protocol = 11;
   int32 deviceType = 12;
 }
+

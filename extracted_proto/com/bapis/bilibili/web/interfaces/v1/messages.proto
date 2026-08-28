@@ -528,3 +528,4 @@ message VipInfo {
 message VipLabel {
   string path = 1;
 }
+

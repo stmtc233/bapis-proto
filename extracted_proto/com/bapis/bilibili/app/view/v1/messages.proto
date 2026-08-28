@@ -1113,3 +1113,4 @@ message VipLabel {
   string text = 2;
   string labelTheme = 3;
 }
+

@@ -1659,3 +1659,4 @@ message WatchProgressV2 {
   int32 type = 3;
   int64 progressEnd = 4;
 }
+

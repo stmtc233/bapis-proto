@@ -181,3 +181,4 @@ message AppPackageDto {
   string md5 = 6;
   string icon = 7;
 }
+

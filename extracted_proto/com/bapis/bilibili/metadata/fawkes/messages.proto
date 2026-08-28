@@ -14,3 +14,4 @@ message FawkesReq {
   string appkey = 1;
   string env = 2;
 }
+

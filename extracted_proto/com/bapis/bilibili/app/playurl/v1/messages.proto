@@ -360,3 +360,4 @@ message VideoInfo {
   repeated Stream streamList = 5;
   repeated DashItem dashAudio = 6;
 }
+

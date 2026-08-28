@@ -16,3 +16,4 @@ message Device {
   string model = 9;
   string osver = 10;
 }
+

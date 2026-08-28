@@ -153,3 +153,4 @@ message Vote {
   int64 count = 3;
   string desc = 4;
 }
+

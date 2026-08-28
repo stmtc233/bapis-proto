@@ -31,3 +31,4 @@ message SourceContentDto {
   int32 index = 8;
   com.bapis.bcg.sunspot.test.bce.AdDto adContent = 9;
 }
+

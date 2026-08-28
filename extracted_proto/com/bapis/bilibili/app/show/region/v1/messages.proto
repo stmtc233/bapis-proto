@@ -33,3 +33,4 @@ message RegionReply {
 message RegionReq {
   string lang = 1;
 }
+
