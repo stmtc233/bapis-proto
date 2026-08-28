@@ -3,11 +3,10 @@
 This repository reconstructs Protocol Buffer schemas from Bilibili Android
 APKs. The generated schemas are written below `extracted_proto/com/bapis`.
 
-The `codex/international` branch targets the international app (`com.bilibili.app.in`).
-Its updater resolves the current `6.x` release from APKCombo, downloads the
-XAPK, verifies the base APK package name, and handles split APKs before
-decompiling the protobuf dex files. The mainland `main` branch continues to
-use the official `tv.danmaku.bili` APK feed.
+The `international` branch targets the international app (`com.bilibili.app.in`),
+while the `tv` branch targets the TV app (`com.xiaodianshi.tv.yst`). Each branch
+has its own updater and generated archive. The mainland `main` branch continues
+to use the official `tv.danmaku.bili` APK feed.
 
 ## Updates
 
@@ -22,9 +21,12 @@ files, creates a version tag, and creates a GitHub Release. Existing tags are
 treated as already processed, and workflow concurrency prevents two
 generations from running at once.
 
-The international workflow uses `international-v<versionName>` tags so its
-releases do not collide with mainland `v<versionName>` tags. Run the workflow
-manually from this branch to refresh the international archive.
+The international workflow uses `international-v<versionName>` tags, and the TV
+workflow uses `tv-v<versionName>` tags, so releases do not collide with mainland
+`v<versionName>` tags. Run the corresponding workflow manually from its branch
+to refresh that archive. The default-branch scheduler dispatches both branch
+workflows daily because GitHub scheduled workflows otherwise run only from the
+default branch.
 
 ## Local regeneration
 

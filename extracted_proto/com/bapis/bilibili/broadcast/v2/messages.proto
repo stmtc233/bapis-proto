@@ -9,4 +9,3 @@ message LaserEventResp {
   string action = 2;
   string params = 3;
 }
-

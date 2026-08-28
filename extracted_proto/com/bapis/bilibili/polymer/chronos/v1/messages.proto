@@ -24,4 +24,3 @@ message ObtainChronosPackageV2Req {
   string bizId = 3;
   string businessAppKey = 4;
 }
-
