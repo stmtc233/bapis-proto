@@ -1,11 +1,11 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.community.service.govern.v1;
+package bilibili.community.service.govern.v1;
 
 import "bilibili/community/service/govern/v1/messages.proto";
 import "google/protobuf/empty.proto";
 
 service Qoe {
-  rpc QoeReport(QoeReportReq) returns (.google.protobuf.Empty);
+  rpc QoeReport(.com.bapis.bilibili.community.service.govern.v1.QoeReportReq) returns (.google.protobuf.Empty);
 }

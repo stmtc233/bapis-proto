@@ -54,11 +54,12 @@ let serviceCount = 0;
 let rpcCount = 0;
 let skippedRpcCount = 0;
 for (const catalogService of catalog.services) {
-  const packageName = `com.bapis.${catalogService.package}`;
+  const packageName = catalogService.package;
+  const messagePackageName = `com.bapis.${catalogService.package}`;
   const candidatesByName = new Map();
   for (const method of catalogService.methods) {
-    const request = messageType(method.request, packageName);
-    const response = messageType(method.response, packageName);
+    const request = messageType(method.request, messagePackageName);
+    const response = messageType(method.response, messagePackageName);
     if (!typeData(request) || !typeData(response)) {
       skippedRpcCount++;
       continue;

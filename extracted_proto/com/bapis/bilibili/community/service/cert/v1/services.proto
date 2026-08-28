@@ -1,11 +1,11 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.community.service.cert.v1;
+package bilibili.community.service.cert.v1;
 
 import "bilibili/community/service/cert/v1/messages.proto";
 
 service FieldCert {
-  rpc FieldCertPopAction(FieldCertPopActionReq) returns (FieldCertPopActionRsp);
-  rpc FieldCertPopRecord(FieldCertPopRecordReq) returns (FieldCertPopRecordRsp);
+  rpc FieldCertPopAction(.com.bapis.bilibili.community.service.cert.v1.FieldCertPopActionReq) returns (.com.bapis.bilibili.community.service.cert.v1.FieldCertPopActionRsp);
+  rpc FieldCertPopRecord(.com.bapis.bilibili.community.service.cert.v1.FieldCertPopRecordReq) returns (.com.bapis.bilibili.community.service.cert.v1.FieldCertPopRecordRsp);
 }
