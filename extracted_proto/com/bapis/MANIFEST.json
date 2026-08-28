@@ -3,5 +3,10 @@
   "generatedAt": "2026-08-26T03:40:28.363Z",
   "messageCount": 4055,
   "topLevelEnumCount": 499,
-  "packageCount": 139
+  "packageCount": 139,
+  "serviceCount": 81,
+  "rpcCount": 475,
+  "apkServiceCount": 0,
+  "catalogServiceCount": 81,
+  "skippedCatalogRpcCount": 92
 }
