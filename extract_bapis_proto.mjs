@@ -513,7 +513,6 @@ for (const [packageName, packageServices] of servicePackages) {
       '}',
       '',
     ]),
-    '',
   ];
   fs.writeFileSync(target, body.join('\n'));
 }
