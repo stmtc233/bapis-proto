@@ -47,6 +47,8 @@ node extract_bapis_proto.mjs
 ```
 
 The reconstructed files retain the protobuf field numbers, scalar wire types,
-repeated fields, maps, oneofs, and recoverable enum definitions. Original proto
-file names, comments, custom options, and RPC services are not present in the
-protobuf-lite metadata and cannot be reconstructed reliably.
+repeated fields, maps, oneofs, and recoverable enum definitions. The extractor
+also recovers gRPC service names, RPC methods, and streaming modes from the
+generated `*Grpc.java` descriptors included in the APK. Original proto file
+names, comments, and custom options are not present in protobuf-lite metadata
+and cannot be reconstructed reliably.
