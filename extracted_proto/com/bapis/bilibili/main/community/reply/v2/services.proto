@@ -1,10 +1,10 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.main.community.reply.v2;
+package bilibili.main.community.reply.v2;
 
 import "bilibili/main/community/reply/v2/messages.proto";
 
 service Reply {
-  rpc SubjectDescription(SubjectDescriptionReq) returns (SubjectDescriptionReply);
+  rpc SubjectDescription(.com.bapis.bilibili.main.community.reply.v2.SubjectDescriptionReq) returns (.com.bapis.bilibili.main.community.reply.v2.SubjectDescriptionReply);
 }
