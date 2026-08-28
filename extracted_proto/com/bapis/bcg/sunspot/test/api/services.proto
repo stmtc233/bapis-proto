@@ -1,7 +1,7 @@
 // Reconstructed from gRPC service descriptors.
 syntax = "proto3";
 
-package com.bapis.bcg.sunspot.test.api;
+package bcg.sunspot.test.api;
 
 import "bcg/sunspot/test/vo/messages.proto";
 

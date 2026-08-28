@@ -1,7 +1,7 @@
 // Reconstructed from gRPC service descriptors.
 syntax = "proto3";
 
-package com.bapis.bilibili.web.interface.v1;
+package bilibili.web.interface.v1;
 
 import "bilibili/web/interfaces/v1/messages.proto";
 

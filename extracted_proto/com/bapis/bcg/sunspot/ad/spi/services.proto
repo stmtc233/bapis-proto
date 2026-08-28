@@ -1,7 +1,7 @@
 // Reconstructed from gRPC service descriptors.
 syntax = "proto3";
 
-package com.bapis.bcg.sunspot.ad.spi;
+package bcg.sunspot.ad.spi;
 
 import "bcg/sunspot/ad/dto/messages.proto";
 

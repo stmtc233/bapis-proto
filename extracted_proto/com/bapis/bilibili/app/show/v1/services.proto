@@ -1,7 +1,7 @@
 // Reconstructed from gRPC service descriptors.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.show.v1;
+package bilibili.app.show.v1;
 
 import "bilibili/app/show/popular/v1/messages.proto";
 import "bilibili/app/show/rank/v1/messages.proto";

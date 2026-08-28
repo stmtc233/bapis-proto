@@ -1,13 +1,13 @@
 // Reconstructed from gRPC service descriptors.
 syntax = "proto3";
 
-package com.bapis.bilibili.api.probe.v1;
+package bilibili.api.probe.v1;
 
 import "bilibili/api/probe/v1/messages.proto";
 
 service Probe {
-  rpc TestCode(CodeReq) returns (CodeReply);
-  rpc TestReq(ProbeReq) returns (ProbeReply);
-  rpc TestStream(stream ProbeStreamReq) returns (stream ProbeStreamReply);
-  rpc TestSub(ProbeSubReq) returns (stream ProbeSubReply);
+  rpc TestCode(.com.bapis.bilibili.api.probe.v1.CodeReq) returns (.com.bapis.bilibili.api.probe.v1.CodeReply);
+  rpc TestReq(.com.bapis.bilibili.api.probe.v1.ProbeReq) returns (.com.bapis.bilibili.api.probe.v1.ProbeReply);
+  rpc TestStream(stream .com.bapis.bilibili.api.probe.v1.ProbeStreamReq) returns (stream .com.bapis.bilibili.api.probe.v1.ProbeStreamReply);
+  rpc TestSub(.com.bapis.bilibili.api.probe.v1.ProbeSubReq) returns (stream .com.bapis.bilibili.api.probe.v1.ProbeSubReply);
 }

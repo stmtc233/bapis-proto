@@ -1,11 +1,11 @@
 // Reconstructed from gRPC service descriptors.
 syntax = "proto3";
 
-package com.bapis.bilibili.cheese.gateway.player.v1;
+package bilibili.cheese.gateway.player.v1;
 
 import "bilibili/cheese/gateway/player/v1/messages.proto";
 
 service PlayURL {
-  rpc PlayView(PlayViewReq) returns (PlayViewReply);
-  rpc Project(ProjectReq) returns (ProjectReply);
+  rpc PlayView(.com.bapis.bilibili.cheese.gateway.player.v1.PlayViewReq) returns (.com.bapis.bilibili.cheese.gateway.player.v1.PlayViewReply);
+  rpc Project(.com.bapis.bilibili.cheese.gateway.player.v1.ProjectReq) returns (.com.bapis.bilibili.cheese.gateway.player.v1.ProjectReply);
 }

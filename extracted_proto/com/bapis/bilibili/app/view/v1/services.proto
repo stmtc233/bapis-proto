@@ -1,17 +1,17 @@
 // Reconstructed from gRPC service descriptors.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.view.v1;
+package bilibili.app.view.v1;
 
 import "bilibili/app/view/v1/messages.proto";
 
 service View {
-  rpc ChronosPkg(ChronosPkgReq) returns (Chronos);
-  rpc ClickActivitySeason(ClickActivitySeasonReq) returns (NoReply);
-  rpc ClickPlayerCard(ClickPlayerCardReq) returns (NoReply);
-  rpc ExposePlayerCard(ExposePlayerCardReq) returns (NoReply);
-  rpc Season(SeasonReq) returns (SeasonReply);
-  rpc ShortFormVideoDownload(ShortFormVideoDownloadReq) returns (ShortFormVideoDownloadReply);
-  rpc View(ViewReq) returns (ViewReply);
-  rpc ViewProgress(ViewProgressReq) returns (ViewProgressReply);
+  rpc ChronosPkg(.com.bapis.bilibili.app.view.v1.ChronosPkgReq) returns (.com.bapis.bilibili.app.view.v1.Chronos);
+  rpc ClickActivitySeason(.com.bapis.bilibili.app.view.v1.ClickActivitySeasonReq) returns (.com.bapis.bilibili.app.view.v1.NoReply);
+  rpc ClickPlayerCard(.com.bapis.bilibili.app.view.v1.ClickPlayerCardReq) returns (.com.bapis.bilibili.app.view.v1.NoReply);
+  rpc ExposePlayerCard(.com.bapis.bilibili.app.view.v1.ExposePlayerCardReq) returns (.com.bapis.bilibili.app.view.v1.NoReply);
+  rpc Season(.com.bapis.bilibili.app.view.v1.SeasonReq) returns (.com.bapis.bilibili.app.view.v1.SeasonReply);
+  rpc ShortFormVideoDownload(.com.bapis.bilibili.app.view.v1.ShortFormVideoDownloadReq) returns (.com.bapis.bilibili.app.view.v1.ShortFormVideoDownloadReply);
+  rpc View(.com.bapis.bilibili.app.view.v1.ViewReq) returns (.com.bapis.bilibili.app.view.v1.ViewReply);
+  rpc ViewProgress(.com.bapis.bilibili.app.view.v1.ViewProgressReq) returns (.com.bapis.bilibili.app.view.v1.ViewProgressReply);
 }
