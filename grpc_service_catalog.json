@@ -1,0 +1,4113 @@
+{
+  "source": {
+    "repository": "https://github.com/stmtc233/bili-grpc-api-go",
+    "revision": "45095d4d913dd8146d9e9fd6e62ed2c12b188ab1"
+  },
+  "services": [
+    {
+      "package": "bilibili.account.fission.v1",
+      "name": "Fission",
+      "methods": [
+        {
+          "name": "Entrance",
+          "request": "EntranceReq",
+          "response": "EntranceReply",
+          "source": "bilibili/account/fission/v1_grpc.pb.go"
+        },
+        {
+          "name": "Privacy",
+          "request": "PrivacyReq",
+          "response": "PrivacyReply",
+          "source": "bilibili/account/fission/v1_grpc.pb.go"
+        },
+        {
+          "name": "Window",
+          "request": "WindowReq",
+          "response": "WindowReply",
+          "source": "bilibili/account/fission/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.account.interfaces.v1",
+      "name": "AccountInterfaceV1",
+      "methods": [
+        {
+          "name": "MidByName",
+          "request": "MidByNameReq",
+          "response": "MidByNameReply",
+          "source": "bilibili/account/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UnameMessage",
+          "request": "UnameMessageReq",
+          "response": "UnameMessageReply",
+          "source": "bilibili/account/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateNameV2",
+          "request": "UpdateNameReq",
+          "response": "UpdateNameReply",
+          "source": "bilibili/account/interfaces/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.api.player.v1",
+      "name": "Heartbeat",
+      "methods": [
+        {
+          "name": "Mobile",
+          "request": "HeartbeatReq",
+          "response": "HeartbeatReply",
+          "source": "bilibili/api/player/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.api.probe.v1",
+      "name": "Probe",
+      "methods": [
+        {
+          "name": "TestCode",
+          "request": "CodeReq",
+          "response": "CodeReply",
+          "source": "bilibili/api/probe/v1_grpc.pb.go"
+        },
+        {
+          "name": "TestReq",
+          "request": "ProbeReq",
+          "response": "ProbeReply",
+          "source": "bilibili/api/probe/v1_grpc.pb.go"
+        },
+        {
+          "name": "TestStream",
+          "request": "ProbeStreamReq",
+          "response": "ProbeStreamReply",
+          "clientStreaming": true,
+          "serverStreaming": true,
+          "source": "bilibili/api/probe/v1_grpc.pb.go"
+        },
+        {
+          "name": "TestStream",
+          "request": "ProbeStreamReq",
+          "response": "ProbeStreamReply",
+          "source": "bilibili/api/probe/v1/probe_grpc.pb.go"
+        },
+        {
+          "name": "TestSub",
+          "request": "ProbeSubReq",
+          "response": "ProbeSubReply",
+          "serverStreaming": true,
+          "source": "bilibili/api/probe/v1_grpc.pb.go"
+        },
+        {
+          "name": "TestSub",
+          "request": "ProbeSubReq",
+          "response": "ProbeSubReply",
+          "source": "bilibili/api/probe/v1/probe_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.api.probe.v1",
+      "name": "ProbeService",
+      "methods": [
+        {
+          "name": "Echo",
+          "request": "SimpleMessage",
+          "response": "SimpleMessage",
+          "source": "bilibili/api/probe/v1_grpc.pb.go"
+        },
+        {
+          "name": "EchoBody",
+          "request": "SimpleMessage",
+          "response": "SimpleMessage",
+          "source": "bilibili/api/probe/v1_grpc.pb.go"
+        },
+        {
+          "name": "EchoDelete",
+          "request": "SimpleMessage",
+          "response": "SimpleMessage",
+          "source": "bilibili/api/probe/v1_grpc.pb.go"
+        },
+        {
+          "name": "EchoError",
+          "request": "ErrorMessage",
+          "response": "ErrorMessage",
+          "source": "bilibili/api/probe/v1_grpc.pb.go"
+        },
+        {
+          "name": "EchoPatch",
+          "request": "DynamicMessageUpdate",
+          "response": "DynamicMessageUpdate",
+          "source": "bilibili/api/probe/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.api.ticket.v1",
+      "name": "Ticket",
+      "methods": [
+        {
+          "name": "GenWebTicket",
+          "request": "GenWebTicketRequest",
+          "response": "GenWebTicketResponse",
+          "source": "bilibili/api/ticket/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetTicket",
+          "request": "GetTicketRequest",
+          "response": "GetTicketResponse",
+          "source": "bilibili/api/ticket/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.click.v1",
+      "name": "Click",
+      "methods": [
+        {
+          "name": "HeartBeat",
+          "request": "HeartBeatReq",
+          "response": "HeartBeatReply",
+          "source": "bilibili/app/click/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.distribution",
+      "name": "Distribution",
+      "methods": [
+        {
+          "name": "GetUserPreference",
+          "request": "GetUserPreferenceReq",
+          "response": "GetUserPreferenceReply",
+          "source": "bilibili/app/distribution_grpc.pb.go"
+        },
+        {
+          "name": "SetUserPreference",
+          "request": "SetUserPreferenceReq",
+          "response": "SetUserPreferenceReply",
+          "source": "bilibili/app/distribution_grpc.pb.go"
+        },
+        {
+          "name": "UserPreference",
+          "request": "UserPreferenceReq",
+          "response": "UserPreferenceReply",
+          "source": "bilibili/app/distribution_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.distribution.v1",
+      "name": "Distribution",
+      "methods": [
+        {
+          "name": "GetUserPreference",
+          "request": "GetUserPreferenceReq",
+          "response": "GetUserPreferenceReply",
+          "source": "bilibili/app/distribution/v1/distribution_grpc.pb.go"
+        },
+        {
+          "name": "SetUserPreference",
+          "request": "SetUserPreferenceReq",
+          "response": "SetUserPreferenceReply",
+          "source": "bilibili/app/distribution/v1/distribution_grpc.pb.go"
+        },
+        {
+          "name": "UserPreference",
+          "request": "UserPreferenceReq",
+          "response": "UserPreferenceReply",
+          "source": "bilibili/app/distribution/v1/distribution_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.dynamic.v1",
+      "name": "Dynamic",
+      "methods": [
+        {
+          "name": "DynDetails",
+          "request": "DynDetailsReq",
+          "response": "DynDetailsReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynMixUpListSearch",
+          "request": "DynMixUpListSearchReq",
+          "response": "DynMixUpListSearchReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynMixUpListViewMore",
+          "request": "NoReq",
+          "response": "DynMixUpListViewMoreReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynOurCity",
+          "request": "DynOurCityReq",
+          "response": "DynOurCityReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynOurCitySwitch",
+          "request": "DynOurCitySwitchReq",
+          "response": "NoReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynRed",
+          "request": "DynRedReq",
+          "response": "DynRedReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynTab",
+          "request": "DynTabReq",
+          "response": "DynTabReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynUpdOffset",
+          "request": "DynUpdOffsetReq",
+          "response": "NoReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynVideo",
+          "request": "DynVideoReq",
+          "response": "DynVideoReqReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynVideoPersonal",
+          "request": "DynVideoPersonalReq",
+          "response": "DynVideoPersonalReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "GeoCoder",
+          "request": "GeoCoderReq",
+          "response": "GeoCoderReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "OurCityClickReport",
+          "request": "OurCityClickReportReq",
+          "response": "OurCityClickReportReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        },
+        {
+          "name": "SVideo",
+          "request": "SVideoReq",
+          "response": "SVideoReply",
+          "source": "bilibili/app/dynamic/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.dynamic.v2",
+      "name": "Campus",
+      "methods": [
+        {
+          "name": "WaterFlowRcmd",
+          "request": "WaterFlowRcmdReq",
+          "response": "WaterFlowRcmdResp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.dynamic.v2",
+      "name": "Dynamic",
+      "methods": [
+        {
+          "name": "AlumniDynamics",
+          "request": "AlumniDynamicsReq",
+          "response": "AlumniDynamicsReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusBillboard",
+          "request": "CampusBillBoardReq",
+          "response": "CampusBillBoardReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusBillBoard",
+          "request": "CampusBillBoardReq",
+          "response": "CampusBillBoardReply",
+          "source": "bilibili/app/dynamic/v2/dynamic_grpc.pb.go"
+        },
+        {
+          "name": "CampusBillboardInternal",
+          "request": "CampusBillboardInternalReq",
+          "response": "CampusBillBoardReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusEntryTab",
+          "request": "CampusEntryTabReq",
+          "response": "CampusEntryTabResp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusFeedback",
+          "request": "CampusFeedbackReq",
+          "response": "CampusFeedbackReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusHomePages",
+          "request": "CampusHomePagesReq",
+          "response": "CampusHomePagesReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusMateLikeList",
+          "request": "CampusMateLikeListReq",
+          "response": "CampusMateLikeListReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusMngDetail",
+          "request": "CampusMngDetailReq",
+          "response": "CampusMngDetailReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusMngQuizOperate",
+          "request": "CampusMngQuizOperateReq",
+          "response": "CampusMngQuizOperateReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusMngSubmit",
+          "request": "CampusMngSubmitReq",
+          "response": "CampusMngSubmitReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusRcmd",
+          "request": "CampusRcmdReq",
+          "response": "CampusRcmdReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusRcmdFeed",
+          "request": "CampusRcmdFeedReq",
+          "response": "CampusRcmdFeedReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusRecommend",
+          "request": "CampusRecommendReq",
+          "response": "CampusRecommendReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusRedDot",
+          "request": "CampusRedDotReq",
+          "response": "CampusRedDotReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusSquare",
+          "request": "CampusSquareReq",
+          "response": "CampusSquareReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CampusTopicRcmdFeed",
+          "request": "CampusTopicRcmdFeedReq",
+          "response": "CampusTopicRcmdFeedReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "CooperationStaffList",
+          "request": "CooperationStaffListReq",
+          "response": "CooperationStaffListResp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynAdditionCommonFollow",
+          "request": "DynAdditionCommonFollowReq",
+          "response": "DynAdditionCommonFollowReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynAll",
+          "request": "DynAllReq",
+          "response": "DynAllReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynAllPersonal",
+          "request": "DynAllPersonalReq",
+          "response": "DynAllPersonalReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynAllUpdOffset",
+          "request": "DynAllUpdOffsetReq",
+          "response": "NoReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynDetail",
+          "request": "DynDetailReq",
+          "response": "DynDetailReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynDetails",
+          "request": "DynDetailsReq",
+          "response": "DynDetailsReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynFakeCard",
+          "request": "DynFakeCardReq",
+          "response": "DynFakeCardReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynFriend",
+          "request": "DynFriendReq",
+          "response": "DynFriendReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynLight",
+          "request": "DynLightReq",
+          "response": "DynLightReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynMixUpListSearch",
+          "request": "DynMixUpListSearchReq",
+          "response": "DynMixUpListSearchReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynMixUpListViewMore",
+          "request": "DynMixUpListViewMoreReq",
+          "response": "DynMixUpListViewMoreReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynRcmdUpExchange",
+          "request": "DynRcmdUpExchangeReq",
+          "response": "DynRcmdUpExchangeReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynSearch",
+          "request": "DynSearchReq",
+          "response": "DynSearchReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynServerDetails",
+          "request": "DynServerDetailsReq",
+          "response": "DynServerDetailsReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynSpace",
+          "request": "DynSpaceReq",
+          "response": "DynSpaceRsp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynSpaceSearchDetails",
+          "request": "DynSpaceSearchDetailsReq",
+          "response": "DynSpaceSearchDetailsReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynTab",
+          "request": "DynTabReq",
+          "response": "DynTabReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynThumb",
+          "request": "DynThumbReq",
+          "response": "NoReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynUnLoginRcmd",
+          "request": "DynRcmdReq",
+          "response": "DynRcmdReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynVideo",
+          "request": "DynVideoReq",
+          "response": "DynVideoReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynVideoPersonal",
+          "request": "DynVideoPersonalReq",
+          "response": "DynVideoPersonalReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynVideoUpdOffset",
+          "request": "DynVideoUpdOffsetReq",
+          "response": "NoReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "DynVote",
+          "request": "DynVoteReq",
+          "response": "DynVoteReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "FeedFilter",
+          "request": "FeedFilterReq",
+          "response": "FeedFilterReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "FetchTabSetting",
+          "request": "NoReq",
+          "response": "FetchTabSettingReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "HomeSubscribe",
+          "request": "HomeSubscribeReq",
+          "response": "HomeSubscribeReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "LbsPoi",
+          "request": "LbsPoiReq",
+          "response": "LbsPoiReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "LegacyTopicFeed",
+          "request": "LegacyTopicFeedReq",
+          "response": "LegacyTopicFeedReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "LikeList",
+          "request": "LikeListReq",
+          "response": "LikeListReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "OfficialAccounts",
+          "request": "OfficialAccountsReq",
+          "response": "OfficialAccountsReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "OfficialDynamics",
+          "request": "OfficialDynamicsReq",
+          "response": "OfficialDynamicsReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "QuickConsumeMoreAvatarList",
+          "request": "QuickConsumeMoreAvatarListReq",
+          "response": "QuickConsumeMoreAvatarListReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "ReactionList",
+          "request": "ReactionListReq",
+          "response": "ReactionListReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "RepostList",
+          "request": "RepostListReq",
+          "response": "RepostListRsp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "SchoolRecommend",
+          "request": "SchoolRecommendReq",
+          "response": "SchoolRecommendReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "SchoolSearch",
+          "request": "SchoolSearchReq",
+          "response": "SchoolSearchReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "SetDecision",
+          "request": "SetDecisionReq",
+          "response": "NoReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "SetRecentCampus",
+          "request": "SetRecentCampusReq",
+          "response": "NoReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "SubscribeCampus",
+          "request": "SubscribeCampusReq",
+          "response": "NoReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "SubscriptionClick",
+          "request": "SubscriptionClickReq",
+          "response": "SubscriptionClickResp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "TopicList",
+          "request": "TopicListReq",
+          "response": "TopicListReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "TopicSquare",
+          "request": "TopicSquareReq",
+          "response": "TopicSquareReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "UnfollowMatch",
+          "request": "UnfollowMatchReq",
+          "response": "NoReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "UpdateTabSetting",
+          "request": "UpdateTabSettingReq",
+          "response": "NoReply",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.dynamic.v2",
+      "name": "Opus",
+      "methods": [
+        {
+          "name": "ListCreation",
+          "request": "ListCreationReq",
+          "response": "ListCreationResp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "ListFav",
+          "request": "ListFavReq",
+          "response": "ListFavResp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "OpusCollectionDetail",
+          "request": "OpusCollectionDetailReq",
+          "response": "OpusCollectionDetailResp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "OpusDetail",
+          "request": "OpusDetailReq",
+          "response": "OpusDetailResp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "OpusSpaceFlow",
+          "request": "OpusSpaceFlowReq",
+          "response": "OpusSpaceFlowResp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        },
+        {
+          "name": "SignResources",
+          "request": "SignResourcesReq",
+          "response": "SignResourcesResp",
+          "source": "bilibili/app/dynamic/v2_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.home.v1",
+      "name": "Home",
+      "methods": [
+        {
+          "name": "HomePopup",
+          "request": "HomePopupReq",
+          "response": "HomePopupRes",
+          "source": "bilibili/app/home/v1_grpc.pb.go"
+        },
+        {
+          "name": "MineSelectionContent",
+          "request": "MineSelectionContentReq",
+          "response": "MineSelectionContentRes",
+          "source": "bilibili/app/home/v1_grpc.pb.go"
+        },
+        {
+          "name": "MineSelectionOptionItems",
+          "request": "MineSelectionOptionItemsReq",
+          "response": "MineSelectionOptionItemsRes",
+          "source": "bilibili/app/home/v1_grpc.pb.go"
+        },
+        {
+          "name": "MineSelectionOptionUpdate",
+          "request": "MineSelectionOptionUpdateReq",
+          "response": "MineSelectionOptionUpdateRes",
+          "source": "bilibili/app/home/v1_grpc.pb.go"
+        },
+        {
+          "name": "Recent",
+          "request": "RecentReq",
+          "response": "RecentRes",
+          "source": "bilibili/app/home/v1_grpc.pb.go"
+        },
+        {
+          "name": "RemoveVideo",
+          "request": "RemoveVideoReq",
+          "response": "RemoveVideoRes",
+          "source": "bilibili/app/home/v1_grpc.pb.go"
+        },
+        {
+          "name": "TopLeftTab",
+          "request": "TopLeftTabReq",
+          "response": "TopLeftTabRes",
+          "source": "bilibili/app/home/v1_grpc.pb.go"
+        },
+        {
+          "name": "TopLeftTabUpdate",
+          "request": "TopLeftTabUpdateReq",
+          "response": "TopLeftTabUpdateRes",
+          "source": "bilibili/app/home/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interface.v1",
+      "name": "History",
+      "methods": [
+        {
+          "name": "Clear",
+          "request": "ClearReq",
+          "response": "NoReply",
+          "source": "bilibili/app/interfaces/v1/history_grpc.pb.go"
+        },
+        {
+          "name": "Cursor",
+          "request": "CursorReq",
+          "response": "CursorReply",
+          "source": "bilibili/app/interfaces/v1/history_grpc.pb.go"
+        },
+        {
+          "name": "CursorV2",
+          "request": "CursorV2Req",
+          "response": "CursorV2Reply",
+          "source": "bilibili/app/interfaces/v1/history_grpc.pb.go"
+        },
+        {
+          "name": "Delete",
+          "request": "DeleteReq",
+          "response": "NoReply",
+          "source": "bilibili/app/interfaces/v1/history_grpc.pb.go"
+        },
+        {
+          "name": "HistoryTab",
+          "request": "HistoryTabReq",
+          "response": "HistoryTabReply",
+          "source": "bilibili/app/interfaces/v1/history_grpc.pb.go"
+        },
+        {
+          "name": "HistoryTabV2",
+          "request": "HistoryTabReq",
+          "response": "HistoryTabReply",
+          "source": "bilibili/app/interfaces/v1/history_grpc.pb.go"
+        },
+        {
+          "name": "LatestHistory",
+          "request": "LatestHistoryReq",
+          "response": "LatestHistoryReply",
+          "source": "bilibili/app/interfaces/v1/history_grpc.pb.go"
+        },
+        {
+          "name": "Search",
+          "request": "SearchReq",
+          "response": "SearchReply",
+          "source": "bilibili/app/interfaces/v1/history_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interface.v1",
+      "name": "Media",
+      "methods": [
+        {
+          "name": "MediaComment",
+          "request": "MediaCommentReq",
+          "response": "MediaCommentReply",
+          "source": "bilibili/app/interfaces/v1/media_grpc.pb.go"
+        },
+        {
+          "name": "MediaDetail",
+          "request": "MediaDetailReq",
+          "response": "MediaDetailReply",
+          "source": "bilibili/app/interfaces/v1/media_grpc.pb.go"
+        },
+        {
+          "name": "MediaFollow",
+          "request": "MediaFollowReq",
+          "response": "MediaFollowReply",
+          "source": "bilibili/app/interfaces/v1/media_grpc.pb.go"
+        },
+        {
+          "name": "MediaRelation",
+          "request": "MediaRelationReq",
+          "response": "MediaRelationReply",
+          "source": "bilibili/app/interfaces/v1/media_grpc.pb.go"
+        },
+        {
+          "name": "MediaTab",
+          "request": "MediaTabReq",
+          "response": "MediaTabReply",
+          "source": "bilibili/app/interfaces/v1/media_grpc.pb.go"
+        },
+        {
+          "name": "MediaVideo",
+          "request": "MediaVideoReq",
+          "response": "MediaVideoReply",
+          "source": "bilibili/app/interfaces/v1/media_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interface.v1",
+      "name": "Search",
+      "methods": [
+        {
+          "name": "DefaultWords",
+          "request": "DefaultWordsReq",
+          "response": "DefaultWordsReply",
+          "source": "bilibili/app/interfaces/v1/search_grpc.pb.go"
+        },
+        {
+          "name": "Suggest3",
+          "request": "SuggestionResult3Req",
+          "response": "SuggestionResult3Reply",
+          "source": "bilibili/app/interfaces/v1/search_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interface.v1",
+      "name": "SearchTest",
+      "methods": [
+        {
+          "name": "NotExist",
+          "request": "SuggestionResult3Req",
+          "response": "SuggestionResult3Reply",
+          "source": "bilibili/app/interfaces/v1/search_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interface.v1",
+      "name": "Space",
+      "methods": [
+        {
+          "name": "SearchArchive",
+          "request": "SearchArchiveReq",
+          "response": "SearchArchiveReply",
+          "source": "bilibili/app/interfaces/v1/space_grpc.pb.go"
+        },
+        {
+          "name": "SearchDynamic",
+          "request": "SearchDynamicReq",
+          "response": "SearchDynamicReply",
+          "source": "bilibili/app/interfaces/v1/space_grpc.pb.go"
+        },
+        {
+          "name": "SearchTab",
+          "request": "SearchTabReq",
+          "response": "SearchTabReply",
+          "source": "bilibili/app/interfaces/v1/space_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interfaces.v1",
+      "name": "History",
+      "methods": [
+        {
+          "name": "Clear",
+          "request": "ClearReq",
+          "response": "NoReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "Cursor",
+          "request": "CursorReq",
+          "response": "CursorReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "CursorV2",
+          "request": "CursorV2Req",
+          "response": "CursorV2Reply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "Delete",
+          "request": "DeleteReq",
+          "response": "NoReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "HistoryTab",
+          "request": "HistoryTabReq",
+          "response": "HistoryTabReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "HistoryTabV2",
+          "request": "HistoryTabReq",
+          "response": "HistoryTabReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "LatestHistory",
+          "request": "LatestHistoryReq",
+          "response": "LatestHistoryReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "Search",
+          "request": "SearchReq",
+          "response": "SearchReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interfaces.v1",
+      "name": "Media",
+      "methods": [
+        {
+          "name": "MediaComment",
+          "request": "MediaCommentReq",
+          "response": "MediaCommentReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "MediaDetail",
+          "request": "MediaDetailReq",
+          "response": "MediaDetailReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "MediaFollow",
+          "request": "MediaFollowReq",
+          "response": "MediaFollowReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "MediaRelation",
+          "request": "MediaRelationReq",
+          "response": "MediaRelationReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "MediaTab",
+          "request": "MediaTabReq",
+          "response": "MediaTabReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "MediaVideo",
+          "request": "MediaVideoReq",
+          "response": "MediaVideoReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interfaces.v1",
+      "name": "Search",
+      "methods": [
+        {
+          "name": "DefaultWords",
+          "request": "DefaultWordsReq",
+          "response": "DefaultWordsReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "Suggest3",
+          "request": "SuggestionResult3Req",
+          "response": "SuggestionResult3Reply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interfaces.v1",
+      "name": "SearchTest",
+      "methods": [
+        {
+          "name": "NotExist",
+          "request": "SuggestionResult3Req",
+          "response": "SuggestionResult3Reply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interfaces.v1",
+      "name": "Space",
+      "methods": [
+        {
+          "name": "SearchArchive",
+          "request": "SearchArchiveReq",
+          "response": "SearchArchiveReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SearchDynamic",
+          "request": "SearchDynamicReq",
+          "response": "SearchDynamicReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SearchTab",
+          "request": "SearchTabReq",
+          "response": "SearchTabReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateReserveStartTime",
+          "request": "UpdateReserveStartTimeReq",
+          "response": "UpdateReserveStartTimeReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.interfaces.v1",
+      "name": "Teenagers",
+      "methods": [
+        {
+          "name": "FacialRecognitionVerify",
+          "request": "FacialRecognitionVerifyReq",
+          "response": "FacialRecognitionVerifyReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "ModeStatus",
+          "request": "ModeStatusReq",
+          "response": "ModeStatusReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "ModifyPwd",
+          "request": "ModifyPwdReq",
+          "response": "ModifyPwdReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SetTeenagersModelAge",
+          "request": "SetTeenagersModelAgeReq",
+          "response": "SetTeenagersModelAgeReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateStatus",
+          "request": "UpdateStatusReq",
+          "response": "UpdateStatusReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "VerifyPwd",
+          "request": "VerifyPwdReq",
+          "response": "VerifyPwdReply",
+          "source": "bilibili/app/interfaces/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.listener.v1",
+      "name": "Listener",
+      "methods": [
+        {
+          "name": "BKArcDetails",
+          "request": "BKArcDetailsReq",
+          "response": "BKArcDetailsResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "BkarcDetails",
+          "request": "BKArcDetailsReq",
+          "response": "BKArcDetailsResp",
+          "source": "bilibili/app/listener/v1/listener_grpc.pb.go"
+        },
+        {
+          "name": "CoinAdd",
+          "request": "CoinAddReq",
+          "response": "CoinAddResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "Event",
+          "request": "EventReq",
+          "response": "EventResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "FavFolderCreate",
+          "request": "FavFolderCreateReq",
+          "response": "FavFolderCreateResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "FavFolderDelete",
+          "request": "FavFolderDeleteReq",
+          "response": "FavFolderDeleteResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "FavFolderDetail",
+          "request": "FavFolderDetailReq",
+          "response": "FavFolderDetailResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "FavFolderList",
+          "request": "FavFolderListReq",
+          "response": "FavFolderListResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "FavItemAdd",
+          "request": "FavItemAddReq",
+          "response": "FavItemAddResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "FavItemBatch",
+          "request": "FavItemBatchReq",
+          "response": "FavItemBatchResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "FavItemDel",
+          "request": "FavItemDelReq",
+          "response": "FavItemDelResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "FavoredInAnyFolders",
+          "request": "FavoredInAnyFoldersReq",
+          "response": "FavoredInAnyFoldersResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "Medialist",
+          "request": "MedialistReq",
+          "response": "MedialistResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "PickCardDetail",
+          "request": "PickCardDetailReq",
+          "response": "PickCardDetailResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "PickFeed",
+          "request": "PickFeedReq",
+          "response": "PickFeedResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "Ping",
+          "request": "google.protobuf.Empty",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayActionReport",
+          "request": "PlayActionReportReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayHistory",
+          "request": "PlayHistoryReq",
+          "response": "PlayHistoryResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayHistoryAdd",
+          "request": "PlayHistoryAddReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayHistoryDel",
+          "request": "PlayHistoryDelReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "Playlist",
+          "request": "PlaylistReq",
+          "response": "PlaylistResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlaylistAdd",
+          "request": "PlaylistAddReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlaylistDel",
+          "request": "PlaylistDelReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayURL",
+          "request": "PlayURLReq",
+          "response": "PlayURLResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayUrl",
+          "request": "PlayURLReq",
+          "response": "PlayURLResp",
+          "source": "bilibili/app/listener/v1/listener_grpc.pb.go"
+        },
+        {
+          "name": "RcmdPlaylist",
+          "request": "RcmdPlaylistReq",
+          "response": "RcmdPlaylistResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "ThumbUp",
+          "request": "ThumbUpReq",
+          "response": "ThumbUpResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "TripleLike",
+          "request": "TripleLikeReq",
+          "response": "TripleLikeResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.listener.v1",
+      "name": "Music",
+      "methods": [
+        {
+          "name": "Click",
+          "request": "ClickReq",
+          "response": "ClickResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "FavTabShow",
+          "request": "FavTabShowReq",
+          "response": "FavTabShowResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "MainFavMusicMenuList",
+          "request": "MainFavMusicMenuListReq",
+          "response": "MainFavMusicMenuListResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "MainFavMusicSubTabList",
+          "request": "MainFavMusicSubTabListReq",
+          "response": "MainFavMusicSubTabListResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "MenuDelete",
+          "request": "MenuDeleteReq",
+          "response": "MenuDeleteResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "MenuEdit",
+          "request": "MenuEditReq",
+          "response": "MenuEditResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        },
+        {
+          "name": "MenuSubscribe",
+          "request": "MenuSubscribeReq",
+          "response": "MenuSubscribeResp",
+          "source": "bilibili/app/listener/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.mine.v1",
+      "name": "Mine",
+      "methods": [
+        {
+          "name": "DisplayReport",
+          "request": "DisplayReportReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/app/mine/v1_grpc.pb.go"
+        },
+        {
+          "name": "PubModule",
+          "request": "PubModuleReq",
+          "response": "PubModuleResp",
+          "source": "bilibili/app/mine/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.playeronline.v1",
+      "name": "PlayerOnline",
+      "methods": [
+        {
+          "name": "PlayerOnline",
+          "request": "PlayerOnlineReq",
+          "response": "PlayerOnlineReply",
+          "source": "bilibili/app/playeronline/v1_grpc.pb.go"
+        },
+        {
+          "name": "PremiereInfo",
+          "request": "PremiereInfoReq",
+          "response": "PremiereInfoReply",
+          "source": "bilibili/app/playeronline/v1_grpc.pb.go"
+        },
+        {
+          "name": "ReportWatch",
+          "request": "ReportWatchReq",
+          "response": "NoReply",
+          "source": "bilibili/app/playeronline/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.playerunite.v1",
+      "name": "Player",
+      "methods": [
+        {
+          "name": "PlayAddition",
+          "request": "PlayAdditionReq",
+          "response": "PlayAdditionReply",
+          "source": "bilibili/app/playerunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayHalfChannels",
+          "request": "PlayHalfChannelsReq",
+          "response": "PlayHalfChannelsReply",
+          "source": "bilibili/app/playerunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayViewUnite",
+          "request": "PlayViewUniteReq",
+          "response": "PlayViewUniteReply",
+          "source": "bilibili/app/playerunite/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.playurl.v1",
+      "name": "PlayURL",
+      "methods": [
+        {
+          "name": "PlayConf",
+          "request": "PlayConfReq",
+          "response": "PlayConfReply",
+          "source": "bilibili/app/playurl/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayConfEdit",
+          "request": "PlayConfEditReq",
+          "response": "PlayConfEditReply",
+          "source": "bilibili/app/playurl/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayURL",
+          "request": "PlayURLReq",
+          "response": "PlayURLReply",
+          "source": "bilibili/app/playurl/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayView",
+          "request": "PlayViewReq",
+          "response": "PlayViewReply",
+          "source": "bilibili/app/playurl/v1_grpc.pb.go"
+        },
+        {
+          "name": "Project",
+          "request": "ProjectReq",
+          "response": "ProjectReply",
+          "source": "bilibili/app/playurl/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.resource.privacy.v1",
+      "name": "Privacy",
+      "methods": [
+        {
+          "name": "PrivacyConfig",
+          "request": "NoArgRequest",
+          "response": "PrivacyConfigReply",
+          "source": "bilibili/app/resource/privacy/v1_grpc.pb.go"
+        },
+        {
+          "name": "SetPrivacyConfig",
+          "request": "SetPrivacyConfigRequest",
+          "response": "NoReply",
+          "source": "bilibili/app/resource/privacy/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.resource.v1",
+      "name": "LegacyResource",
+      "methods": [
+        {
+          "name": "Download",
+          "request": "DownloadReq",
+          "response": "DownloadReply",
+          "source": "bilibili/app/resource/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.resource.v1",
+      "name": "Module",
+      "methods": [
+        {
+          "name": "List",
+          "request": "ListReq",
+          "response": "ListReply",
+          "source": "bilibili/app/resource/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.search.v2",
+      "name": "Search",
+      "methods": [
+        {
+          "name": "CancelChatTask",
+          "request": "CancelChatTaskReq",
+          "response": "CancelChatTaskReply",
+          "source": "bilibili/app/search/v2_grpc.pb.go"
+        },
+        {
+          "name": "GetChatAuth",
+          "request": "GetChatAuthReq",
+          "response": "GetChatAuthReply",
+          "source": "bilibili/app/search/v2_grpc.pb.go"
+        },
+        {
+          "name": "GetChatResult",
+          "request": "GetChatResultReq",
+          "response": "com.bapis.bilibili.broadcast.message.ChatResult",
+          "source": "bilibili/app/search/v2_grpc.pb.go"
+        },
+        {
+          "name": "GetChatResult",
+          "request": "GetChatResultReq",
+          "response": "com.bapis.bilibili.broadcast.message.main.ChatResult",
+          "source": "bilibili/app/search/v2/search_grpc.pb.go"
+        },
+        {
+          "name": "QueryRecAfterClick",
+          "request": "QueryRecAfterClickReq",
+          "response": "QueryRecAfterClickReply",
+          "source": "bilibili/app/search/v2/search_grpc.pb.go"
+        },
+        {
+          "name": "QueryRecComment",
+          "request": "QueryRecAfterClickReq",
+          "response": "QueryRecAfterClickReply",
+          "source": "bilibili/app/search/v2_grpc.pb.go"
+        },
+        {
+          "name": "SearchDelFollow",
+          "request": "SearchDelFollowRequest",
+          "response": "SearchDelFollowResponse",
+          "source": "bilibili/app/search/v2_grpc.pb.go"
+        },
+        {
+          "name": "SearchEgg",
+          "request": "SearchEggReq",
+          "response": "SearchEggReply",
+          "source": "bilibili/app/search/v2_grpc.pb.go"
+        },
+        {
+          "name": "SearchFollow",
+          "request": "SearchFollowRequest",
+          "response": "SearchFollowResponse",
+          "source": "bilibili/app/search/v2_grpc.pb.go"
+        },
+        {
+          "name": "SearchLike",
+          "request": "SearchLikeReq",
+          "response": "SearchLikeReply",
+          "source": "bilibili/app/search/v2_grpc.pb.go"
+        },
+        {
+          "name": "SearchShortUrl",
+          "request": "SearchShortUrlReq",
+          "response": "SearchShortUrlReply",
+          "source": "bilibili/app/search/v2_grpc.pb.go"
+        },
+        {
+          "name": "SubmitChatTask",
+          "request": "SubmitChatTaskReq",
+          "response": "SubmitChatTaskReply",
+          "source": "bilibili/app/search/v2_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.show.gateway.v1",
+      "name": "AppShow",
+      "methods": [
+        {
+          "name": "GetActProgress",
+          "request": "GetActProgressReq",
+          "response": "GetActProgressReply",
+          "source": "bilibili/app/show/gateway/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.show.mixture.v1",
+      "name": "Mixture",
+      "methods": [
+        {
+          "name": "ChannelRedirect",
+          "request": "ChannelRedirectReq",
+          "response": "ChannelRedirectReply",
+          "source": "bilibili/app/show/mixture/v1_grpc.pb.go"
+        },
+        {
+          "name": "Clarity",
+          "request": "ClarityReq",
+          "response": "ClarityReply",
+          "source": "bilibili/app/show/mixture/v1_grpc.pb.go"
+        },
+        {
+          "name": "RegionIndex",
+          "request": "RegionIndexReq",
+          "response": "RegionIndexReply",
+          "source": "bilibili/app/show/mixture/v1_grpc.pb.go"
+        },
+        {
+          "name": "RegionList",
+          "request": "RegionListReq",
+          "response": "RegionListReply",
+          "source": "bilibili/app/show/mixture/v1_grpc.pb.go"
+        },
+        {
+          "name": "RegionShortcut",
+          "request": "RegionShortcutReq",
+          "response": "RegionShortcutReply",
+          "source": "bilibili/app/show/mixture/v1_grpc.pb.go"
+        },
+        {
+          "name": "Widget",
+          "request": "WidgetReq",
+          "response": "WidgetReply",
+          "source": "bilibili/app/show/mixture/v1_grpc.pb.go"
+        },
+        {
+          "name": "WidgetGuide",
+          "request": "WidgetGuideReq",
+          "response": "WidgetGuideReply",
+          "source": "bilibili/app/show/mixture/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.show.popular.v1",
+      "name": "Popular",
+      "methods": [
+        {
+          "name": "Index",
+          "request": "PopularResultReq",
+          "response": "PopularReply",
+          "source": "bilibili/app/show/popular/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.show.rank.v1",
+      "name": "Rank",
+      "methods": [
+        {
+          "name": "RankAll",
+          "request": "RankAllResultReq",
+          "response": "RankListReply",
+          "source": "bilibili/app/show/rank/v1_grpc.pb.go"
+        },
+        {
+          "name": "RankRegion",
+          "request": "RankRegionResultReq",
+          "response": "RankListReply",
+          "source": "bilibili/app/show/rank/v1_grpc.pb.go"
+        },
+        {
+          "name": "RankRegionList",
+          "request": "RankRegionListReq",
+          "response": "RankRegionListReply",
+          "source": "bilibili/app/show/rank/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.show.region.v1",
+      "name": "Region",
+      "methods": [
+        {
+          "name": "Region",
+          "request": "RegionReq",
+          "response": "RegionReply",
+          "source": "bilibili/app/show/region/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.show.v1",
+      "name": "Popular",
+      "methods": [
+        {
+          "name": "Index",
+          "request": "PopularResultReq",
+          "response": "PopularReply",
+          "source": "bilibili/app/show/popular/v1/popular_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.show.v1",
+      "name": "Rank",
+      "methods": [
+        {
+          "name": "RankAll",
+          "request": "RankAllResultReq",
+          "response": "RankListReply",
+          "source": "bilibili/app/show/rank/v1/rank_grpc.pb.go"
+        },
+        {
+          "name": "RankRegion",
+          "request": "RankRegionResultReq",
+          "response": "RankListReply",
+          "source": "bilibili/app/show/rank/v1/rank_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.space.v1",
+      "name": "Space",
+      "methods": [
+        {
+          "name": "Archive",
+          "request": "ArchiveReq",
+          "response": "ArchiveReply",
+          "source": "bilibili/app/space/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.splash.v1",
+      "name": "Splash",
+      "methods": [
+        {
+          "name": "List",
+          "request": "SplashReq",
+          "response": "SplashReply",
+          "source": "bilibili/app/splash/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.story.v1",
+      "name": "Story",
+      "methods": [
+        {
+          "name": "AIAudio",
+          "request": "AIAudioReq",
+          "response": "AIAudioReply",
+          "source": "bilibili/app/story/v1_grpc.pb.go"
+        },
+        {
+          "name": "ArchiveStatus",
+          "request": "ArchiveStatusReq",
+          "response": "ArchiveStatusReply",
+          "source": "bilibili/app/story/v1_grpc.pb.go"
+        },
+        {
+          "name": "BgmPlay",
+          "request": "BgmPlayReq",
+          "response": "BgmPlayReply",
+          "source": "bilibili/app/story/v1_grpc.pb.go"
+        },
+        {
+          "name": "Rerank",
+          "request": "RerankReq",
+          "response": "RerankReply",
+          "source": "bilibili/app/story/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.topic.v1",
+      "name": "Topic",
+      "methods": [
+        {
+          "name": "ReportUserCloseFeedCard",
+          "request": "ReportUserCloseFeedCardReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/app/topic/v1_grpc.pb.go"
+        },
+        {
+          "name": "ReportUserRatingFeedCardChoice",
+          "request": "ReportUserRatingFeedCardChoiceReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/app/topic/v1_grpc.pb.go"
+        },
+        {
+          "name": "SetTopTopicRes",
+          "request": "SetTopTopicResReq",
+          "response": "SetTopTopicResReply",
+          "source": "bilibili/app/topic/v1_grpc.pb.go"
+        },
+        {
+          "name": "TopicDetailsAll",
+          "request": "TopicDetailsAllReq",
+          "response": "TopicDetailsAllReply",
+          "source": "bilibili/app/topic/v1_grpc.pb.go"
+        },
+        {
+          "name": "TopicDetailsFold",
+          "request": "TopicDetailsFoldReq",
+          "response": "TopicDetailsFoldReply",
+          "source": "bilibili/app/topic/v1_grpc.pb.go"
+        },
+        {
+          "name": "TopicMergedResource",
+          "request": "TopicMergedResourceReq",
+          "response": "TopicMergedResourceReply",
+          "source": "bilibili/app/topic/v1_grpc.pb.go"
+        },
+        {
+          "name": "TopicReserveButtonClick",
+          "request": "TopicReserveButtonClickReq",
+          "response": "TopicReserveButtonClickReply",
+          "source": "bilibili/app/topic/v1_grpc.pb.go"
+        },
+        {
+          "name": "TopicSetDetails",
+          "request": "TopicSetDetailsReq",
+          "response": "TopicSetDetailsReply",
+          "source": "bilibili/app/topic/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.view.v1",
+      "name": "LegacyView",
+      "methods": [
+        {
+          "name": "Like",
+          "request": "LikeReq",
+          "response": "LikeReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.view.v1",
+      "name": "View",
+      "methods": [
+        {
+          "name": "AddContract",
+          "request": "AddContractReq",
+          "response": "NoReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "CacheView",
+          "request": "CacheViewReq",
+          "response": "CacheViewReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "ChronosPkg",
+          "request": "ChronosPkgReq",
+          "response": "Chronos",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "ClickActivitySeason",
+          "request": "ClickActivitySeasonReq",
+          "response": "NoReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "ClickPlayerCard",
+          "request": "ClickPlayerCardReq",
+          "response": "NoReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "ClickPlayerCardV2",
+          "request": "ClickPlayerCardReq",
+          "response": "ClickPlayerCardReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "ContinuousPlay",
+          "request": "ContinuousPlayReq",
+          "response": "ContinuousPlayReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "ExposePlayerCard",
+          "request": "ExposePlayerCardReq",
+          "response": "NoReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "FeedView",
+          "request": "FeedViewReq",
+          "response": "FeedViewReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetArcsPlayer",
+          "request": "GetArcsPlayerReq",
+          "response": "GetArcsPlayerReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetUser",
+          "request": "GetUserReq",
+          "response": "GetUserReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "PlayerRelates",
+          "request": "PlayerRelatesReq",
+          "response": "PlayerRelatesReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "PremiereArchive",
+          "request": "PremiereArchiveReq",
+          "response": "PremiereArchiveReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "RelatesFeed",
+          "request": "RelatesFeedReq",
+          "response": "RelatesFeedReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "Reserve",
+          "request": "ReserveReq",
+          "response": "ReserveReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "Season",
+          "request": "SeasonReq",
+          "response": "SeasonReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "SeasonActivityRecord",
+          "request": "SeasonActivityRecordReq",
+          "response": "SeasonActivityRecordReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "SeasonWidgetExpose",
+          "request": "SeasonWidgetExposeReq",
+          "response": "SeasonWidgetExposeReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "ShortFormVideoDownload",
+          "request": "ShortFormVideoDownloadReq",
+          "response": "ShortFormVideoDownloadReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "TFInfo",
+          "request": "TFInfoReq",
+          "response": "TFInfoReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "View",
+          "request": "ViewReq",
+          "response": "ViewReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "ViewMaterial",
+          "request": "ViewMaterialReq",
+          "response": "ViewMaterialReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "ViewProgress",
+          "request": "ViewProgressReq",
+          "response": "ViewProgressReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        },
+        {
+          "name": "ViewTag",
+          "request": "ViewTagReq",
+          "response": "ViewTagReply",
+          "source": "bilibili/app/view/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.viewunite.v1",
+      "name": "View",
+      "methods": [
+        {
+          "name": "ArcRefresh",
+          "request": "ArcRefreshReq",
+          "response": "ArcRefreshReply",
+          "source": "bilibili/app/viewunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "CacheAuthentication",
+          "request": "CacheAuthenticationReq",
+          "response": "CacheAuthenticationReply",
+          "source": "bilibili/app/viewunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "FloorAdSearch",
+          "request": "FloorAdSearchReq",
+          "response": "FloorAdSearchReply",
+          "source": "bilibili/app/viewunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "RelatesFeed",
+          "request": "RelatesFeedReq",
+          "response": "RelatesFeedReply",
+          "source": "bilibili/app/viewunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "Story",
+          "request": "StoryReq",
+          "response": "StoryReply",
+          "source": "bilibili/app/viewunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "View",
+          "request": "ViewReq",
+          "response": "ViewReply",
+          "source": "bilibili/app/viewunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "ViewProgress",
+          "request": "ViewProgressReq",
+          "response": "ViewProgressReply",
+          "source": "bilibili/app/viewunite/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.app.wall.v1",
+      "name": "Wall",
+      "methods": [
+        {
+          "name": "RuleInfo",
+          "request": "RuleRequest",
+          "response": "RulesReply",
+          "source": "bilibili/app/wall/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.archive",
+      "name": "VideoUp",
+      "methods": [
+        {
+          "name": "VideoData",
+          "request": "google.protobuf.Empty",
+          "response": "VideoDataReply",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/archive_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.bgroup",
+      "name": "BGroup",
+      "methods": [
+        {
+          "name": "AppEventStream",
+          "request": "AppEventMessage",
+          "response": "google.protobuf.Empty",
+          "clientStreaming": true,
+          "serverStreaming": false,
+          "source": "bilibili/broadcast/message/bgroup_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.editor",
+      "name": "OperationNotify",
+      "methods": [
+        {
+          "name": "OperationNotify",
+          "request": "google.protobuf.Empty",
+          "response": "Notify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/editor/notify_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.fission",
+      "name": "Fission",
+      "methods": [
+        {
+          "name": "GameNotify",
+          "request": "google.protobuf.Empty",
+          "response": "GameNotifyReply",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/fission/notify_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.gamecenter",
+      "name": "GameCenterPush",
+      "methods": [
+        {
+          "name": "PushEvent",
+          "request": "google.protobuf.Empty",
+          "response": "PushEventReply",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/gamecenter_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.im",
+      "name": "Notify",
+      "methods": [
+        {
+          "name": "WatchNotify",
+          "request": "google.protobuf.Empty",
+          "response": "NotifyRsp",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/im_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.main",
+      "name": "NativePage",
+      "methods": [
+        {
+          "name": "WatchNotify",
+          "request": "google.protobuf.Empty",
+          "response": "NativePageEvent",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/main_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.main",
+      "name": "Resource",
+      "methods": [
+        {
+          "name": "TopActivity",
+          "request": "google.protobuf.Empty",
+          "response": "TopActivityReply",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/main_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.main",
+      "name": "Search",
+      "methods": [
+        {
+          "name": "ChatResultPush",
+          "request": "google.protobuf.Empty",
+          "response": "ChatResult",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/main_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.mall",
+      "name": "MerchantNotify",
+      "methods": [
+        {
+          "name": "MessageNotify",
+          "request": "google.protobuf.Empty",
+          "response": "NotifyReq",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/mall_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.push",
+      "name": "PushUpStream",
+      "methods": [
+        {
+          "name": "PushUpStream",
+          "request": "UpStreamMessage",
+          "response": "google.protobuf.Empty",
+          "clientStreaming": true,
+          "serverStreaming": false,
+          "source": "bilibili/broadcast/message/push_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.message.tv",
+      "name": "Tv",
+      "methods": [
+        {
+          "name": "Account",
+          "request": "google.protobuf.Empty",
+          "response": "AccountNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "CommonPush",
+          "request": "google.protobuf.Empty",
+          "response": "CommonPushNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "Esports",
+          "request": "google.protobuf.Empty",
+          "response": "EsportsNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "FeedClientSmart",
+          "request": "google.protobuf.Empty",
+          "response": "FeedClientSmartNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "LiveBottom",
+          "request": "google.protobuf.Empty",
+          "response": "LiveBottomConfNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "LiveCommonMsg",
+          "request": "google.protobuf.Empty",
+          "response": "LiveCommonNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "LiveSkip",
+          "request": "google.protobuf.Empty",
+          "response": "LiveSkipNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "LiveStatus",
+          "request": "google.protobuf.Empty",
+          "response": "LiveStatusNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "MainRedDot",
+          "request": "google.protobuf.Empty",
+          "response": "MainRedDotReply",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "NotifyPop",
+          "request": "google.protobuf.Empty",
+          "response": "NotifyPopReply",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "OgvPayOrder",
+          "request": "google.protobuf.Empty",
+          "response": "OgvPayOrderReply",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "Proj",
+          "request": "google.protobuf.Empty",
+          "response": "ProjReply",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "ProjCore",
+          "request": "google.protobuf.Empty",
+          "response": "ProjReply",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "ProjLiveEvent",
+          "request": "google.protobuf.Empty",
+          "response": "ProjLiveEventNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "Publicity",
+          "request": "google.protobuf.Empty",
+          "response": "PublicityNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        },
+        {
+          "name": "ViewerNumMsg",
+          "request": "google.protobuf.Empty",
+          "response": "LiveViewerMsgNotify",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/message/tv_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.v1",
+      "name": "Broadcast",
+      "methods": [
+        {
+          "name": "Auth",
+          "request": "AuthReq",
+          "response": "AuthResp",
+          "source": "bilibili/broadcast/v1/broadcast_grpc.pb.go"
+        },
+        {
+          "name": "Heartbeat",
+          "request": "HeartbeatReq",
+          "response": "HeartbeatResp",
+          "source": "bilibili/broadcast/v1/broadcast_grpc.pb.go"
+        },
+        {
+          "name": "MessageAck",
+          "request": "MessageAckReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/broadcast/v1/broadcast_grpc.pb.go"
+        },
+        {
+          "name": "Subscribe",
+          "request": "TargetPath",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/broadcast/v1/broadcast_grpc.pb.go"
+        },
+        {
+          "name": "Unsubscribe",
+          "request": "TargetPath",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/broadcast/v1/broadcast_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.v1",
+      "name": "BroadcastRoom",
+      "methods": [
+        {
+          "name": "Enter",
+          "request": "RoomReq",
+          "response": "RoomResp",
+          "clientStreaming": true,
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.v1",
+      "name": "BroadcastTunnel",
+      "methods": [
+        {
+          "name": "CreateTunnel",
+          "request": "BroadcastFrame",
+          "response": "BroadcastFrame",
+          "clientStreaming": true,
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/v1/broadcast_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.v1",
+      "name": "Laser",
+      "methods": [
+        {
+          "name": "WatchLogUploadEvent",
+          "request": "google.protobuf.Empty",
+          "response": "LaserLogUploadResp",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.v1",
+      "name": "ModManager",
+      "methods": [
+        {
+          "name": "WatchResource",
+          "request": "google.protobuf.Empty",
+          "response": "ModResourceResp",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.v1",
+      "name": "Push",
+      "methods": [
+        {
+          "name": "WatchMessage",
+          "request": "google.protobuf.Empty",
+          "response": "PushMessageResp",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.v1",
+      "name": "Test",
+      "methods": [
+        {
+          "name": "WatchTestEvent",
+          "request": "google.protobuf.Empty",
+          "response": "TestResp",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/v1/test_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.v1",
+      "name": "Test2",
+      "methods": [
+        {
+          "name": "Test",
+          "request": "AddParams",
+          "response": "google.protobuf.Empty",
+          "clientStreaming": true,
+          "serverStreaming": false,
+          "source": "bilibili/broadcast/v1_grpc.pb.go"
+        },
+        {
+          "name": "Test",
+          "request": "AddParams",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/broadcast/v1/test_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.broadcast.v2",
+      "name": "Laser",
+      "methods": [
+        {
+          "name": "WatchEvent",
+          "request": "google.protobuf.Empty",
+          "response": "LaserEventResp",
+          "serverStreaming": true,
+          "source": "bilibili/broadcast/v2_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.cheese.gateway.player.v1",
+      "name": "PlayURL",
+      "methods": [
+        {
+          "name": "PlayView",
+          "request": "PlayViewReq",
+          "response": "PlayViewReply",
+          "source": "bilibili/cheese/gateway/player/v1/playurl_grpc.pb.go"
+        },
+        {
+          "name": "Project",
+          "request": "ProjectReq",
+          "response": "ProjectReply",
+          "source": "bilibili/cheese/gateway/player/v1/playurl_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.community.interfacess.cosmoconn.v1",
+      "name": "CosmoInterface",
+      "methods": [
+        {
+          "name": "Ping",
+          "request": "google.protobuf.Empty",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/community/interfacess/cosmoconn/v1_grpc.pb.go"
+        },
+        {
+          "name": "SimpleAction",
+          "request": "SimpleActionReq",
+          "response": "SimpleActionRsp",
+          "source": "bilibili/community/interfacess/cosmoconn/v1_grpc.pb.go"
+        },
+        {
+          "name": "Subscribe",
+          "request": "SubscribeReq",
+          "response": "SubscribeRsp",
+          "source": "bilibili/community/interfacess/cosmoconn/v1_grpc.pb.go"
+        },
+        {
+          "name": "SubscribeCard",
+          "request": "SubscribeCardReq",
+          "response": "SubscribeCardRsp",
+          "source": "bilibili/community/interfacess/cosmoconn/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.community.service.cert.v1",
+      "name": "FieldCert",
+      "methods": [
+        {
+          "name": "FieldCertPopAction",
+          "request": "FieldCertPopActionReq",
+          "response": "FieldCertPopActionRsp",
+          "source": "bilibili/community/service/cert/v1_grpc.pb.go"
+        },
+        {
+          "name": "FieldCertPopRecord",
+          "request": "FieldCertPopRecordReq",
+          "response": "FieldCertPopRecordRsp",
+          "source": "bilibili/community/service/cert/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.community.service.dm.v1",
+      "name": "DM",
+      "methods": [
+        {
+          "name": "DmExpoReport",
+          "request": "DmExpoReportReq",
+          "response": "DmExpoReportRes",
+          "source": "bilibili/community/service/dm/v1_grpc.pb.go"
+        },
+        {
+          "name": "DmPlayerConfig",
+          "request": "DmPlayerConfigReq",
+          "response": "Response",
+          "source": "bilibili/community/service/dm/v1_grpc.pb.go"
+        },
+        {
+          "name": "DmSegCache",
+          "request": "DmSegCacheReq",
+          "response": "DmSegMobileReply",
+          "source": "bilibili/community/service/dm/v1_grpc.pb.go"
+        },
+        {
+          "name": "DmSegMobile",
+          "request": "DmSegMobileReq",
+          "response": "DmSegMobileReply",
+          "source": "bilibili/community/service/dm/v1_grpc.pb.go"
+        },
+        {
+          "name": "DmSegOtt",
+          "request": "DmSegOttReq",
+          "response": "DmSegOttReply",
+          "source": "bilibili/community/service/dm/v1_grpc.pb.go"
+        },
+        {
+          "name": "DmSegSDK",
+          "request": "DmSegSDKReq",
+          "response": "DmSegSDKReply",
+          "source": "bilibili/community/service/dm/v1_grpc.pb.go"
+        },
+        {
+          "name": "DmView",
+          "request": "DmViewReq",
+          "response": "DmViewReply",
+          "source": "bilibili/community/service/dm/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.community.service.govern.v1",
+      "name": "Qoe",
+      "methods": [
+        {
+          "name": "QoeReport",
+          "request": "QoeReportReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/community/service/govern/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.dynamic.interfaces.campus.v1",
+      "name": "Campus",
+      "methods": [
+        {
+          "name": "ActionReport",
+          "request": "ActionReportReq",
+          "response": "ActionReportReply",
+          "source": "bilibili/dynamic/interfaces/campus/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.dynamic.interfaces.feed.v1",
+      "name": "Feed",
+      "methods": [
+        {
+          "name": "AddDynamicReport",
+          "request": "AddDynamicReportReq",
+          "response": "AddDynamicReportRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "ArticleHomePageCategories",
+          "request": "ArticleHomePageCategoriesReq",
+          "response": "ArticleHomePageCategoriesRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "AtList",
+          "request": "com.bapis.bilibili.dynamic.AtListReq",
+          "response": "com.bapis.bilibili.dynamic.AtListRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "AtList",
+          "request": "com.bapis.bilibili.dynamic.common.AtListReq",
+          "response": "com.bapis.bilibili.dynamic.common.AtListRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1/api_grpc.pb.go"
+        },
+        {
+          "name": "AtSearch",
+          "request": "com.bapis.bilibili.dynamic.AtSearchReq",
+          "response": "com.bapis.bilibili.dynamic.AtListRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "AtSearch",
+          "request": "com.bapis.bilibili.dynamic.common.AtSearchReq",
+          "response": "com.bapis.bilibili.dynamic.common.AtListRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1/api_grpc.pb.go"
+        },
+        {
+          "name": "AttachCardButton",
+          "request": "AttachCardButtonReq",
+          "response": "AttachCardButtonRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "Config",
+          "request": "ConfigReq",
+          "response": "ConfigRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "CreateDyn",
+          "request": "CreateDynReq",
+          "response": "com.bapis.bilibili.dynamic.CreateResp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "CreateDyn",
+          "request": "CreateDynReq",
+          "response": "com.bapis.bilibili.dynamic.common.CreateResp",
+          "source": "bilibili/dynamic/interfaces/feed/v1/api_grpc.pb.go"
+        },
+        {
+          "name": "CreateInitCheck",
+          "request": "CreateInitCheckReq",
+          "response": "com.bapis.bilibili.dynamic.CreateCheckResp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "CreateInitCheck",
+          "request": "CreateInitCheckReq",
+          "response": "com.bapis.bilibili.dynamic.common.CreateCheckResp",
+          "source": "bilibili/dynamic/interfaces/feed/v1/api_grpc.pb.go"
+        },
+        {
+          "name": "CreateOpus",
+          "request": "CreateOpusReq",
+          "response": "com.bapis.bilibili.dynamic.CreateResp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "CreatePageInfos",
+          "request": "CreatePageInfosReq",
+          "response": "CreatePageInfosRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "CreatePermissionButtonClick",
+          "request": "CreatePermissionButtonClickReq",
+          "response": "CreatePermissionButtonClickRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "CreatePlusButtonClick",
+          "request": "CreatePlusButtonClickReq",
+          "response": "CreatePlusButtonClickRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynamicButtonClick",
+          "request": "DynamicButtonClickReq",
+          "response": "DynamicButtonClickRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynamicRepost",
+          "request": "DynamicRepostReq",
+          "response": "com.bapis.bilibili.dynamic.CreateResp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynamicRepost",
+          "request": "DynamicRepostReq",
+          "response": "com.bapis.bilibili.dynamic.common.CreateResp",
+          "source": "bilibili/dynamic/interfaces/feed/v1/api_grpc.pb.go"
+        },
+        {
+          "name": "DynamicThumb",
+          "request": "DynamicThumbReq",
+          "response": "DynamicThumbRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynMetricsActiveReport",
+          "request": "DynMetricsActiveReportReq",
+          "response": "DynMetricsActiveReportRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "DynPrivatePubSetting",
+          "request": "DynPrivatePubSettingReq",
+          "response": "DynPrivatePubSettingRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "EditDyn",
+          "request": "EditDynReq",
+          "response": "EditDynRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetEditDynInfo",
+          "request": "GetEditDynInfoReq",
+          "response": "GetEditDynInfoRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetEditDynInfoWeb",
+          "request": "GetEditDynInfoWebReq",
+          "response": "GetEditDynInfoWebRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetUidByName",
+          "request": "com.bapis.bilibili.dynamic.GetUidByNameReq",
+          "response": "com.bapis.bilibili.dynamic.GetUidByNameRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetUidByName",
+          "request": "com.bapis.bilibili.dynamic.common.GetUidByNameReq",
+          "response": "com.bapis.bilibili.dynamic.common.GetUidByNameRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1/api_grpc.pb.go"
+        },
+        {
+          "name": "GoodsAttachCardPreview",
+          "request": "GoodsAttachCardPreviewReq",
+          "response": "GoodsAttachCardPreviewRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "HomeBubbleReport",
+          "request": "HomeBubbleReportReq",
+          "response": "HomeBubbleReportRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "HotSearch",
+          "request": "HotSearchReq",
+          "response": "HotSearchRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "ICreateGoodsReplySync",
+          "request": "ICreateGoodsReplySyncReq",
+          "response": "ICreateResp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "NearbyPoiList",
+          "request": "NearbyPoiListReq",
+          "response": "NearbyPoiListRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "RecommendPoi",
+          "request": "RecommendPoiReq",
+          "response": "RecommendPoiRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "ReserveButtonClick",
+          "request": "ReserveButtonClickReq",
+          "response": "ReserveButtonClickResp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "RmDyn",
+          "request": "RmDynReq",
+          "response": "RmDynRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "RmSpaceTop",
+          "request": "RmSpaceTopReq",
+          "response": "RmSpaceTopRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "SearchPoiList",
+          "request": "SearchPoiListReq",
+          "response": "SearchPoiListRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "SetSpaceTop",
+          "request": "SetSpaceTopReq",
+          "response": "SetSpaceTopRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "SubmitCheck",
+          "request": "SubmitCheckReq",
+          "response": "SubmitCheckRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        },
+        {
+          "name": "Suggest",
+          "request": "SuggestReq",
+          "response": "SuggestRsp",
+          "source": "bilibili/dynamic/interfaces/feed/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.dynamic.interfaces.vote.v1",
+      "name": "Vote",
+      "methods": [
+        {
+          "name": "NewDoVote",
+          "request": "NewDoVoteReq",
+          "response": "NewDoVoteRsp",
+          "source": "bilibili/dynamic/interfaces/vote/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.gaia.gw",
+      "name": "Gaia",
+      "methods": [
+        {
+          "name": "ExClimbAppleTrees",
+          "request": "GaiaEncryptMsgReq",
+          "response": "UploadAppListReply",
+          "source": "bilibili/gaia/gw_grpc.pb.go"
+        },
+        {
+          "name": "ExFetchPublicKey",
+          "request": "google.protobuf.Empty",
+          "response": "FetchPublicKeyReply",
+          "source": "bilibili/gaia/gw_grpc.pb.go"
+        },
+        {
+          "name": "ExGetAxe",
+          "request": "google.protobuf.Empty",
+          "response": "FetchPublicKeyReply",
+          "source": "bilibili/gaia/gw_grpc.pb.go"
+        },
+        {
+          "name": "ExUploadAppList",
+          "request": "GaiaEncryptMsgReq",
+          "response": "UploadAppListReply",
+          "source": "bilibili/gaia/gw_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.im.customer.interfaces",
+      "name": "CustomerInterface",
+      "methods": [
+        {
+          "name": "CustomerPreEvaluate",
+          "request": "PreEvaluateReq",
+          "response": "PreEvaluateRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "CustomerUpdateAck",
+          "request": "UpdateAckReq",
+          "response": "Empty",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "CustomerWindowOptions",
+          "request": "WindowOptionsReq",
+          "response": "WindowOptionsRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "FinishParagraphsRender",
+          "request": "FinishParagraphsRenderReq",
+          "response": "FinishParagraphsRenderRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "GetCustomerSessDetail",
+          "request": "GetSessDetailReq",
+          "response": "GetSessDetailRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "GetCustomerSessions",
+          "request": "GetSessionsReq",
+          "response": "SessionsRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "GetNewCustomerSessions",
+          "request": "GetNewSessionsReq",
+          "response": "SessionsRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "GetShopCfg",
+          "request": "ShopCfgReq",
+          "response": "ShopCfgRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "GetShopInfo",
+          "request": "ShopInfoReq",
+          "response": "ShopInfoRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "GetUserSettings",
+          "request": "GetUserSettingsReq",
+          "response": "GetUserSettingsRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "HeartBeat",
+          "request": "SendHeartBeatReq",
+          "response": "Empty",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "OutCustomerQueue",
+          "request": "OutCustomerQueueReq",
+          "response": "Empty",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "PopResultUpdate",
+          "request": "PopResultUpdateReq",
+          "response": "PopResultUpdateRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "RemoveSession",
+          "request": "RemoveSessionReq",
+          "response": "Empty",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "SendCustomerMsg",
+          "request": "SendMsgReq",
+          "response": "SendMsgRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "SetTop",
+          "request": "SetTopReq",
+          "response": "Empty",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "SetUserSettings",
+          "request": "SetUserSettingsReq",
+          "response": "SetUserSettingsRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "SyncFetchCustomerSessionMsgs",
+          "request": "SessionMsgReq",
+          "response": "SessionMsgRsp",
+          "source": "bilibili/im/customer/interfaces_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.im.gateway.interfaces.v1",
+      "name": "ImGatewayApi",
+      "methods": [
+        {
+          "name": "ClearBubbleMsg",
+          "request": "ClearBubbleMsgReq",
+          "response": "ClearBubbleMsgRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "ClearMessageToast",
+          "request": "ClearMessageToastReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "DelMsg",
+          "request": "DelMsgReq",
+          "response": "DelMsgRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "DelMsgCard",
+          "request": "DelMsgCardReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetAIInfo",
+          "request": "ReqGetAIInfo",
+          "response": "RspGetAIInfo",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetBubbleMsg",
+          "request": "GetBubbleMsgReq",
+          "response": "GetBubbleMsgRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetSessions",
+          "request": "ReqGetSessions",
+          "response": "com.bapis.bilibili.im.interfaces.RspSessions",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetSystemNotice",
+          "request": "ReqGetSystemNotice",
+          "response": "RspGetSystemNotice",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetTotalUnread",
+          "request": "GetTotalUnreadReq",
+          "response": "GetTotalUnreadRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "HarmonyTotalUnread",
+          "request": "GetTotalUnreadReq",
+          "response": "HarmonyTotalUnreadRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "MessageToast",
+          "request": "MessageToastReq",
+          "response": "MessageToastRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "MsgFeedAction",
+          "request": "MsgFeedActionReq",
+          "response": "MsgFeedActionRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "MsgFeedMsgList",
+          "request": "MsgListReq",
+          "response": "MsgListRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "NewSessions",
+          "request": "ReqNewSessions",
+          "response": "com.bapis.bilibili.im.interfaces.RspSessions",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "Prompt",
+          "request": "PromptReq",
+          "response": "PromptRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "QuickLink",
+          "request": "QuickLinkReq",
+          "response": "QuickLinkRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "RemoveSession",
+          "request": "ReqRemoveSession",
+          "response": "DummyRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SetMsgFeedNotice",
+          "request": "SetMsgFeedNoticeReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SetTop",
+          "request": "ReqSetTop",
+          "response": "DummyRsp",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SingleInbox",
+          "request": "ReqSingleInbox",
+          "response": "RspSingleInbox",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateTotalUnread",
+          "request": "google.protobuf.Empty",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateTotalUnreadV2",
+          "request": "com.bapis.bilibili.im.interfaces.ReqUpdateTotalUnread",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/im/gateway/interfaces/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.im.interface.inner.interface.v1",
+      "name": "InnerInterface",
+      "methods": [
+        {
+          "name": "UpdateListInn",
+          "request": "ReqOpBlacklist",
+          "response": "RspOpBlacklist",
+          "source": "bilibili/im/interfaces/inner-interface/v1/api_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.im.interface.v1",
+      "name": "ImInterface",
+      "methods": [
+        {
+          "name": "AckAssisMsg",
+          "request": "ReqAckAssisMsg",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "AckSessions",
+          "request": "ReqAckSessions",
+          "response": "RspSessions",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "BatchRmSessions",
+          "request": "ReqBatRmSess",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "BatchSessDetail",
+          "request": "ReqSessionDetails",
+          "response": "RspSessionDetails",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "CloseClearUnreadUI",
+          "request": "ReqCloseClearUnreadUI",
+          "response": "RspCloseClearUnreadUI",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "GetLiveInfo",
+          "request": "ReqLiveInfo",
+          "response": "RspLiveInfo",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "GetSessions",
+          "request": "ReqGetSessions",
+          "response": "RspSessions",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "GetSpecificSessions",
+          "request": "ReqGetSpecificSessions",
+          "response": "RspSessions",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "GetTotalUnread",
+          "request": "ReqTotalUnread",
+          "response": "RspTotalUnread",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "GroupAssisMsg",
+          "request": "ReqGroupAssisMsg",
+          "response": "RspSessionMsg",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "MyGroupUnread",
+          "request": "DummyReq",
+          "response": "RspMyGroupUnread",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "NewSessions",
+          "request": "ReqNewSessions",
+          "response": "RspSessions",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "RemoveSession",
+          "request": "ReqRemoveSession",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "SendMsg",
+          "request": "ReqSendMsg",
+          "response": "RspSendMsg",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "SessionDetail",
+          "request": "ReqSessionDetail",
+          "response": "com.bapis.bilibili.im.type.SessionInfo",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "SetTop",
+          "request": "ReqSetTop",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "ShareList",
+          "request": "ReqShareList",
+          "response": "RspShareList",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "ShowClearUnreadUI",
+          "request": "ReqShowClearUnreadUI",
+          "response": "RspShowClearUnreadUI",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "SingleUnread",
+          "request": "ReqSingleUnread",
+          "response": "RspSingleUnread",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "SpecificSingleUnread",
+          "request": "ReqSpecificSingleUnread",
+          "response": "RspSpecificSingleUnread",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "SyncAck",
+          "request": "ReqSyncAck",
+          "response": "RspSyncAck",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "SyncFetchSessionMsgs",
+          "request": "ReqSessionMsg",
+          "response": "RspSessionMsg",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "SyncRelation",
+          "request": "ReqRelationSync",
+          "response": "RspRelationSync",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "UpdateAck",
+          "request": "ReqUpdateAck",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "UpdateTotalUnread",
+          "request": "ReqUpdateTotalUnread",
+          "response": "RspUpdateTotalUnread",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        },
+        {
+          "name": "UpdateUnflwRead",
+          "request": "DummyReq",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1/im_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.im.interfaces.v1",
+      "name": "ImInterface",
+      "methods": [
+        {
+          "name": "AckAssisMsg",
+          "request": "ReqAckAssisMsg",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "AckSessions",
+          "request": "ReqAckSessions",
+          "response": "RspSessions",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "BatchGetMsgDetail",
+          "request": "ReqGetMsg",
+          "response": "RspGetMsg",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "BatchRmDustbin",
+          "request": "DummyReq",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "BatchRmSessions",
+          "request": "ReqBatRmSess",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "BatchSessDetail",
+          "request": "ReqSessionDetails",
+          "response": "RspSessionDetails",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "BatchUpdateDustbinAck",
+          "request": "DummyReq",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "CloseClearUnreadUI",
+          "request": "ReqCloseClearUnreadUI",
+          "response": "RspCloseClearUnreadUI",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetDiscussListInImPage",
+          "request": "ReqGetDiscussListInImPage",
+          "response": "RspGetDiscussListInImPage",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetLiveInfo",
+          "request": "ReqLiveInfo",
+          "response": "RspLiveInfo",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetSessions",
+          "request": "ReqGetSessions",
+          "response": "RspSessions",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetSpecificSessions",
+          "request": "ReqGetSpecificSessions",
+          "response": "RspSessions",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetTotalUnread",
+          "request": "ReqTotalUnread",
+          "response": "RspTotalUnread",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetUserCosmoState",
+          "request": "GetUserCosmoStateReq",
+          "response": "GetUserCosmoStateRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "GroupAssisMsg",
+          "request": "ReqGroupAssisMsg",
+          "response": "RspSessionMsg",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "LikeMsg",
+          "request": "ReqLikeMsg",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "MsgHasLike",
+          "request": "ReqMsgHasLike",
+          "response": "RspMsgHasLike",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "MyGroupUnread",
+          "request": "DummyReq",
+          "response": "RspMyGroupUnread",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "NewSessions",
+          "request": "ReqNewSessions",
+          "response": "RspSessions",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "RemoveSession",
+          "request": "ReqRemoveSession",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SendMsg",
+          "request": "ReqSendMsg",
+          "response": "RspSendMsg",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SessionDetail",
+          "request": "ReqSessionDetail",
+          "response": "com.bapis.bilibili.im.SessionInfo",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SetTop",
+          "request": "ReqSetTop",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "ShareList",
+          "request": "ReqShareList",
+          "response": "RspShareList",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "ShowClearUnreadUI",
+          "request": "ReqShowClearUnreadUI",
+          "response": "RspShowClearUnreadUI",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SingleUnread",
+          "request": "ReqSingleUnread",
+          "response": "RspSingleUnread",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SpecificSingleUnread",
+          "request": "ReqSpecificSingleUnread",
+          "response": "RspSpecificSingleUnread",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SyncAck",
+          "request": "ReqSyncAck",
+          "response": "RspSyncAck",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SyncFetchSessionMsgs",
+          "request": "ReqSessionMsg",
+          "response": "RspSessionMsg",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "SyncRelation",
+          "request": "ReqRelationSync",
+          "response": "RspRelationSync",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateAck",
+          "request": "ReqUpdateAck",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateIntercept",
+          "request": "ReqUpdateIntercept",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateTotalUnread",
+          "request": "ReqUpdateTotalUnread",
+          "response": "RspUpdateTotalUnread",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateUnflwRead",
+          "request": "DummyReq",
+          "response": "DummyRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateUserCosmoState",
+          "request": "UpdateUserCosmoStateReq",
+          "response": "UpdateUserCosmoStateRsp",
+          "source": "bilibili/im/interfaces/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.main.common.arch.doll.v1",
+      "name": "Echo",
+      "methods": [
+        {
+          "name": "Error",
+          "request": "ErrorRequest",
+          "response": "ErrorResponse",
+          "source": "bilibili/main/common/arch/doll/v1/doll_grpc.pb.go"
+        },
+        {
+          "name": "Ping",
+          "request": "PingRequest",
+          "response": "PingResponse",
+          "source": "bilibili/main/common/arch/doll/v1/doll_grpc.pb.go"
+        },
+        {
+          "name": "Say",
+          "request": "SayRequest",
+          "response": "SayResponse",
+          "source": "bilibili/main/common/arch/doll/v1/doll_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.main.community.reply.v1",
+      "name": "Reply",
+      "methods": [
+        {
+          "name": "AnswerQuestion",
+          "request": "AnswerQuestionReq",
+          "response": "AnswerQuestionResp",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "AtSearch",
+          "request": "AtSearchReq",
+          "response": "AtSearchReply",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "DetailList",
+          "request": "DetailListReq",
+          "response": "DetailListReply",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "DialogList",
+          "request": "DialogListReq",
+          "response": "DialogListReply",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "DoVote",
+          "request": "DoVoteReq",
+          "response": "DoVoteResp",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "MainList",
+          "request": "MainListReq",
+          "response": "MainListReply",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "PictureList",
+          "request": "PictureListReq",
+          "response": "PictureListResp",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "PreviewList",
+          "request": "PreviewListReq",
+          "response": "PreviewListReply",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "ReplyInfo",
+          "request": "ReplyInfoReq",
+          "response": "ReplyInfoReply",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "SearchItem",
+          "request": "SearchItemReq",
+          "response": "SearchItemReply",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "SearchItemPreHook",
+          "request": "SearchItemPreHookReq",
+          "response": "SearchItemPreHookReply",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "ShareRepliesInfo",
+          "request": "ShareRepliesInfoReq",
+          "response": "ShareRepliesInfoResp",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "ShareReplyMaterial",
+          "request": "ShareReplyMaterialReq",
+          "response": "ShareReplyMaterialResp",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "SuggestEmotes",
+          "request": "SuggestEmotesReq",
+          "response": "SuggestEmotesResp",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "UpdateSingleReplyNotificationConfig",
+          "request": "UpdateSingleReplyNotificationConfigReq",
+          "response": "UpdateSingleReplyNotificationConfigResp",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        },
+        {
+          "name": "UserCallback",
+          "request": "UserCallbackReq",
+          "response": "UserCallbackReply",
+          "source": "bilibili/main/community/reply/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.main.community.reply.v2",
+      "name": "Reply",
+      "methods": [
+        {
+          "name": "SubjectDescription",
+          "request": "SubjectDescriptionReq",
+          "response": "SubjectDescriptionReply",
+          "source": "bilibili/main/community/reply/v2_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.mall.tab3.dynamic.v1",
+      "name": "Opus",
+      "methods": [
+        {
+          "name": "OpusDetail",
+          "request": "OpusDetailReq",
+          "response": "OpusDetailResp",
+          "source": "bilibili/mall/tab3/dynamic/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.mall.tab3.playerunite.v1",
+      "name": "Player",
+      "methods": [
+        {
+          "name": "PlayViewUnite",
+          "request": "PlayViewUniteReq",
+          "response": "PlayViewUniteReply",
+          "source": "bilibili/mall/tab3/playerunite/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.mall.tab3.viewunite.v1",
+      "name": "View",
+      "methods": [
+        {
+          "name": "ArcRefresh",
+          "request": "ArcRefreshReq",
+          "response": "ArcRefreshReply",
+          "source": "bilibili/mall/tab3/viewunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "RelatesFeed",
+          "request": "RelatesFeedReq",
+          "response": "RelatesFeedReply",
+          "source": "bilibili/mall/tab3/viewunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "View",
+          "request": "ViewReq",
+          "response": "ViewReply",
+          "source": "bilibili/mall/tab3/viewunite/v1_grpc.pb.go"
+        },
+        {
+          "name": "ViewProgress",
+          "request": "ViewProgressReq",
+          "response": "ViewProgressReply",
+          "source": "bilibili/mall/tab3/viewunite/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.pangu.gallery.v1",
+      "name": "GalleryInterface",
+      "methods": [
+        {
+          "name": "AgreePolicy",
+          "request": "AgreePolicyReq",
+          "response": "AgreePolicyReply",
+          "source": "bilibili/pangu/gallery/v1_grpc.pb.go"
+        },
+        {
+          "name": "BasicInfo",
+          "request": "BasicInfoReq",
+          "response": "BasicInfoReply",
+          "source": "bilibili/pangu/gallery/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetBanners",
+          "request": "GetBannersReq",
+          "response": "GetBannersReply",
+          "source": "bilibili/pangu/gallery/v1_grpc.pb.go"
+        },
+        {
+          "name": "GetLastPolicy",
+          "request": "GetLastPolicyReq",
+          "response": "GetLastPolicyReply",
+          "source": "bilibili/pangu/gallery/v1_grpc.pb.go"
+        },
+        {
+          "name": "ListNFTByMid",
+          "request": "ListNFTByMidReq",
+          "response": "ListNFTByMidReply",
+          "source": "bilibili/pangu/gallery/v1_grpc.pb.go"
+        },
+        {
+          "name": "ListOrderByMid",
+          "request": "ListOrderByMidReq",
+          "response": "ListOrderByMidReply",
+          "source": "bilibili/pangu/gallery/v1_grpc.pb.go"
+        },
+        {
+          "name": "MinePage",
+          "request": "MinePageReq",
+          "response": "MinePageReply",
+          "source": "bilibili/pangu/gallery/v1_grpc.pb.go"
+        },
+        {
+          "name": "Ping",
+          "request": "google.protobuf.Empty",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/pangu/gallery/v1_grpc.pb.go"
+        },
+        {
+          "name": "UserCheck",
+          "request": "UserCheckReq",
+          "response": "UserCheckReply",
+          "source": "bilibili/pangu/gallery/v1_grpc.pb.go"
+        },
+        {
+          "name": "UserInfo",
+          "request": "GetUserInfoReq",
+          "response": "GetUserInfoReply",
+          "source": "bilibili/pangu/gallery/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.pgc.gateway.player.v1",
+      "name": "PlayURL",
+      "methods": [
+        {
+          "name": "LivePlayView",
+          "request": "LivePlayViewReq",
+          "response": "LivePlayViewReply",
+          "source": "bilibili/pgc/gateway/player/v1/playurl_grpc.pb.go"
+        },
+        {
+          "name": "PlayView",
+          "request": "PlayViewReq",
+          "response": "PlayViewReply",
+          "source": "bilibili/pgc/gateway/player/v1/playurl_grpc.pb.go"
+        },
+        {
+          "name": "Project",
+          "request": "ProjectReq",
+          "response": "ProjectReply",
+          "source": "bilibili/pgc/gateway/player/v1/playurl_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.pgc.gateway.player.v2",
+      "name": "PlayURL",
+      "methods": [
+        {
+          "name": "PlayView",
+          "request": "PlayViewReq",
+          "response": "PlayViewReply",
+          "source": "bilibili/pgc/gateway/player/v2_grpc.pb.go"
+        },
+        {
+          "name": "PlayViewComic",
+          "request": "PlayViewReq",
+          "response": "PlayViewReply",
+          "source": "bilibili/pgc/gateway/player/v2_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.pgc.service.premiere.v1",
+      "name": "Premiere",
+      "methods": [
+        {
+          "name": "Status",
+          "request": "PremiereStatusReq",
+          "response": "PremiereStatusReply",
+          "source": "bilibili/pgc/service/premiere/v1/premiere_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.polymer.app.govern.v1",
+      "name": "AntiHarassmentService",
+      "methods": [
+        {
+          "name": "LoadAntiHarassmentSettings",
+          "request": "LoadAntiHarassmentSettingsReq",
+          "response": "LoadAntiHarassmentSettingsRsp",
+          "source": "bilibili/polymer/community/govern/v1/govern_grpc.pb.go"
+        },
+        {
+          "name": "StoreAntiHarassmentSettings",
+          "request": "StoreAntiHarassmentSettingsReq",
+          "response": "StoreAntiHarassmentSettingsRsp",
+          "source": "bilibili/polymer/community/govern/v1/govern_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.polymer.app.search.v1",
+      "name": "Search",
+      "methods": [
+        {
+          "name": "SearchAll",
+          "request": "SearchAllRequest",
+          "response": "SearchAllResponse",
+          "source": "bilibili/polymer/app/search/v1_grpc.pb.go"
+        },
+        {
+          "name": "SearchByType",
+          "request": "SearchByTypeRequest",
+          "response": "SearchByTypeResponse",
+          "source": "bilibili/polymer/app/search/v1_grpc.pb.go"
+        },
+        {
+          "name": "SearchComic",
+          "request": "SearchComicRequest",
+          "response": "SearchComicResponse",
+          "source": "bilibili/polymer/app/search/v1_grpc.pb.go"
+        },
+        {
+          "name": "SearchOGV",
+          "request": "SearchOGVReq",
+          "response": "SearchOGVReply",
+          "source": "bilibili/polymer/app/search/v1_grpc.pb.go"
+        },
+        {
+          "name": "SearchReserve",
+          "request": "SearchReserveRequest",
+          "response": "SearchReserveResponse",
+          "source": "bilibili/polymer/app/search/v1_grpc.pb.go"
+        },
+        {
+          "name": "SearchReserveCancel",
+          "request": "SearchReserveRequest",
+          "response": "SearchReserveResponse",
+          "source": "bilibili/polymer/app/search/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.polymer.chronos.v1",
+      "name": "ChronosService",
+      "methods": [
+        {
+          "name": "ObtainChronosPackage",
+          "request": "ObtainChronosPackageReq",
+          "response": "ObtainChronosPackageRsp",
+          "source": "bilibili/polymer/chronos/v1_grpc.pb.go"
+        },
+        {
+          "name": "ObtainChronosPackageV2",
+          "request": "ObtainChronosPackageV2Req",
+          "response": "ObtainChronosPackageRsp",
+          "source": "bilibili/polymer/chronos/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.polymer.community.govern.v1",
+      "name": "AntiHarassmentService",
+      "methods": [
+        {
+          "name": "LoadAntiHarassmentSettings",
+          "request": "LoadAntiHarassmentSettingsReq",
+          "response": "LoadAntiHarassmentSettingsRsp",
+          "source": "bilibili/polymer/community/govern/v1_grpc.pb.go"
+        },
+        {
+          "name": "StoreAntiHarassmentSettings",
+          "request": "StoreAntiHarassmentSettingsReq",
+          "response": "StoreAntiHarassmentSettingsRsp",
+          "source": "bilibili/polymer/community/govern/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.polymer.contract",
+      "name": "Contract",
+      "methods": [
+        {
+          "name": "AddContract",
+          "request": "AddContractReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/polymer/contract_grpc.pb.go"
+        },
+        {
+          "name": "AddContractV2",
+          "request": "AddContractReq",
+          "response": "AddContractReply",
+          "source": "bilibili/polymer/contract_grpc.pb.go"
+        },
+        {
+          "name": "ContractConfig",
+          "request": "ContractConfigReq",
+          "response": "ContractConfigReply",
+          "source": "bilibili/polymer/contract_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.polymer.contract.v1",
+      "name": "Contract",
+      "methods": [
+        {
+          "name": "AddContract",
+          "request": "AddContractReq",
+          "response": "google.protobuf.Empty",
+          "source": "bilibili/polymer/contract/v1/contract_grpc.pb.go"
+        },
+        {
+          "name": "AddContractV2",
+          "request": "AddContractReq",
+          "response": "AddContractReply",
+          "source": "bilibili/polymer/contract/v1/contract_grpc.pb.go"
+        },
+        {
+          "name": "ContractConfig",
+          "request": "ContractConfigReq",
+          "response": "ContractConfigReply",
+          "source": "bilibili/polymer/contract/v1/contract_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.polymer.list",
+      "name": "List",
+      "methods": [
+        {
+          "name": "CheckAccount",
+          "request": "CheckAccountReq",
+          "response": "CheckAccountReply",
+          "source": "bilibili/polymer/list_grpc.pb.go"
+        },
+        {
+          "name": "FavoriteTab",
+          "request": "FavoriteTabReq",
+          "response": "FavoriteTabReply",
+          "source": "bilibili/polymer/list_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.polymer.list.v1",
+      "name": "List",
+      "methods": [
+        {
+          "name": "CheckAccount",
+          "request": "CheckAccountReq",
+          "response": "CheckAccountReply",
+          "source": "bilibili/polymer/list/v1/list_grpc.pb.go"
+        },
+        {
+          "name": "FavoriteTab",
+          "request": "FavoriteTabReq",
+          "response": "FavoriteTabReply",
+          "source": "bilibili/polymer/list/v1/list_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.relation.interface.v1",
+      "name": "RelationInterface",
+      "methods": [
+        {
+          "name": "AtSearch",
+          "request": "AtSearchReq",
+          "response": "AtSearchReply",
+          "source": "bilibili/relation/interfaces/api_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.relation.interfaces",
+      "name": "RelationInterface",
+      "methods": [
+        {
+          "name": "AtSearch",
+          "request": "AtSearchReq",
+          "response": "AtSearchReply",
+          "source": "bilibili/relation/interfaces_grpc.pb.go"
+        },
+        {
+          "name": "ModifyRelation",
+          "request": "FollowingReq",
+          "response": "ModifyRelationReply",
+          "source": "bilibili/relation/interfaces_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "bilibili.vega.deneb.v1",
+      "name": "VegaDenebRPC",
+      "methods": [
+        {
+          "name": "MessagePulls",
+          "request": "MessagePullsReq",
+          "response": "MessagePullsReply",
+          "source": "bilibili/vega/deneb/v1_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "pgc.gateway.vega.v1",
+      "name": "Vega",
+      "methods": [
+        {
+          "name": "CreateTunnel",
+          "request": "VegaFrame",
+          "response": "VegaFrame",
+          "source": "pgc/gateway/vega/v1/vega_grpc.pb.go"
+        }
+      ]
+    },
+    {
+      "package": "pgc.gateway.vega.v1",
+      "name": "VegaFrameDoc",
+      "methods": [
+        {
+          "name": "Auth",
+          "request": "AuthReq",
+          "response": "AuthResp",
+          "source": "pgc/gateway/vega/v1/vega_grpc.pb.go"
+        },
+        {
+          "name": "Heartbeat",
+          "request": "HeartbeatReq",
+          "response": "HeartbeatResp",
+          "source": "pgc/gateway/vega/v1/vega_grpc.pb.go"
+        },
+        {
+          "name": "MessageAck",
+          "request": "MessageAckReq",
+          "response": "google.protobuf.Empty",
+          "source": "pgc/gateway/vega/v1/vega_grpc.pb.go"
+        },
+        {
+          "name": "Subscribe",
+          "request": "SubscribeReq",
+          "response": "google.protobuf.Empty",
+          "source": "pgc/gateway/vega/v1/vega_grpc.pb.go"
+        }
+      ]
+    }
+  ]
+}
