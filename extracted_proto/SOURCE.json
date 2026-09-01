@@ -1,7 +1,7 @@
 {
-  "apk_url": "https://apkcombo.com/bilibili/com.bilibili.app.in/download/phone-6.3.0-apk",
+  "apk_url": "https://apkcombo.com/bilibili/com.bilibili.app.in/download/phone-6.4.0-apk",
   "package_name": "com.bilibili.app.in",
-  "apk_sha256": "50c7804890bb3ec382d372675cd546adca37ca4a3ee7335dc8edc118fd71b620",
-  "version_code": "9080300",
-  "version_name": "6.3.0"
+  "apk_sha256": "f1cd0d7fe03710df5e00fedb698f704cfad190758f04836273789ff2a942a6ae",
+  "version_code": "9100300",
+  "version_name": "6.4.0"
 }
