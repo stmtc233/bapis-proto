@@ -57,7 +57,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .work
-          release_page="$(xvfb-run -a node tools/download_apkmirror.mjs .work/bilibili.apkm)"
+          xvfb-run -a node tools/download_apkmirror.mjs .work/bilibili.apkm .work/release-url.txt
+          release_page="$(cat .work/release-url.txt)"
           test -n "$release_page"
           info_json="$(unzip -p .work/bilibili.apkm info.json)"
           version_name="$(jq -r '.release_version' <<< "$info_json")"
@@ -200,8 +201,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.version.outputs.tag }}
+          VERSION_NAME: ${{ steps.version.outputs.version_name }}
         run: |
           set -euo pipefail
+          asset=".work/bilibili-international-${VERSION_NAME}.apkm"
+          cp .work/bilibili.apkm "$asset"
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release delete "$TAG" --yes
           fi
@@ -209,4 +213,5 @@ jobs:
             --verify-tag \
             --target "$(git rev-parse HEAD)" \
             --title "$TAG" \
-            --generate-notes
+            --generate-notes \
+            "$asset"

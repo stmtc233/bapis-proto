@@ -3,8 +3,9 @@
 // must run headed (e.g. under xvfb-run) with the installed Google Chrome
 // (set CHROME_PATH to use another Chromium build).
 //
-// Usage: xvfb-run -a node tools/download_apkmirror.mjs <output.apkm>
-// Prints the release page URL on stdout.
+// Usage: xvfb-run -a node tools/download_apkmirror.mjs <output.apkm> <release-url.txt>
+// Writes the release page URL to <release-url.txt> (stdout is not reliable under xvfb-run).
+import { writeFileSync } from 'node:fs';
 import { chromium } from 'playwright';
 
 const BASE = 'https://www.apkmirror.com';
@@ -13,9 +14,9 @@ const RELEASE_RE = /\/apk\/bilibili-inc\/bilibili\/[^/]+-(6)-(\d+)-(\d+)-release
 const USER_AGENT =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
 
-const output = process.argv[2];
-if (!output) {
-  console.error('Usage: download_apkmirror.mjs <output.apkm>');
+const [output, releaseUrlFile] = process.argv.slice(2);
+if (!output || !releaseUrlFile) {
+  console.error('Usage: download_apkmirror.mjs <output.apkm> <release-url.txt>');
   process.exit(2);
 }
 
@@ -69,7 +70,7 @@ try {
     page.goto(BASE + direct).catch(() => {}),
   ]);
   await download.saveAs(output);
-  console.log(releasePage);
+  writeFileSync(releaseUrlFile, releasePage);
 } finally {
   await browser.close();
 }
