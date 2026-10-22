@@ -103,8 +103,9 @@ jobs:
           unzip -q .work/bilibili.apk 'classes*.dex' -d .work/dex
           rm -rf decompiled
           javac -cp .work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
-            -d .work/classes tools/DecompileBapis.java tools/ListBapisDex.java
-          runtime_dex=.work/dex/classes17.dex
+            -d .work/classes tools/DecompileBapis.java tools/ListBapisDex.java tools/FindProtoRuntimeDex.java
+          runtime_dex="$(java -cp .work/classes:.work/jadx/lib/jadx-${JADX_VERSION}-all.jar \
+            FindProtoRuntimeDex .work/dex/classes*.dex)"
           test -f "$runtime_dex"
           bapis_dex_count=0
           while read -r dex _; do
