@@ -19,7 +19,6 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  APK_PAGE_URL: https://apkcombo.com/bilibili/com.bilibili.app.in/old-versions/
   APK_PACKAGE: com.bilibili.app.in
   JADX_VERSION: 1.5.6
   MIN_MESSAGE_COUNT: 3500
@@ -47,7 +46,10 @@ jobs:
       - name: Install build tools
         run: |
           sudo apt-get update
-          sudo apt-get install --yes aapt protobuf-compiler
+          sudo apt-get install --yes aapt protobuf-compiler xvfb
+
+      - name: Install Playwright
+        run: npm install --no-save --no-package-lock playwright@1.56.1
 
       - name: Download APK and read version
         id: version
@@ -55,41 +57,25 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .work
-          old_versions="$(curl --fail --location --retry 3 --retry-delay 5 \
-            --user-agent 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36' \
-            "$APK_PAGE_URL")"
-          release_path="$(printf '%s' "$old_versions" | grep -oE '/bilibili/com\.bilibili\.app\.in/download/phone-6[^" ]+-apk' | head -n 1)"
-          test -n "$release_path"
-          release_page="https://apkcombo.com${release_path}"
-          release_html="$(curl --fail --location --retry 3 --retry-delay 5 \
-            --user-agent 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36' \
-            "$release_page")"
-          apk_url="$(RELEASE_HTML="$release_html" node --input-type=module -e '
-            const html = process.env.RELEASE_HTML;
-            const match = html.match(/href="(\/r2\?u=[^"]+\.apks[^"]*)"/);
-            if (!match) process.exit(1);
-            console.log(new URL(match[1].replaceAll("&amp;", "&"), "https://apkcombo.com").href);
-          ')"
-          curl --fail --location --retry 3 --retry-delay 5 \
-            --user-agent 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36' \
-            --output .work/bilibili.xapk "$apk_url"
-          manifest_json="$(unzip -p .work/bilibili.xapk manifest.json)"
-          version_name="$(jq -r '.version_name' <<< "$manifest_json")"
-          version_code="$(jq -r '.version_code' <<< "$manifest_json")"
-          base_apk="$(jq -r '.split_apks[] | select(.id == "base") | .file' <<< "$manifest_json")"
+          release_page="$(xvfb-run -a node tools/download_apkmirror.mjs .work/bilibili.apkm)"
+          test -n "$release_page"
+          info_json="$(unzip -p .work/bilibili.apkm info.json)"
+          version_name="$(jq -r '.release_version' <<< "$info_json")"
+          version_code="$(jq -r '.versioncode' <<< "$info_json")"
+          base_apk=base.apk
+          test "$(jq -r '.pname' <<< "$info_json")" = "$APK_PACKAGE"
           test "$version_name" != null
           test "$version_code" != null
-          test -n "$base_apk"
           case "$version_code" in ''|*[!0-9]*) echo "Invalid version code: $version_code" >&2; exit 1;; esac
           mkdir -p .work/apks
-          unzip -q .work/bilibili.xapk "$base_apk" -d .work/apks
+          unzip -q .work/bilibili.apkm "$base_apk" -d .work/apks
           badging="$(aapt dump badging ".work/apks/$base_apk")"
           package_name="$(sed -nE "s/^package: name='([^']+)'.*/\1/p" <<< "$badging" | head -n 1)"
           test "$package_name" = "$APK_PACKAGE"
           case "$version_name" in 6.[0-9]* ) ;; *) echo "Unexpected international version: $version_name" >&2; exit 1;; esac
 
           tag="international-v${version_name}"
-          apk_sha256="$(sha256sum .work/bilibili.xapk | cut -d ' ' -f 1)"
+          apk_sha256="$(sha256sum .work/bilibili.apkm | cut -d ' ' -f 1)"
           git fetch --tags --force
           force_rebuild="${{ github.event_name == 'workflow_dispatch' && inputs.force }}"
           if git rev-parse -q --verify "refs/tags/$tag" >/dev/null && [ "$force_rebuild" != 'true' ]; then
