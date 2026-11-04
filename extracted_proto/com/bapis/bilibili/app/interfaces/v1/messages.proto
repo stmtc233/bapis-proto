@@ -331,6 +331,7 @@ message CursorV2Reply {
   Cursor cursor = 2;
   bool hasMore = 3;
   string emptyLink = 4;
+  repeated CursorItem recentFrequentItems = 5;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/CursorV2Req.java
@@ -420,6 +421,18 @@ message FacialRecognitionVerifyReq {
 message HisInfo {
   string business = 1;
   int64 kid = 2;
+}
+
+// Source: com/bapis/bilibili/app/interfaces/v1/HistoryItemsReply.java
+message HistoryItemsReply {
+  repeated CursorItem items = 1;
+}
+
+// Source: com/bapis/bilibili/app/interfaces/v1/HistoryItemsReq.java
+message HistoryItemsReq {
+  string business = 1;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 2;
+  repeated int64 oids = 3;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/HistoryTabReply.java

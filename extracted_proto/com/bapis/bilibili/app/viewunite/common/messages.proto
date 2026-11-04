@@ -1666,6 +1666,7 @@ message RelateBangumiResourceCard {
   string label = 10;
   map<string, string> report = 11;
   string gotoType = 12;
+  RelateMallInfo mallInfo = 13;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/RelateBangumiUGCCard.java
@@ -1816,6 +1817,25 @@ message RelateLiveCard {
   string liveNewStyle = 6;
   StatInfo statInfo = 7;
   bool showRcmdStyle = 8;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/common/RelateMallInfo.java
+message RelateMallInfo {
+  string rcmdReasonText = 1;
+  string rcmdReasonBgColor = 2;
+  string rcmdReasonBgColorNight = 3;
+  string rcmdReasonTextColor = 4;
+  string rcmdReasonTextColorNight = 5;
+  int32 rcmdReasonBgStyle = 6;
+  string priceSymbol = 7;
+  string priceDesc = 8;
+  string goodsCurPrice = 9;
+  string priceSuffix = 10;
+  bool hasAntiSnipingPrice = 11;
+  string antiSnipingText = 12;
+  repeated string qualityTexts = 13;
+  bool isBigMemberPrice = 14;
+  string desc = 15;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/RelateMiniProgramCard.java

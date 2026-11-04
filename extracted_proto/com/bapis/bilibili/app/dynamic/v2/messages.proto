@@ -59,6 +59,13 @@ enum AdditionalType {
   additional_type_toy = 16;
 }
 
+enum AdditionVote2_ItemCase {
+  ITEM_NOT_SET = 0;
+  ADDITION_VOTE_WORD = 10;
+  ADDITION_VOTE_PIC = 11;
+  ADDITION_VOTE_DEFAULE = 12;
+}
+
 enum AdditionVoteState {
   addition_vote_state_none = 0;
   addition_vote_state_open = 1;
@@ -540,12 +547,6 @@ enum ModuleDynamicType {
   mdl_dyn_topic_set = 17;
   mdl_dyn_charging_archive = 18;
   mdl_dyn_share_charging_qa = 19;
-}
-
-enum ModuleHeadResource_ResourceType {
-  Default = 0;
-  Topic = 1;
-  Tribee = 2;
 }
 
 enum NavigationType {
@@ -4006,17 +4007,23 @@ message ModuleFold {
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource.java
 message ModuleHeadResource {
   string icon = 1;
-  bytes text = 2;
+  ModuleHeadResource_LinkText text = 2;
   string suffix = 3;
   bytes subtext = 4;
-  int32 type = 5;
+  ResourceType type = 5;
   int64 moduleId = 6;
   int64 subModuleId = 7;
   string moduleType = 8;
   repeated TribeeHeadInfo tribeeHeadInfos = 9;
+  enum ResourceType {
+    Default = 0;
+    Topic = 1;
+    Tribee = 2;
+  }
+
 }
 
-// Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource$LinkText.java
+// Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource.java
 message ModuleHeadResource_LinkText {
   string text = 1;
   string url = 2;
@@ -6176,6 +6183,19 @@ message TribeeProfileResp {
   string visaJumpUri = 7;
   ShareConfig share = 8;
   TribeeTheme tribeeTheme = 9;
+  TribeeRuleContent ruleOpus = 10;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeRuleContent.java
+message TribeeRuleContent {
+  Mode mode = 1;
+  repeated Paragraph paragraphs = 2;
+  enum Mode {
+    MODE_UNSPECIFIED = 0;
+    FOLLOW_DEFAULT = 1;
+    CUSTOM = 2;
+  }
+
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchAllReq.java

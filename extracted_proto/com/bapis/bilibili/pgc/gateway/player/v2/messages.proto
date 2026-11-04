@@ -680,6 +680,21 @@ message QualityExtInfo {
 message RecordInfo {
   string record = 1;
   string recordIcon = 2;
+  RecordStyle recordStyle = 3;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v2/RecordPosition.java
+message RecordPosition {
+  int32 top = 1;
+  int32 right = 2;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v2/RecordStyle.java
+message RecordStyle {
+  RecordPosition landscape = 1;
+  RecordPosition portrait = 2;
+  string fontColor = 3;
+  int32 fontSize = 4;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v2/Report.java
