@@ -180,10 +180,21 @@ jobs:
           git add -f extracted_proto
           if ! git diff --cached --quiet; then
             git commit -m "chore(proto): update to ${VERSION_NAME}"
-            git push origin HEAD
           fi
           git tag -fa "$TAG" -m "BAPIS proto ${VERSION_NAME}"
-          git push origin "refs/tags/$TAG" --force
+          # Publish both refs together so a rejected tag cannot leave a partial update.
+          # Only the tag may be replaced; branch updates must remain fast-forwards.
+          for attempt in 1 2 3 4; do
+            if git push --atomic origin HEAD "+refs/tags/$TAG"; then
+              break
+            fi
+            if [ "$attempt" -eq 4 ]; then
+              echo "Failed to publish schema and tag after $attempt attempts." >&2
+              exit 1
+            fi
+            echo "Push attempt $attempt failed; retrying in $((attempt * 5)) seconds." >&2
+            sleep "$((attempt * 5))"
+          done
 
       - name: Publish or replace release
         if: steps.version.outputs.tag_exists != 'true'
