@@ -1,8 +1,8 @@
 {
   "sourceRoot": "/home/runner/work/bapis-proto/bapis-proto/decompiled/sources/com/bapis",
-  "generatedAt": "2026-11-04T15:28:55.219Z",
-  "messageCount": 4428,
-  "topLevelEnumCount": 541,
+  "generatedAt": "2026-11-12T10:02:26.668Z",
+  "messageCount": 4501,
+  "topLevelEnumCount": 565,
   "packageCount": 140,
   "serviceCount": 85,
   "rpcCount": 482,

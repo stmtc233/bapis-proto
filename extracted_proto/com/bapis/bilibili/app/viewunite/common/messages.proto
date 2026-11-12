@@ -693,6 +693,15 @@ message FollowLayer {
 message Headline {
   Label label = 1;
   string content = 2;
+  repeated HighlightWord highLightWord = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/common/HighlightWord.java
+message HighlightWord {
+  int32 start = 1;
+  string text = 2;
+  string uri = 3;
+  map<string, string> trackInfo = 4;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/HistoryNode.java
